@@ -331,8 +331,9 @@ jobs:
         run: |
           mkdir -p src/main/assets/resources
           # Copy all game assets (Media/, recipe/, resource.cfg) from
-          # engine-res-main/ into assets/resources/.
-          cp -r ../../../../engine-res-main/* src/main/assets/resources/
+          # engine-res-main/ (at repo root) into assets/resources/.
+          # Path: app/ → Blockmango/ → Android/ → Shells/ → client/ → engine-main/ → repo root
+          cp -r ../../../../../engine-res-main/* src/main/assets/resources/
           echo "=== Assets staged ==="
           find src/main/assets/resources -maxdepth 2 -type d | head -20
           echo "=== Total asset files ==="
