@@ -282,12 +282,25 @@ jobs:
       # shared library that Java loads via System.loadLibrary("BlockMan").
       # This runs the ndk-build at client/Shells/Android/Blockmango/app/jni/
       # which has PREBUILT_STATIC_LIBRARY entries for all the static libs.
+      #
+      # The app/jni/Android.mk expects libcurl.a at a DIFFERENT path than
+      # where the libraries/ApkBuild ndk-build produces it:
+      #   Expected: client/curl/Android/Lib/$(APP_OPTIM)/$(ABI)/libcurl.a
+      #   Actual:   libraries/build/lib/$(APP_OPTIM)/$(ABI)/libcurl.a
+      # We copy it to the expected location before running the link step.
       # ----------------------------------------------------------------
       - name: Build final libBlockMan.so (ndk-build link step)
         working-directory: engine-main/client/Shells/Android/Blockmango/app
         run: |
           set -o pipefail
           echo "Building final libBlockMan.so for $ABI..."
+          # The Android.mk expects libcurl.a at client/curl/Android/Lib/release/$ABI/
+          # but it was built at libraries/build/lib/release/$ABI/. Copy it.
+          mkdir -p ../../../../../curl/Android/Lib/release/$ABI
+          cp ../../../../../../libraries/build/lib/release/$ABI/libcurl.a \
+             ../../../../../curl/Android/Lib/release/$ABI/libcurl.a
+          echo "Copied libcurl.a to expected path"
+          
           $NDK_ROOT/ndk-build NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_shared 2>&1 | tee link-build.log
           echo "=== Final .so ==="
           find . -name "libBlockMan.so" -exec ls -la {} \;
@@ -330,24 +343,32 @@ jobs:
         working-directory: engine-main/client/Shells/Android/Blockmango/app
         run: |
           mkdir -p libs/$ABI
-          # libBlockMan.so was built by the "Build final libBlockMan.so" step
-          # above. It's either in libs/$ABI/ (ndk-build default output) or
-          # in ../../../../client/Bin/$ABI/ (if the Android.mk uses TARGET_OUT).
-          # Try both locations.
+          # libBlockMan.so: built by the "Build final libBlockMan.so" step.
+          # ndk-build puts it in libs/$ABI/ (the default LOCAL_OUT for the
+          # app's jni/Android.mk which uses BUILD_SHARED_LIBRARY).
+          # Also check ../../../../client/Bin/$ABI/ as fallback.
           if [ -f libs/$ABI/libBlockMan.so ]; then
-            echo "libBlockMan.so already in libs/$ABI/"
+            echo "libBlockMan.so found in libs/$ABI/"
           elif [ -f ../../../../client/Bin/$ABI/libBlockMan.so ]; then
             cp -v ../../../../client/Bin/$ABI/libBlockMan.so libs/$ABI/
           else
             echo "ERROR: libBlockMan.so not found! Searching..."
             find . -name "libBlockMan.so" -exec ls -la {} \;
-            find ../../../../client -name "libBlockMan.so" -exec ls -la {} \;
+            find ../../../../.. -name "libBlockMan.so" -exec ls -la {} \;
             exit 1
           fi
-          cp -v ../../../../server/build-android-$ABI/libGameServer.so libs/$ABI/ 2>/dev/null || \
-            echo "WARNING: libGameServer.so not found at expected path; the APK build may fail."
+          # libGameServer.so: built by CMake at server/build-android-$ABI/
+          if [ -f ../../../../server/build-android-$ABI/libGameServer.so ]; then
+            cp -v ../../../../server/build-android-$ABI/libGameServer.so libs/$ABI/
+          else
+            echo "ERROR: libGameServer.so not found!"
+            find ../../../../server -name "libGameServer.so" -exec ls -la {} \;
+            exit 1
+          fi
+          # gnustl_shared: required at runtime by both .so files
           cp -v $NDK_ROOT/sources/cxx-stl/gnu-libstdc++/4.9/libs/$ABI/libgnustl_shared.so libs/$ABI/ 2>/dev/null || \
             echo "WARNING: libgnustl_shared.so not found at NDK path."
+          echo "=== Native libs in APK jniLibs ==="
           ls -la libs/$ABI/
 
       - name: Stage game assets into APK assets directory
