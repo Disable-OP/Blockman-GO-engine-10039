@@ -163,33 +163,35 @@ ENDIF()
 elseif(${LORD_PLATFORM_ANDROID})
 
 # Android: link against the same NDK-built static libs the client uses
-# (produced by engine/NDKBuild/DepBuild + libraries/ApkBuild/jni).
-# The HTTP-based MysqlHttpRequest/RedisHttpRequest mean we don't need
-# libmysqlclient or libhiredis on Android — those code paths are dead
-# (commented out in Server.cpp). We only need RakNet + the engine deps.
+# (produced by engine/NDKBuild + libraries/ApkBuild + logic/ApkBuild).
+#
+# ndk-build output paths (APP_OPTIM=release when NDK_DEBUG=0):
+#   LordCore + LordGLES2Render → engine/Bin/release/${ANDROID_ABI}/
+#   Raknet, FreeType, FreeImage, Zlib, Lua, Cpr, G3log, curl
+#     → libraries/build/lib/release/${ANDROID_ABI}/
+#   Logic → logic/Bin/release/${ANDROID_ABI}/
+#
+# Library names from ndk-build (note the case: libZlib.a not libzlib.a,
+# libG3log.a not libg3logger.a, libCpr.a not libcpr.a).
+set(NDK_OPTIM release)  # NDK_DEBUG=0 → APP_OPTIM=release
 link_directories(
   ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
-  ${LOGIC_BIN_PATH}
-  ${CORE_BIN_PATH}
-  ${LORD_DEP_PATH}/FreeType/Android/Lib/${CMAKE_BUILD_TYPE}/${ANDROID_ABI}
-  ${LORD_DEP_PATH}/FreeImage/Android/Lib/${CMAKE_BUILD_TYPE}/${ANDROID_ABI}
-  ${LORD_DEP_PATH}/Zlib/Android/Lib/${CMAKE_BUILD_TYPE}/${ANDROID_ABI}
-  ${LORD_DEP_PATH}/Lua/Android/Lib/${CMAKE_BUILD_TYPE}/${ANDROID_ABI}
-  ${LORD_DEP_PATH}/g3log/android/lib/${ANDROID_ABI}
-  ${LOGIC_DEP_PATH}/lib/${ANDROID_ABI}
+  ../../engine/Bin/${NDK_OPTIM}/${ANDROID_ABI}
+  ../../libraries/build/lib/${NDK_OPTIM}/${ANDROID_ABI}
+  ../../logic/Bin/${NDK_OPTIM}/${ANDROID_ABI}
 )
 
 link_libraries(
   Logic
   LordCore
-  raknet
+  Raknet
   FreeType
   FreeImage
-  zlib
-  lua
-  g3logger
+  Zlib
+  Lua
+  G3log
   curl
-  cpr
+  Cpr
   # Android system libs:
   log       # __android_log_print (used by ServerJni.cpp)
   android   # ANativeActivity, JNI helpers

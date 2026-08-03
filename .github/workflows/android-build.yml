@@ -253,6 +253,19 @@ jobs:
           find . -name "*.a" | head -20
 
       # ----------------------------------------------------------------
+      # Step 3.5: Build the logic static lib (libLogic.a).
+      # The server links against libLogic.a — it must be built before
+      # the server CMake step. Outputs to logic/Bin/$(APP_OPTIM)/$(ABI)/.
+      # ----------------------------------------------------------------
+      - name: Build logic static lib (ndk-build)
+        working-directory: engine-main/logic/ApkBuild
+        run: |
+          set -o pipefail
+          echo "Building logic static lib for $ABI..."
+          $NDK_ROOT/ndk-build NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee logic-build.log
+          find . -name "*.a" | head -20
+
+      # ----------------------------------------------------------------
       # Step 4: Build the client static lib (libGameClient.a).
       # ----------------------------------------------------------------
       - name: Build client static lib (ndk-build)
@@ -354,6 +367,7 @@ jobs:
             engine-main/engine/NDKBuild/DepBuild/deps-build.log
             engine-main/engine/NDKBuild/engine-build.log
             engine-main/libraries/ApkBuild/libs-build.log
+            engine-main/logic/ApkBuild/logic-build.log
             engine-main/client/ApkBuild/client-build.log
             engine-main/server/build-android-${{ env.ABI }}/server-build.log
             engine-main/client/Shells/Android/Blockmango/apk-build.log
