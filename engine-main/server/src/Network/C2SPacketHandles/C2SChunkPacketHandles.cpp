@@ -1,28 +1,3 @@
-/********************************************************************
-filename: 	C2SChunkPacketHandles.cpp
-file path:	engine-main/server/src/Network/C2SPacketHandles/C2SChunkPacketHandles.cpp
-
-version:	1
-author:		Blockman-GO-engine-10039 contributors
-date:		2026-08-03
-
-purpose:	Server-side handlers for the server-authoritative worldgen
-            chunk-request packets (see docs/WORLDGEN.md).
-
-            When a client requests a chunk (C2SPacketRequestChunk or
-            C2SPacketRequestChunkBulk), the server:
-              1. Looks up the chunk via the world's ChunkService. This
-                 triggers ChunkProviderGenerate (real WorldGenerator) on
-                 cache miss, or loads from Anvil on disk hit.
-              2. Encodes the chunk to a compressed byte blob using the
-                 same NBT+zlib format the Anvil region files use (so the
-                 client can decode with the existing ChunkReadableStorageFile
-                 decoder).
-              3. Sends an S2CPacketChunkData back to the requesting peer.
-
-            Per-tick throttling lives in ClientPeer (configured in
-            ServerNetwork); here we just serve the request.
-*********************************************************************/
 #include "C2SChunkPacketHandles.h"
 
 #include "Network/ClientPeer.h"
@@ -35,6 +10,7 @@ purpose:	Server-side handlers for the server-authoritative worldgen
 #include "Chunk/ChunkService.h"
 #include "WorldGenerator/Anvil.h"
 #include "WorldGenerator/AnvilManager.h"
+#include "Stream/ZlibStream.h"
 #include "Object/Root.h"
 
 #include <chrono>
@@ -48,7 +24,10 @@ namespace {
 // straight to its ChunkReadableStorageFile decoder, so disk and network
 // share one decoder.
 //
-// Returns true on success; fills `outBlob`.
+// Implementation: call BLOCKMAN::serialize(ChunkWithMeta*, OutputStream&)
+// directly with a ZlibOutputStream. This is exactly what Anvil::placeChunk
+// does internally — we just skip the Anvil object (which is abstract and
+// has private m_chunkDatas).
 bool encodeChunkToBlob(BLOCKMAN::Chunk* chunk, LORD::vector<LORD::ui8>::type& outBlob)
 {
 	if (!chunk || chunk->isNonexistent())
@@ -57,72 +36,22 @@ bool encodeChunkToBlob(BLOCKMAN::Chunk* chunk, LORD::vector<LORD::ui8>::type& ou
 		return false;
 	}
 
-	// Use a transient Anvil as an encoder: placeChunk() compresses the
-	// chunk into the Anvil's in-memory chunkDatas map, which we then
-	// copy out. This reuses the proven NBT+zlib encoder instead of
-	// hand-rolling a second one.
-	//
-	// The Anvil is constructed with a null region dir (we never flush
-	// it to disk); we only use it as an in-memory encoder.
-	BLOCKMAN::Anvil encoder(0, 0, /*regionDir*/ "");
-	if (!encoder.placeChunk(chunk))
+	// ChunkWithMeta is { int version; Chunk* chunk; } — the NBT wrapper
+	// used by the Anvil region format. serialize() writes it as compressed
+	// NBT into the output stream.
+	BLOCKMAN::ChunkWithMeta chunkWithMeta = { 0, chunk };
+
+	LORD::ZlibOutputStream os(outBlob);
+	try
 	{
+		BLOCKMAN::serialize(&chunkWithMeta, os);
+	}
+	catch (const BLOCKMAN::InvalidNbtFormatError& e)
+	{
+		LordLogError("Failed to encode chunk (%d, %d): %s", chunk->m_posX, chunk->m_posZ, e.what());
 		return false;
 	}
-
-	// placeChunk stored the compressed bytes at the chunk's index.
-	// Since we constructed the Anvil at (0,0) and the chunk may be at
-	// any (x,z), we can't directly look it up by index — instead we
-	// ask the Anvil to serialize the whole region (which is just our
-	// one chunk) into a stream and take the chunk-data portion.
-	//
-	// Simpler: use the Anvil's serialize() which writes the full region
-	// file format (header + sectors). The client's decoder expects just
-	// the per-chunk compressed payload, so we instead reach into the
-	// Anvil's m_chunkDatas via the public extractChunk path.
-	//
-	// The cleanest public API is: call extractChunk(x,z) which reads
-	// back from m_chunkDatas — but that returns a Chunk*, not bytes.
-	//
-	// Pragmatic approach: we add a tiny helper on Anvil to expose the
-	// compressed bytes. For now, since Anvil::m_chunkDatas is protected,
-	// we use a transient subclass to grab the bytes.
-	//
-	// See AnvilEncoderAccessor below.
-	return false;  // placeholder until encoder accessor is wired
-}
-
-// Subclass to expose Anvil's protected compressed-chunk map for encoding.
-class AnvilEncoderAccessor : public BLOCKMAN::Anvil
-{
-public:
-	using Anvil::Anvil;  // inherit constructors
-
-	bool encodeChunk(BLOCKMAN::Chunk* chunk, LORD::vector<LORD::ui8>::type& outBlob)
-	{
-		if (!placeChunk(chunk))
-		{
-			return false;
-		}
-		auto idx = calculateChunkIndex(chunk->m_posX, chunk->m_posZ);
-		auto it = this->m_chunkDatas.find(idx);
-		if (it == this->m_chunkDatas.end())
-		{
-			return false;
-		}
-		outBlob = it->second.compressedChunk;
-		return !outBlob.empty();
-	}
-};
-
-bool encodeChunkToBlobV2(BLOCKMAN::Chunk* chunk, LORD::vector<LORD::ui8>::type& outBlob)
-{
-	if (!chunk || chunk->isNonexistent())
-	{
-		return false;
-	}
-	AnvilEncoderAccessor encoder(0, 0, "");
-	return encoder.encodeChunk(chunk, outBlob);
+	return !outBlob.empty();
 }
 
 } // anonymous namespace
@@ -147,7 +76,7 @@ void C2SChunkPacketHandles::handlePacket(std::shared_ptr<ClientPeer>& clientPeer
 	}
 
 	LORD::vector<LORD::ui8>::type blob;
-	if (!encodeChunkToBlobV2(chunk.get(), blob))
+	if (!encodeChunkToBlob(chunk.get(), blob))
 	{
 		LordLogWarning("Failed to encode chunk (%d, %d) for client %llu",
 			packet->m_chunkX, packet->m_chunkZ, (unsigned long long)clientPeer->getRakssid());
@@ -191,7 +120,7 @@ void C2SChunkPacketHandles::handlePacket(std::shared_ptr<ClientPeer>& clientPeer
 		}
 
 		LORD::vector<LORD::ui8>::type blob;
-		if (!encodeChunkToBlobV2(chunk.get(), blob))
+		if (!encodeChunkToBlob(chunk.get(), blob))
 		{
 			continue;
 		}
