@@ -60,7 +60,9 @@ echo "export PATH=$SDK_DIR/cmdline-tools/latest/bin:$SDK_DIR/platform-tools:$SDK
 
 # Accept licenses + install SDK packages
 yes | sdkmanager --licenses > /dev/null 2>&1 || true
-sdkmanager "platform-tools" "platforms;android-30" "build-tools;30.0.3" "emulator" "system-images;android-30;default;x86_64"
+# Android 9 (API 28) x86_64 — native bridge translates ARM libs to x86,
+# so armeabi-v7a apps run on x86 emulator without rebuilding for x86.
+sdkmanager "platform-tools" "platforms;android-28" "build-tools;28.0.3" "emulator" "system-images;android-28;default;x86_64"
 
 # --- 4. Android NDK r17c (gnustl_static support) ---
 if [ ! -d "$NDK_DIR" ]; then
@@ -98,7 +100,7 @@ if ! avdmanager list avd 2>/dev/null | grep -q "$AVD_NAME"; then
   echo "Creating AVD: $AVD_NAME..."
   echo "no" | avdmanager create avd \
     --name "$AVD_NAME" \
-    --package "system-images;android-30;default;x86_64" \
+    --package "system-images;android-28;default;x86_64" \
     --device "pixel_4a" \
     --force
   # Enable hardware acceleration in the AVD config
