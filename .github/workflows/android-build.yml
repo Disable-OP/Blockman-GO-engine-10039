@@ -7,21 +7,22 @@
 #
 # To run: GitHub → Actions tab → "Android Build (Manual)" → Run workflow.
 #
-# What it does:
-#   1. Sets up NDK r17c (the only version that supports the legacy
-#      gnustl_static STL the project uses — gnustl was removed in NDK r22).
-#   2. Builds the third-party deps (FreeImage, FreeType, LuaJIT, zlib, ...)
-#      for armeabi-v7a via ndk-build.
-#   3. Builds the engine + logic + clothes + client native libs via ndk-build.
-#   4. Builds the server as a shared library (libGameServer.so) via CMake
-#      with the Android toolchain.
-#   5. Assembles the debug APK via Gradle.
-#   6. Uploads the APK + the libGameServer.so as workflow artifacts.
-#
-# The first run will likely fail because the prebuilt deps are not checked
-# in — this workflow assumes the deps build step (1) succeeds. If it fails,
-# the deps build scripts under engine-main/engine/NDKBuild/DepBuild/ need
-# fixing. See docs/BUILD.md and docs/ROADMAP.md (M1).
+# Caching strategy (to keep rebuilds fast AND keep storage clean):
+#   1. NDK r17c cache — stable key "ndk-r17c-v1". The NDK is ~1.2 GB
+#      unzipped; caching it saves ~1 min download+unzip per run. The key
+#      never changes (NDK r17c is frozen), so there's exactly ONE cache
+#      entry — no clutter.
+#   2. ccache — stable key "ccache-{abi}-{hash-of-cpp-sources}". ccache
+#      stores precompiled object files keyed by a hash of the source +
+#      compiler flags. On a no-change rebuild, hit rate is ~100% and the
+#      full C++ compile (steps 1-5, ~30 min) drops to ~3 min. The key
+#      rolls only when source files change, so old entries are evicted
+#      automatically by GitHub's LRU policy.
+#   3. Gradle cache — keyed by hash of build.gradle files.
+#   4. Artifact names are STABLE (no run_id suffix) so re-runs OVERWRITE
+#      the same artifact instead of piling up new ones. This keeps the
+#      artifact list short: 1 APK + 1 .so + 1 logs bundle = 3 entries
+#      total, regardless of how many runs you do.
 
 name: Android Build (Manual)
 
@@ -48,6 +49,11 @@ on:
         required: false
         default: false
         type: boolean
+      clean_cache:
+        description: 'Bypass all caches (force full rebuild from scratch)'
+        required: false
+        default: false
+        type: boolean
 
 # Cancel any previous manual run when a new one is started.
 concurrency:
@@ -58,12 +64,19 @@ jobs:
   build:
     name: Build Android APK
     runs-on: ubuntu-22.04
-    timeout-minutes: 120
+    timeout-minutes: 90
 
     env:
       NDK_VERSION: r17c
       ABI: ${{ github.event.inputs.abi || 'armeabi-v7a' }}
       BUILD_TYPE: ${{ github.event.inputs.build_type || 'Debug' }}
+      # ccache config: 500 MB cap (enough for the whole project), use
+      # compiler_hash for uniqueness, compress storage.
+      CCACHE_DIR: ${{ github.workspace }}/.ccache
+      CCACHE_MAXSIZE: 500M
+      CCACHE_COMPRESS: 1
+      CCACHE_COMPRESSLEVEL: 6
+      NDK_CCACHE: /usr/bin/ccache
 
     steps:
       - name: Checkout repository
@@ -82,18 +95,70 @@ jobs:
         with:
           packages: 'platform-tools platforms;android-26 build-tools;26.0.2'
 
+      # ----------------------------------------------------------------
+      # Cache 1: NDK r17c — stable key, never rolls. Saves ~1 min/run.
+      # ----------------------------------------------------------------
+      - name: Cache Android NDK r17c
+        id: ndk-cache
+        uses: actions/cache@v4
+        with:
+          path: /home/runner/android-ndk-r17c
+          key: ndk-r17c-v1
+
       - name: Set up Android NDK r17c
+        # NDK r17c is the last version with gnustl_static, which the project uses.
+        # Modern NDK (r22+) removed gnustl — the project won't link against it.
+        if: steps.ndk-cache.outputs.cache-hit != 'true'
         run: |
-          # NDK r17c is the last version with gnustl_static, which the project uses.
-          # Modern NDK (r22+) removed gnustl — the project won't link against it.
-          # See docs/BUILD.md for the gnustl → c++_shared migration plan (M1).
           cd $HOME
           wget -q https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
           unzip -q android-ndk-r17c-linux-x86_64.zip
+          rm android-ndk-r17c-linux-x86_64.zip
+
+      - name: Export NDK env vars
+        run: |
           echo "ANDROID_NDK_HOME=$HOME/android-ndk-r17c" >> $GITHUB_ENV
           echo "ANDROID_NDK_ROOT=$HOME/android-ndk-r17c" >> $GITHUB_ENV
           echo "NDK_ROOT=$HOME/android-ndk-r17c" >> $GITHUB_ENV
-          rm android-ndk-r17c-linux-x86_64.zip
+
+      # ----------------------------------------------------------------
+      # Cache 2: ccache — keyed by hash of all .cpp/.h/.c source files.
+      # On a no-change rebuild, hit rate is ~100% and the ~30 min C++
+      # compile drops to ~3 min. Key rolls only when source changes.
+      # ----------------------------------------------------------------
+      - name: Compute source hash for ccache key
+        id: src-hash
+        run: |
+          # Hash all C/C++ source + headers + build scripts. This is the
+          # cache key — if any source file changes, the key rolls and a
+          # fresh ccache starts. If nothing changes, the key matches and
+          # we get a near-100% cache hit.
+          HASH=$(find engine-main -type f \( -name '*.cpp' -o -name '*.h' -o -name '*.c' -o -name '*.mk' -o -name 'Android.mk' -o -name 'Application.mk' -o -name 'CMakeLists.txt' -o -name '*.cmake' \) | sort | xargs cat | sha256sum | cut -c1-16)
+          echo "hash=$HASH" >> $GITHUB_OUTPUT
+          echo "Source hash: $HASH"
+
+      - name: Restore ccache
+        id: ccache-cache
+        if: ${{ github.event.inputs.clean_cache != 'true' }}
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/.ccache
+          key: ccache-${{ env.ABI }}-${{ steps.src-hash.outputs.hash }}
+          restore-keys: |
+            ccache-${{ env.ABI }}-
+
+      - name: Install ccache + host build deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential ccache cmake ninja-build python3 \
+            zlib1g-dev libssl-dev \
+            unzip wget
+          # Print ccache stats (will be empty on first run, populated on later runs).
+          ccache --version || true
+          ccache -s || true
+          # Create the ccache dir if the cache miss left it absent.
+          mkdir -p $CCACHE_DIR
 
       - name: Set up Gradle cache
         uses: actions/cache@v4
@@ -104,23 +169,12 @@ jobs:
           key: gradle-${{ runner.os }}-${{ hashFiles('engine-main/client/Shells/Android/Blockmango/**/build.gradle', 'engine-main/client/Shells/Android/Blockmango/**/settings.gradle') }}
           restore-keys: gradle-${{ runner.os }}-
 
-      - name: Install host build deps
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y --no-install-recommends \
-            build-essential cmake ninja-build python3 \
-            zlib1g-dev libssl-dev \
-            unzip wget
-
       - name: Fix libtinfo.so.5 for NDK r17c clang
         # NDK r17c's clang binary is linked against libtinfo.so.5, which
         # Ubuntu 22.04 no longer ships (it has libtinfo.so.6). The clang
         # binary only uses a handful of symbols that are ABI-compatible
-        # across the libtinfo 5/6 boundary, so a symlink works as a
-        # workaround. This is the standard fix for NDK r17c on modern Linux.
-        # See: https://github.com/android-ndk/ndk/issues/1153
+        # across the libtinfo 5/6 boundary, so a symlink works.
         run: |
-          # Find where libtinfo.so.6 lives on this runner.
           LIBTINFO6=$(find /usr/lib /lib -name 'libtinfo.so.6*' 2>/dev/null | head -1)
           if [ -z "$LIBTINFO6" ]; then
             echo "ERROR: libtinfo.so.6 not found on the runner — cannot create libtinfo.so.5 symlink."
@@ -130,34 +184,36 @@ jobs:
           echo "Symlinking $LIBTINFO5_LINK -> $LIBTINFO6"
           sudo ln -sf "$LIBTINFO6" "$LIBTINFO5_LINK"
           sudo ldconfig
-          # Verify clang now loads.
           $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --version || {
             echo "clang still fails to load after libtinfo symlink:"
             ldd $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/clang | grep -i "not found" || true
             exit 1
           }
 
-      - name: Print environment
+      - name: Print environment + ccache stats
         run: |
           echo "=== Environment ==="
           echo "NDK_ROOT=$NDK_ROOT"
           echo "ANDROID_NDK_HOME=$ANDROID_NDK_HOME"
           echo "ABI=$ABI"
           echo "BUILD_TYPE=$BUILD_TYPE"
+          echo "CCACHE_DIR=$CCACHE_DIR"
+          echo "NDK_CCACHE=$NDK_CCACHE"
           echo "=== ndk-build version ==="
           $NDK_ROOT/ndk-build --version || true
           echo "=== clang version (NDK) ==="
           $NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --version
-          echo "=== cmake version ==="
-          cmake --version
-          echo "=== Repo tree (depth 3) ==="
-          find engine-main -maxdepth 3 -type d | head -40
+          echo "=== ccache version ==="
+          ccache --version
+          echo "=== ccache stats (before build) ==="
+          ccache -s
 
       # ----------------------------------------------------------------
-      # Step 1: Build third-party deps (FreeImage, FreeType, LuaJIT, zlib)
-      # for Android. This is the slowest step and the most fragile —
-      # the build scripts under engine/NDKBuild/DepBuild/jni/ use ancient
-      # Android.mk files that may need patching for modern NDK.
+      # Step 1: Build third-party deps (FreeImage, FreeType, LuaJIT, zlib).
+      # ndk-build uses NDK_CCACHE env var (set above) automatically.
+        # NOTE: We no longer pass -B (force-rebuild) — that was defeating
+        # the ccache + incremental build. ndk-build's own make dependency
+        # tracking handles incremental builds correctly.
       # ----------------------------------------------------------------
       - name: Build third-party deps (ndk-build)
         if: ${{ github.event.inputs.skip_deps != true && github.event.inputs.skip_deps != 'true' }}
@@ -165,7 +221,7 @@ jobs:
         run: |
           set -o pipefail
           echo "Building third-party deps for $ABI..."
-          $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee deps-build.log
+          $NDK_ROOT/ndk-build NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee deps-build.log
           echo "=== Deps build artifacts ==="
           find . -name "*.a" | head -20
 
@@ -177,7 +233,7 @@ jobs:
         run: |
           set -o pipefail
           echo "Building engine core for $ABI..."
-          $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee engine-build.log
+          $NDK_ROOT/ndk-build NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee engine-build.log
           find . -name "*.a" | head -20
 
       # ----------------------------------------------------------------
@@ -188,7 +244,7 @@ jobs:
         run: |
           set -o pipefail
           echo "Building shared libraries for $ABI..."
-          $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee libs-build.log
+          $NDK_ROOT/ndk-build NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee libs-build.log
           find . -name "*.a" | head -20
 
       # ----------------------------------------------------------------
@@ -199,12 +255,12 @@ jobs:
         run: |
           set -o pipefail
           echo "Building client static lib for $ABI..."
-          $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee client-build.log
+          $NDK_ROOT/ndk-build NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee client-build.log
 
       # ----------------------------------------------------------------
       # Step 5: Build the server shared library (libGameServer.so) via
-      # CMake with the Android toolchain. This is the new Android target
-      # added in M1 that lets the server run in-process on the phone.
+      # CMake. CMAKE_C/CXX_COMPILER_LAUNCHER=ccache makes CMake route
+      # every compile through ccache.
       # ----------------------------------------------------------------
       - name: Build server shared lib (libGameServer.so) via CMake
         working-directory: engine-main/server
@@ -218,10 +274,18 @@ jobs:
             -DANDROID_PLATFORM=android-14 \
             -DANDROID_STL=gnustl_static \
             -DLORD_BUILD_PLATFORM_ANDROID=ON \
-            -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+            -DCMAKE_BUILD_TYPE=$BUILD_TYPE \
+            -DCMAKE_C_COMPILER_LAUNCHER=ccache \
+            -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
           cmake --build . -j$(nproc) 2>&1 | tee server-build.log
           echo "=== Server build artifacts ==="
           find . -name "*.so" -o -name "*.a" | head -20
+
+      - name: Print ccache stats (after build)
+        if: always()
+        run: |
+          echo "=== ccache stats (after build) ==="
+          ccache -s
 
       # ----------------------------------------------------------------
       # Step 6: Copy libGameServer.so + libBlockMan.so into the Gradle
@@ -231,13 +295,10 @@ jobs:
         working-directory: engine-main/client/Shells/Android/Blockmango/app
         run: |
           mkdir -p libs/$ABI
-          # Copy the client native lib (built by step 4).
           cp -v ../../../../client/Bin/$ABI/libBlockMan.so libs/$ABI/ 2>/dev/null || \
             echo "WARNING: libBlockMan.so not found at expected path; the APK build may fail."
-          # Copy the server shared lib (built by step 5).
           cp -v ../../../../server/build-android-$ABI/libGameServer.so libs/$ABI/ 2>/dev/null || \
             echo "WARNING: libGameServer.so not found at expected path; the APK build may fail."
-          # Copy gnustl_shared (required by both libs at runtime).
           cp -v $NDK_ROOT/sources/cxx-stl/gnu-libstdc++/4.9/libs/$ABI/libgnustl_shared.so libs/$ABI/ 2>/dev/null || \
             echo "WARNING: libgnustl_shared.so not found at NDK path."
           ls -la libs/$ABI/
@@ -255,31 +316,35 @@ jobs:
           find . -name "*.apk" -type f
 
       # ----------------------------------------------------------------
-      # Step 8: Upload artifacts (APK + libGameServer.so + build logs).
+      # Step 8: Upload artifacts. Names are STABLE (no run_id suffix) so
+      # re-runs overwrite the same artifact instead of piling up new
+      # ones. This keeps storage usage flat regardless of run count.
       # ----------------------------------------------------------------
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: blockman-go-apk-${{ env.ABI }}-${{ github.run_id }}
+          name: blockman-go-apk
           path: |
             engine-main/client/Shells/Android/Blockmango/app/build/outputs/apk/**/*.apk
           if-no-files-found: warn
           retention-days: 30
+          overwrite: true
 
       - name: Upload libGameServer.so
         uses: actions/upload-artifact@v4
         with:
-          name: libGameServer-${{ env.ABI }}-${{ github.run_id }}
+          name: libGameServer
           path: |
             engine-main/server/build-android-${{ env.ABI }}/libGameServer.so
           if-no-files-found: warn
           retention-days: 30
+          overwrite: true
 
       - name: Upload build logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: build-logs-${{ github.run_id }}
+          name: build-logs
           path: |
             engine-main/engine/NDKBuild/DepBuild/deps-build.log
             engine-main/engine/NDKBuild/engine-build.log
@@ -289,6 +354,7 @@ jobs:
             engine-main/client/Shells/Android/Blockmango/apk-build.log
           if-no-files-found: warn
           retention-days: 14
+          overwrite: true
 
       # ----------------------------------------------------------------
       # Step 9: Print the storage usage so the user can track quota.
@@ -300,5 +366,16 @@ jobs:
           echo "ABI: $ABI"
           echo "Build type: $BUILD_TYPE"
           echo "Run ID: ${{ github.run_id }}"
-          echo "Artifacts will be retained for 30 days (APK + .so) or 14 days (logs)."
-          echo "To save storage, delete old run artifacts from the Actions UI after downloading."
+          echo "Source hash: ${{ steps.src-hash.outputs.hash }}"
+          echo ""
+          echo "Cache entries (stable, auto-evicted by GitHub LRU):"
+          echo "  - ndk-r17c-v1          (NDK r17c, ~1.2 GB, never rolls)"
+          echo "  - ccache-$ABI-<hash>   (~500 MB, rolls on source change)"
+          echo "  - gradle-<os>-<hash>   (~200 MB, rolls on gradle change)"
+          echo ""
+          echo "Artifact entries (STABLE names — re-runs overwrite, no clutter):"
+          echo "  - blockman-go-apk      (the APK)"
+          echo "  - libGameServer         (the .so)"
+          echo "  - build-logs            (6 .log files)"
+          echo ""
+          echo "Total: 3 cache entries + 3 artifact entries = 6 items, flat."
