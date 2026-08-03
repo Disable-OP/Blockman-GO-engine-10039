@@ -182,6 +182,12 @@ link_directories(
 )
 
 link_libraries(
+  # Use --start-group/--end-group to resolve circular dependencies between
+  # static libraries. The server depends on Logic, which depends on LordCore
+  # and Raknet; Cpr depends on curl; curl depends on Zlib; etc. Without
+  # grouping, the linker resolves symbols left-to-right and misses
+  # back-references, causing 'undefined reference' errors.
+  -Wl,--start-group
   Logic
   LordCore
   Raknet
@@ -192,6 +198,7 @@ link_libraries(
   G3log
   curl
   Cpr
+  -Wl,--end-group
   # Android system libs:
   log       # __android_log_print (used by ServerJni.cpp)
   android   # ANativeActivity, JNI helpers
