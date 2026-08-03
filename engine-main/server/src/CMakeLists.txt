@@ -41,6 +41,12 @@ elseif(${LORD_PLATFORM_ANDROID})
 # Android: server is built as a shared library (libGameServer.so) loaded
 # via JNI. The deps come from the same NDK-built static libs that the
 # client uses (built by engine/NDKBuild/DepBuild + libraries/ApkBuild/jni).
+#
+# For server-only deps (behaviac, mysql, redis headers), we reuse the linux
+# headers — they are platform-independent C/C++ headers. The prebuilt .a
+# libs for these don't exist for Android, so we DON'T link them (the server
+# code paths that use MySQL/Redis are already dead code — commented out in
+# Server.cpp; behaviac's initBehaviac() fails silently on TCP connect).
 set(INCLUDE_FILES
         ${PROJECT_SOURCE_DIR}
         ${LORD_SRC_PATH}/Core
@@ -53,7 +59,10 @@ set(INCLUDE_FILES
         ${LORD_DEP_PATH}/FreeImage/Android/Include
         ${LOGIC_DEP_PATH}/curl/android/include
         ${LOGIC_DEP_PATH}/cpr/android/include
-  ${SERVER_DEP_PATH}/android/include
+  # Server-only deps: reuse the linux headers (platform-independent).
+  ${SERVER_DEP_PATH}/linux/behaviac/include
+  ${SERVER_DEP_PATH}/linux/mysql/include
+  ${SERVER_DEP_PATH}/linux/redis/include
         ${LOGIC_DEP_PATH}/sparsehash/android/include
 )
 

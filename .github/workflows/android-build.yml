@@ -122,30 +122,23 @@ jobs:
           echo "NDK_ROOT=$HOME/android-ndk-r17c" >> $GITHUB_ENV
 
       # ----------------------------------------------------------------
-      # Cache 2: ccache — keyed by hash of all .cpp/.h/.c source files.
-      # On a no-change rebuild, hit rate is ~100% and the ~30 min C++
-      # compile drops to ~3 min. Key rolls only when source changes.
+      # Cache 2: ccache — STABLE key (never rolls on source change).
+      # This is intentional: ccache is content-addressed internally, so
+      # when a source file changes, ONLY that file gets recompiled —
+      # everything else stays cached. A rolling key would throw away the
+      # whole cache on every source change, defeating the purpose.
+      # Key rolls only when we bump the "-v1" suffix manually (e.g. to
+      # force a clean cache after a compiler upgrade).
       # ----------------------------------------------------------------
-      - name: Compute source hash for ccache key
-        id: src-hash
-        run: |
-          # Hash all C/C++ source + headers + build scripts. This is the
-          # cache key — if any source file changes, the key rolls and a
-          # fresh ccache starts. If nothing changes, the key matches and
-          # we get a near-100% cache hit.
-          HASH=$(find engine-main -type f \( -name '*.cpp' -o -name '*.h' -o -name '*.c' -o -name '*.mk' -o -name 'Android.mk' -o -name 'Application.mk' -o -name 'CMakeLists.txt' -o -name '*.cmake' \) | sort | xargs cat | sha256sum | cut -c1-16)
-          echo "hash=$HASH" >> $GITHUB_OUTPUT
-          echo "Source hash: $HASH"
-
       - name: Restore ccache
         id: ccache-cache
         if: ${{ github.event.inputs.clean_cache != 'true' }}
         uses: actions/cache@v4
         with:
           path: ${{ github.workspace }}/.ccache
-          key: ccache-${{ env.ABI }}-${{ steps.src-hash.outputs.hash }}
+          key: ccache-${{ env.ABI }}-v1
           restore-keys: |
-            ccache-${{ env.ABI }}-
+            ccache-${{ env.ABI }}-v1
 
       - name: Install ccache + host build deps
         run: |
@@ -366,11 +359,11 @@ jobs:
           echo "ABI: $ABI"
           echo "Build type: $BUILD_TYPE"
           echo "Run ID: ${{ github.run_id }}"
-          echo "Source hash: ${{ steps.src-hash.outputs.hash }}"
+          echo "ccache key: ccache-$ABI-v1 (stable — never rolls on source change)"
           echo ""
           echo "Cache entries (stable, auto-evicted by GitHub LRU):"
           echo "  - ndk-r17c-v1          (NDK r17c, ~1.2 GB, never rolls)"
-          echo "  - ccache-$ABI-<hash>   (~500 MB, rolls on source change)"
+          echo "  - ccache-$ABI-v1       (~500 MB, stable — content-addressed internally)"
           echo "  - gradle-<os>-<hash>   (~200 MB, rolls on gradle change)"
           echo ""
           echo "Artifact entries (STABLE names — re-runs overwrite, no clutter):"
