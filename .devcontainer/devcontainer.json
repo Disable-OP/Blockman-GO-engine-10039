@@ -22,17 +22,8 @@
       "version": "latest"
     }
   },
-  "postCreateCommand": "bash .devcontainer/setup.sh && bash .devcontainer/auto_build.sh",
+  "postCreateCommand": "bash .devcontainer/setup.sh; bash .devcontainer/auto_build.sh",
   "forwardPorts": [5554, 5555, 19130],
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "ms-vscode.cpptools",
-        "ms-vscode.cmake-tools",
-        "vscjava.vscode-java-pack"
-      ]
-    }
-  },
   "remoteEnv": {
     "ANDROID_HOME": "/home/codespace/android-sdk",
     "ANDROID_SDK_ROOT": "/home/codespace/android-sdk",
