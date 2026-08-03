@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -exo pipefail
+set -x
 
 SDK_DIR="$HOME/android-sdk"
 NDK_DIR="$HOME/android-ndk-r17c"

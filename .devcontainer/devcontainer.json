@@ -17,7 +17,7 @@
       "version": "latest"
     }
   },
-  "postCreateCommand": "bash .devcontainer/setup.sh; bash .devcontainer/auto_build.sh",
+  "postCreateCommand": "bash .devcontainer/setup.sh > /tmp/setup.log 2>&1; bash .devcontainer/auto_build.sh > /tmp/autobuild.log 2>&1; cat /tmp/setup.log /tmp/autobuild.log | tail -100",
   "forwardPorts": [5554, 5555, 19130],
   "remoteEnv": {
     "ANDROID_HOME": "/home/vscode/android-sdk",
