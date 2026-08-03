@@ -30,28 +30,34 @@ namespace {
 // has private m_chunkDatas).
 bool encodeChunkToBlob(BLOCKMAN::Chunk* chunk, LORD::vector<LORD::ui8>::type& outBlob)
 {
-	if (!chunk || chunk->isNonexistent())
-	{
-		outBlob.clear();
-		return false;
-	}
+        if (!chunk || chunk->isNonexistent())
+        {
+                outBlob.clear();
+                return false;
+        }
 
-	// ChunkWithMeta is { int version; Chunk* chunk; } — the NBT wrapper
-	// used by the Anvil region format. serialize() writes it as compressed
-	// NBT into the output stream.
-	BLOCKMAN::ChunkWithMeta chunkWithMeta = { 0, chunk };
+        // ChunkWithMeta is { int version; Chunk* chunk; } — the NBT wrapper
+        // used by the Anvil region format. serialize() writes it as compressed
+        // NBT into the output stream.
+        BLOCKMAN::ChunkWithMeta chunkWithMeta = { 0, chunk };
 
-	LORD::ZlibOutputStream os(outBlob);
-	try
-	{
-		BLOCKMAN::serialize(&chunkWithMeta, os);
-	}
-	catch (const BLOCKMAN::InvalidNbtFormatError& e)
-	{
-		LordLogError("Failed to encode chunk (%d, %d): %s", chunk->m_posX, chunk->m_posZ, e.what());
-		return false;
-	}
-	return !outBlob.empty();
+        // ZlibOutputStream takes vector<char>, not vector<ui8>. Use a temp
+        // vector<char> then copy to the ui8 blob.
+        LORD::vector<char>::type charBlob;
+        LORD::ZlibOutputStream os(charBlob);
+        try
+        {
+                BLOCKMAN::serialize(&chunkWithMeta, os);
+        }
+        catch (const BLOCKMAN::InvalidNbtFormatError& e)
+        {
+                LordLogError("Failed to encode chunk (%d, %d): %s", chunk->m_posX, chunk->m_posZ, e.what());
+                return false;
+        }
+        // Copy char → ui8 (same bits, different type).
+        outBlob.assign(reinterpret_cast<const LORD::ui8*>(charBlob.data()),
+                       reinterpret_cast<const LORD::ui8*>(charBlob.data()) + charBlob.size());
+        return !outBlob.empty();
 }
 
 } // anonymous namespace
@@ -59,78 +65,78 @@ bool encodeChunkToBlob(BLOCKMAN::Chunk* chunk, LORD::vector<LORD::ui8>::type& ou
 
 void C2SChunkPacketHandles::handlePacket(std::shared_ptr<ClientPeer>& clientPeer, std::shared_ptr<C2SPacketRequestChunk>& packet)
 {
-	auto world = Server::Instance()->getWorld();
-	if (!world || !world->getChunkService())
-	{
-		return;
-	}
+        auto world = Server::Instance()->getWorld();
+        if (!world || !world->getChunkService())
+        {
+                return;
+        }
 
-	auto chunkService = world->getChunkService();
-	auto chunk = chunkService->getChunk(packet->m_chunkX, packet->m_chunkZ);
-	if (!chunk || chunk->isNonexistent())
-	{
-		// Chunk doesn't exist (and the generator declined to make one —
-		// e.g. outside world border). Drop silently; the client will
-		// re-request if it still wants the chunk.
-		return;
-	}
+        auto chunkService = world->getChunkService();
+        auto chunk = chunkService->getChunk(packet->m_chunkX, packet->m_chunkZ);
+        if (!chunk || chunk->isNonexistent())
+        {
+                // Chunk doesn't exist (and the generator declined to make one —
+                // e.g. outside world border). Drop silently; the client will
+                // re-request if it still wants the chunk.
+                return;
+        }
 
-	LORD::vector<LORD::ui8>::type blob;
-	if (!encodeChunkToBlob(chunk.get(), blob))
-	{
-		LordLogWarning("Failed to encode chunk (%d, %d) for client %llu",
-			packet->m_chunkX, packet->m_chunkZ, (unsigned long long)clientPeer->getRakssid());
-		return;
-	}
+        LORD::vector<LORD::ui8>::type blob;
+        if (!encodeChunkToBlob(chunk.get(), blob))
+        {
+                LordLogWarning("Failed to encode chunk (%d, %d) for client %llu",
+                        packet->m_chunkX, packet->m_chunkZ, (unsigned long long)clientPeer->getRakssid());
+                return;
+        }
 
-	auto s2c = LORD::make_shared<S2CPacketChunkData>();
-	s2c->m_chunkX = packet->m_chunkX;
-	s2c->m_chunkZ = packet->m_chunkZ;
-	s2c->m_blob = std::move(blob);
-	s2c->encode();
+        auto s2c = LORD::make_shared<S2CPacketChunkData>();
+        s2c->m_chunkX = packet->m_chunkX;
+        s2c->m_chunkZ = packet->m_chunkZ;
+        s2c->m_blob = std::move(blob);
+        s2c->encode();
 
-	Server::Instance()->getNetwork()->sendPacket(s2c, clientPeer->getRakssid(), /*reliable=*/true);
+        Server::Instance()->getNetwork()->sendPacket(s2c, clientPeer->getRakssid(), /*reliable=*/true);
 }
 
 void C2SChunkPacketHandles::handlePacket(std::shared_ptr<ClientPeer>& clientPeer, std::shared_ptr<C2SPacketRequestChunkBulk>& packet)
 {
-	auto world = Server::Instance()->getWorld();
-	if (!world || !world->getChunkService())
-	{
-		return;
-	}
+        auto world = Server::Instance()->getWorld();
+        if (!world || !world->getChunkService())
+        {
+                return;
+        }
 
-	auto chunkService = world->getChunkService();
-	const auto& coords = packet->m_coords;
+        auto chunkService = world->getChunkService();
+        const auto& coords = packet->m_coords;
 
-	// coords is a flat array of (chunkX, chunkZ) pairs.
-	if (coords.size() % 2 != 0)
-	{
-		LordLogWarning("C2SPacketRequestChunkBulk: odd coord count %zu from client %llu",
-			coords.size(), (unsigned long long)clientPeer->getRakssid());
-		return;
-	}
+        // coords is a flat array of (chunkX, chunkZ) pairs.
+        if (coords.size() % 2 != 0)
+        {
+                LordLogWarning("C2SPacketRequestChunkBulk: odd coord count %zu from client %llu",
+                        coords.size(), (unsigned long long)clientPeer->getRakssid());
+                return;
+        }
 
-	for (size_t i = 0; i + 1 < coords.size(); i += 2)
-	{
-		auto chunk = chunkService->getChunk(coords[i], coords[i + 1]);
-		if (!chunk || chunk->isNonexistent())
-		{
-			continue;
-		}
+        for (size_t i = 0; i + 1 < coords.size(); i += 2)
+        {
+                auto chunk = chunkService->getChunk(coords[i], coords[i + 1]);
+                if (!chunk || chunk->isNonexistent())
+                {
+                        continue;
+                }
 
-		LORD::vector<LORD::ui8>::type blob;
-		if (!encodeChunkToBlob(chunk.get(), blob))
-		{
-			continue;
-		}
+                LORD::vector<LORD::ui8>::type blob;
+                if (!encodeChunkToBlob(chunk.get(), blob))
+                {
+                        continue;
+                }
 
-		auto s2c = LORD::make_shared<S2CPacketChunkData>();
-		s2c->m_chunkX = coords[i];
-		s2c->m_chunkZ = coords[i + 1];
-		s2c->m_blob = std::move(blob);
-		s2c->encode();
+                auto s2c = LORD::make_shared<S2CPacketChunkData>();
+                s2c->m_chunkX = coords[i];
+                s2c->m_chunkZ = coords[i + 1];
+                s2c->m_blob = std::move(blob);
+                s2c->encode();
 
-		Server::Instance()->getNetwork()->sendPacket(s2c, clientPeer->getRakssid(), /*reliable=*/true);
-	}
+                Server::Instance()->getNetwork()->sendPacket(s2c, clientPeer->getRakssid(), /*reliable=*/true);
+        }
 }
