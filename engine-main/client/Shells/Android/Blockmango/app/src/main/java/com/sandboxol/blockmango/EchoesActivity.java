@@ -168,6 +168,12 @@ public class EchoesActivity extends Activity implements EchoesHelperListener {
     @Override
     protected void onDestroy() {
         Log.d(TAG, "onDestroy");
+        // Stop the in-process game server if it was started.
+        try {
+            com.sandboxol.blockmango.ServerService.stopInProcess();
+        } catch (Throwable t) {
+            Log.w(TAG, "Failed to stop in-process server on destroy: " + t.getMessage());
+        }
         //mHandler.sendEmptyMessage(EchoesHandler.HANDLER_EXIT_GAME);
         //EchoesRenderer.nativeOnDestroy();
         super.onDestroy();

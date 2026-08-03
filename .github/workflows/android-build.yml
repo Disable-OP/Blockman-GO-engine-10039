@@ -1,0 +1,271 @@
+# Blockman-GO-engine-10039 — Android build workflow
+#
+# IMPORTANT: This workflow runs ONLY on manual dispatch (workflow_dispatch).
+# It does NOT trigger on push, PR, schedule, or any other event. This is
+# intentional — the user has limited GitHub Actions storage quota (0.5 GB)
+# and cannot afford a build per push.
+#
+# To run: GitHub → Actions tab → "Android Build (Manual)" → Run workflow.
+#
+# What it does:
+#   1. Sets up NDK r17c (the only version that supports the legacy
+#      gnustl_static STL the project uses — gnustl was removed in NDK r22).
+#   2. Builds the third-party deps (FreeImage, FreeType, LuaJIT, zlib, ...)
+#      for armeabi-v7a via ndk-build.
+#   3. Builds the engine + logic + clothes + client native libs via ndk-build.
+#   4. Builds the server as a shared library (libGameServer.so) via CMake
+#      with the Android toolchain.
+#   5. Assembles the debug APK via Gradle.
+#   6. Uploads the APK + the libGameServer.so as workflow artifacts.
+#
+# The first run will likely fail because the prebuilt deps are not checked
+# in — this workflow assumes the deps build step (1) succeeds. If it fails,
+# the deps build scripts under engine-main/engine/NDKBuild/DepBuild/ need
+# fixing. See docs/BUILD.md and docs/ROADMAP.md (M1).
+
+name: Android Build (Manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      build_type:
+        description: 'Build type (Debug or Release)'
+        required: true
+        default: 'Debug'
+        type: choice
+        options:
+          - Debug
+          - Release
+      abi:
+        description: 'Target ABI (only armeabi-v7a is supported today; legacy gnustl_static)'
+        required: true
+        default: 'armeabi-v7a'
+        type: choice
+        options:
+          - armeabi-v7a
+      skip_deps:
+        description: 'Skip the third-party deps build step (use cached/prebuilt libs)'
+        required: false
+        default: false
+        type: boolean
+
+# Cancel any previous manual run when a new one is started.
+concurrency:
+  group: android-build-manual-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build Android APK
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+
+    env:
+      NDK_VERSION: r17c
+      ABI: ${{ github.event.inputs.abi || 'armeabi-v7a' }}
+      BUILD_TYPE: ${{ github.event.inputs.build_type || 'Debug' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools platforms;android-26 build-tools;26.0.2'
+
+      - name: Set up Android NDK r17c
+        run: |
+          # NDK r17c is the last version with gnustl_static, which the project uses.
+          # Modern NDK (r22+) removed gnustl — the project won't link against it.
+          # See docs/BUILD.md for the gnustl → c++_shared migration plan (M1).
+          cd $HOME
+          wget -q https://dl.google.com/android/repository/android-ndk-r17c-linux-x86_64.zip
+          unzip -q android-ndk-r17c-linux-x86_64.zip
+          echo "ANDROID_NDK_HOME=$HOME/android-ndk-r17c" >> $GITHUB_ENV
+          echo "ANDROID_NDK_ROOT=$HOME/android-ndk-r17c" >> $GITHUB_ENV
+          echo "NDK_ROOT=$HOME/android-ndk-r17c" >> $GITHUB_ENV
+          rm android-ndk-r17c-linux-x86_64.zip
+
+      - name: Set up Gradle cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('engine-main/client/Shells/Android/Blockmango/**/build.gradle', 'engine-main/client/Shells/Android/Blockmango/**/settings.gradle') }}
+          restore-keys: gradle-${{ runner.os }}-
+
+      - name: Install host build deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends \
+            build-essential cmake ninja-build python3 \
+            zlib1g-dev libssl-dev \
+            unzip wget
+
+      - name: Print environment
+        run: |
+          echo "=== Environment ==="
+          echo "NDK_ROOT=$NDK_ROOT"
+          echo "ANDROID_NDK_HOME=$ANDROID_NDK_HOME"
+          echo "ABI=$ABI"
+          echo "BUILD_TYPE=$BUILD_TYPE"
+          echo "=== ndk-build version ==="
+          $NDK_ROOT/ndk-build --version || true
+          echo "=== cmake version ==="
+          cmake --version
+          echo "=== Repo tree (depth 3) ==="
+          find engine-main -maxdepth 3 -type d | head -40
+
+      # ----------------------------------------------------------------
+      # Step 1: Build third-party deps (FreeImage, FreeType, LuaJIT, zlib)
+      # for Android. This is the slowest step and the most fragile —
+      # the build scripts under engine/NDKBuild/DepBuild/jni/ use ancient
+      # Android.mk files that may need patching for modern NDK.
+      # ----------------------------------------------------------------
+      - name: Build third-party deps (ndk-build)
+        if: ${{ github.event.inputs.skip_deps != 'true' }}
+        working-directory: engine-main/engine/NDKBuild/DepBuild
+        run: |
+          echo "Building third-party deps for $ABI..."
+          $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee deps-build.log
+          echo "=== Deps build artifacts ==="
+          find . -name "*.a" | head -20
+
+      # ----------------------------------------------------------------
+      # Step 2: Build the engine core (LordCore + LordGLES2Render).
+      # ----------------------------------------------------------------
+      - name: Build engine core (ndk-build)
+        working-directory: engine-main/engine/NDKBuild
+        run: |
+          echo "Building engine core for $ABI..."
+          $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee engine-build.log
+          find . -name "*.a" | head -20
+
+      # ----------------------------------------------------------------
+      # Step 3: Build the shared libraries (RakNet, cpr, curl, g3log).
+      # ----------------------------------------------------------------
+      - name: Build shared libraries (ndk-build)
+        working-directory: engine-main/libraries/ApkBuild
+        run: |
+          echo "Building shared libraries for $ABI..."
+          $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee libs-build.log
+          find . -name "*.a" | head -20
+
+      # ----------------------------------------------------------------
+      # Step 4: Build the client static lib (libGameClient.a).
+      # ----------------------------------------------------------------
+      - name: Build client static lib (ndk-build)
+        working-directory: engine-main/client/ApkBuild
+        run: |
+          echo "Building client static lib for $ABI..."
+          $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee client-build.log
+
+      # ----------------------------------------------------------------
+      # Step 5: Build the server shared library (libGameServer.so) via
+      # CMake with the Android toolchain. This is the new Android target
+      # added in M1 that lets the server run in-process on the phone.
+      # ----------------------------------------------------------------
+      - name: Build server shared lib (libGameServer.so) via CMake
+        working-directory: engine-main/server
+        run: |
+          mkdir -p build-android-$ABI
+          cd build-android-$ABI
+          cmake .. \
+            -DCMAKE_TOOLCHAIN_FILE=$NDK_ROOT/build/cmake/android.toolchain.cmake \
+            -DANDROID_ABI=$ABI \
+            -DANDROID_PLATFORM=android-14 \
+            -DANDROID_STL=gnustl_static \
+            -DLORD_BUILD_PLATFORM_ANDROID=ON \
+            -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+          cmake --build . -j$(nproc) 2>&1 | tee server-build.log
+          echo "=== Server build artifacts ==="
+          find . -name "*.so" -o -name "*.a" | head -20
+
+      # ----------------------------------------------------------------
+      # Step 6: Copy libGameServer.so + libBlockMan.so into the Gradle
+      # jniLibs directory so the APK packages them.
+      # ----------------------------------------------------------------
+      - name: Stage native libs into Gradle jniLibs
+        working-directory: engine-main/client/Shells/Android/Blockmango/app
+        run: |
+          mkdir -p libs/$ABI
+          # Copy the client native lib (built by step 4).
+          cp -v ../../../../client/Bin/$ABI/libBlockMan.so libs/$ABI/ 2>/dev/null || \
+            echo "WARNING: libBlockMan.so not found at expected path; the APK build may fail."
+          # Copy the server shared lib (built by step 5).
+          cp -v ../../../../server/build-android-$ABI/libGameServer.so libs/$ABI/ 2>/dev/null || \
+            echo "WARNING: libGameServer.so not found at expected path; the APK build may fail."
+          # Copy gnustl_shared (required by both libs at runtime).
+          cp -v $NDK_ROOT/sources/cxx-stl/gnu-libstdc++/4.9/libs/$ABI/libgnustl_shared.so libs/$ABI/ 2>/dev/null || \
+            echo "WARNING: libgnustl_shared.so not found at NDK path."
+          ls -la libs/$ABI/
+
+      # ----------------------------------------------------------------
+      # Step 7: Build the APK via Gradle.
+      # ----------------------------------------------------------------
+      - name: Build APK (Gradle)
+        working-directory: engine-main/client/Shells/Android/Blockmango
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee apk-build.log
+          echo "=== APK artifacts ==="
+          find . -name "*.apk" -type f
+
+      # ----------------------------------------------------------------
+      # Step 8: Upload artifacts (APK + libGameServer.so + build logs).
+      # ----------------------------------------------------------------
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: blockman-go-apk-${{ env.ABI }}-${{ github.run_id }}
+          path: |
+            engine-main/client/Shells/Android/Blockmango/app/build/outputs/apk/**/*.apk
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload libGameServer.so
+        uses: actions/upload-artifact@v4
+        with:
+          name: libGameServer-${{ env.ABI }}-${{ github.run_id }}
+          path: |
+            engine-main/server/build-android-${{ env.ABI }}/libGameServer.so
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Upload build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-logs-${{ github.run_id }}
+          path: |
+            engine-main/engine/NDKBuild/DepBuild/deps-build.log
+            engine-main/engine/NDKBuild/engine-build.log
+            engine-main/libraries/ApkBuild/libs-build.log
+            engine-main/client/ApkBuild/client-build.log
+            engine-main/server/build-android-${{ env.ABI }}/server-build.log
+            engine-main/client/Shells/Android/Blockmango/apk-build.log
+          if-no-files-found: warn
+          retention-days: 14
+
+      # ----------------------------------------------------------------
+      # Step 9: Print the storage usage so the user can track quota.
+      # ----------------------------------------------------------------
+      - name: Print artifact storage summary
+        if: always()
+        run: |
+          echo "=== Build complete ==="
+          echo "ABI: $ABI"
+          echo "Build type: $BUILD_TYPE"
+          echo "Run ID: ${{ github.run_id }}"
+          echo "Artifacts will be retained for 30 days (APK + .so) or 14 days (logs)."
+          echo "To save storage, delete old run artifacts from the Actions UI after downloading."

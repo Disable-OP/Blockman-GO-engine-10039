@@ -30,7 +30,30 @@ message(STATUS "Platform: ${CMAKE_SYSTEM_NAME}")
 
 option(LORD_STATIC "Static build" TRUE)
 
-if(WIN32)
+# Android target: the server compiles into a shared library (libGameServer.so)
+# that the Java side loads via System.loadLibrary and starts via JNI. This is
+# what makes "no PC, no other server" possible — the phone runs the server
+# in-process. See docs/ARCHITECTURE.md and ServerJni.cpp.
+option(LORD_BUILD_PLATFORM_ANDROID "Build server as Android shared lib (libGameServer.so)" FALSE)
+
+if(ANDROID)
+	# ANDROID is set by CMake's Android toolchain file — auto-enable.
+	set(LORD_BUILD_PLATFORM_ANDROID TRUE CACHE BOOL "Android detected" FORCE)
+endif()
+
+if(LORD_BUILD_PLATFORM_ANDROID)
+	set(LORD_PLATFORM_ANDROID TRUE)
+	set(LORD_STATIC TRUE CACHE BOOL "Forcing static build for android" FORCE)
+	message(STATUS "Platform: Android (server → libGameServer.so)")
+
+	# Android uses clang from the NDK. C++11 + GNU STL ABI (matches the
+	# legacy gnustl_static used by the client ndk-build setup; until the
+	# client is migrated to c++_shared, both sides must agree on STL).
+	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -D_FORCE_INLINES -D_GLIBCXX_USE_CXX11_ABI=0 -fexceptions -frtti")
+	set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -D_FORCE_INLINES")
+	# Position-independent code (required for shared lib).
+	set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+elseif(WIN32)
 
 		set(LORD_PLATFORM_WIN32 TRUE)
 		message(STATUS "Platform: Windows")

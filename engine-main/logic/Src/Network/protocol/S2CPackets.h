@@ -2332,4 +2332,50 @@ _BEGIN_PACKET_S2C(S2CPacketType::DeleteWallText, DataPacket::emNormal, S2CPacket
 _SERIALIZE_MEMBER(S2CPACKET_DETAIL::Vector3, textPos)
 _END_PACKET
 
+// ============================================================================
+// Server-authoritative world generation packets (see docs/WORLDGEN.md).
+// These ship chunk data + world info from the server to the client. The client
+// NEVER runs WorldGenerator — it only renders what these packets deliver.
+// ============================================================================
+
+//S2CPacketWorldInfo  — sent once on connect, before any chunk data.
+_BEGIN_PACKET_S2C(S2CPacketType::WorldInfo, DataPacket::emMapData, S2CPacketWorldInfo)
+_SERIALIZE_MEMBER(ui64, m_worldSeedHash)        // hash of seed; raw seed never leaves the server
+_SERIALIZE_MEMBER(i32, m_spawnX)
+_SERIALIZE_MEMBER(i32, m_spawnY)
+_SERIALIZE_MEMBER(i32, m_spawnZ)
+_SERIALIZE_MEMBER(ui8, m_gameType)              // 0=survival, 1=creative, 2=adventure, 3=spectator
+_SERIALIZE_MEMBER(ui8, m_worldType)             // 0=default, 1=flat, 2=large biomes, 3=amplified
+_SERIALIZE_MEMBER(ui8, m_dimension)             // 0=overworld, -1=nether, 1=end (sent as ui8)
+_END_PACKET
+
+//S2CPacketChunkData  — full chunk payload.
+//Wire format: chunkX, chunkZ, then a raw byte blob containing the serialised
+//sections + biomes + heightmap + block-entities + entities. The blob is
+//produced by the server's chunk encoder (Anvil-compatible NBT + palette).
+//The client decodes by passing the blob to the same ChunkReadableStorageFile
+//decoder used for region files, so disk and wire share one decoder.
+_BEGIN_PACKET_S2C(S2CPacketType::ChunkData, DataPacket::emMapData, S2CPacketChunkData)
+_SERIALIZE_MEMBER(i32, m_chunkX)
+_SERIALIZE_MEMBER(i32, m_chunkZ)
+_SERIALIZE_MEMBER(LORD::vector<ui8>::type, m_blob)
+_END_PACKET
+
+//S2CPacketBlockChange  — a single block changed (player edit or server event).
+_BEGIN_PACKET_S2C(S2CPacketType::BlockChange, DataPacket::emMapData, S2CPacketBlockChange)
+_SERIALIZE_MEMBER(i32, m_blockX)
+_SERIALIZE_MEMBER(i32, m_blockY)
+_SERIALIZE_MEMBER(i32, m_blockZ)
+_SERIALIZE_MEMBER(ui16, m_blockId)
+_SERIALIZE_MEMBER(ui8,  m_blockMeta)
+_END_PACKET
+
+//S2CPacketMultiBlockChange  — a batch of block changes within one chunk.
+//Layout: chunkX, chunkZ, then a byte blob of (localX, localY, localZ, blockId, blockMeta) records.
+_BEGIN_PACKET_S2C(S2CPacketType::MultiBlockChange, DataPacket::emMapData, S2CPacketMultiBlockChange)
+_SERIALIZE_MEMBER(i32, m_chunkX)
+_SERIALIZE_MEMBER(i32, m_chunkZ)
+_SERIALIZE_MEMBER(LORD::vector<ui8>::type, m_blob)
+_END_PACKET
+
 #endif // !__S2C_PACKTS_H__

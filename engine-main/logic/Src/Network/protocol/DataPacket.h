@@ -305,6 +305,15 @@ enum class S2CPacketType
 	ChangeGuideArrowStatus = 280,
 	AddWallText = 281,
 	DeleteWallText = 282,
+	// Server-authoritative world generation (see docs/WORLDGEN.md).
+	// Sent on connect: seed hash + spawn point + game type + world rules.
+	WorldInfo = 283,
+	// Full chunk payload (blocks, biomes, heightmap, block-entities, entities).
+	ChunkData = 284,
+	// A single block changed (player edit or server event).
+	BlockChange = 285,
+	// A batch of block changes within one chunk.
+	MultiBlockChange = 286,
 	ProtocolEnd
 };
 
@@ -501,6 +510,11 @@ enum class C2SPacketType
 	BirdTask = 178,
 	BirdFeed = 179,
 	BirdSetDress = 180,
+	// Server-authoritative world generation (see docs/WORLDGEN.md).
+	// Client → server: "send me chunk (cx, cz)".
+	RequestChunk = 181,
+	// Client → server: "send me these N chunks in one shot".
+	RequestChunkBulk = 182,
 	ProtocolEnd
 };
 

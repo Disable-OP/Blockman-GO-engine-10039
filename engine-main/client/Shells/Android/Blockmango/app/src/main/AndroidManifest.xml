@@ -27,5 +27,15 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <!--
+          In-process game server. Runs in a background thread on UDP 127.0.0.1:19130.
+          Started/stopped by EchoesGLSurfaceView when LOCAL_MODE is true.
+          See ServerService.java and docs/ARCHITECTURE.md.
+        -->
+        <service
+            android:name="com.sandboxol.blockmango.ServerService"
+            android:exported="false"
+            android:label="Blockman Server"/>
     </application>
 </manifest>

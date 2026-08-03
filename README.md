@@ -1,14 +1,21 @@
 # Blockman-GO-engine-10039
 
-A **mobile-only** Blockman-style voxel game engine — a single codebase that ships both an
-**Android client** and a **dedicated game server**, where the **server is the authoritative
-source of world generation**. No PC client, no console targets, no third-party matchmaking
-servers — just the phone in your pocket and the server it talks to.
+A **mobile-only** Blockman-style voxel game engine where **the phone runs both
+the client AND the server** — no PC, no external server, no matchmaking service,
+no external HTTP tools. The server is compiled into a shared library
+(`libGameServer.so`) that the APK loads via JNI; the client (`libBlockMan.so`)
+connects to it on `127.0.0.1:19130` over RakNet UDP. The server is the
+**authoritative source of world generation** — it runs the full
+`logic/Src/WorldGenerator/` pipeline (Perlin/Octaves noise, biome layers,
+biome decorator, structure pieces) and streams chunks to the client on demand.
 
-> **Status:** Bootstrapping. The extracted engine source lives under `engine-main/` and
-> `engine-res-main/`. The first milestone is wiring the existing `WorldGenerator` into the
-> server's authoritative chunk pipeline and stripping the PC/Win32 build paths so the
-> project is mobile-only end to end. See [`docs/ROADMAP.md`](docs/ROADMAP.md).
+> **Status:** M1 in progress. The worldgen wiring is in place
+> (`ServerWorldProvider::createChunkGenerator` now returns real
+> `ChunkProviderGenerate`/`ChunkProviderHell`/`ChunkProviderEnd` instead of
+> throwing), the chunk-data + chunk-request packet protocol is added, the
+> Android server CMake target + JNI entry are added, and the client Java side
+> bypasses matchmaking in `LOCAL_MODE`. The Win32 shell ("WinShell-Blockman")
+> is kept as a parallel build target. See [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
 ---
 
@@ -16,16 +23,19 @@ servers — just the phone in your pocket and the server it talks to.
 
 | Layer            | What it does                                                                 |
 |------------------|------------------------------------------------------------------------------|
-| **Client**       | Android (NDK + GLES2) app. Renders the world, sends player input, plays audio. |
-| **Game Server**  | Linux process. Owns world state, runs `WorldGenerator`, ticks entities, persists chunks to Anvil, validates every player action. |
-| **Shared Logic** | One C++ codebase (`engine-main/logic`) linked into both client and server: blocks, chunks, entities, NBT, world-gen algorithms, packet protocol. |
-| **Engine Core**  | `engine-main/engine` ("Lord"): renderer, scene graph, audio, resource manager, math, animation. |
-| **Resources**    | `engine-res-main/`: `Media/`, `recipe/`, `resource.cfg` — textures, models, audio, recipes. |
+| **Client** (`libBlockMan.so`) | Android (NDK + GLES2) native lib. Renders the world, sends player input, plays audio. Loaded by `EchoesActivity` via `EchoesRenderer`. |
+| **Game Server** (`libGameServer.so`) | Android native lib. Runs in a background thread on `127.0.0.1:19130`. Owns world state, runs `WorldGenerator`, ticks entities, persists chunks to Anvil, validates every player action. Started by `ServerService.java` via JNI. |
+| **Win32 Client** ("WinShell-Blockman") | Windows `.exe` reference shell. Same `CGame` API as Android; only `SoundEngine` + `ShellInterface` differ. Kept as a parallel target, NOT quarantined. |
+| **Win32 Server** (`GameServer.exe`) | Windows server build, same source as Android/Linux. |
+| **Shared Logic** (`logic/`) | One C++ codebase linked into both client and server: blocks, chunks, entities, NBT, world-gen algorithms, packet protocol. |
+| **Engine Core** (`engine/`) | "Lord" engine: renderer, scene graph, audio, resource manager, math, animation. |
+| **Resources** (`engine-res-main/`) | `Media/`, `recipe/`, `resource.cfg` — textures, models, audio, recipes. |
 
-The defining rule of this engine: **the server generates the world, the client only renders it.**
-A phone never decides what blocks exist — it asks the server, the server runs the noise +
-biome + structure pipeline, and ships back chunks. This is what makes cheating hard and what
-makes the world consistent across every player on a server.
+The defining rules of this engine:
+1. **The phone runs both server and client.** No PC required. No external server.
+2. **The server generates the world.** The client never runs `WorldGenerator` — it only renders what the server streams via `S2CChunkData`.
+3. **No external tools.** No matchmaking HTTP services, no DB servers, no monitor service. The server is configured for standalone mode: `DISABLE_ROOM=1`, all HTTP endpoints stubbed to `127.0.0.1:1`.
+4. **Win32 is kept.** "WinShell-Blockman" is a parallel target for development on PC; it shares the same engine + logic static libs as the Android build.
 
 ---
 
@@ -60,20 +70,31 @@ Full per-folder breakdown: [`docs/PROJECT_STRUCTURE.md`](docs/PROJECT_STRUCTURE.
 
 ---
 
-## Mobile-only constraint
+## Target platforms
 
-This repository intentionally drops every non-mobile target. Concretely:
+This repository targets:
 
-- **Client target:** Android (`arm64-v8a`, `armeabi-v7a`, `x86_64` for emulators). No iOS, no
-  Windows desktop, no macOS app.
-- **Server target:** Linux x86_64. The server runs on a host (cloud, dedicated box, or a
-  rooted Android device for local testing) — never on the player's phone as a peer.
-- **No PC client shell.** The legacy `client/Shells/Win32/` directory is preserved only as a
-  reference snapshot; it is **not** in the build graph for new milestones and will be deleted
-  once the Android shell is the only one referenced by `cmakeall`.
+- **Android client** (`libBlockMan.so`): `armeabi-v7a` (current; arm64-v8a planned once gnustl → c++_shared migration lands).
+- **Android server** (`libGameServer.so`): same ABI as the client; runs in-process on the phone.
+- **Win32 client** ("WinShell-Blockman", `WinShell.exe`): kept as a parallel development target. Same `CGame` API; only the `SoundEngine` + `ShellInterface` differ. Built via `engine-main/client/Shells/Win32/WinShell.sln` (VS 2017+ toolset v143).
+- **Win32 server** (`GameServer.exe`): same source as Android/Linux server, built via `engine-main/server/WinServer.sln`.
+- **Linux server** (`Server` binary): built via `engine-main/server/CMakeLists.txt` with `-DLORD_PLATFORM_LINUX=ON`. Useful for headless testing.
 
-If you find yourself adding `#ifdef LORD_PLATFORM_WIN32` to a new feature, stop — that path is
-deprecated for this fork.
+The default deployment is **the phone running both `libBlockMan.so` + `libGameServer.so` in one APK**. The Win32 and Linux targets exist for development convenience, not as primary deployment platforms.
+
+## CI (GitHub Actions)
+
+A single workflow exists at [`.github/workflows/android-build.yml`](.github/workflows/android-build.yml). It runs **only on manual dispatch** (`workflow_dispatch`) — it does **NOT** trigger on push or PR, to conserve GitHub Actions storage quota (0.5 GB limit). To run it: GitHub → Actions tab → "Android Build (Manual)" → Run workflow → pick build type + ABI → Run.
+
+The workflow:
+1. Sets up NDK r17c (the only NDK version that supports the project's legacy `gnustl_static` STL — `gnustl` was removed in NDK r22).
+2. Builds the third-party deps (FreeImage, FreeType, LuaJIT, zlib) for `armeabi-v7a` via `ndk-build`.
+3. Builds the engine + logic + client native libs via `ndk-build`.
+4. Builds the server shared library (`libGameServer.so`) via CMake with the Android toolchain.
+5. Assembles the debug APK via Gradle.
+6. Uploads the APK + `libGameServer.so` as workflow artifacts (30-day retention).
+
+The first run will likely fail because the prebuilt deps are not checked in — see [`docs/ROADMAP.md`](docs/ROADMAP.md) M1 for the gnustl → c++_shared migration plan.
 
 ---
 

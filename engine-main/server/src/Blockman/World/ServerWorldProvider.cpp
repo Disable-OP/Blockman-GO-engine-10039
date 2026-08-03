@@ -4,6 +4,10 @@
 /** header files from common. */
 #include "World/World.h"
 #include "World/WorldChunkManager.h"
+#include "Chunk/ChunkProviderGenerate.h"
+#include "Chunk/ChunkProviderHell.h"
+#include "Chunk/ChunkProviderEnd.h"
+#include "Chunk/ChunkProviderFlat.h"
 
 namespace BLOCKMAN
 {
@@ -25,19 +29,30 @@ WorldProvider* ServerWorldProvider::getProviderForDimension(int dimension)
 	return NULL;
 }
 
+// Server-authoritative world generation: the server now actually runs the
+// shared WorldGenerator pipeline (Perlin/Octaves noise + BiomeGen +
+// BiomeDecorator + MapGenerate + StructureStart) instead of throwing.
+// See docs/WORLDGEN.md for the design contract.
+//
+// Each provider delegates to the matching ChunkProvider implementation in
+// logic/Src/Chunk/. The seed comes from the World (set in
+// ServerWorld::createWorld via WorldSettings).
+
 IChunkProvider* ServerWorldProviderHell::createChunkGenerator()
 {
-	throw std::logic_error("method not implemented");
+	return LordNew ChunkProviderHell(worldObj, worldObj->getSeed());
 }
 
 IChunkProvider* ServerWorldProviderSurface::createChunkGenerator()
 {
-	throw std::logic_error("method not implemented");
+	// Delegate to the base class — it picks ChunkProviderFlat vs
+	// ChunkProviderGenerate based on terrainType, which is exactly what we want.
+	return WorldProviderSurface::createChunkGenerator();
 }
 
 IChunkProvider* ServerWorldProviderEnd::createChunkGenerator()
 {
-	throw std::logic_error("method not implemented");
+	return LordNew ChunkProviderEnd(worldObj, worldObj->getSeed());
 }
 
 }

@@ -33,6 +33,23 @@ public class EchoesGLSurfaceView extends GLSurfaceView implements EnterMiniGameT
     private int width;
     private int height;
 
+    // -------------------------------------------------------------------------
+    // Standalone local mode — "no PC, no other server, no external tools".
+    //
+    // When LOCAL_MODE is true, the app starts an in-process game server
+    // (libGameServer.so) on 127.0.0.1:LOCAL_SERVER_PORT and the client
+    // connects to it directly. No matchmaking HTTP services are called.
+    // The server runs the actual world generation pipeline
+    // (logic/Src/WorldGenerator/) and is the authoritative source of every
+    // chunk the client renders.
+    //
+    // Set to false to restore the original matchmaking-based flow (which
+    // requires the external sandboxol dispatch + auth services).
+    // -------------------------------------------------------------------------
+    private static final boolean LOCAL_MODE = true;
+    private static final int LOCAL_SERVER_PORT = 19130;
+    private static final long LOCAL_WORLD_SEED = 0L;  // 0 → server's built-in test seed
+
     // ===========================================================
     // Constructors
     // ===========================================================
@@ -325,11 +342,54 @@ public class EchoesGLSurfaceView extends GLSurfaceView implements EnterMiniGameT
         this.mapPath = mapPath;
         this.width = nWidth;
         this.height = nHeight;
-        new EnterMiniGameTask(this).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+
+        if (LOCAL_MODE) {
+            // ---- Standalone local mode (no PC, no external tools) ----
+            // Instead of calling the matchmaking HTTP services, we:
+            //   1. Start the in-process game server (libGameServer.so) on
+            //      127.0.0.1:LOCAL_SERVER_PORT. The server runs the actual
+            //      world generation pipeline and is the authoritative source
+            //      of every chunk the client renders.
+            //   2. Synthesize a Dispatch that points the client at
+            //      127.0.0.1:LOCAL_SERVER_PORT with a stub user/token.
+            //   3. Invoke onEnterMiniGame directly with code=1.
+            //
+            // See docs/WORLDGEN.md and docs/ARCHITECTURE.md.
+            android.util.Log.i("EchoesGLSurfaceView", "LOCAL_MODE: starting in-process server on 127.0.0.1:" + LOCAL_SERVER_PORT);
+
+            String workDir = strRootPath;
+            ServerService.startInProcess(LOCAL_SERVER_PORT, workDir, LOCAL_WORLD_SEED);
+
+            // Give the server a moment to bind the UDP socket. The client
+            // will retry the RakNet connect for ~10 seconds if it fails
+            // immediately, so a short sleep here is sufficient.
+            try { Thread.sleep(300); } catch (InterruptedException ignored) {}
+
+            Dispatch localDispatch = new Dispatch();
+            localDispatch.gAddr = "127.0.0.1:" + LOCAL_SERVER_PORT;
+            localDispatch.name = "Player";
+            localDispatch.userId = 1L;
+            localDispatch.signature = "local-token";
+            localDispatch.timestamp = System.currentTimeMillis() / 1000L;
+            localDispatch.gameType = "g_local";
+            localDispatch.mapName = "local";
+            localDispatch.mapId = "local";
+            localDispatch.mapUrl = "";   // server generates chunks; no map download
+            onEnterMiniGame(1, localDispatch);
+        } else {
+            // Original path: matchmaking via external HTTP services.
+            new EnterMiniGameTask(this).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+        }
     }
 
     public void resetGame() {
-        new ResetMiniGameTask(this).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+        if (LOCAL_MODE) {
+            // Local mode: no need to call the matchmaking service to reset.
+            // Just re-init the game with the same local dispatch.
+            initGame(rootPath, configPath, mapPath, width, height);
+        } else {
+            new ResetMiniGameTask(this).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
+        }
     }
 
     @Override

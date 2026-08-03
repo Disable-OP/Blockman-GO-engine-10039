@@ -1041,5 +1041,18 @@ _SERIALIZE_MEMBER(i32, dressType)
 _SERIALIZE_MEMBER(i32, dressId)
 _END_PACKET
 
+//C2SPacketRequestChunk  — client asks server for a chunk (server-authoritative worldgen).
+//Sent on the emMapData channel so it gets prioritised over gameplay packets.
+_BEGIN_PACKET_C2S(C2SPacketType::RequestChunk, DataPacket::emMapData, C2SPacketRequestChunk)
+_SERIALIZE_MEMBER(i32, m_chunkX)
+_SERIALIZE_MEMBER(i32, m_chunkZ)
+_END_PACKET
+
+//C2SPacketRequestChunkBulk  — client asks server for N chunks in one shot.
+//The serialised layout is: count (i32), then count pairs of (i32, i32).
+_BEGIN_PACKET_C2S(C2SPacketType::RequestChunkBulk, DataPacket::emMapData, C2SPacketRequestChunkBulk)
+_SERIALIZE_MEMBER(LORD::vector<i32>::type, m_coords)
+_END_PACKET
+
 #endif
 

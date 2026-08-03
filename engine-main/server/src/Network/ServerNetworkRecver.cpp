@@ -5,6 +5,7 @@
 #include "C2SPacketHandles/C2SInitPacketHandles.h"
 #include "C2SPacketHandles/C2SPlayerActionPacketHandles.h"
 #include "C2SPacketHandles/C2SBreakBlockPacketHandles.h"
+#include "C2SPacketHandles/C2SChunkPacketHandles.h"
 
 #include "Network/protocol/AutoRegisterPacketC2S.h"
 
@@ -27,6 +28,7 @@ ServerNetworkRecver::ServerNetworkRecver()
 	m_packetDispatcher->registerClass<C2SInitPacketHandles>();
 	m_packetDispatcher->registerClass<C2SPlayerActionPacketHandles>();
 	m_packetDispatcher->registerClass<C2SBreakBlockPacketHandles>();
+	m_packetDispatcher->registerClass<C2SChunkPacketHandles>();
 
 }
 

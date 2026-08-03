@@ -37,6 +37,26 @@ set(INCLUDE_FILES
 	${LOGIC_DEP_PATH}/sparsehash/linux/include
 )
 
+elseif(${LORD_PLATFORM_ANDROID})
+# Android: server is built as a shared library (libGameServer.so) loaded
+# via JNI. The deps come from the same NDK-built static libs that the
+# client uses (built by engine/NDKBuild/DepBuild + libraries/ApkBuild/jni).
+set(INCLUDE_FILES
+	${PROJECT_SOURCE_DIR}
+  	${LORD_SRC_PATH}/Core
+	${LOGIC_SRC_PATH}
+	${LORD_DEP_PATH}/rapidjson/Include
+  	${LORD_DEP_PATH}/Zlib/Android/Include
+	${LORD_DEP_PATH}/Lua/Android/Include
+  	${LORD_DEP_PATH}/g3log/android/include
+	${LORD_DEP_PATH}/FreeType/Android/Include
+	${LORD_DEP_PATH}/FreeImage/Android/Include
+	${LOGIC_DEP_PATH}/curl/android/include
+	${LOGIC_DEP_PATH}/cpr/android/include
+  ${SERVER_DEP_PATH}/android/include
+	${LOGIC_DEP_PATH}/sparsehash/android/include
+)
+
 endif()
 
 include_directories( ${INCLUDE_FILES} )
@@ -130,6 +150,41 @@ ELSEIF (CMAKE_BUILD_TYPE MATCHES "Release")
     )
 ENDIF()
 
+elseif(${LORD_PLATFORM_ANDROID})
+
+# Android: link against the same NDK-built static libs the client uses
+# (produced by engine/NDKBuild/DepBuild + libraries/ApkBuild/jni).
+# The HTTP-based MysqlHttpRequest/RedisHttpRequest mean we don't need
+# libmysqlclient or libhiredis on Android — those code paths are dead
+# (commented out in Server.cpp). We only need RakNet + the engine deps.
+link_directories(
+  ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
+  ${LOGIC_BIN_PATH}
+  ${CORE_BIN_PATH}
+  ${LORD_DEP_PATH}/FreeType/Android/Lib/${CMAKE_BUILD_TYPE}/${ANDROID_ABI}
+  ${LORD_DEP_PATH}/FreeImage/Android/Lib/${CMAKE_BUILD_TYPE}/${ANDROID_ABI}
+  ${LORD_DEP_PATH}/Zlib/Android/Lib/${CMAKE_BUILD_TYPE}/${ANDROID_ABI}
+  ${LORD_DEP_PATH}/Lua/Android/Lib/${CMAKE_BUILD_TYPE}/${ANDROID_ABI}
+  ${LORD_DEP_PATH}/g3log/android/lib/${ANDROID_ABI}
+  ${LOGIC_DEP_PATH}/lib/${ANDROID_ABI}
+)
+
+link_libraries(
+  Logic
+  LordCore
+  raknet
+  FreeType
+  FreeImage
+  zlib
+  lua
+  g3logger
+  curl
+  cpr
+  # Android system libs:
+  log       # __android_log_print (used by ServerJni.cpp)
+  android   # ANativeActivity, JNI helpers
+)
+
 else()
     set(LOGIC_BIN_PATH "../../logic/Bin")
     set(CORE_BIN_PATH "../../engine/Bin")
@@ -139,6 +194,13 @@ endif()
 
 file(GLOB_RECURSE HEADER_FILES *.h *.inl)
 file(GLOB_RECURSE SOURCE_FILES *.cpp *.c)
+
+# On Android, the server is a shared library (libGameServer.so) with a JNI
+# entry point (ServerJni.cpp) — it does NOT have a main(). We exclude
+# main.cpp from the Android build to avoid a duplicate-symbol link error.
+if(LORD_PLATFORM_ANDROID)
+	list(FILTER SOURCE_FILES EXCLUDE REGEX "${CMAKE_CURRENT_SOURCE_DIR}/main\.cpp$")
+endif()
 
 set(ALL_FILES ${HEADER_FILES} ${SOURCE_FILES})
 
@@ -174,8 +236,13 @@ endif()
 
 set(GAMESERVER_NAME GameServer)
 
-
-add_executable(${GAMESERVER_NAME} ${HEADER_FILES} ${SOURCE_FILES})
+if(LORD_PLATFORM_ANDROID)
+	# Android: shared library loaded via JNI by ServerService.java.
+	# Produces libGameServer.so, packaged into the APK's jniLibs/<abi>/.
+	add_library(${GAMESERVER_NAME} SHARED ${HEADER_FILES} ${SOURCE_FILES})
+else()
+	add_executable(${GAMESERVER_NAME} ${HEADER_FILES} ${SOURCE_FILES})
+endif()
 
 
 if(${LORD_PLATFORM_LINUX})
@@ -186,9 +253,12 @@ set_target_properties(${GAMESERVER_NAME} PROPERTIES LINK_FLAGS
 target_link_libraries(${GAMESERVER_NAME} -ldl)
 
 endif()
-set_target_properties(${GAMESERVER_NAME} PROPERTIES DEBUG_OUTPUT_NAME "${GAMESERVER_NAME}_d")
-set_target_properties(${GAMESERVER_NAME} PROPERTIES MINSIZEREL_OUTPUT_NAME ${GAMESERVER_NAME})
-set_target_properties(${GAMESERVER_NAME} PROPERTIES RELEASE_OUTPUT_NAME ${GAMESERVER_NAME})
+if(NOT LORD_PLATFORM_ANDROID)
+	# On Android, the .so is always just "libGameServer.so" (no _d suffix).
+	set_target_properties(${GAMESERVER_NAME} PROPERTIES DEBUG_OUTPUT_NAME "${GAMESERVER_NAME}_d")
+	set_target_properties(${GAMESERVER_NAME} PROPERTIES MINSIZEREL_OUTPUT_NAME ${GAMESERVER_NAME})
+	set_target_properties(${GAMESERVER_NAME} PROPERTIES RELEASE_OUTPUT_NAME ${GAMESERVER_NAME})
+endif()
 
 if(${LORD_PLATFORM_WIN32})
 target_link_libraries(${GAMESERVER_NAME} 
