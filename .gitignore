@@ -1,0 +1,95 @@
+# Root-level ignores for Blockman-GO-engine-10039
+# (module-level .gitignore under engine-main/ handles Build/, *.a, *.so, *.pdb, etc.)
+
+# ---- Secrets / credentials ----
+*.pem
+*.key
+*.p12
+*.pfx
+.env
+.env.*
+secrets.*
+**/credentials*
+**/local.properties
+# Never commit a PAT or token file
+*github_pat*
+*access_token*
+
+# ---- IDE / editor ----
+.vs/
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ---- Build artifacts (top-level) ----
+build/
+Build/
+bin/
+Bin/
+obj/
+Obj/
+out/
+*.o
+*.obj
+*.a
+*.so
+*.so.*
+*.dylib
+*.dll
+*.lib
+*.exe
+*.pdb
+*.ilk
+*.idb
+*.exp
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+
+# ---- CMake ----
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake.in.stamp
+compile_commands.json
+
+# ---- Gradle / Android ----
+.gradle/
+gradle-app.setting
+!gradle-wrapper.jar
+*.iml
+local.properties
+captures/
+.cxx/
+
+# ---- NDK / native ----
+*.mk.bak
+GPATH
+GRTAGS
+GSYMS
+GTAGS
+
+# ---- Logs / runtime ----
+*.log
+logs/
+crash-*.txt
+hs_err_pid*.log
+
+# ---- OS junk ----
+.cache/
+tmp/
+*.tmp
+*.bak
+
+# ---- Do not ignore the actual gradle wrapper ----
+!engine-main/client/Shells/Android/Blockmango/gradle/wrapper/gradle-wrapper.jar
+!engine-main/client/Shells/Android/Blockmango/gradlew
+!engine-main/client/Shells/Android/Blockmango/gradlew.bat
