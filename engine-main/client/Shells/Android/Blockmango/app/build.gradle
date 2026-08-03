@@ -93,6 +93,9 @@ task initVersion() {
     doFirst {
         File resVersionFile = new File(buildDir, '/../src/main/assets/resources/res.version')
 
+        // Create parent directories if they don't exist (needed on CI where
+        // the assets/resources/ tree may not be checked in).
+        resVersionFile.getParentFile().mkdirs()
         if (!resVersionFile.exists()) {
             resVersionFile.createNewFile()
         }
@@ -100,6 +103,7 @@ task initVersion() {
         outFile(resVersionFile, new Gson().toJson(new ResVersion("2.342.0.0","f9bd6e2dd5d090f008ebaa8eed275bb9")))
                 
         File engineVersionFile = new File(buildDir, '/../src/main/assets/resources/Media/engineVersion.json')
+        engineVersionFile.getParentFile().mkdirs()
         if (!engineVersionFile.exists()) {
             engineVersionFile.createNewFile()
         }
