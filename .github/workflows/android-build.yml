@@ -143,12 +143,12 @@ jobs:
         uses: actions/cache/restore@v4
         with:
           path: ${{ github.workspace }}/.ccache
-          key: ccache-${{ env.ABI }}-v1
+          key: ccache-${{ env.ABI }}-v2
           # restore-keys uses a broad prefix so we can still restore
-          # from the OLD source-hash-based keys (e.g. ccache-armeabi-v7a-7f05a2a9...)
-          # that may have been saved by earlier runs. This provides a
-          # fallback while the new -v1 key is being populated.
+          # from the OLD v1 cache (500MB, missing logic+server) while
+          # the new v2 cache (2G, complete) is being populated.
           restore-keys: |
+            ccache-${{ env.ABI }}-v2
             ccache-${{ env.ABI }}-v1
             ccache-${{ env.ABI }}-
 
@@ -411,7 +411,7 @@ jobs:
         uses: actions/cache/save@v4
         with:
           path: ${{ github.workspace }}/.ccache
-          key: ccache-${{ env.ABI }}-v1
+          key: ccache-${{ env.ABI }}-v2
 
       - name: Save Android NDK r17c
         if: always() && steps.ndk-cache.outputs.cache-hit != 'true'
