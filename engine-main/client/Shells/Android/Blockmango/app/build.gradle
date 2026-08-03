@@ -61,11 +61,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             android.applicationVariants.all { variant ->
                 variant.outputs.each { output ->
-                    def outputFile = output.outputFile
-                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
-                        def fileName = "app-blockmango-v${defaultConfig.versionName}-build-${defaultConfig.versionCode}.apk"
-                        output.outputFile = new File(outputFile.parent, fileName)
-                    }
+                    // AGP 3.0+: output.outputFile is read-only. Use
+                    // output.outputFileName instead (takes just the filename).
+                    def fileName = "app-blockmango-v${defaultConfig.versionName}-build-${defaultConfig.versionCode}.apk"
+                    output.outputFileName = fileName
                 }
             }
         }
@@ -99,7 +98,7 @@ task initVersion() {
         }
 
         outFile(resVersionFile, new Gson().toJson(new ResVersion("2.342.0.0","f9bd6e2dd5d090f008ebaa8eed275bb9")))
-		
+                
         File engineVersionFile = new File(buildDir, '/../src/main/assets/resources/Media/engineVersion.json')
         if (!engineVersionFile.exists()) {
             engineVersionFile.createNewFile()

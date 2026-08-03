@@ -338,22 +338,22 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '8'
-      - name: Cache Gradle 4.1 distribution
+      - name: Cache Gradle 4.10.2 distribution
         id: gradle-dist-cache
         uses: actions/cache@v4
         with:
-          path: /home/runner/gradle-4.1
-          key: gradle-4.1-extracted-v1
+          path: /home/runner/gradle-4.10.2
+          key: gradle-4.10.2-extracted-v1
 
-      - name: Download + extract Gradle 4.1
+      - name: Download + extract Gradle 4.10.2
         if: steps.gradle-dist-cache.outputs.cache-hit != 'true'
         run: |
           cd /home/runner
-          wget -q https://services.gradle.org/distributions/gradle-4.1-bin.zip
-          unzip -q gradle-4.1-bin.zip
-          rm gradle-4.1-bin.zip
+          wget -q https://services.gradle.org/distributions/gradle-4.10.2-bin.zip
+          unzip -q gradle-4.10.2-bin.zip
+          rm gradle-4.10.2-bin.zip
           # Verify the gradle binary works
-          /home/runner/gradle-4.1/bin/gradle --version
+          /home/runner/gradle-4.10.2/bin/gradle --version
 
       - name: Build APK (Gradle)
         working-directory: engine-main/client/Shells/Android/Blockmango
@@ -364,7 +364,7 @@ jobs:
         run: |
           set -o pipefail
           # Use the extracted Gradle directly (bypasses the broken wrapper).
-          export PATH=/home/runner/gradle-4.1/bin:$PATH
+          export PATH=/home/runner/gradle-4.10.2/bin:$PATH
           gradle assembleDebug --no-daemon --stacktrace 2>&1 | tee apk-build.log
           echo "=== APK artifacts ==="
           find . -name "*.apk" -type f
@@ -433,12 +433,12 @@ jobs:
           path: /home/runner/android-ndk-r17c
           key: ndk-r17c-v1
 
-      - name: Save Gradle 4.1 distribution
+      - name: Save Gradle 4.10.2 distribution
         if: always() && steps.gradle-dist-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
-          path: /home/runner/gradle-4.1
-          key: gradle-4.1-extracted-v1
+          path: /home/runner/gradle-4.10.2
+          key: gradle-4.10.2-extracted-v1
 
       # ----------------------------------------------------------------
       # Step 9: Print the storage usage so the user can track quota.
