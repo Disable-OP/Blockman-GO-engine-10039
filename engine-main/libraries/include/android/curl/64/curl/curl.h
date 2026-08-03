@@ -201,6 +201,7 @@ typedef int (*curl_xferinfo_callback)(void *clientp,
      400 bytes since libcurl uses a buffer of this size as a scratch area
      (unrelated to network send operations). */
 #define CURL_MAX_WRITE_SIZE 16384
+#define CURL_MAX_READ_SIZE (524288) /* added for newer curl source compat */
 #endif
 
 #ifndef CURL_MAX_HTTP_HEADER
@@ -1770,6 +1771,10 @@ typedef enum {
   /* The public key in DER form used to validate the proxy public key
      this option is used only if PROXY_SSL_VERIFYPEER is true */
   CINIT(PROXY_PINNEDPUBLICKEY, STRINGPOINT, 263),
+  CINIT(ABSTRACT_UNIX_SOCKET, STRINGPOINT, 264),
+  CINIT(SUPPRESS_CONNECT_HEADERS, LONG, 265),
+  CINIT(REQUEST_TARGET, STRINGPOINT, 266),
+  CINIT(SOCKS5_AUTH, LONG, 267),
 
   CURLOPT_LASTENTRY /* the last unused */
 } CURLoption;
