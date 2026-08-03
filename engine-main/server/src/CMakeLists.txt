@@ -54,7 +54,7 @@ set(INCLUDE_FILES
         ${LORD_DEP_PATH}/rapidjson/Include
         ${LORD_DEP_PATH}/Zlib/Android/Include
         ${LORD_DEP_PATH}/Lua/Android/Include
-        ${LORD_DEP_PATH}/g3log/android/include
+        ${LORD_DEP_PATH}/g3log/linux/include
         ${LORD_DEP_PATH}/FreeType/Android/Include
         ${LORD_DEP_PATH}/FreeImage/Android/Include
         ${LOGIC_DEP_PATH}/curl/android/include
