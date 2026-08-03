@@ -16,6 +16,7 @@
 // Forward-declare the structs these functions take (defined in urldata.h).
 struct ssl_primary_config;
 struct ssl_config_data;
+struct Curl_easy;
 
 // Stubs for ssl_config functions (normally in vtls/vtls.c).
 void Curl_free_primary_ssl_config(struct ssl_primary_config* sslc)
@@ -44,6 +45,48 @@ bool Curl_auth_is_digest_supported(const struct ssl_primary_config* sslc)
 {
     (void)sslc;
     return false;
+}
+
+// Stub for Curl_ssl_backend (normally in vtls/vtls.c).
+const struct Curl_ssl_backend* Curl_ssl_backend = (const void*)0;
+
+// Stubs for digest auth functions (normally in vtls/vtls.c).
+CURLcode Curl_auth_decode_digest_http_message(const char* data,
+                                                struct Curl_easy* easy)
+{
+    (void)data;
+    (void)easy;
+    return CURLE_OK;
+}
+
+CURLcode Curl_auth_create_digest_http_message(struct Curl_easy* data,
+                                                 const char* userp,
+                                                 const char* passwdp,
+                                                 const unsigned char* request,
+                                                 unsigned char* outptr,
+                                                 size_t* outlen,
+                                                 void* context)
+{
+    (void)data; (void)userp; (void)passwdp; (void)request;
+    (void)outptr; (void)outlen; (void)context;
+    return CURLE_OK;
+}
+
+void Curl_auth_digest_cleanup(void* context)
+{
+    (void)context;
+}
+
+// Stubs for getifaddrs/freeifaddrs (Android doesn't have these).
+int getifaddrs(void** ifap)
+{
+    (void)ifap;
+    return -1;
+}
+
+void freeifaddrs(void* ifa)
+{
+    (void)ifa;
 }
 
 // Stub for Curl_initinfo (normally in getinfo.c — but if it's still
