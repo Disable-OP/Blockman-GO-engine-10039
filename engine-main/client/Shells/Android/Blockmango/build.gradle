@@ -1,8 +1,11 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     repositories {
-        jcenter()
         google()
+        mavenCentral()
+        // jcenter() was shut down in May 2021 — use mavenCentral() instead.
+        // For very old artifacts that were only on jcenter, this mirror works:
+        maven { url 'https://jcenter.bintray.com' }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
@@ -11,8 +14,9 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
         google()
+        mavenCentral()
+        maven { url 'https://jcenter.bintray.com' }
     }
 }
 
