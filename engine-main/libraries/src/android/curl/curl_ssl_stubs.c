@@ -11,7 +11,7 @@
 // Android.mk LOCAL_SRC_FILES).
 
 #include "curl_setup.h"
-#include "curl.h"
+#include <curl/curl.h>
 
 // Forward-declare the structs these functions take (defined in urldata.h).
 struct ssl_primary_config;
