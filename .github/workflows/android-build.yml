@@ -97,6 +97,9 @@ jobs:
 
       # ----------------------------------------------------------------
       # Cache 1: NDK r17c — stable key, never rolls. Saves ~1 min/run.
+      # save-always: true so the cache is saved even if the job fails
+      # later (e.g. on a compile error in the server build). Without
+      # this, the NDK download is wasted on every failed run.
       # ----------------------------------------------------------------
       - name: Cache Android NDK r17c
         id: ndk-cache
@@ -104,6 +107,7 @@ jobs:
         with:
           path: /home/runner/android-ndk-r17c
           key: ndk-r17c-v1
+          save-always: true
 
       - name: Set up Android NDK r17c
         # NDK r17c is the last version with gnustl_static, which the project uses.
@@ -129,6 +133,12 @@ jobs:
       # whole cache on every source change, defeating the purpose.
       # Key rolls only when we bump the "-v1" suffix manually (e.g. to
       # force a clean cache after a compiler upgrade).
+      #
+      # save-always: true is CRITICAL — without it, if the job fails
+      # (e.g. server compile error), the post-cache save step is SKIPPED
+      # and all the compilation done BEFORE the failure is lost. This
+      # was the bug in runs 10-11: the ccache was never saved because
+      # the job failed at the server build step.
       # ----------------------------------------------------------------
       - name: Restore ccache
         id: ccache-cache
@@ -137,8 +147,14 @@ jobs:
         with:
           path: ${{ github.workspace }}/.ccache
           key: ccache-${{ env.ABI }}-v1
+          # restore-keys uses a broad prefix so we can still restore
+          # from the OLD source-hash-based keys (e.g. ccache-armeabi-v7a-7f05a2a9...)
+          # that may have been saved by earlier runs. This provides a
+          # fallback while the new -v1 key is being populated.
           restore-keys: |
             ccache-${{ env.ABI }}-v1
+            ccache-${{ env.ABI }}-
+          save-always: true
 
       - name: Install ccache + host build deps
         run: |
