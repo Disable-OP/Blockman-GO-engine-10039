@@ -84,11 +84,11 @@ jobs:
         with:
           fetch-depth: 1
 
-      - name: Set up JDK 8 (for Gradle 4.1 + AGP 2.3.3)
+      - name: Set up JDK 17 (for Android SDK setup)
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
-          java-version: '8'
+          java-version: '17'
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
@@ -328,7 +328,16 @@ jobs:
       # the old services.gradle.org TLS. We bypass the wrapper entirely:
       # download + extract the Gradle distribution with wget, then call
       # the extracted `gradle` binary directly.
+      #
+      # IMPORTANT: Gradle 4.1 + AGP 2.3.3 require JDK 8. We install JDK 8
+      # here (after the C++ build which doesn't need Java) and switch
+      # JAVA_HOME so the Gradle step uses JDK 8, not JDK 17.
       # ----------------------------------------------------------------
+      - name: Set up JDK 8 (for Gradle 4.1 + AGP 2.3.3)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '8'
       - name: Cache Gradle 4.1 distribution
         id: gradle-dist-cache
         uses: actions/cache@v4
