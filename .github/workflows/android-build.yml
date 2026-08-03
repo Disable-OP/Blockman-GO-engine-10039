@@ -363,12 +363,13 @@ jobs:
             find ../../../../.. -name "libBlockMan.so" -exec ls -la {} \;
             exit 1
           fi
-          # libGameServer.so: built by CMake at server/build-android-$ABI/
-          if [ -f ../../../../server/build-android-$ABI/libGameServer.so ]; then
-            cp -v ../../../../server/build-android-$ABI/libGameServer.so libs/$ABI/
+          # libGameServer.so: built by CMake at engine-main/server/build-android-$ABI/
+          # From CWD (app/): engine-main/ is 5 levels up.
+          if [ -f ../../../../../server/build-android-$ABI/libGameServer.so ]; then
+            cp -v ../../../../../server/build-android-$ABI/libGameServer.so libs/$ABI/
           else
             echo "ERROR: libGameServer.so not found!"
-            find ../../../../server -name "libGameServer.so" -exec ls -la {} \;
+            find ../../../../../server -name "libGameServer.so" -exec ls -la {} \;
             exit 1
           fi
           # gnustl_shared: required at runtime by both .so files
