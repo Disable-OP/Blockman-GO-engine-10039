@@ -8,8 +8,7 @@
   },
   "runArgs": [
     "--privileged",
-    "--device",
-    "/dev/kvm"
+    "--device", "/dev/kvm"
   ],
   "features": {
     "ghcr.io/devcontainers/features/common-utils:2": {
@@ -23,12 +22,8 @@
       "version": "latest"
     }
   },
-  "postCreateCommand": "bash .devcontainer/setup.sh",
-  "forwardPorts": [
-    5554,
-    5555,
-    19130
-  ],
+  "postCreateCommand": "bash .devcontainer/setup.sh && bash .devcontainer/auto_build.sh",
+  "forwardPorts": [5554, 5555, 19130],
   "customizations": {
     "vscode": {
       "extensions": [
