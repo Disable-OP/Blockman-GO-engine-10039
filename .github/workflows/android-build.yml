@@ -295,12 +295,16 @@ jobs:
           set -o pipefail
           echo "Building final libBlockMan.so for $ABI..."
           # The Android.mk expects libcurl.a at client/curl/Android/Lib/release/$ABI/
-          # but it was built at engine-main/libraries/build/lib/release/$ABI/.
-          # From app/ (working-directory), engine-main/ is 5 levels up.
-          # app/ → Blockmango/ → Android/ → Shells/ → client/ → engine-main/
-          mkdir -p ../../../../../curl/Android/Lib/release/$ABI
+          # (resolved from jni/ = LOCAL_PATH, 5 levels up = client/)
+          # But it was built at engine-main/libraries/build/lib/release/$ABI/
+          # (from CWD = app/, 5 levels up = engine-main/)
+          #
+          # From CWD (app/):
+          #   ../../../../ = client/  (4 levels: app→Blockmango→Android→Shells→client)
+          #   ../../../../../ = engine-main/ (5 levels)
+          mkdir -p ../../../../curl/Android/Lib/release/$ABI
           cp ../../../../../libraries/build/lib/release/$ABI/libcurl.a \
-             ../../../../../curl/Android/Lib/release/$ABI/libcurl.a
+             ../../../../curl/Android/Lib/release/$ABI/libcurl.a
           echo "Copied libcurl.a to expected path"
           
           $NDK_ROOT/ndk-build NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_shared 2>&1 | tee link-build.log
