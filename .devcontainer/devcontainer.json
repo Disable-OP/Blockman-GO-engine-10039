@@ -1,0 +1,43 @@
+{
+  "name": "Blockman Engine Dev",
+  "image": "ubuntu:22.04",
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb",
+    "storage": "32gb"
+  },
+  "runArgs": [
+    "--privileged",
+    "--device", "/dev/kvm"
+  ],
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "configureZshAsDefaultShell": false,
+      "username": "codespace"
+    },
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "forwardPorts": [5554, 5555, 19130],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "vscjava.vscode-java-pack"
+      ]
+    }
+  },
+  "remoteEnv": {
+    "ANDROID_HOME": "/home/codespace/android-sdk",
+    "ANDROID_SDK_ROOT": "/home/codespace/android-sdk",
+    "ANDROID_NDK_HOME": "/home/codespace/android-ndk-r17c",
+    "ANDROID_NDK_ROOT": "/home/codespace/android-ndk-r17c",
+    "NDK_ROOT": "/home/codespace/android-ndk-r17c",
+    "JAVA_HOME": "/usr/lib/jvm/java-8-openjdk-amd64",
+    "GRADLE_OPTS": "-Dhttps.protocols=TLSv1.2",
+    "DISPLAY": ":0"
+  }
+}
