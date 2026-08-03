@@ -437,6 +437,7 @@ LOCAL_SRC_FILES := \
         ../../src/android/curl/formdata.c \
         ../../src/android/curl/ftp.c \
         ../../src/android/curl/ftplistparser.c \
+        ../../src/android/curl/getinfo.c \
         ../../src/android/curl/getenv.c \
         ../../src/android/curl/gopher.c \
         ../../src/android/curl/hash.c \
@@ -507,7 +508,8 @@ LOCAL_SRC_FILES := \
         ../../src/android/curl/version.c \
         ../../src/android/curl/warnless.c \
         ../../src/android/curl/wildcard.c \
-        ../../src/android/curl/x509asn1.c
+        ../../src/android/curl/x509asn1.c \
+        ../../src/android/curl/curl_ssl_stubs.c
 
 LOCAL_STATIC_LIBRARIES := zlib
 include $(BUILD_STATIC_LIBRARY)
