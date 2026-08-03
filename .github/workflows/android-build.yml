@@ -277,6 +277,22 @@ jobs:
           $NDK_ROOT/ndk-build NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee client-build.log
 
       # ----------------------------------------------------------------
+      # Step 4.5: Build the final libBlockMan.so — links all static libs
+      # (libGameClient.a + libLordCore.a + libLogic.a + etc.) into the
+      # shared library that Java loads via System.loadLibrary("BlockMan").
+      # This runs the ndk-build at client/Shells/Android/Blockmango/app/jni/
+      # which has PREBUILT_STATIC_LIBRARY entries for all the static libs.
+      # ----------------------------------------------------------------
+      - name: Build final libBlockMan.so (ndk-build link step)
+        working-directory: engine-main/client/Shells/Android/Blockmango/app
+        run: |
+          set -o pipefail
+          echo "Building final libBlockMan.so for $ABI..."
+          $NDK_ROOT/ndk-build NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_shared 2>&1 | tee link-build.log
+          echo "=== Final .so ==="
+          find . -name "libBlockMan.so" -exec ls -la {} \;
+
+      # ----------------------------------------------------------------
       # Step 5: Build the server shared library (libGameServer.so) via
       # CMake. CMAKE_C/CXX_COMPILER_LAUNCHER=ccache makes CMake route
       # every compile through ccache.
@@ -314,8 +330,20 @@ jobs:
         working-directory: engine-main/client/Shells/Android/Blockmango/app
         run: |
           mkdir -p libs/$ABI
-          cp -v ../../../../client/Bin/$ABI/libBlockMan.so libs/$ABI/ 2>/dev/null || \
-            echo "WARNING: libBlockMan.so not found at expected path; the APK build may fail."
+          # libBlockMan.so was built by the "Build final libBlockMan.so" step
+          # above. It's either in libs/$ABI/ (ndk-build default output) or
+          # in ../../../../client/Bin/$ABI/ (if the Android.mk uses TARGET_OUT).
+          # Try both locations.
+          if [ -f libs/$ABI/libBlockMan.so ]; then
+            echo "libBlockMan.so already in libs/$ABI/"
+          elif [ -f ../../../../client/Bin/$ABI/libBlockMan.so ]; then
+            cp -v ../../../../client/Bin/$ABI/libBlockMan.so libs/$ABI/
+          else
+            echo "ERROR: libBlockMan.so not found! Searching..."
+            find . -name "libBlockMan.so" -exec ls -la {} \;
+            find ../../../../client -name "libBlockMan.so" -exec ls -la {} \;
+            exit 1
+          fi
           cp -v ../../../../server/build-android-$ABI/libGameServer.so libs/$ABI/ 2>/dev/null || \
             echo "WARNING: libGameServer.so not found at expected path; the APK build may fail."
           cp -v $NDK_ROOT/sources/cxx-stl/gnu-libstdc++/4.9/libs/$ABI/libgnustl_shared.so libs/$ABI/ 2>/dev/null || \
@@ -424,6 +452,7 @@ jobs:
             engine-main/libraries/ApkBuild/libs-build.log
             engine-main/logic/ApkBuild/logic-build.log
             engine-main/client/ApkBuild/client-build.log
+            engine-main/client/Shells/Android/Blockmango/app/link-build.log
             engine-main/server/build-android-${{ env.ABI }}/server-build.log
             engine-main/client/Shells/Android/Blockmango/apk-build.log
           if-no-files-found: warn
