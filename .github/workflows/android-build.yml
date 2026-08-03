@@ -323,41 +323,36 @@ jobs:
 
       # ----------------------------------------------------------------
       # Step 7: Build the APK via Gradle.
-      # The Gradle wrapper (gradlew) tries to download Gradle 4.1 from
-      # services.gradle.org, but Java 17 on the runner gets a TLS error
-      # ("Connection refused"). We pre-download the distribution with wget
-      # (which handles TLS fine) and cache it so the wrapper finds it
-      # locally and skips the download.
+      # The Gradle wrapper (gradlew) uses Java's HttpsURLConnection to
+      # download Gradle 4.1 — but Java 17 gets "Connection refused" on
+      # the old services.gradle.org TLS. We bypass the wrapper entirely:
+      # download + extract the Gradle distribution with wget, then call
+      # the extracted `gradle` binary directly.
       # ----------------------------------------------------------------
       - name: Cache Gradle 4.1 distribution
         id: gradle-dist-cache
         uses: actions/cache@v4
         with:
-          path: ~/.gradle/wrapper/dists/gradle-4.1-all
-          key: gradle-4.1-all-v1
+          path: /home/runner/gradle-4.1
+          key: gradle-4.1-extracted-v1
 
-      - name: Download Gradle 4.1 distribution
+      - name: Download + extract Gradle 4.1
         if: steps.gradle-dist-cache.outputs.cache-hit != 'true'
         run: |
-          mkdir -p ~/.gradle/wrapper/dists/gradle-4.1-all
-          cd ~/.gradle/wrapper/dists/gradle-4.1-all
-          # Download with wget (handles TLS properly, unlike Java 17's
-          # HttpsURLConnection connecting to the old services.gradle.org).
-          wget -q https://services.gradle.org/distributions/gradle-4.1-all.zip
-          # The wrapper expects the zip at a specific hash-named subdir.
-          # The gradlew script will extract it automatically on first run
-          # if the zip is in the right place. We just need the zip present.
-          ls -la
+          cd /home/runner
+          wget -q https://services.gradle.org/distributions/gradle-4.1-bin.zip
+          unzip -q gradle-4.1-bin.zip
+          rm gradle-4.1-bin.zip
+          # Verify the gradle binary works
+          /home/runner/gradle-4.1/bin/gradle --version
 
       - name: Build APK (Gradle)
         working-directory: engine-main/client/Shells/Android/Blockmango
         run: |
           set -o pipefail
-          chmod +x gradlew
-          # Use --offline so Gradle doesn't try to download anything
-          # (all deps should be in the Gradle cache from previous runs
-          # or the project's libs/ dir).
-          ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee apk-build.log
+          # Use the extracted Gradle directly (bypasses the broken wrapper).
+          export PATH=/home/runner/gradle-4.1/bin:$PATH
+          gradle assembleDebug --no-daemon --stacktrace 2>&1 | tee apk-build.log
           echo "=== APK artifacts ==="
           find . -name "*.apk" -type f
 
@@ -429,8 +424,8 @@ jobs:
         if: always() && steps.gradle-dist-cache.outputs.cache-hit != 'true'
         uses: actions/cache/save@v4
         with:
-          path: ~/.gradle/wrapper/dists/gradle-4.1-all
-          key: gradle-4.1-all-v1
+          path: /home/runner/gradle-4.1
+          key: gradle-4.1-extracted-v1
 
       # ----------------------------------------------------------------
       # Step 9: Print the storage usage so the user can track quota.
