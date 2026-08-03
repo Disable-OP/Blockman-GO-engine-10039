@@ -49,7 +49,6 @@ namespace {
 
 std::unique_ptr<std::thread> g_serverThread;
 std::atomic<bool>             g_serverRunning{false};
-std::atomic<bool>             g_serverStopFlag{false};  // passed by ref to Server::tick()
 std::string                   g_serverWorkDir;
 int                           g_serverPort = 19130;
 
@@ -101,11 +100,11 @@ void serverThreadMain()
                 g_serverRunning = true;
                 LOGI("Server running on 0.0.0.0:%d", g_serverPort);
 
-                // tick() blocks until g_serverStopFlag becomes true.
-                g_serverStopFlag = false;
-                server.tick(g_serverStopFlag);
+                // waitForStopEvent() blocks until setStopEvent() is called by
+                // nativeServerStop. This is the public API (tick() is private).
+                server.waitForStopEvent();
 
-                LOGI("Server tick loop exited; shutting down...");
+                LOGI("Server stop event received; shutting down...");
                 server.stopThread();
                 server.unInit();
                 g_serverRunning = false;
@@ -151,19 +150,25 @@ Java_com_sandboxol_blockmango_ServerService_nativeServerStart(
         // Wiring a custom seed through to WorldSettings is a future task.
         (void)seed;
 
-        g_serverThread = std::make_unique<std::thread>(serverThreadMain);
+        g_serverThread = std::unique_ptr<std::thread>(new std::thread(serverThreadMain));
         g_serverThread->detach();
 }
 
-// Stop the server. The tick loop checks the stop flag once per tick (~50ms),
-// so shutdown completes within one tick.
+// Stop the server. Calls Server::setStopEvent() which unblocks
+// waitForStopEvent(), allowing the server thread to exit cleanly.
 JNIEXPORT void JNICALL
 Java_com_sandboxol_blockmango_ServerService_nativeServerStop(JNIEnv*, jclass)
 {
         if (!g_serverRunning.load()) {
                 return;
         }
-        g_serverStopFlag.store(true, std::memory_order_release);
+        // Signal the server's stop event. The server thread's waitForStopEvent()
+        // will return, then the thread cleans up and exits.
+        // Note: we don't have a direct pointer to the Server instance here, but
+        // Server is a Singleton — we can get it via Server::Instance().
+        if (Server::Instance()) {
+                Server::Instance()->setStopEvent();
+        }
 }
 
 // Check whether the server is currently running.
