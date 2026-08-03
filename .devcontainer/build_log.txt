@@ -1,0 +1,10 @@
+START
+vscode
+/workspaces/Blockman-GO-engine-10039
+auto_build.sh
+build_log.txt
+devcontainer.json
+run.sh
+screenshot_helper.py
+setup.sh
+APT DONE
