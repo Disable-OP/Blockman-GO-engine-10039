@@ -64,7 +64,7 @@ set(INCLUDE_FILES
   ${SERVER_DEP_PATH}/linux/behaviac/include
   ${SERVER_DEP_PATH}/linux/mysql/include
   ${SERVER_DEP_PATH}/linux/redis/include
-        ${LOGIC_DEP_PATH}/sparsehash/android/include
+        ${LOGIC_DEP_PATH}/sparsehash/linux/include
 )
 
 endif()
