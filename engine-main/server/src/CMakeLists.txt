@@ -3,38 +3,38 @@
 
 if(${LORD_PLATFORM_WIN32})
 set(INCLUDE_FILES 
-	${PROJECT_SOURCE_DIR}
-  	${LORD_SRC_PATH}/Core
-	${LOGIC_SRC_PATH}
-  	${LOGIC_DEP_PATH}/win32
-	${LOGIC_DEP_PATH}/cpr/win32/include
-	${LOGIC_DEP_PATH}/curl/win32/include
-	${LORD_DEP_PATH}/rapidjson/Include
-  	${LORD_DEP_PATH}/Zlib/Win32/Include
-  	${LORD_DEP_PATH}/g3log/win32/include
-	${LORD_DEP_PATH}/Lua/Win32/Include
+        ${PROJECT_SOURCE_DIR}
+        ${LORD_SRC_PATH}/Core
+        ${LOGIC_SRC_PATH}
+        ${LOGIC_DEP_PATH}/win32
+        ${LOGIC_DEP_PATH}/cpr/win32/include
+        ${LOGIC_DEP_PATH}/curl/win32/include
+        ${LORD_DEP_PATH}/rapidjson/Include
+        ${LORD_DEP_PATH}/Zlib/Win32/Include
+        ${LORD_DEP_PATH}/g3log/win32/include
+        ${LORD_DEP_PATH}/Lua/Win32/Include
   ${SERVER_DEP_PATH}/win32/mysql/include
   ${SERVER_DEP_PATH}/win32/redis/include
   ${SERVER_DEP_PATH}/win32/behaviac/include
-	${LOGIC_DEP_PATH}/sparsehash/win32/include
+        ${LOGIC_DEP_PATH}/sparsehash/win32/include
 )
 
 elseif(${LORD_PLATFORM_LINUX})
 set(INCLUDE_FILES 
-	${PROJECT_SOURCE_DIR}
-  	${LORD_SRC_PATH}/Core
-	${LOGIC_SRC_PATH}
-  	${LOGIC_DEP_PATH}/linux
-	${LOGIC_DEP_PATH}/cpr/linux/include
-	${LOGIC_DEP_PATH}/curl/linux/include
-  	${LORD_DEP_PATH}/Zlib/Linux/Include
-	${LORD_DEP_PATH}/rapidjson/Include
-	${LORD_DEP_PATH}/Lua/Linux/Include
-  	${LORD_DEP_PATH}/g3log/linux/include
+        ${PROJECT_SOURCE_DIR}
+        ${LORD_SRC_PATH}/Core
+        ${LOGIC_SRC_PATH}
+        ${LOGIC_DEP_PATH}/linux
+        ${LOGIC_DEP_PATH}/cpr/linux/include
+        ${LOGIC_DEP_PATH}/curl/linux/include
+        ${LORD_DEP_PATH}/Zlib/Linux/Include
+        ${LORD_DEP_PATH}/rapidjson/Include
+        ${LORD_DEP_PATH}/Lua/Linux/Include
+        ${LORD_DEP_PATH}/g3log/linux/include
   ${SERVER_DEP_PATH}/linux/mysql/include
   ${SERVER_DEP_PATH}/linux/redis/include
   ${SERVER_DEP_PATH}/linux/behaviac/include
-	${LOGIC_DEP_PATH}/sparsehash/linux/include
+        ${LOGIC_DEP_PATH}/sparsehash/linux/include
 )
 
 elseif(${LORD_PLATFORM_ANDROID})
@@ -42,19 +42,19 @@ elseif(${LORD_PLATFORM_ANDROID})
 # via JNI. The deps come from the same NDK-built static libs that the
 # client uses (built by engine/NDKBuild/DepBuild + libraries/ApkBuild/jni).
 set(INCLUDE_FILES
-	${PROJECT_SOURCE_DIR}
-  	${LORD_SRC_PATH}/Core
-	${LOGIC_SRC_PATH}
-	${LORD_DEP_PATH}/rapidjson/Include
-  	${LORD_DEP_PATH}/Zlib/Android/Include
-	${LORD_DEP_PATH}/Lua/Android/Include
-  	${LORD_DEP_PATH}/g3log/android/include
-	${LORD_DEP_PATH}/FreeType/Android/Include
-	${LORD_DEP_PATH}/FreeImage/Android/Include
-	${LOGIC_DEP_PATH}/curl/android/include
-	${LOGIC_DEP_PATH}/cpr/android/include
+        ${PROJECT_SOURCE_DIR}
+        ${LORD_SRC_PATH}/Core
+        ${LOGIC_SRC_PATH}
+        ${LORD_DEP_PATH}/rapidjson/Include
+        ${LORD_DEP_PATH}/Zlib/Android/Include
+        ${LORD_DEP_PATH}/Lua/Android/Include
+        ${LORD_DEP_PATH}/g3log/android/include
+        ${LORD_DEP_PATH}/FreeType/Android/Include
+        ${LORD_DEP_PATH}/FreeImage/Android/Include
+        ${LOGIC_DEP_PATH}/curl/android/include
+        ${LOGIC_DEP_PATH}/cpr/android/include
   ${SERVER_DEP_PATH}/android/include
-	${LOGIC_DEP_PATH}/sparsehash/android/include
+        ${LOGIC_DEP_PATH}/sparsehash/android/include
 )
 
 endif()
@@ -69,12 +69,12 @@ include_directories( ${INCLUDE_FILES} )
 if(${LORD_PLATFORM_WIN32})
 
 link_directories(
-	${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
-	${LOGIC_DEP_PATH}/win32/raknet/lib
-	${LORD_DEP_PATH}/FreeImage/Win32/Lib
-	${LORD_DEP_PATH}/FreeType/Win32/Lib
-	${LORD_DEP_PATH}/Lua/Win32/Lib
-	${LORD_DEP_PATH}/g3log/win32/lib
+        ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}
+        ${LOGIC_DEP_PATH}/win32/raknet/lib
+        ${LORD_DEP_PATH}/FreeImage/Win32/Lib
+        ${LORD_DEP_PATH}/FreeType/Win32/Lib
+        ${LORD_DEP_PATH}/Lua/Win32/Lib
+        ${LORD_DEP_PATH}/g3log/win32/lib
   ${LORD_DEP_PATH}/luajit/prebuilt/Win32
   ${SERVER_DEP_PATH}/win32/mysql/lib
   ${SERVER_DEP_PATH}/win32/redis/lib
@@ -82,13 +82,13 @@ link_directories(
 )
 
 link_libraries(
-	RakNet.lib
-	ws2_32.lib
-	FreeType.lib
-	FreeImage.lib
-	lua.lib
-	debug g3logger_d.lib
-	optimized g3logger.lib
+        RakNet.lib
+        ws2_32.lib
+        FreeType.lib
+        FreeImage.lib
+        lua.lib
+        debug g3logger_d.lib
+        optimized g3logger.lib
   mysqlcppconn-static.lib
   mysqlcppconn.lib
   hiredis.lib
@@ -199,7 +199,7 @@ file(GLOB_RECURSE SOURCE_FILES *.cpp *.c)
 # entry point (ServerJni.cpp) — it does NOT have a main(). We exclude
 # main.cpp from the Android build to avoid a duplicate-symbol link error.
 if(LORD_PLATFORM_ANDROID)
-	list(FILTER SOURCE_FILES EXCLUDE REGEX "${CMAKE_CURRENT_SOURCE_DIR}/main\.cpp$")
+        list(FILTER SOURCE_FILES EXCLUDE REGEX "/main[.]cpp$")
 endif()
 
 set(ALL_FILES ${HEADER_FILES} ${SOURCE_FILES})
@@ -214,7 +214,7 @@ macro(GROUP_FILES src_files)
             if(sgbd_nogroup)
                 set(sgbd_group_name "Logic")
             endif(sgbd_nogroup)
-			
+                        
             source_group(${sgbd_group_name} FILES ${group_files})
         endforeach(group_files)
 endmacro(GROUP_FILES)
@@ -231,17 +231,17 @@ if(${LORD_PLATFORM_WIN32})
 endif()
 
 if(LORD_UNICODE)
-	add_definitions("-DUNICODE -D_UNICODE")
+        add_definitions("-DUNICODE -D_UNICODE")
 endif()
 
 set(GAMESERVER_NAME GameServer)
 
 if(LORD_PLATFORM_ANDROID)
-	# Android: shared library loaded via JNI by ServerService.java.
-	# Produces libGameServer.so, packaged into the APK's jniLibs/<abi>/.
-	add_library(${GAMESERVER_NAME} SHARED ${HEADER_FILES} ${SOURCE_FILES})
+        # Android: shared library loaded via JNI by ServerService.java.
+        # Produces libGameServer.so, packaged into the APK's jniLibs/<abi>/.
+        add_library(${GAMESERVER_NAME} SHARED ${HEADER_FILES} ${SOURCE_FILES})
 else()
-	add_executable(${GAMESERVER_NAME} ${HEADER_FILES} ${SOURCE_FILES})
+        add_executable(${GAMESERVER_NAME} ${HEADER_FILES} ${SOURCE_FILES})
 endif()
 
 
@@ -254,10 +254,10 @@ target_link_libraries(${GAMESERVER_NAME} -ldl)
 
 endif()
 if(NOT LORD_PLATFORM_ANDROID)
-	# On Android, the .so is always just "libGameServer.so" (no _d suffix).
-	set_target_properties(${GAMESERVER_NAME} PROPERTIES DEBUG_OUTPUT_NAME "${GAMESERVER_NAME}_d")
-	set_target_properties(${GAMESERVER_NAME} PROPERTIES MINSIZEREL_OUTPUT_NAME ${GAMESERVER_NAME})
-	set_target_properties(${GAMESERVER_NAME} PROPERTIES RELEASE_OUTPUT_NAME ${GAMESERVER_NAME})
+        # On Android, the .so is always just "libGameServer.so" (no _d suffix).
+        set_target_properties(${GAMESERVER_NAME} PROPERTIES DEBUG_OUTPUT_NAME "${GAMESERVER_NAME}_d")
+        set_target_properties(${GAMESERVER_NAME} PROPERTIES MINSIZEREL_OUTPUT_NAME ${GAMESERVER_NAME})
+        set_target_properties(${GAMESERVER_NAME} PROPERTIES RELEASE_OUTPUT_NAME ${GAMESERVER_NAME})
 endif()
 
 if(${LORD_PLATFORM_WIN32})
