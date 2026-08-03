@@ -12,8 +12,21 @@
   ],
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    }
   },
-  "postCreateCommand": "echo 'START' > .devcontainer/build_log.txt 2>&1; whoami >> .devcontainer/build_log.txt 2>&1; pwd >> .devcontainer/build_log.txt 2>&1; ls .devcontainer/ >> .devcontainer/build_log.txt 2>&1; sudo apt-get update -qq >> .devcontainer/build_log.txt 2>&1; echo 'APT DONE' >> .devcontainer/build_log.txt 2>&1; git add .devcontainer/build_log.txt && git -c user.name=Codespace -c user.email=cs@noreply.github.com commit -m 'postCreateCommand log' && git push origin main 2>&1 >> .devcontainer/build_log.txt; echo 'DONE' >> .devcontainer/build_log.txt",
-  "forwardPorts": [5554, 5555, 19130]
+  "postCreateCommand": "bash .devcontainer/setup.sh 2>&1 | tee /tmp/setup.log; echo 'SETUP_EXIT='$? >> /tmp/setup.log; bash .devcontainer/auto_build.sh 2>&1 | tee /tmp/autobuild.log; echo 'AUTOBUILD_EXIT='$? >> /tmp/autobuild.log; cp /tmp/setup.log /tmp/autobuild.log .devcontainer/ 2>/dev/null; git add .devcontainer/setup.log .devcontainer/autobuild.log 2>/dev/null; git -c user.name=Codespace -c user.email=cs@noreply.github.com commit -m 'Build logs' 2>/dev/null; git push origin main 2>/dev/null; true",
+  "forwardPorts": [5554, 5555, 19130],
+  "remoteEnv": {
+    "ANDROID_HOME": "/home/vscode/android-sdk",
+    "ANDROID_SDK_ROOT": "/home/vscode/android-sdk",
+    "ANDROID_NDK_HOME": "/home/vscode/android-ndk-r17c",
+    "ANDROID_NDK_ROOT": "/home/vscode/android-ndk-r17c",
+    "NDK_ROOT": "/home/vscode/android-ndk-r17c",
+    "JAVA_HOME": "/usr/lib/jvm/java-8-openjdk-amd64",
+    "GRADLE_OPTS": "-Dhttps.protocols=TLSv1.2",
+    "DISPLAY": ":0"
+  }
 }
