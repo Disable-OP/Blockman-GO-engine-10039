@@ -49,7 +49,7 @@ if(LORD_BUILD_PLATFORM_ANDROID)
         # Android uses clang from the NDK. C++11 + GNU STL ABI (matches the
         # legacy gnustl_static used by the client ndk-build setup; until the
         # client is migrated to c++_shared, both sides must agree on STL).
-        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -D_FORCE_INLINES -D_GLIBCXX_USE_CXX11_ABI=0 -fexceptions -frtti -D__GXX_EXPERIMENTAL_CXX0X__ -include gnustl_compat.h")
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -D_FORCE_INLINES -D_GLIBCXX_USE_CXX11_ABI=0 -fexceptions -frtti -D__GXX_EXPERIMENTAL_CXX0X__ -include gnustl_compat.h -Wno-format-security -Wno-error=format-security")
         set(CMAKE_C_FLAGS   "${CMAKE_C_FLAGS}   -D_FORCE_INLINES")
         # Position-independent code (required for shared lib).
         set(CMAKE_POSITION_INDEPENDENT_CODE ON)
