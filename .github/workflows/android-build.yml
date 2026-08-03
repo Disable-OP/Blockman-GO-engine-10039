@@ -321,6 +321,23 @@ jobs:
             echo "WARNING: libgnustl_shared.so not found at NDK path."
           ls -la libs/$ABI/
 
+      - name: Stage game assets into APK assets directory
+        # Copy engine-res-main/ (Media/, recipe/, resource.cfg) into the
+        # APK's assets/resources/ directory. The Java side (EchoesActivity)
+        # copies assets/resources/ to the app's private files dir at first
+        # launch, then passes that path as rootPath to C++. The C++ engine
+        # loads rootPath/resource.cfg which mounts Media/ and recipe/.
+        working-directory: engine-main/client/Shells/Android/Blockmango/app
+        run: |
+          mkdir -p src/main/assets/resources
+          # Copy all game assets (Media/, recipe/, resource.cfg) from
+          # engine-res-main/ into assets/resources/.
+          cp -r ../../../../engine-res-main/* src/main/assets/resources/
+          echo "=== Assets staged ==="
+          find src/main/assets/resources -maxdepth 2 -type d | head -20
+          echo "=== Total asset files ==="
+          find src/main/assets/resources -type f | wc -l
+
       # ----------------------------------------------------------------
       # Step 7: Build the APK via Gradle.
       # The Gradle wrapper (gradlew) uses Java's HttpsURLConnection to
