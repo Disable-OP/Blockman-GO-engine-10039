@@ -438,7 +438,6 @@ LOCAL_SRC_FILES := \
         ../../src/android/curl/ftp.c \
         ../../src/android/curl/ftplistparser.c \
         ../../src/android/curl/getenv.c \
-        ../../src/android/curl/getinfo.c \
         ../../src/android/curl/gopher.c \
         ../../src/android/curl/hash.c \
         ../../src/android/curl/hmac.c \
