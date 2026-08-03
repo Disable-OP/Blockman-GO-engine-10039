@@ -211,6 +211,15 @@ file(GLOB_RECURSE SOURCE_FILES *.cpp *.c)
 if(LORD_PLATFORM_ANDROID)
         list(FILTER SOURCE_FILES EXCLUDE REGEX "/main[.]cpp$")
 
+        # Exclude ServerDB.cpp + ServerRedisDB.cpp — the native MySQL/Redis
+        # connectors are dead code (commented out in Server.cpp). The Android
+        # standalone server uses HTTP-based MysqlHttpRequest/RedisHttpRequest
+        # instead. Excluding these avoids the need for libmysqlclient/libhiredis
+        # on Android and sidesteps gnustl_static C++11 brace-init issues in
+        # ServerDB.cpp:322 (m_waitForGetQueue = {}).
+        list(FILTER SOURCE_FILES EXCLUDE REGEX "/DB/ServerDB[.]cpp$")
+        list(FILTER SOURCE_FILES EXCLUDE REGEX "/DB/ServerRedisDB[.]cpp$")
+
         # Build behaviac from source (vendored at server/dependencies/behaviac-src/).
         # The prebuilt libbehaviac_gcc_release.a only exists for Linux x86_64; for
         # Android we compile the behaviac source directly into libGameServer.so.
