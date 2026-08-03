@@ -38,12 +38,13 @@ on:
           - Debug
           - Release
       abi:
-        description: 'Target ABI (only armeabi-v7a is supported today; legacy gnustl_static)'
+        description: 'Target ABI (armeabi-v7a for phones, x86 for emulator)'
         required: true
         default: 'armeabi-v7a'
         type: choice
         options:
           - armeabi-v7a
+          - x86
       skip_deps:
         description: 'Skip the third-party deps build step (use cached/prebuilt libs)'
         required: false
