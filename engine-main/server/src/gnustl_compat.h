@@ -10,6 +10,7 @@
 
 #include <string>
 #include <cstdio>
+#include <cstdlib>
 #include <cstdint>
 
 #if defined(__ANDROID__) && !defined(_LIBCPP_VERSION) && !defined(BLOCKMAN_GNUSTL_COMPAT)
