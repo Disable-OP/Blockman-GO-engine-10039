@@ -59,7 +59,7 @@ set(INCLUDE_FILES
         ${LORD_DEP_PATH}/FreeImage/Android/Include
         ${LOGIC_DEP_PATH}/curl/android/include
         ${LOGIC_DEP_PATH}/cpr/android/include
-        ${LOGIC_DEP_PATH}/Android/raknet/include
+        ${LOGIC_DEP_PATH}/Android
   # Server-only deps: reuse the linux headers (platform-independent).
   ${SERVER_DEP_PATH}/linux/behaviac/include
   ${SERVER_DEP_PATH}/linux/mysql/include
