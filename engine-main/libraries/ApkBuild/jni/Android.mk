@@ -399,114 +399,112 @@ LOCAL_CFLAGS += -DHAVE_CONFIG_H -DCURL_DISABLE_LDAP -DCURL_DISABLE_LDAPS \
 	-DCURL_DISABLE_SMTP -DCURL_DISABLE_GOPHER -DCURL_DISABLE_SMB \
 	-DCURL_DISABLE_TELNET -DBUILDING_LIBCURL -DUSE_SSLEAY=0 -DUSE_OPENSSL=0
 
-# Core libcurl sources (curated — excludes TLS/RTMP/GSSAPI/SSPI/Ares which
-# need external libs not bundled here).
+# Core libcurl sources — only files that actually exist in
+# libraries/src/android/curl/ (auto-generated list, no TLS backend files).
 LOCAL_SRC_FILES := \
-	../../src/android/curl/file.c \
-	../../src/android/curl/timeval.c \
-	../../src/android/curl/base64.c \
-	../../src/android/curl/hostip.c \
-	../../src/android/curl/progress.c \
-	../../src/android/curl/formdata.c \
-	../../src/android/curl/cookie.c \
-	../../src/android/curl/http.c \
-	../../src/android/curl/sendf.c \
-	../../src/android/curl/ftp.c \
-	../../src/android/curl/url.c \
-	../../src/android/curl/dict.c \
-	../../src/android/curl/if2ip.c \
-	../../src/android/curl/speedlookup.c \
-	../../src/android/curl/ldap.c \
-	../../src/android/curl/ssluse.c \
-	../../src/android/curl/version.c \
-	../../src/android/curl/getenv.c \
-	../../src/android/curl/escape.c \
-	../../src/android/curl/mprintf.c \
-	../../src/android/curl/telnet.c \
-	../../src/android/curl/netrc.c \
-	../../src/android/curl/getinfo.c \
-	../../src/android/curl/transfer.c \
-	../../src/android/curl/strequal.c \
-	../../src/android/curl/easy.c \
-	../../src/android/curl/security.c \
-	../../src/android/curl/curl_fnmatch.c \
-	../../src/android/curl/fileinfo.c \
-	../../src/android/curl/ftplistparser.c \
-	../../src/android/curl/parsedate.c \
-	../../src/android/curl/select.c \
-	../../src/android/curl/tftp.c \
-	../../src/android/curl/splay.c \
-	../../src/android/curl/strdup.c \
-	../../src/android/curl/socks.c \
-	../../src/android/curl/ssh.c \
-	../../src/android/curl/rawstr.c \
-	../../src/android/curl/curl_addrinfo.c \
-	../../src/android/curl/socks_gssapi.c \
-	../../src/android/curl/socks_sspi.c \
-	../../src/android/curl/curl_sspi.c \
-	../../src/android/curl/slist.c \
-	../../src/android/curl/nonblock.c \
-	../../src/android/curl/curl_memrchr.c \
-	../../src/android/curl/wildcard.c \
-	../../src/android/curl/krb5.c \
-	../../src/android/curl/memdebug.c \
-	../../src/android/curl/http_chunks.c \
-	../../src/android/curl/strtok.c \
-	../../src/android/curl/connect.c \
-	../../src/android/curl/llist.c \
-	../../src/android/curl/hash.c \
-	../../src/android/curl/multi.c \
-	../../src/android/curl/content_encoding.c \
-	../../src/android/curl/share.c \
-	../../src/android/curl/http_digest.c \
-	../../src/android/curl/md5.c \
-	../../src/android/curl/curl_rand.c \
-	../../src/android/curl/http_negotiate.c \
-	../../src/android/curl/inet_pton.c \
-	../../src/android/curl/strtoofft.c \
-	../../src/android/curl/strerror.c \
 	../../src/android/curl/amigaos.c \
+	../../src/android/curl/asyn-ares.c \
+	../../src/android/curl/asyn-thread.c \
+	../../src/android/curl/base64.c \
+	../../src/android/curl/conncache.c \
+	../../src/android/curl/connect.c \
+	../../src/android/curl/content_encoding.c \
+	../../src/android/curl/cookie.c \
+	../../src/android/curl/curl_addrinfo.c \
+	../../src/android/curl/curl_des.c \
+	../../src/android/curl/curl_endian.c \
+	../../src/android/curl/curl_fnmatch.c \
+	../../src/android/curl/curl_gethostname.c \
+	../../src/android/curl/curl_gssapi.c \
+	../../src/android/curl/curl_memrchr.c \
+	../../src/android/curl/curl_multibyte.c \
+	../../src/android/curl/curl_ntlm_core.c \
+	../../src/android/curl/curl_ntlm_wb.c \
+	../../src/android/curl/curl_rtmp.c \
+	../../src/android/curl/curl_sasl.c \
+	../../src/android/curl/curl_sspi.c \
+	../../src/android/curl/curl_threads.c \
+	../../src/android/curl/dict.c \
+	../../src/android/curl/dotdot.c \
+	../../src/android/curl/easy.c \
+	../../src/android/curl/escape.c \
+	../../src/android/curl/file.c \
+	../../src/android/curl/fileinfo.c \
+	../../src/android/curl/formdata.c \
+	../../src/android/curl/ftp.c \
+	../../src/android/curl/ftplistparser.c \
+	../../src/android/curl/getenv.c \
+	../../src/android/curl/getinfo.c \
+	../../src/android/curl/gopher.c \
+	../../src/android/curl/hash.c \
+	../../src/android/curl/hmac.c \
 	../../src/android/curl/hostasyn.c \
+	../../src/android/curl/hostcheck.c \
+	../../src/android/curl/hostip.c \
 	../../src/android/curl/hostip4.c \
 	../../src/android/curl/hostip6.c \
 	../../src/android/curl/hostsyn.c \
+	../../src/android/curl/http.c \
+	../../src/android/curl/http2.c \
+	../../src/android/curl/http_chunks.c \
+	../../src/android/curl/http_digest.c \
+	../../src/android/curl/http_negotiate.c \
+	../../src/android/curl/http_ntlm.c \
+	../../src/android/curl/http_proxy.c \
+	../../src/android/curl/idn_win32.c \
+	../../src/android/curl/if2ip.c \
+	../../src/android/curl/imap.c \
 	../../src/android/curl/inet_ntop.c \
+	../../src/android/curl/inet_pton.c \
+	../../src/android/curl/krb5.c \
+	../../src/android/curl/ldap.c \
+	../../src/android/curl/llist.c \
+	../../src/android/curl/md4.c \
+	../../src/android/curl/md5.c \
+	../../src/android/curl/memdebug.c \
+	../../src/android/curl/mprintf.c \
+	../../src/android/curl/multi.c \
+	../../src/android/curl/netrc.c \
+	../../src/android/curl/non-ascii.c \
+	../../src/android/curl/nonblock.c \
+	../../src/android/curl/nwlib.c \
+	../../src/android/curl/nwos.c \
+	../../src/android/curl/openldap.c \
 	../../src/android/curl/parsedate.c \
+	../../src/android/curl/pingpong.c \
+	../../src/android/curl/pipeline.c \
+	../../src/android/curl/pop3.c \
+	../../src/android/curl/progress.c \
+	../../src/android/curl/rand.c \
+	../../src/android/curl/rtsp.c \
+	../../src/android/curl/security.c \
 	../../src/android/curl/select.c \
-	../../src/android/curl/gtls.c \
-	../../src/android/curl/sslgen.c \
-	../../src/android/curl/tftp.c \
-	../../src/android/curl/splay.c \
-	../../src/android/curl/strdup.c \
+	../../src/android/curl/sendf.c \
+	../../src/android/curl/share.c \
+	../../src/android/curl/slist.c \
+	../../src/android/curl/smb.c \
+	../../src/android/curl/smtp.c \
 	../../src/android/curl/socks.c \
-	../../src/android/curl/ssh.c \
-	../../src/android/curl/rawstr.c \
-	../../src/android/curl/curl_addrinfo.c \
 	../../src/android/curl/socks_gssapi.c \
 	../../src/android/curl/socks_sspi.c \
-	../../src/android/curl/curl_sspi.c \
-	../../src/android/curl/slist.c \
-	../../src/android/curl/nonblock.c \
-	../../src/android/curl/curl_memrchr.c \
-	../../src/android/curl/wildcard.c \
-	../../src/android/curl/krb5.c \
-	../../src/android/curl/memdebug.c \
-	../../src/android/curl/http_chunks.c \
-	../../src/android/curl/strtok.c \
-	../../src/android/curl/connect.c \
-	../../src/android/curl/llist.c \
-	../../src/android/curl/hash.c \
-	../../src/android/curl/multi.c \
-	../../src/android/curl/content_encoding.c \
-	../../src/android/curl/share.c \
-	../../src/android/curl/http_digest.c \
-	../../src/android/curl/md5.c \
-	../../src/android/curl/curl_rand.c \
-	../../src/android/curl/http_negotiate.c \
-	../../src/android/curl/inet_pton.c \
-	../../src/android/curl/strtoofft.c \
+	../../src/android/curl/speedcheck.c \
+	../../src/android/curl/splay.c \
+	../../src/android/curl/ssh.c \
+	../../src/android/curl/strcase.c \
+	../../src/android/curl/strdup.c \
 	../../src/android/curl/strerror.c \
-	../../src/android/curl/pingpong.c
+	../../src/android/curl/strtok.c \
+	../../src/android/curl/strtoofft.c \
+	../../src/android/curl/system_win32.c \
+	../../src/android/curl/telnet.c \
+	../../src/android/curl/tftp.c \
+	../../src/android/curl/timeval.c \
+	../../src/android/curl/transfer.c \
+	../../src/android/curl/url.c \
+	../../src/android/curl/version.c \
+	../../src/android/curl/warnless.c \
+	../../src/android/curl/wildcard.c \
+	../../src/android/curl/x509asn1.c
 
 LOCAL_STATIC_LIBRARIES := zlib
 include $(BUILD_STATIC_LIBRARY)

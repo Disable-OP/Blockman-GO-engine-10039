@@ -458,31 +458,31 @@
 /* #undef HAVE_OLD_GSSMIT */
 
 /* Define to 1 if you have the <openssl/crypto.h> header file. */
-#define HAVE_OPENSSL_CRYPTO_H 1
+//#define HAVE_OPENSSL_CRYPTO_H 1  // disabled
 
 /* Define to 1 if you have the <openssl/engine.h> header file. */
 //#define HAVE_OPENSSL_ENGINE_H 1
 
 /* Define to 1 if you have the <openssl/err.h> header file. */
-#define HAVE_OPENSSL_ERR_H 1
+//#define HAVE_OPENSSL_ERR_H 1  // disabled
 
 /* Define to 1 if you have the <openssl/pem.h> header file. */
-#define HAVE_OPENSSL_PEM_H 1
+//#define HAVE_OPENSSL_PEM_H 1  // disabled
 
 /* Define to 1 if you have the <openssl/pkcs12.h> header file. */
-#define HAVE_OPENSSL_PKCS12_H 1
+//#define HAVE_OPENSSL_PKCS12_H 1  // disabled
 
 /* Define to 1 if you have the <openssl/rsa.h> header file. */
-#define HAVE_OPENSSL_RSA_H 1
+//#define HAVE_OPENSSL_RSA_H 1  // disabled
 
 /* if you have the function SRP_Calc_client_key */
-#define HAVE_OPENSSL_SRP 1
+//#define HAVE_OPENSSL_SRP 1  // disabled
 
 /* Define to 1 if you have the <openssl/ssl.h> header file. */
-#define HAVE_OPENSSL_SSL_H 1
+//#define HAVE_OPENSSL_SSL_H 1  // disabled
 
 /* Define to 1 if you have the <openssl/x509.h> header file. */
-#define HAVE_OPENSSL_X509_H 1
+//#define HAVE_OPENSSL_X509_H 1  // disabled
 
 /* Define to 1 if you have the <pem.h> header file. */
 /* #undef HAVE_PEM_H */
@@ -944,7 +944,7 @@
 #define USE_OPENLDAP 1
 
 /* if OpenSSL is in use */
-#define USE_OPENSSL 1
+//#define USE_OPENSSL 1  // disabled — no OpenSSL on Android standalone build
 
 /* if PolarSSL is enabled */
 /* #undef USE_POLARSSL */
