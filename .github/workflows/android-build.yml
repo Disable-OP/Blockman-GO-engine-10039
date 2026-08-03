@@ -363,12 +363,16 @@ jobs:
             find ../../../../.. -name "libBlockMan.so" -exec ls -la {} \;
             exit 1
           fi
-          # libGameServer.so: built by CMake at engine-main/server/build-android-$ABI/
+          # libGameServer.so: built by CMake at engine-main/server/Bin/Debug/
+          # (CMAKE_RUNTIME_OUTPUT_DIRECTORY = server/Bin/${CMAKE_BUILD_TYPE})
           # From CWD (app/): engine-main/ is 5 levels up.
-          if [ -f ../../../../../server/build-android-$ABI/libGameServer.so ]; then
+          GAMESERVER_PATH="../../../../../server/Bin/$BUILD_TYPE/libGameServer.so"
+          if [ -f "$GAMESERVER_PATH" ]; then
+            cp -v "$GAMESERVER_PATH" libs/$ABI/
+          elif [ -f ../../../../../server/build-android-$ABI/libGameServer.so ]; then
             cp -v ../../../../../server/build-android-$ABI/libGameServer.so libs/$ABI/
           else
-            echo "ERROR: libGameServer.so not found!"
+            echo "ERROR: libGameServer.so not found! Searching..."
             find ../../../../../server -name "libGameServer.so" -exec ls -la {} \;
             exit 1
           fi
