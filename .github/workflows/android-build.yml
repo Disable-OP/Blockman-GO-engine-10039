@@ -357,6 +357,10 @@ jobs:
 
       - name: Build APK (Gradle)
         working-directory: engine-main/client/Shells/Android/Blockmango
+        env:
+          # Force TLS 1.2 — Java 8's default TLS config can't connect to
+          # modern HTTPS servers (google(), mavenCentral(), jcenter).
+          GRADLE_OPTS: "-Dhttps.protocols=TLSv1.2"
         run: |
           set -o pipefail
           # Use the extracted Gradle directly (bypasses the broken wrapper).
