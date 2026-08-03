@@ -295,9 +295,11 @@ jobs:
           set -o pipefail
           echo "Building final libBlockMan.so for $ABI..."
           # The Android.mk expects libcurl.a at client/curl/Android/Lib/release/$ABI/
-          # but it was built at libraries/build/lib/release/$ABI/. Copy it.
+          # but it was built at engine-main/libraries/build/lib/release/$ABI/.
+          # From app/ (working-directory), engine-main/ is 5 levels up.
+          # app/ → Blockmango/ → Android/ → Shells/ → client/ → engine-main/
           mkdir -p ../../../../../curl/Android/Lib/release/$ABI
-          cp ../../../../../../libraries/build/lib/release/$ABI/libcurl.a \
+          cp ../../../../../libraries/build/lib/release/$ABI/libcurl.a \
              ../../../../../curl/Android/Lib/release/$ABI/libcurl.a
           echo "Copied libcurl.a to expected path"
           
