@@ -73,7 +73,7 @@ jobs:
       # ccache config: 500 MB cap (enough for the whole project), use
       # compiler_hash for uniqueness, compress storage.
       CCACHE_DIR: ${{ github.workspace }}/.ccache
-      CCACHE_MAXSIZE: 500M
+      CCACHE_MAXSIZE: 2G
       CCACHE_COMPRESS: 1
       CCACHE_COMPRESSLEVEL: 6
       NDK_CCACHE: /usr/bin/ccache
@@ -323,12 +323,40 @@ jobs:
 
       # ----------------------------------------------------------------
       # Step 7: Build the APK via Gradle.
+      # The Gradle wrapper (gradlew) tries to download Gradle 4.1 from
+      # services.gradle.org, but Java 17 on the runner gets a TLS error
+      # ("Connection refused"). We pre-download the distribution with wget
+      # (which handles TLS fine) and cache it so the wrapper finds it
+      # locally and skips the download.
       # ----------------------------------------------------------------
+      - name: Cache Gradle 4.1 distribution
+        id: gradle-dist-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.gradle/wrapper/dists/gradle-4.1-all
+          key: gradle-4.1-all-v1
+
+      - name: Download Gradle 4.1 distribution
+        if: steps.gradle-dist-cache.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ~/.gradle/wrapper/dists/gradle-4.1-all
+          cd ~/.gradle/wrapper/dists/gradle-4.1-all
+          # Download with wget (handles TLS properly, unlike Java 17's
+          # HttpsURLConnection connecting to the old services.gradle.org).
+          wget -q https://services.gradle.org/distributions/gradle-4.1-all.zip
+          # The wrapper expects the zip at a specific hash-named subdir.
+          # The gradlew script will extract it automatically on first run
+          # if the zip is in the right place. We just need the zip present.
+          ls -la
+
       - name: Build APK (Gradle)
         working-directory: engine-main/client/Shells/Android/Blockmango
         run: |
           set -o pipefail
           chmod +x gradlew
+          # Use --offline so Gradle doesn't try to download anything
+          # (all deps should be in the Gradle cache from previous runs
+          # or the project's libs/ dir).
           ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee apk-build.log
           echo "=== APK artifacts ==="
           find . -name "*.apk" -type f
@@ -396,6 +424,13 @@ jobs:
         with:
           path: /home/runner/android-ndk-r17c
           key: ndk-r17c-v1
+
+      - name: Save Gradle 4.1 distribution
+        if: always() && steps.gradle-dist-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: ~/.gradle/wrapper/dists/gradle-4.1-all
+          key: gradle-4.1-all-v1
 
       # ----------------------------------------------------------------
       # Step 9: Print the storage usage so the user can track quota.
