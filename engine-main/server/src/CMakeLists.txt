@@ -52,6 +52,7 @@ set(INCLUDE_FILES
         ${LORD_SRC_PATH}/Core
         ${LOGIC_SRC_PATH}
         ${LORD_DEP_PATH}/rapidjson/Include
+        ${LORD_DEP_PATH}/RapidXml/Include
         ${LORD_DEP_PATH}/Zlib/Android/Include
         ${LORD_DEP_PATH}/Lua/Android/Include
         ${LORD_DEP_PATH}/g3log/linux/include
