@@ -17,6 +17,36 @@
 
 namespace std {
 
+// std::stoi/stol/stoll/stoul/stoull — gnustl_static doesn't define these.
+inline int stoi(const string& str, size_t* pos = 0, int base = 10) {
+    return static_cast<int>(strtol(str.c_str(), (char**)pos, base));
+}
+
+inline long stol(const string& str, size_t* pos = 0, int base = 10) {
+    return strtol(str.c_str(), (char**)pos, base);
+}
+
+inline long long stoll(const string& str, size_t* pos = 0, int base = 10) {
+    return strtoll(str.c_str(), (char**)pos, base);
+}
+
+inline unsigned long stoul(const string& str, size_t* pos = 0, int base = 10) {
+    return strtoul(str.c_str(), (char**)pos, base);
+}
+
+inline unsigned long long stoull(const string& str, size_t* pos = 0, int base = 10) {
+    return strtoull(str.c_str(), (char**)pos, base);
+}
+
+inline float stof(const string& str, size_t* pos = 0) {
+    return strtof(str.c_str(), (char**)pos);
+}
+
+inline double stod(const string& str, size_t* pos = 0) {
+    return strtod(str.c_str(), (char**)pos);
+}
+
+// std::to_string — gnustl_static doesn't define these either.
 inline string to_string(int value) {
     char buf[16];
     snprintf(buf, sizeof(buf), "%d", value);
