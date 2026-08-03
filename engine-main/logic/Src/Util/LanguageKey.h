@@ -1,0 +1,500 @@
+#pragma once
+#ifndef __LANGUAGE_KEY_HEADER__
+#define __LANGUAGE_KEY_HEADER__
+#include "Core.h"
+
+
+using namespace LORD;
+namespace BLOCKMAN
+{
+	class LanguageKey
+	{
+	public:
+		//system msg
+		const static String SYSTEM_MESSAGE_PLAYER_ENTER_SERVER;
+		const static String SYSTEM_MESSAGE_PLAYER_EXIT_SERVER;
+
+		//death
+		const static String SYSTEM_MESSAGE_PLAYER_DEATH;
+
+		//GUI
+		const static String GUI_LOADING_PAGE_CONNECTED_SERVER_CONNECTING;
+		const static String GUI_LOADING_PAGE_CONNECTED_SERVER_FAILED;
+		const static String GUI_LOADING_PAGE_PLAYER_LOGIN_LOGGINGIN;
+		const static String GUI_LOADING_PAGE_PLAYER_LOGIN_FAILURE;
+		const static String GUI_LOADING_PAGE_PLAYER_LOGIN_TOKEN_ERROR;
+		const static String GUI_LOADING_PAGE_PLAYER_LOGIN_GET_USER_ATTR_FAIL;
+		const static String GUI_LOADING_PAGE_PLAYER_LOGIN_WAIT_ROLE_ATTR_FAIL;
+		const static String GUI_LOADING_PAGE_PLAYER_LOGIN_RESPONSE_TIMEOUT;
+		const static String GUI_LOADING_PAGE_DOWNLOAD_MAP_LOADING;
+		const static String GUI_LOADING_PAGE_DOWNLOAD_MAP_FAILURE; 
+		const static String GUI_LOADING_PAGE_LOAD_WORLD;
+		const static String GUI_LOADING_PAGE_LOAD_TERRAIN;
+		const static String GUI_CHEST_INVENTORY;
+		const static String GUI_CHEST_SMALL_CHEST;
+		const static String GUI_CHEST_LARGE_CHEST; 
+		const static String GUI_CLOSE;
+		const static String GUI_SURE;
+		const static String GUI_CANCEL;
+		const static String GUI_REBIRTH;
+		const static String GUI_BACK;
+		const static String GUI_MESSAGE_DEATH;
+		const static String GUI_MESSAGE_NETWORK_CONNECTION_DISCONNECT;
+		const static String GUI_MESSAGE_NETWORK_CONNECTION_NETWORK_ERROR;
+		const static String GUI_MESSAGE_NETWORK_CONNECTION_KICK_OUT;
+		const static String GUI_MESSAGE_ACCOUNT_BE_KICKED;
+		const static String GUI_MESSAGE_NETWORK_SERVER_CLOSE_CONNECTION;
+		const static String GUI_MESSAGE_EXIT_GAME;
+		const static String GUI_GAME_SETTING;
+		const static String GUI_BACK_GAME;
+		const static String GUI_EXIT_GAME;
+		const static String GUI_SETTING_VISUAL_ANGLE;
+		const static String GUI_SETTING_LUMINANCE;
+		const static String GUI_SETTING_HORIZON;
+		const static String GUI_SETTING_VOLUME;
+		const static String GUI_SETTING_GUI_SIZE;
+		const static String GUI_SETTING_CAMERA_SENSITIVE; 
+		const static String GUI_SETTING_JUMP_SNEAK_TOGGLE;
+		const static String GUI_SETTING_POLE_STATE_TOGGLE;
+		const static String GUI_SETTING_FPS;
+		const static String GUI_SETTING;
+		const static String GUI_CHAT_SEND;
+		const static String TOOL_BAR_PLAYER_LIST_MUNBER_NAME;
+		const static String TOOL_BAR_PLAYER_LIST_MUNBER_VALUE;
+		const static String DEAD_SUMMARY_TITLE;
+		const static String DEAD_SUMMARY_RANK;
+		const static String DEAD_SUMMARY_REWARD;
+		const static String GUI_EXIT;
+		const static String DEAD_SUMMARY_WATCH_BATTLE;
+		const static String GUI_SHARE;
+		const static String GUI_ADVERTISE;
+		const static String GUI_ADVERTISE_TIP;
+		const static String GUI_CONTINUE;
+		const static String GUI_BACK_HALL;
+		const static String FINAL_SUMMARY_RANK;
+		const static String FINAL_SUMMARY_PLAYER;
+		const static String FINAL_SUMMARY_REWARD;
+		const static String FINAL_SUMMARY_SCORE;
+		const static String GUI_SHOP_TITLE;
+		const static String GUI_SHOP_TAB_TOOL;
+		const static String GUI_SHOP_TAB_ARMOR;
+		const static String GUI_SHOP_TAB_ARMS;
+		const static String GUI_SHOP_TAB_BLOCK;
+		const static String GUI_SHOP_TAB_FOOD;
+		const static String GUI_SHOP_TAB_OTHERS;
+		const static String GUI_SHOP_TAB_UPGRADE;
+		const static String GUI_SHOP_TAB_SKILL_BOOK_FRAGMENTATION;
+		const static String GUI_SHOP_TAB_SKILL_BOOK;
+		const static String GUI_SHOP_TAB_SELL;
+		const static String GUI_SHOP_TAB_SUIT;
+		const static String GUI_SHOP_TAB_COLOR;
+		const static String GUI_SHOP_TAB_WOOD;
+		const static String GUI_SHOP_TAB_STONE;
+		const static String GUI_SHOP_TAB_METAL;
+		const static String GUI_SHOP_TAB_POTION;
+		const static String GUI_GAME_LOADING;
+		const static String DEFAULT_MERCHANT_NAME;
+		const static String RED_MERCHANT_NAME;
+		const static String BLUE_MERCHANT_NAME;
+		const static String GREEN_MERCHANT_NAME;
+		const static String YELLOW_MERCHANT_NAME;
+		const static String PURPLE_MERCHANT_NAME;
+		const static String ORANGE_MERCHANT_NAME;
+		const static String INVENTORY_PANEL_ALL;
+		const static String INVENTORY_PANEL_EQUIPMENT;
+		const static String INVENTORY_PANEL_NEATEN;
+		const static String INVENTORY_PANEL_MATERIALS;
+		const static String CRAFTING_PANEL_MAKE;
+		const static String LACK_OF_MONEY;
+		const static String HAS_NO_GUN;
+		const static String SHOP_BTN_BUY;
+		const static String SHOP_BTN_SELECT;
+		const static String SHOP_BTN_UNLOCK;
+		const static String GUI_MAIN_WATCHING_BATTLE;
+		const static String WAIT_REBIRTH;
+		const static String GUI_TEAM_RED;
+		const static String GUI_TEAM_BLUE;
+		const static String GUI_TEAM_YELLOW;
+		const static String GUI_TEAM_GREEN;
+		const static String GUI_CHECK_VERSION_FAILURE;
+		const static String GUI_CHECKING_VERSION;
+		const static String GUI_TEAM_CIVILIAN;
+		const static String GUI_TEAM_SHERIFF;
+		const static String GUI_TEAM_MURDERER;
+		const static String GUI_STR_GUN_HARM;
+		const static String GUI_STR_GUN_BULLET;
+		const static String GUI_STR_GUN_RANGE;
+		const static String GUI_STR_GUN_FIRING_RATE; 
+		const static String GUI_STR_GUN_DEVIATION;
+		const static String GUI_STR_GUN_RANGE_VALUE;
+		const static String GUI_STR_GUN_FIRING_RATE_VALUE;
+		const static String GUI_STR_GUN_DEVIATION_VALUE;
+		const static String GUI_STR_GUN_DETAILS_TEXT;
+		const static String GUI_STR_APP_SHOP_SHOP;
+		const static String GUI_STR_APP_SHOP_LIMIT;
+		const static String GUI_STR_APP_SHOP_INSUFFICIENT_INVENTORY;
+		const static String GUI_STR_APP_SHOP_INVENTORY_IS_FULL;
+		const static String GUI_SUMMARY_REWARD_TIP_FIRST;
+		const static String GUI_SUMMARY_REWARD_TIP_SECOND;
+		const static String GUI_STR_SUPER_SHOP_SHOP;
+
+		const static String GUI_JAIL_BREAK_ROLE_CHOICE_POLICE_TIP; 
+		const static String GUI_JAIL_BREAK_ROLE_CHOICE_BANDIT_TIP;
+		const static String GUI_JAIL_BREAK_ROLE_CHOICE_ENTER_GAME;
+		const static String GUI_JAIL_BREAK_ROLE_CHOICE_TITLE;
+		const static String GUI_JAIL_BREAK_ROLE_CHOICE_TITLE_POLICE;
+		const static String GUI_JAIL_BREAK_ROLE_CHOICE_TITLE_BANDIT;
+
+		const static String VEHICLE_LOCKED;
+		const static String VEHICLE_FULL_LOADED;
+		const static String GUI_DIALOG_TIP_TITLE_VEHICLE;
+		const static String GUI_DIALOG_TIP_CONTENT_UNLOCK_VEHICLE;
+		const static String GUI_DIALOG_TIP_CONTENT_UNLOCK_COMMODITY;
+		const static String GUI_DIALOG_TIP_CONTENT_CHANGE_ACTORT;
+		const static String GUI_DIALOG_TIP_TITLE_CHANGE_ACTORT;
+		const static String GUI_DIALOG_TIP_BTN_GET_CURRENCY;
+		const static String GUI_DIALOG_TIP_BTN_CANCEL;
+		const static String GUI_DIALOG_TIP_BTN_SURE;
+		const static String GUI_DIALOG_TIP_BTN_UNLOCK;
+		const static String GUI_DIALOG_TIP_BTN_CHANGE_ACTORT;
+		const static String GUI_DIALOG_TIP_TITLE_TIP;
+		const static String DOOR_HAS_NO_KEY;
+		const static String GUI_DIALOG_TIP_CONTENT_GO_APP_SHOP;
+		const static String GUI_DIALOG_TIP_CONTENT_GO_NPC_MERCHANT;
+		const static String GUI_BUY_GOODS_SUCCESSFUL;
+		const static String GUI_BUY_GOODS_FAILURE;
+		const static String GUI_DIALOG_TIP_REVIVE_MSG;
+		const static String GUI_DIALOG_TIP_REVIVE_CANCEL;
+		const static String GUI_DIALOG_TIP_REVIVE_SURE;
+		const static String WORDART_PLAYER_LIST;
+		const static String WORDART_ACHIEVEMENT;
+		const static String WORDART_COURSE;
+		const static String WORDART_GAME_SETTING;
+		const static String WORDART_GAME_OTHER_SETTING;
+		const static String WORDART_EXIT_GAME;
+		const static String WORDART_RESUME_GAME;
+		const static String WORDART_COMPOUND;
+		const static String WORDART_ROLE;
+		const static String WORDART_BAG;
+		const static String WORDART_INVENTORY_TABS;
+		const static String WORDART_CHEST;
+		const static String WORDART_SHOP_TILE_NAME;
+		const static String WORDART_WORKBENCH;
+		const static String WORDART_SETTLEMENT;
+		const static String GUI_RANK_SCORE;
+		const static String GUI_RANK_DAY_RANK;
+		const static String GUI_RANK_WEEK_RANK;
+		const static String GUI_RANK_SELF_SCORE;
+		const static String DEFAULT_RANK_NAME;
+		const static String GUI_DIALOG_BTN_UPGRADE_BAG;
+		const static String DEAD_SUMMARY_ELIMINATED_RANK;
+		const static String DEAD_SUMMARY_CHICKEN_TIP;
+		const static String DEAD_SUMMARY_CHICKEN_TIP_LLUCK;
+		const static String TOOL_BAR_MEMBER_LEFT;
+		const static String TOOL_BAR_KILL_NUMBER;
+		const static String GUI_PLAYER_LIST_ITEM_ADD_FRIEND;
+		const static String GUI_PLAYER_LIST_ITEM_ADD_FRIEND_MSG_SENT;
+		const static String GUI_PLAYER_LIST_ITEM_ADD_FRIEND_MSG_SEND_FAILURE;
+		const static String GUI_PLAYER_LIST_ITEM_ADD_FRIEND_MSG_AGREE_FAILURE;
+		const static String GUI_PLAYER_LIST_ITEM_ADD_FRIEND_BTN_AGREE;
+		const static String GUI_PLAYER_LIST_ITEM_ADD_FRIEND_BTN_IGNORE;
+		const static String GUI_PLAYER_LIST_ITEM_ADD_FRIEND_MSG;
+		const static String GUI_RANK_SAND_DIGGER_TITLE_NAME;
+		const static String GUI_RANK_DEFAULT_TITLE_NAME;
+		const static String GUI_RANK_VICE_TITLE_LEFT_NAME ;
+		const static String GUI_RANK_VICE_TITLE_RIGHT_NAME;
+
+		const static String GUI_TIP_PICK_UP_GOODS_TITLE;
+		const static String GUI_TIP_PICK_UP_GOODS_CONTENT;
+		const static String GUI_TIP_PICK_UP_GOODS_BTN_SURE;
+		const static String GUI_TIP_PICK_UP_GOODS_NOT_EXIST;
+		const static String GUI_TIP_PICK_UP_GOODS_PAY_FAILURE;
+		const static String GUI_RANK_MY_RANK;
+		const static String GUI_RANK_JAIL_BREAK_HERO_COPS;
+		const static String GUI_RANK_JAIL_BREAK_TOP_WANTED;
+		const static String GUI_RANK_JAIL_BREAK_MY_HERO_COPS;
+		const static String GUI_RANK_JAIL_BREAK_MY_TOP_WANTED;
+		const static String GUI_RANK_JAIL_BREAK_LEFT_SCORE;
+		const static String GUI_RANK_JAIL_BREAK_RIGHT_SCORE;
+		const static String GUI_HIDE_AND_SEEK_GAME_TIME_INFO;
+
+		const static String DEFAULT_SEESION_NAME;
+		const static String GUI_DIALOG_TIP_BTN_SURE_GET_MANOR;
+		const static String GUI_DIALOG_TIP_CONTENT_GET_MANOR;
+		const static String GUI_DIALOG_TIP_CONTENT_SELL_MANOR;
+		const static String GUI_DIALOG_TIP_CONTENT_SURE_SELL_MANOR;
+
+		const static String GUI_MANOR_TITLE_NAME;
+		const static String GUI_MANOR_RADIO_INFO;
+		const static String GUI_MANOR_RADIO_HOUSE;
+		const static String GUI_MANOR_RADIO_FURNITURE;
+		const static String GUI_MANOR_RADIO_MESSAGE;
+		const static String GUI_MANOR_INFO_BTN_TELEPORT;
+		const static String GUI_MANOR_INFO_BTN_UPGRADE;
+
+		const static String GUI_MANOR_INFO_GROUND;
+		const static String GUI_MANOR_INFO_ROSE;
+		const static String GUI_MANOR_INFO_SEED;
+		const static String GUI_MANOR_INFO_CHARM;
+		const static String GUI_MANOR_INFO_VALUE;
+
+		const static String GUI_MANOR_HOUSE_BTN_BUY;
+		const static String GUI_MANOR_HOUSE_BTN_BUILD;
+		const static String GUI_MANOR_FURNITURE_BTN_BUY;
+		const static String GUI_MANOR_FURNITURE_BTN_USE;
+		const static String GUI_MANOR_FURNITURE_BTN_RECYCLE;
+		const static String GUI_MANOR_UPGRADE_INFO_GROUND;
+		const static String GUI_MANOR_UPGRADE_INFO_ROSE;
+		const static String GUI_MANOR_UPGRADE_INFO_SEED;
+		const static String GUI_MANOR_UPGRADE_INFO_CHARM;
+		const static String GUI_MANOR_UPGRADE_TITLE;
+		const static String GUI_MANOR_UPGRADE_EXPENDITURE;
+		const static String GUI_MANOR_HOUSE_NOT_CAN_UNLOCK;
+		const static String GUI_BACK_PLATFORM_TOP_UP;
+		const static String GUI_TIP_NEED_CURRENCY;
+		const static String GUI_NEED_BACK_PLATFORM_TOP_UP;
+		const static String GUI_MANOR_MESSAGE_BTN_GIVE;
+		const static String GUI_MANOR_MESSAGE_BTN_CALL_ON;
+		const static String GUI_MANOR_GIVE_ROSE;
+		const static String GUI_MANOR_CALL_ON;
+		const static String GUI_MANOR_MAX_LEVEL;
+		const static String GUI_MANOR_BUILD_HOUSE_TIP;
+		const static String GUI_MANOR_TARGET_USER_NOT_MANOR;
+		const static String GUI_MANOR_RECEIVE_FAILURE;
+		const static String GUI_MANOR_SELL_FAILURE;
+		const static String GUI_MANOR_SELL_SUCCEED;
+		const static String GUI_MANOR_SELL_FAILURE_BY_TIMES;
+
+		const static String GUI_MANOR_GIVE_ROSE_SUCCEED;
+		const static String GUI_MANOR_GIVE_ROSE_FAILURE;
+		const static String GUI_MANOR_GIVE_ROSE_FAILURE_NOT_MANOR;
+		const static String GUI_MANOR_GIVE_ROSE_FAILURE_NUM_IS_ZERO;
+		const static String GUI_MANOR_MESSAGE_GIVE_ROSE_TIP;
+		const static String GUI_MANOR_MESSAGE_VEGETEAL_TIP;
+		const static String GUI_MANOR_MESSAGE_CALL_ON_TIP;
+		const static String GUI_GAME_SETTING_BACKGROUND_MUSIC;
+		const static String GUI_CHECK_POINT_NUMBER;
+		const static String GUI_SURPLUS_MONSTER;
+		const static String GUI_SURPLUS_CHECK_POINT_NUMBER;
+		const static String GUI_COUNT_DOWN_INFO;
+		const static String TOOL_BAR_REAL_TIME_RANK_TITLE_RANK_ID;
+		const static String TOOL_BAR_REAL_TIME_RANK_TITLE_NAME;
+		const static String TOOL_BAR_REAL_TIME_RANK_TITLE_LEV;
+		const static String TOOL_BAR_REAL_TIME_RANK_TITLE_KILLS;
+		const static String TOOL_BAR_REAL_TIME_RANK_TITLE_GOLD;
+		const static String GUI_BOSS_LIFE;
+		const static String GUI_RANK_CREEPY_ALIENS_TOTAL_CLEARANCE ;
+		const static String GUI_RANK_CREEPY_ALIENS_WEEK_CLEARANCE ;
+		const static String GUI_RANK_CREEPY_ALIENS_TOTAL_CHECK_POINT ;
+		const static String GUI_RANK_CREEPY_ALIENS_WEEK_CHECK_POINT ;
+		const static String GUI_RANK_CREEPY_ALIENS_MY_TOTAL_CHECK_POINT;
+		const static String GUI_RANK_CREEPY_ALIENS_MY_WEEK_CHECK_POINT;
+		const static String GUI_RANK_CREEPY_ALIENS_MY_CHECK_POINT_NUM;
+
+		const static String GUI_SHOP_DONT_BUY;
+		const static String GUI_SHOP_HAS_GET;
+		const static String GUI_SHOP_HAS_USE; 
+		const static String GUI_SHOP_SWITCH;
+		const static String TOOL_BAR_REAL_TIEM_RANK_BTN_NAME;
+		const static String GUI_SHOP_GOODS_TIP;
+		const static String GUI_SHOP_TIP_MAX_LEVEL;
+		const static String GUI_BASEMENT_LIFE;
+		const static String GUI_MANOR_CALL_ON_FAILURE;
+		const static String GUI_MANOR_TP_FAILURE;
+		const static String GUI_MANOR_OPERATION_FAILURE;
+		const static String GUI_MANOR_GIVE_ROSE_FAILURE_GIVEN;
+		const static String GUI_MANOR_UPGRADE_FAILURE;
+		const static String GUI_MANOR_GET_ALREADY_EXISTS;
+		const static String GUI_MANOR_SELL_NOT_EXISTS;
+		const static String GUI_MANOR_CALL_ON_IN_VEHICLE;
+		const static String GUI_MANOR_CALL_TP_IN_VEHICLE;
+		const static String GUI_MANOR_FURNITURE_OPERATION_TIP;
+		const static String GUI_MANOR_IS_NOT_LOAD;
+		const static String GUI_MANOR_EDIT_BAN_GET_ON;
+		const static String GUI_MANOR_IS_FURNITURE_ACTOR;
+
+		const static String TOOL_BAR_BUILDWAR_TTILE;
+		const static String TOOL_BAR_BUILDWAR_PLAYERNUM;
+		const static String TOOL_BAR_BUILDWAR_LEFTTIME;
+		const static String TOOL_BAR_BUILDWAR_GRADE;
+		const static String GUI_BUILD_WAR_GUESS_RESULT_BUTTON;
+		const static String GUI_BUILD_WAR_GUESS_ITEM_VISIT_BUTTON;
+		const static String GUI_BUILD_WAR_GUESS_ITEM_GUESS_BUTTON;
+		const static String GUI_BUILD_WAR_GUESS_ITEM_HAS_GUESS_BUTTON;
+		const static String GUI_BUILD_WAR_GUESS_TITLE;
+		const static String GUI_BUILD_WAR_GUESS_SUC;
+		const static String GUI_BUILD_WAR_GUESS_TIP;
+		const static String GUI_BUILD_WAR_GUESS_REWARD_TITLE;
+		const static String GUI_BUILD_WAR_GUESS_RESULT_TITLE;
+		const static String GUI_BUILD_WAR_MY_RANK_TITLE;
+		const static String GUI_BUILD_WAR_MY_GUESS_TITLE;
+		const static String GUI_HAVE_ALREADY_GOT_BLOCK;
+
+		const static String GUI_PLAYER_OPERATION_GREETINGS;
+		const static String GUI_TEAM_RESOURCES_MAX_TEAM_POOL;
+		const static String GUI_TEAM_RESOURCES_MY_TEAM_POOL;
+		const static String GUI_TEAM_RESOURCES_OTHER_TEAM_POOL;
+		const static String GUI_SETTLEMENT_JEWEL_KNIGHT;
+		const static String GUI_JEWEL_KNIGHT_GAME_NAME;
+		const static String GUI_PLAYER_OPERATION_GREETINGS_MESSAGE;
+		const static String GUI_BUILD_PROGRESS;
+		const static String GUI_SHOP_TAB_ENCHANTMENT;
+		const static String SHOP_BTN_HAVE_BOUGHT;
+		const static String GUI_RANK_MY_RANK_NOT_RANK;
+		const static String GUI_KILL_MSG_ITEM_MESSAGE;
+		const static String GUI_SHOP_TAB_SUPER;
+
+		const static String GUI_TEAM_SNOWMANHP_MY_TEAM_POOL;
+		const static String GUI_TEAM_SNOWMANHP_OTHER_TEAM_POOL;
+
+		const static String GUI_RANCH_MAIN_MAIN;
+		const static String GUI_RANCH_MAIN_HOUSE;
+		const static String GUI_RANCH_MAIN_STORAGE;
+		const static String GUI_RANCH_MAIN_FACTORY;
+		const static String GUI_RANCH_MAIN_FARMING;
+		const static String GUI_RANCH_MAIN_COMMUNITY;
+		const static String GUI_RANCH_MAIN_ACHIEVEMENT;
+		const static String GUI_RANCH_RANK_MY_RANK;
+		const static String GUI_BTN_CLICK_CONTINUE;
+		const static String GUI_RANCH_HOUSE_REBUILD;
+		const static String GUI_RANCH_HOUSE_SCIENCE;
+		const static String GUI_BTN_BUY_ALL;
+		const static String GUI_RANCH_HOUSE_UPGRADE;
+		const static String GUI_RANCH_STORAGE_ALL;
+		const static String GUI_RANCH_STORAGE_FARMING;
+		const static String GUI_RANCH_STORAGE_MANUFACTURE;
+		const static String GUI_RANCH_STORAGE_TOOL;
+		const static String GUI_RANCH_STORAGE_MACHINE;
+		const static String GUI_RANCH_STORAGE_BUILDING;
+		const static String GUI_RANCH_STORAGE_PARTS;
+		const static String GUI_RANCH_STORAGE_CAPACITY;
+		const static String GUI_RANCH_TIME_TIP_DESC;
+		const static String GUI_RANCH_TIME_TIP_SURE;
+		const static String GUI_RANCH_TIME_TIP_EXTEND;
+		const static String GUI_RANCH_TIME_TIP_LEFT_TIME;
+		const static String GUI_RANCH_MAIN_ORDER;
+		const static String GUI_RANCH_UNLOCK_LEVEL;
+
+		const static String GUI_DIALOG_TIP_RANCHER_EXPLORE_BEGIN;
+		const static String TOOL_BAR_RANCHEX_LEFTTIME;
+		const static String TOOL_BAR_RANCHEX_ROOM_INFO;
+		const static String TOOL_BAR_RANCHEX_BOX_INFO;
+		const static String GUI_DIALOG_TIP_RANCHER_EXPLORE_TASK_FINISH;
+		const static String TOOL_BAR_RANCHEX_TASK_INFO;
+		const static String TOOL_BAR_RANCHEX_TASK_FINISH_COLOR;
+		const static String TOOL_BAR_RANCHEX_TASK_NOT_FINISH_COLOR;
+		const static String TOOL_BAR_RANCHEX_TASK_TITLE;
+		const static String GUI_USEITEM;
+
+		const static String GUI_DIALOG_TIP_KEEP_ITEM_MSG;
+		const static String GUI_DIALOG_TIP_KEEP_ITEM_SURE;
+		const static String GUI_DIALOG_TIP_KEEP_ITEM_CANCEL;
+
+		const static String GUI_ENCHANTMENT_TABLE_TITLE;
+		const static String GUI_ENCHANTMENT_BTN_TXT;
+		const static String GUI_LACK_ENCHANTMENT_ITEM;
+
+		const static String GUI_DIALOG_TIP_ENCHANTMENT_QUICK;
+
+		const static String GUI_TIGER_LOTTERY_CHOOSE;
+		const static String GUI_TIGER_LOTTERY_AGAIN;
+		const static String GUI_TIGER_LOTTERY_LOCK;
+
+		const static String GUI_HIDEANDSEEKHALLRESULT_SURE;
+		const static String GUI_HIDEANDSEEKHALLRESULT_AGAIN;
+		const static String GUI_CLICK_USE;
+		
+		const static String GUI_BIRD_PERSONAL_SHOP;
+		const static String GUI_BIRD_PERSONAL_SHOP_DETAILS_INFO;
+		const static String GUI_BIRD_PERSONAL_SHOP_BUY;
+		const static String GUI_BIRD_PERSONAL_SHOP_ALREADY_BUY;
+		const static String GUI_BIRD_ATLAS;
+		const static String GUI_BIRD_ACTIVITY;
+		const static String GUI_BIRD_ACTIVITY_BUTTON;		
+		const static String GUI_BIRD_ACTIVITY_DAY;
+		const static String GUI_BIRD_PACK_SORT;
+
+		const static String GUI_PIXEL_GUNHALL_MODE_BOTTOM_TIP;
+		const static String GUI_PIXEL_GUNHALL_MODE_BOTTOM_RANDOM_TIP;
+		const static String GUI_PIXEL_GUNHALL_MODE_NOT_OPEN_TIP_TITLE;
+		const static String GUI_PIXEL_GUNHALL_MODE_NOT_OPEN_TIP_TXT;
+		const static String GUI_PIXEL_GUNHALL_MODE_LOCK_TIP_TITLE;
+		const static String GUI_PIXEL_GUNHALL_MODE_LOCK_TIP_TXT;
+		const static String GUI_PIXEL_GUNHALL_MAP_NOT_OPEN_TIP_TITLE;
+		const static String GUI_PIXEL_GUNHALL_MAP_LOCK_TIP_TITLE;
+		const static String GUI_PIXEL_GUNHALL_BTN_STORAGE_TXT;
+		const static String GUI_PIXEL_GUNHALL_BTN_FIGHT_TXT;
+		const static String GUI_PIXEL_GUNHALL_MODE_TITLE_TXT;
+		const static String GUI_PIXEL_GUNHALL_MAP_FRAG_MISSION_TXT;
+
+		const static String GUI_PIXEL_GUNHALL_MAP_DIAMOND_LOCK_TIP_TITLE;
+		const static String GUI_PIXEL_GUNHALL_MAP_DIAMOND_LOCK_TIP_TXT;
+
+		const static String GUI_BTN_UNLOAD;
+		const static String GUI_BTN_EQUIPPED;
+		const static String GUI_GUN_STORE_NAME;
+		const static String GUI_GUN_STORE_QUICK_UPGRADE;
+
+		const static String GUI_PIXEL_GUN_1V1_TITLE;
+		const static String GUI_PIXEL_GUN_1V1_TIME_TITLE_TXT;
+		const static String GUI_PIXEL_GUN_1V1_FINAL_BOX_TITLE;
+		const static String GUI_PIXEL_GUN_1V1_ALLBOX_DES;
+		const static String GUI_PIXEL_GUN_1V1_BTN_REMATCH_TXT;
+		const static String GUI_PIXEL_GUN_1V1_BTN_EXIT_TXT;
+
+		const static String GUI_PIXEL_GUN_REVIVE_KILLNAME;
+		const static String GUI_PIXEL_GUN_PLAYER_USED_TXT;
+		const static String GUI_PIXEL_GUN_PLAYER_ARMS_TXT;
+		const static String GUI_PIXEL_GUN_PLAYER_GADGETS_TXT;
+		const static String GUI_PIXEL_GUN_BTN_BATTLE_TXT;
+		const static String GUI_PIXEL_GUN_BTN_BATTLE_TIME_TXT;
+
+		const static String GUI_CHEST_LOTTERY_TITLE;
+		const static String GUI_CHEST_LOTTERY_HINT;
+		const static String GUI_CHEST_REWARD_RESULT_TITLE;
+		const static String GUI_CHEST_LOTTERY_OPEN;
+
+		const static String GUI_ARMOR_UPGRADE;
+		const static String GUI_ARMOR_TEXT;
+		const static String GUI_ARMOR_DESCRIBE;
+		const static String GUI_UPGRADE;
+		const static String GUI_SPEEDUP;
+		const static String GUI_ARMOR_MAX;
+		const static String GUI_HALL_ARMOR_TITLE;
+		const static String GUI_ARMOR_BAR_TEXT;
+
+		const static String GUI_PIXEL_GUN_RESULT_TITLE;
+		const static String GUI_PIXEL_GUN_BLUE_TEAM_TITLE;
+		const static String GUI_PIXEL_GUN_RED_TEAM_TITLE;
+		const static String GUI_PIXEL_GUN_RESULT_RANK_TITLE;
+		const static String GUI_PIXEL_GUN_RESULT_DUAN_TITLE;
+		const static String GUI_PIXEL_GUN_RESULT_LV_TITLE;
+		const static String GUI_PIXEL_GUN_RESULT_NAME_TITLE;
+		const static String GUI_PIXEL_GUN_RESULT_KILL_TITLE;
+		const static String GUI_PIXEL_GUN_RESULT_REWARD_TITLE;
+		const static String GUI_PIXEL_GUN_RESULT_GOLD_TITLE;
+		const static String GUI_PIXEL_GUN_RESULT_BLOCKMAN_TITLE;
+		const static String GUI_PIXEL_GUN_RESULT_BTN_BACK;
+		const static String GUI_PIXEL_GUN_RESULT_BTN_NEXT;
+		const static String GUI_PIXEL_GUN_RESULT_BTN_REVENGE;
+		const static String GUI_PIXEL_GUN_LVUP_TITLE;
+		const static String GUI_PIXEL_GUN_LVUP_SURE_BTN;
+
+		const static String GUI_SEASON_RANK_TITLE;
+		const static String GUI_SEASON_RANK_COUNTDOWN;
+		const static String GUI_SEASON_RANK_REWARD;
+		const static String GUI_SEASON_RANK_HONOR;
+		const static String GUI_SEASON_RANK_BATTLE;
+		const static String GUI_SEASON_REWARD_TITLE;
+		const static String GUI_SEASON_REWARD_RANK;
+		const static String GUI_SEASON_REWARD_BOTTOM_HINT;
+		const static String GUI_SEASON_REWARD_LAST;
+		const static String GUI_SEASON_REWARD_CURRENT;
+		const static String GUI_SEASON_RULE_TITLE;
+		const static String GUI_SEASON_RULE_CONTENT;
+		const static String GUI_SEASON_RULE_BOTTOM_HINT;
+
+	};
+}
+
+#endif

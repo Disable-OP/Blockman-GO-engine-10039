@@ -1,0 +1,618 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "RanchBuildFarm",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                },
+                {
+                    "Name": "BackgroundColor",
+                    "Value": "0 0 0 0.501961"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "Layout",
+                    "Name": "RanchBuildFarm-Panel",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,-50},{0,648},{0,230}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "Touchable",
+                            "Value": "false"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "StretchType",
+                            "Value": "NineGrid"
+                        },
+                        {
+                            "Name": "StretchOffset",
+                            "Value": "100 100 100 100"
+                        },
+                        {
+                            "Name": "LayoutBackImage",
+                            "Value": "set:ranch_build.json image:farm_bg"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "StaticText",
+                            "Name": "RanchBuildFarm-Title",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,26},{1,0},{0,80}}"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "Name"
+                                },
+                                {
+                                    "Name": "Font",
+                                    "Value": "HT24"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextColor",
+                                    "Value": "0.627451 0.937255 0.360784 1"
+                                },
+                                {
+                                    "Name": "TextHorzAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextVertAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextShadow",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "TextLineExtraSpace",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Button",
+                            "Name": "RanchBuildFarm-Btn-Remove",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,10},{0,10},{0,115},{0,70}}"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextShadow",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "NormalImage",
+                                    "Value": "set:ranch_build.json image:remove"
+                                },
+                                {
+                                    "Name": "PushedImage",
+                                    "Value": "set:ranch_build.json image:remove"
+                                },
+                                {
+                                    "Name": "SoundName",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "HexgonTopImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonTopColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonSideImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonSideColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonOverlayerImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonOverlayerColor",
+                                    "Value": "1 1 1 1"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "ListHorizontal",
+                            "Name": "RanchBuildFarm-Queue-Items",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,18},{0,71},{1,-154},{0,317}}"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "ClipChild",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Button",
+                            "Name": "RanchBuildFarm-Btn-Buy-Queue",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,-18},{0,-18},{0,111},{0,117}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Right"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "NormalImage",
+                                    "Value": "set:ranch_build.json image:farm_add"
+                                },
+                                {
+                                    "Name": "PushedImage",
+                                    "Value": "set:ranch_build.json image:farm_add"
+                                },
+                                {
+                                    "Name": "SoundName",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "HexgonTopImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonTopColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonSideImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonSideColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonOverlayerImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonOverlayerColor",
+                                    "Value": "1 1 1 1"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "StaticImage",
+                                    "Name": "RanchBuildFarm-Queue-CurrencyIcon",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,-30},{0,-3},{0,5},{0,32}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Bottom"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Right"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "ImageName",
+                                            "Value": "set:jail_break.json image:jail_break_currency"
+                                        },
+                                        {
+                                            "Name": "HexgonTopImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonTopColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonSideImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonSideColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerColor",
+                                            "Value": "1 1 1 1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "RanchBuildFarm-Product",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,-33},{0,404},{0,41}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "StretchType",
+                                    "Value": "NineGrid"
+                                },
+                                {
+                                    "Name": "StretchOffset",
+                                    "Value": "63 63 0 0"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "StaticImage",
+                                    "Name": "RanchBuildFarm-Product-Bg",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,0},{1,0},{0,41}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Bottom"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "ImageName",
+                                            "Value": "set:ranch_build.json image:product_bg"
+                                        },
+                                        {
+                                            "Name": "HexgonTopImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonTopColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonSideImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonSideColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerColor",
+                                            "Value": "1 1 1 1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "ListHorizontal",
+                                    "Name": "RanchBuildFarm-Product-Items",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,-10},{1,-20},{1,-10}}"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "ClipChild",
+                                            "Value": "true"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "RanchBuildFarm-Recipe",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,170},{1,-160},{0,284}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "StretchType",
+                                    "Value": "NineGrid"
+                                },
+                                {
+                                    "Name": "StretchOffset",
+                                    "Value": "15 15 15 15"
+                                },
+                                {
+                                    "Name": "LayoutBackImage",
+                                    "Value": "set:ranch_build.json image:material_bg"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "ListHorizontal",
+                                    "Name": "RanchBuildFarm-Recipe-Items",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,0},{1,-20},{0,100}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "ClipChild",
+                                            "Value": "true"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Button",
+                            "Name": "RanchBuildFarm-Close",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,-15},{0,-4},{0,54},{0,90}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Right"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "NormalImage",
+                                    "Value": "set:ranch_main.json image:ranch_common_btn_close"
+                                },
+                                {
+                                    "Name": "PushedImage",
+                                    "Value": "set:ranch_main.json image:ranch_common_btn_close"
+                                },
+                                {
+                                    "Name": "SoundName",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "HexgonTopImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonTopColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonSideImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonSideColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonOverlayerImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonOverlayerColor",
+                                    "Value": "1 1 1 1"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Type": "Layout",
+                    "Name": "RanchBuildFarm-RecipeInfo",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{1,0},{0.5,90}}"
+                        },
+                        {
+                            "Name": "Visible",
+                            "Value": "false"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "RanchBuildOperation",
+                            "Name": "RanchBuildFarm-Operation",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,-2},{0,455},{0,388}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

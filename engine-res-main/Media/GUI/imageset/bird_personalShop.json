@@ -1,0 +1,83 @@
+{"frames": {
+
+"backgroud":
+{
+	"frame": {"x":169,"y":142,"w":1251,"h":644},
+	"offset": {"x":0,"y":0,"w":1251,"h":644},
+	"sourceSize": {"w":1251,"h":644}
+},
+"buyButtonNor":
+{
+	"frame": {"x":252,"y":0,"w":174,"h":58},
+	"offset": {"x":0,"y":0,"w":174,"h":58},
+	"sourceSize": {"w":174,"h":58}
+},
+"buyButtonPre":
+{
+	"frame": {"x":78,"y":0,"w":174,"h":58},
+	"offset": {"x":0,"y":0,"w":174,"h":58},
+	"sourceSize": {"w":174,"h":58}
+},
+"details":
+{
+	"frame": {"x":1056,"y":0,"w":120,"h":103},
+	"offset": {"x":0,"y":0,"w":120,"h":103},
+	"sourceSize": {"w":120,"h":103}
+},
+"details_two":
+{
+	"frame": {"x":1176,"y":0,"w":120,"h":103},
+	"offset": {"x":0,"y":0,"w":120,"h":103},
+	"sourceSize": {"w":120,"h":103}
+},
+"discount":
+{
+	"frame": {"x":0,"y":0,"w":78,"h":35},
+	"offset": {"x":0,"y":0,"w":78,"h":35},
+	"sourceSize": {"w":78,"h":35}
+},
+"image":
+{
+	"frame": {"x":1296,"y":0,"w":158,"h":142},
+	"offset": {"x":0,"y":0,"w":158,"h":142},
+	"sourceSize": {"w":158,"h":142}
+},
+"item":
+{
+	"frame": {"x":0,"y":142,"w":169,"h":217},
+	"offset": {"x":0,"y":0,"w":169,"h":217},
+	"sourceSize": {"w":169,"h":217}
+},
+"itemBack":
+{
+	"frame": {"x":931,"y":0,"w":125,"h":99},
+	"offset": {"x":0,"y":0,"w":125,"h":99},
+	"sourceSize": {"w":125,"h":99}
+},
+"itemBack_two":
+{
+	"frame": {"x":806,"y":0,"w":125,"h":99},
+	"offset": {"x":0,"y":0,"w":125,"h":99},
+	"sourceSize": {"w":125,"h":99}
+},
+"radioButtonNor":
+{
+	"frame": {"x":426,"y":0,"w":190,"h":72},
+	"offset": {"x":0,"y":0,"w":190,"h":72},
+	"sourceSize": {"w":190,"h":72}
+},
+"radioButtonPre":
+{
+	"frame": {"x":616,"y":0,"w":190,"h":72},
+	"offset": {"x":0,"y":0,"w":190,"h":72},
+	"sourceSize": {"w":190,"h":72}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "bird_personalShop.png",
+	"format": "RGBA8888",
+	"size": {"w":1454,"h":786},
+	"scale": "1"
+}
+}

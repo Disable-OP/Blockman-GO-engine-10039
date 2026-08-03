@@ -1,0 +1,320 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "GunStoreTab",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "StretchType",
+                    "Value": "NineGrid"
+                },
+                {
+                    "Name": "StretchOffset",
+                    "Value": "10 10 10 10"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "CheckBox",
+                    "Name": "GunStoreTab-Border",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "NormalImage",
+                            "Value": "set:gun_store.json image:tab_nor"
+                        },
+                        {
+                            "Name": "PushedImage",
+                            "Value": "set:gun_store.json image:tab_pre"
+                        },
+                        {
+                            "Name": "SoundName",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "HexgonTopImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonTopColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonSideImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonSideColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonOverlayerImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonOverlayerColor",
+                            "Value": "1 1 1 1"
+                        }
+                    ]
+                },
+                {
+                    "Type": "StaticImage",
+                    "Name": "GunStoreTab-Icon",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{0.9,0},{0.9,0}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "Touchable",
+                            "Value": "false"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "ImageName",
+                            "Value": "set:gun_store.json image:tab_1"
+                        },
+                        {
+                            "Name": "HexgonTopImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonTopColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonSideImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonSideColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonOverlayerImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonOverlayerColor",
+                            "Value": "1 1 1 1"
+                        }
+                    ]
+                },
+                {
+                    "Type": "StaticText",
+                    "Name": "GunStoreTab-Name",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{-0.05,0},{-0.1,0},{0.95,0},{0.1,0}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Bottom"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "Text",
+                            "Value": "步枪"
+                        },
+                        {
+                            "Name": "Font",
+                            "Value": "HT12"
+                        },
+                        {
+                            "Name": "Touchable",
+                            "Value": "false"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "TextHorzAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "TextVertAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "TextBorder",
+                            "Value": "true"
+                        },
+                        {
+                            "Name": "TextLineExtraSpace",
+                            "Value": "0"
+                        }
+                    ]
+                },
+                {
+                    "Type": "Button",
+                    "Name": "GunStoreTab-New-Count",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0.08,0},{0,0},{0.28,0},{0.3,0}}"
+                        },
+                        {
+                            "Name": "Font",
+                            "Value": "HT12"
+                        },
+                        {
+                            "Name": "Touchable",
+                            "Value": "false"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "NormalImage",
+                            "Value": "set:gun_store.json image:bg_new_count"
+                        },
+                        {
+                            "Name": "PushedImage",
+                            "Value": "set:gun_store.json image:bg_new_count"
+                        },
+                        {
+                            "Name": "SoundName",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "HexgonTopImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonTopColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonSideImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonSideColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonOverlayerImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonOverlayerColor",
+                            "Value": "1 1 1 1"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "StaticText",
+                            "Name": "GunStoreTab-New-Count-Text",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0.38,0},{0,0},{0.38,0}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "2"
+                                },
+                                {
+                                    "Name": "Font",
+                                    "Value": "HT12"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextColor",
+                                    "Value": "0.956863 0.956863 0.133333 1"
+                                },
+                                {
+                                    "Name": "TextHorzAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextVertAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextLineExtraSpace",
+                                    "Value": "0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

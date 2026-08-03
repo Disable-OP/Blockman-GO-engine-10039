@@ -1,0 +1,208 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "StoreAttributeItem",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,0},{0,32}}"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "StretchOffset",
+                    "Value": "10 10 10 10"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "StaticImage",
+                    "Name": "StorePropertyItem-Background",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{1,0},{0,28}}"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "StretchType",
+                            "Value": "NineGrid"
+                        },
+                        {
+                            "Name": "StretchOffset",
+                            "Value": "2 2 2 2"
+                        },
+                        {
+                            "Name": "ImageName",
+                            "Value": "set:gun_store.json image:bg_infos_item"
+                        },
+                        {
+                            "Name": "HexgonTopImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonTopColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonSideImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonSideColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonOverlayerImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonOverlayerColor",
+                            "Value": "1 1 1 1"
+                        }
+                    ]
+                },
+                {
+                    "Type": "StaticImage",
+                    "Name": "StoreAttributeItem-Icon",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{0,32},{0,28}}"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "HexgonTopImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonTopColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonSideImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonSideColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonOverlayerImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonOverlayerColor",
+                            "Value": "1 1 1 1"
+                        }
+                    ]
+                },
+                {
+                    "Type": "StaticText",
+                    "Name": "StoreAttributeItem-Text",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,32},{0,0},{0,32},{0,28}}"
+                        },
+                        {
+                            "Name": "Text",
+                            "Value": "多次射击"
+                        },
+                        {
+                            "Name": "Font",
+                            "Value": "HT12"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "TextVertAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "TextBorder",
+                            "Value": "true"
+                        },
+                        {
+                            "Name": "TextLineExtraSpace",
+                            "Value": "0"
+                        }
+                    ]
+                },
+                {
+                    "Type": "StaticText",
+                    "Name": "StoreAttributeItem-Value",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,-8},{0,0},{0,-8},{0,28}}"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Right"
+                        },
+                        {
+                            "Name": "Text",
+                            "Value": "50+15"
+                        },
+                        {
+                            "Name": "Font",
+                            "Value": "HT12"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "TextHorzAlignment",
+                            "Value": "Right"
+                        },
+                        {
+                            "Name": "TextVertAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "TextBorder",
+                            "Value": "true"
+                        },
+                        {
+                            "Name": "TextLineExtraSpace",
+                            "Value": "0"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        applicationId "com.sandboxol.clothes"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 1
+        versionName "0.0.1"
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('mineCraft.keystore')
+            storePassword '111111'
+            keyAlias 'fbzz'
+            keyPassword '111111'
+        }
+    }
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            jniDebuggable true
+        }
+        release {
+            minifyEnabled false
+            zipAlignEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            android.applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = "app-clothes-v${defaultConfig.versionName}-build-${defaultConfig.versionCode}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['./libs']
+        }
+    }
+
+    android {
+        useLibrary 'org.apache.http.legacy'
+    }
+}

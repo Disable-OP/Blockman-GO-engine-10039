@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "GB2312"?>
+<ActorTemplates>
+	<ActorTemplate name="g1041_chest_sign.actor" Originalscale="1 1 1" Skeleton="g1041_bone.skel" AttackScale="1" TextHeight="0" IsShowShadow="true" WoundBone="" WoundAngle="25" SelectedRingSize="1" SoundName1="" SoundName2="" SoundName3="" SoundName4="" SoundName5="" SoundFileNum="0" Volume="0.8" MinDistance="1" MaxDistance="16" IntervalTime="2" Alpha="1">
+		<BodyParts>
+			<BodyPart MasterName="body" SlaveName="1" DefaultUse="true" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_chest_lvl1_sign.skin" ChangeColor = "2.10195e-44 9.03838e-43 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="2" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_chest_lvl2_sign.skin" ChangeColor = "2.10195e-44 1.27238e-42 2.00608e+20 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="3" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_chest_lvl3_sign.skin" ChangeColor = "2.10195e-44 1.64092e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="4" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_chest_lvl4_sign.skin" ChangeColor = "2.10195e-44 2.00806e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+		</BodyParts>
+		<Skills>
+		</Skills>
+		<Anims>
+		</Anims>
+	</ActorTemplate>
+</ActorTemplates>

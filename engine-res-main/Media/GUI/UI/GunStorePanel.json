@@ -1,0 +1,30 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "GunStorePanel",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "StretchType",
+                    "Value": "NineGrid"
+                },
+                {
+                    "Name": "StretchOffset",
+                    "Value": "10 10 10 10"
+                }
+            ]
+        }
+    }
+}

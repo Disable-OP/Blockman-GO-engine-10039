@@ -1,0 +1,130 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "CarProgressTable",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                },
+                {
+                    "Name": "Touchable",
+                    "Value": "false"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "Layout",
+                    "Name": "CarProgressTable-ProgressList",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,-2},{0,55},{0,199},{0,191}}"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Right"
+                        },
+                        {
+                            "Name": "Touchable",
+                            "Value": "false"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "StretchType",
+                            "Value": "NineGrid"
+                        },
+                        {
+                            "Name": "LayoutBackImage",
+                            "Value": "set:car_progress.json image:car_progress_panel"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "CarProgress",
+                            "Name": "CarProgressTable-Yellow",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,1},{0,201},{0,46}}"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "CarProgress",
+                            "Name": "CarProgressTable-Green",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,46},{0,201},{0,91}}"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "CarProgress",
+                            "Name": "CarProgressTable-Red",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,91},{0,201},{0,136}}"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

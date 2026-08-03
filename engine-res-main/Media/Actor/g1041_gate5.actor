@@ -1,0 +1,74 @@
+<?xml version = "1.0" encoding = "GB2312"?>
+<ActorTemplates>
+	<ActorTemplate name="g1041_gate5.actor" Originalscale="1 1 1" Skeleton="g1041_reg_bone.skel" AttackScale="1" TextHeight="0" IsShowShadow="true" WoundBone="" WoundAngle="25" SelectedRingSize="1" SoundName1="" SoundName2="" SoundName3="" SoundName4="" SoundName5="" SoundFileNum="0" Volume="0.8" MinDistance="1" MaxDistance="16" IntervalTime="2" Alpha="1">
+		<BodyParts>
+			<BodyPart MasterName="body" SlaveName="1" DefaultUse="true" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_region_spider.skin" ChangeColor = "2.10195e-44 2.59801e-42 6.05053e+22 0" UVSpeed = "0 0">
+				</Skin>
+				<Effect>
+					<FileName value="test_red.effect"/>
+					<SocketName value="point2"/>
+					<Position_X value="-2"/>
+					<Position_Y value="-2.4"/>
+					<Position_Z value="-2"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="4.3"/>
+					<TimeScale value="1"/>
+					<Alpha value="1"/>
+				</Effect>
+				<StaticMesh>
+					<FileName value="4.mesh"/>
+					<SocketName value="point2"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="2" DefaultUse="true" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_region_spider.skin" ChangeColor = "2.10195e-44 3.16693e-42 1.68972e+22 0" UVSpeed = "0 0">
+				</Skin>
+				<Effect>
+					<FileName value="test effect.effect"/>
+					<SocketName value="g1041_reg_bone"/>
+					<Position_X value="0"/>
+					<Position_Y value="1.96313"/>
+					<Position_Z value="2.27704"/>
+					<yaw value="90"/>
+					<pitch value="90"/>
+					<roll value="0"/>
+					<scale value="4.3"/>
+					<TimeScale value="1"/>
+					<Alpha value="1"/>
+				</Effect>
+				<StaticMesh>
+					<FileName value="4.mesh"/>
+					<SocketName value="point2"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		</BodyParts>
+		<Skills>
+			<Skill Name="idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "g1041_reg_bone.anim" BeginTime = "0" Times = "-1" Length = "3.366" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+				<ActorScaleChange  beginScale = "1.4" endScale = "1.4" >
+				</ActorScaleChange>
+			</Skill>
+		</Skills>
+		<Anims>
+				<Anim Name="g1041_reg_bone.anim"/>
+		</Anims>
+	</ActorTemplate>
+</ActorTemplates>

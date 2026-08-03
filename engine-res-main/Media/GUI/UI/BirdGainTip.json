@@ -1,0 +1,268 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "BirdGainTip",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                },
+                {
+                    "Name": "VerticalAlignment",
+                    "Value": "Centre"
+                },
+                {
+                    "Name": "HorizontalAlignment",
+                    "Value": "Centre"
+                },
+                {
+                    "Name": "Touchable",
+                    "Value": "false"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "Layout",
+                    "Name": "BirdGainTip-Common",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{0.7703,0},{0.3041,0}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "Touchable",
+                            "Value": "false"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "StretchType",
+                            "Value": "NineGrid"
+                        },
+                        {
+                            "Name": "LayoutBackImage",
+                            "Value": "set:ranch_build.json image:get_items_tip"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "ListHorizontal",
+                            "Name": "BirdGainTip-Items",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,10},{0.8,0},{0,118}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "ClipChild",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "StaticText",
+                            "Name": "BirdGainTip-Title",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,20},{1,0},{0,50}}"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "获得物品"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextHorzAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextVertAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextShadow",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "TextLineExtraSpace",
+                                    "Value": "0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "Type": "Layout",
+                    "Name": "BirdGainTip-Lottery",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                        },
+                        {
+                            "Name": "BackgroundColor",
+                            "Value": "0 0 0 0.498039"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "ActorWindow",
+                            "Name": "BirdGainTip-BirdActor",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,100},{0,100},{0,100}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "Visible",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowRotateX",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowRotateY",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowRotateZ",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowScale",
+                                    "Value": "3"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "ActorWindow",
+                            "Name": "BirdGainTip-Actor",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,0},{0,100},{0,0}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowRotateX",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowRotateY",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowRotateZ",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowScale",
+                                    "Value": "1.5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

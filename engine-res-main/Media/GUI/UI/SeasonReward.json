@@ -1,0 +1,492 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "SeasonReward",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                },
+                {
+                    "Name": "BackgroundColor",
+                    "Value": "0 0 0 0.392157"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "StretchType",
+                    "Value": "NineGrid"
+                },
+                {
+                    "Name": "StretchOffset",
+                    "Value": "10 10 10 10"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "Layout",
+                    "Name": "SeasonReward-Border",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0.03,0},{0.78,0},{0.81,0}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "StretchType",
+                            "Value": "NineGrid"
+                        },
+                        {
+                            "Name": "StretchOffset",
+                            "Value": "80 80 60 20"
+                        },
+                        {
+                            "Name": "LayoutBackImage",
+                            "Value": "set:season_rank.json image:bg_honor_rule"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "StaticText",
+                            "Name": "SeasonReward-Title",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,0},{0,0},{0,50}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "Season Reward"
+                                },
+                                {
+                                    "Name": "Font",
+                                    "Value": "HT20"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextHorzAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextVertAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextBorder",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "TextLineExtraSpace",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Button",
+                            "Name": "SeasonReward-Close",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,-18},{0,18},{0,32},{0,68}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Right"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "NormalImage",
+                                    "Value": "set:season_rank.json image:btn_close"
+                                },
+                                {
+                                    "Name": "PushedImage",
+                                    "Value": "set:season_rank.json image:btn_close"
+                                },
+                                {
+                                    "Name": "SoundName",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "HexgonTopImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonTopColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonSideImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonSideColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonOverlayerImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonOverlayerColor",
+                                    "Value": "1 1 1 1"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "StaticText",
+                            "Name": "SeasonReward-Bottom-Hint",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,-18},{1,-100},{0,32}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "这是一个底部提示语"
+                                },
+                                {
+                                    "Name": "Font",
+                                    "Value": "HT12"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextColor",
+                                    "Value": "0.972549 0.996078 0.0705882 1"
+                                },
+                                {
+                                    "Name": "TextHorzAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextVertAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextBorder",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "TextLineExtraSpace",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "SeasonReward-Detail",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,-1},{0,-65},{1,-141},{0,5}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "StretchType",
+                                    "Value": "NineGrid"
+                                },
+                                {
+                                    "Name": "StretchOffset",
+                                    "Value": "4 4 4 4"
+                                },
+                                {
+                                    "Name": "LayoutBackImage",
+                                    "Value": "set:season_rank.json image:bg_rank_base_item"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "StaticText",
+                                    "Name": "SeasonReward-Rank-Text",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,0},{0.25,0},{1,0}}"
+                                        },
+                                        {
+                                            "Name": "Text",
+                                            "Value": "Rank 50"
+                                        },
+                                        {
+                                            "Name": "Font",
+                                            "Value": "HT20"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "TextHorzAlignment",
+                                            "Value": "Right"
+                                        },
+                                        {
+                                            "Name": "TextVertAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "TextBorder",
+                                            "Value": "true"
+                                        },
+                                        {
+                                            "Name": "TextLineExtraSpace",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Layout",
+                                    "Name": "SeasonReward-Rewards",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0.35,0},{0,0},{1,0},{0,45}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "SeasonReward-Content",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,-155},{1,-180},{1,-380}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "Layout",
+                                    "Name": "SeasonReward-Center",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,0},{0,220},{1,0}}"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticImage",
+                                            "Name": "SeasonReward-Arrow",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,30},{0,220},{0,142}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "ImageName",
+                                                    "Value": "set:season_rank.json image:honor_up_arrow"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Type": "SeasonHonorItem",
+                                            "Name": "SeasonReward-Left-Honor",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,-163},{0,0},{0,0},{1,0}}"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Type": "SeasonHonorItem",
+                                            "Name": "SeasonReward-Right-Honor",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,163},{0,0},{0,326},{1,0}}"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Right"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

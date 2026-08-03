@@ -1,0 +1,2 @@
+Lua 目录拷贝到和luajit同级，src/jit目录和luajit同级
+然后运行output.bat

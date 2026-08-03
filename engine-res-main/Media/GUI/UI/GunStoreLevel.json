@@ -1,0 +1,30 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "GunStoreLevel",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,0},{0,45}}"
+                },
+                {
+                    "Name": "Touchable",
+                    "Value": "false"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "StretchType",
+                    "Value": "NineGrid"
+                }
+            ]
+        }
+    }
+}

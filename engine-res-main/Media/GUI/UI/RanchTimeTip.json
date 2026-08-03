@@ -1,0 +1,576 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "RanchTimeTip",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                },
+                {
+                    "Name": "BackgroundColor",
+                    "Value": "0 0 0 0.501961"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "Layout",
+                    "Name": "RanchTimeTip-Content",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{0,652},{0,465}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "Touchable",
+                            "Value": "false"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "StretchType",
+                            "Value": "NineGrid"
+                        },
+                        {
+                            "Name": "StretchOffset",
+                            "Value": "55 55 90 120"
+                        },
+                        {
+                            "Name": "LayoutBackImage",
+                            "Value": "set:ranch_main.json image:ranch_common_bg"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "StaticText",
+                            "Name": "RanchTimeTip-Title-Name",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,18},{1,0},{0,62}}"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "扩建中"
+                                },
+                                {
+                                    "Name": "Font",
+                                    "Value": "HT20"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextColor",
+                                    "Value": "0.627451 0.933333 0.360784 1"
+                                },
+                                {
+                                    "Name": "TextHorzAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextVertAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextBorder",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "TextBorderColor",
+                                    "Value": "0.235294 0.0862745 0.0313726 1"
+                                },
+                                {
+                                    "Name": "TextLineExtraSpace",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Button",
+                            "Name": "RanchTimeTip-Btn-Close",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,-15},{0,-4},{0,45},{0,86}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Right"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "NormalImage",
+                                    "Value": "set:ranch_main.json image:ranch_btn_close"
+                                },
+                                {
+                                    "Name": "PushedImage",
+                                    "Value": "set:ranch_main.json image:ranch_btn_close"
+                                },
+                                {
+                                    "Name": "SoundName",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "HexgonTopImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonTopColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonSideImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonSideColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonOverlayerImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonOverlayerColor",
+                                    "Value": "1 1 1 1"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "RanchTimeTip-Time",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,1},{0,100},{1,-67},{0.5,100}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "StaticImage",
+                                    "Name": "RanchTimeTip-Time-Icon",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,50},{0,0},{0,198},{0,158}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "ImageName",
+                                            "Value": "set:ranch_main.json image:ranch_time_icon"
+                                        },
+                                        {
+                                            "Name": "HexgonTopImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonTopColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonSideImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonSideColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerColor",
+                                            "Value": "1 1 1 1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "ProgressBar",
+                                    "Name": "RanchTimeTip-Time-Left",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{-0.118,0},{0,-20},{0.3594,0},{0,3}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Right"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "StretchType",
+                                            "Value": "NineGrid"
+                                        },
+                                        {
+                                            "Name": "StretchOffset",
+                                            "Value": "10 10 8 8"
+                                        },
+                                        {
+                                            "Name": "Progress",
+                                            "Value": "0.5"
+                                        },
+                                        {
+                                            "Name": "ProgressBackImage",
+                                            "Value": "set:ranch_main.json image:ranch_time_nor"
+                                        },
+                                        {
+                                            "Name": "ProgressImage",
+                                            "Value": "set:ranch_main.json image:ranch_time_pre"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticText",
+                                            "Name": "RanchTimeTip-Time-Left-Value",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,-40},{1,0},{1,-40}}"
+                                                },
+                                                {
+                                                    "Name": "Text",
+                                                    "Value": "1111"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "TextHorzAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "TextVertAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "TextShadow",
+                                                    "Value": "true"
+                                                },
+                                                {
+                                                    "Name": "TextLineExtraSpace",
+                                                    "Value": "0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "StaticText",
+                                    "Name": "RanchTimeTip-Time-Msg",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{-0.118,0},{0,30},{0.3594,0},{0,74}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Right"
+                                        },
+                                        {
+                                            "Name": "Text",
+                                            "Value": "是否使用魔方进行加速"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "TextColor",
+                                            "Value": "0.388235 0.223529 0.0392157 1"
+                                        },
+                                        {
+                                            "Name": "TextWordWrap",
+                                            "Value": "true"
+                                        },
+                                        {
+                                            "Name": "TextLineExtraSpace",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Button",
+                            "Name": "RanchTimeTip-Btn-Sure",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,-30},{0,302},{0,35}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "立即完成"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextShadow",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "NormalImage",
+                                    "Value": "set:ranch_main.json image:ranch_common_btn_sure"
+                                },
+                                {
+                                    "Name": "PushedImage",
+                                    "Value": "set:ranch_main.json image:ranch_common_btn_sure"
+                                },
+                                {
+                                    "Name": "SoundName",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "HexgonTopImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonTopColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonSideImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonSideColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonOverlayerImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonOverlayerColor",
+                                    "Value": "1 1 1 1"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "StaticImage",
+                                    "Name": "RanchTimeTip-Currency-Icon",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,20},{0,0},{0,45},{0,25}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "ImageName",
+                                            "Value": "set:app_shop.json image:app_shop_diamonds_mods"
+                                        },
+                                        {
+                                            "Name": "HexgonTopImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonTopColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonSideImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonSideColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerColor",
+                                            "Value": "1 1 1 1"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticText",
+                                            "Name": "RanchTimeTip-Currency-Value",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,40},{0,0},{0,80},{1,0}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Right"
+                                                },
+                                                {
+                                                    "Name": "Text",
+                                                    "Value": "100"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "TextShadow",
+                                                    "Value": "true"
+                                                },
+                                                {
+                                                    "Name": "TextLineExtraSpace",
+                                                    "Value": "0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

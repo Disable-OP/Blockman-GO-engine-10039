@@ -1,0 +1,352 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "BirdLottery",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,-1},{1,0},{1,-1}}"
+                },
+                {
+                    "Name": "VerticalAlignment",
+                    "Value": "Centre"
+                },
+                {
+                    "Name": "HorizontalAlignment",
+                    "Value": "Centre"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "StretchOffset",
+                    "Value": "0 2 2 2"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "Layout",
+                    "Name": "BirdLottery-Content",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,-60},{0,311},{0,219}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "Touchable",
+                            "Value": "false"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "StretchType",
+                            "Value": "NineGrid"
+                        },
+                        {
+                            "Name": "StretchOffset",
+                            "Value": "14 14 16 16"
+                        },
+                        {
+                            "Name": "LayoutBackImage",
+                            "Value": "set:bird_task.json image:lottery_background"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "GridView",
+                            "Name": "BirdLottery-ItemView",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,0},{1,-40},{1,-40}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "ClipChild",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ItemAlignment",
+                                    "Value": "Left"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Button",
+                            "Name": "BirdLottery-Open",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{1,21},{0,191},{1,87}}"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "Open"
+                                },
+                                {
+                                    "Name": "Font",
+                                    "Value": "HT20"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextBorder",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "TextBorderColor",
+                                    "Value": "0.101961 0.298039 0.262745 1"
+                                },
+                                {
+                                    "Name": "NormalImage",
+                                    "Value": "set:bird_task.json image:frame"
+                                },
+                                {
+                                    "Name": "PushedImage",
+                                    "Value": "set:bird_task.json image:frame"
+                                },
+                                {
+                                    "Name": "SoundName",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "HexgonTopImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonTopColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonSideImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonSideColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonOverlayerImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonOverlayerColor",
+                                    "Value": "1 1 1 1"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "StaticImage",
+                                    "Name": "BirdLottery-Open-click",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,-40},{0,-2},{0,33},{0,71}}"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "ImageName",
+                                            "Value": "set:bird_task.json image:click"
+                                        },
+                                        {
+                                            "Name": "HexgonTopImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonTopColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonSideImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonSideColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerColor",
+                                            "Value": "1 1 1 1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Layout",
+                                    "Name": "BirdLottery-Open-Money",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{1,0},{0,0},{1,127},{0,60}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "StretchType",
+                                            "Value": "NineGrid"
+                                        },
+                                        {
+                                            "Name": "LayoutBackImage",
+                                            "Value": "set:bird_task.json image:lottery_money_background"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticImage",
+                                            "Name": "BirdLottery-Open-Money-Image",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,12},{0,0},{0,48},{0,36}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "ImageName",
+                                                    "Value": "set:bird_pack.json image:fruitCoin"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Type": "StaticText",
+                                            "Name": "BirdLottery-Open-Money-Text",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{1,-43},{1,0}}"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Right"
+                                                },
+                                                {
+                                                    "Name": "Text",
+                                                    "Value": "000000"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "TextHorzAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "TextVertAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "TextLineExtraSpace",
+                                                    "Value": "0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

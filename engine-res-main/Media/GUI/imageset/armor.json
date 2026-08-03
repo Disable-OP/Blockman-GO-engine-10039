@@ -1,0 +1,23 @@
+{"frames": {
+
+"Armor_frame":
+{
+	"frame": {"x":0,"y":0,"w":53,"h":154},
+	"offset": {"x":0,"y":0,"w":53,"h":154},
+	"sourceSize": {"w":53,"h":154}
+},
+"Armor_img":
+{
+	"frame": {"x":0,"y":154,"w":38,"h":32},
+	"offset": {"x":0,"y":0,"w":38,"h":32},
+	"sourceSize": {"w":38,"h":32}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "armor.png",
+	"format": "RGBA8888",
+	"size": {"w":64,"h":256},
+	"scale": "1"
+}
+}

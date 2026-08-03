@@ -1,0 +1,46 @@
+<?xml version = "1.0" encoding = "GB2312"?>
+<ActorTemplates>
+	<ActorTemplate name="g1041_door_mantis.actor" Originalscale="1 1 1" Skeleton="g1041_bone.skel" AttackScale="1" TextHeight="0" IsShowShadow="true" WoundBone="" WoundAngle="25" SelectedRingSize="1" SoundName1="" SoundName2="" SoundName3="" SoundName4="" SoundName5="" SoundFileNum="0" Volume="0.8" MinDistance="1" MaxDistance="16" IntervalTime="2" Alpha="1">
+		<BodyParts>
+			<BodyPart MasterName="body" SlaveName="1" DefaultUse="true" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_tele_mantis.skin" ChangeColor = "2.10195e-44 9.05239e-43 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+				<Effect>
+					<FileName value="test effect.effect"/>
+					<SocketName value="g1041_bone"/>
+					<Position_X value="0.539316"/>
+					<Position_Y value="0.639516"/>
+					<Position_Z value="-0.87587"/>
+					<yaw value="35.2644"/>
+					<pitch value="89.9657"/>
+					<roll value="35.2644"/>
+					<scale value="1.7"/>
+					<TimeScale value="1"/>
+					<Alpha value="1"/>
+				</Effect>
+				<Effect>
+					<FileName value="test_red.effect"/>
+					<SocketName value="g1041_bone"/>
+					<Position_X value="0.539316"/>
+					<Position_Y value="0.639516"/>
+					<Position_Z value="-0.87587"/>
+					<yaw value="35.2644"/>
+					<pitch value="89.9657"/>
+					<roll value="35.2644"/>
+					<scale value="1.7"/>
+					<TimeScale value="1"/>
+					<Alpha value="1"/>
+				</Effect>
+			</BodyPart>
+		</BodyParts>
+		<Skills>
+			<Skill Name="idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "g1041_bone.anim" BeginTime = "0" Times = "-1" Length = "3.366" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+			</Skill>
+		</Skills>
+		<Anims>
+				<Anim Name="g1041_bone.anim"/>
+		</Anims>
+	</ActorTemplate>
+</ActorTemplates>

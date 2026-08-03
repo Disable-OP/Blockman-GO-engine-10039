@@ -1,0 +1,72 @@
+<?xml version = "1.0" encoding = "GB2312"?>
+<ActorTemplates>
+	<ActorTemplate name="g1041_stand.actor" Originalscale="1 1 1" Skeleton="g1041_bone.skel" AttackScale="1" TextHeight="0" IsShowShadow="true" WoundBone="" WoundAngle="25" SelectedRingSize="1" SoundName1="" SoundName2="" SoundName3="" SoundName4="" SoundName5="" SoundFileNum="0" Volume="0.8" MinDistance="1" MaxDistance="16" IntervalTime="2" Alpha="1">
+		<BodyParts>
+			<BodyPart MasterName="body" SlaveName="1" DefaultUse="true" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g_1041_npcstand.skin" ChangeColor = "2.10195e-44 1.68856e-42 1.15573e+27 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="2" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g_1041_npcstand.skin" ChangeColor = "2.10195e-44 2.79979e-42 6.05053e+22 0" UVSpeed = "0 0">
+				</Skin>
+				<StaticMesh>
+					<FileName value="g_1041_npcexmarkout.mesh"/>
+					<SocketName value="g1041_bone"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="0.7"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="g_1041_npcexmark.mesh"/>
+					<SocketName value="g1041_bone"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="0.7"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="3" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g_1041_npcstand.skin" ChangeColor = "2.10195e-44 2.97776e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+				<StaticMesh>
+					<FileName value="g_1041_npcexmark_02.mesh"/>
+					<SocketName value="g1041_bone"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="0.7"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="g1041_npcexmarkout_02.mesh"/>
+					<SocketName value="g1041_bone"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="0.7"/>
+				</StaticMesh>
+			</BodyPart>
+		</BodyParts>
+		<Skills>
+			<Skill Name="idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "g1041_bone.anim" BeginTime = "0" Times = "1" Length = "3.366" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+			</Skill>
+		</Skills>
+		<Anims>
+				<Anim Name="g1041_bone.anim"/>
+		</Anims>
+	</ActorTemplate>
+</ActorTemplates>

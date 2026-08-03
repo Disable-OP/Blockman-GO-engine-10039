@@ -1,0 +1,1700 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "SeasonRule",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                },
+                {
+                    "Name": "BackgroundColor",
+                    "Value": "0 0 0 0.392157"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "StretchType",
+                    "Value": "NineGrid"
+                },
+                {
+                    "Name": "StretchOffset",
+                    "Value": "10 10 10 10"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "Layout",
+                    "Name": "SeasonRule-Border",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0.03,0},{0.78,0},{0.81,0}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "StretchType",
+                            "Value": "NineGrid"
+                        },
+                        {
+                            "Name": "StretchOffset",
+                            "Value": "80 80 60 20"
+                        },
+                        {
+                            "Name": "LayoutBackImage",
+                            "Value": "set:season_rank.json image:bg_honor_rule"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "StaticText",
+                            "Name": "SeasonRule-Title",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,0},{0,0},{0,50}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "Season Rules"
+                                },
+                                {
+                                    "Name": "Font",
+                                    "Value": "HT20"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextHorzAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextVertAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextBorder",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "TextLineExtraSpace",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "StaticText",
+                            "Name": "SeasonRule-Bottom-Hint",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,-18},{1,-100},{0,32}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "这是一个底部提示语"
+                                },
+                                {
+                                    "Name": "Font",
+                                    "Value": "HT12"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextColor",
+                                    "Value": "0.972549 0.996078 0.0705882 1"
+                                },
+                                {
+                                    "Name": "TextHorzAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextVertAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextLineExtraSpace",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "SeasonRule-Rule",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,-65},{1,-140},{0,35}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "StretchType",
+                                    "Value": "NineGrid"
+                                },
+                                {
+                                    "Name": "StretchOffset",
+                                    "Value": "4 4 4 4"
+                                },
+                                {
+                                    "Name": "LayoutBackImage",
+                                    "Value": "set:season_rank.json image:bg_rank_base_item"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "StaticText",
+                                    "Name": "SeasonRule-Rule-Text",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,0},{0.9,0},{0,0}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "Text",
+                                            "Value": "这是具体规则这是具体规则这是具体规则这是具体规则这是具体规则这是具体规则这是具体规则这是具体规则这是具体规则"
+                                        },
+                                        {
+                                            "Name": "Font",
+                                            "Value": "HT12"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "TextHorzAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "TextVertAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "TextWordWrap",
+                                            "Value": "true"
+                                        },
+                                        {
+                                            "Name": "TextLineExtraSpace",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "SeasonRule-Honors",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,-185},{1,-180},{1,-430}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "Layout",
+                                    "Name": "SeasonRule-Honor-Lv1",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,0},{0.2,0},{1,0}}"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticImage",
+                                            "Name": "SeasonRule-Honor-Lv1-Bg",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{0,111},{0,127}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Bottom"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "ImageName",
+                                                    "Value": "set:season_rank.json image:bg_honor_lv1"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ],
+                                            "Window": [
+                                                {
+                                                    "Type": "StaticImage",
+                                                    "Name": "SeasonRule-Honor-Lv1-Icon",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,0},{0,-55},{0,155},{0,80}}"
+                                                        },
+                                                        {
+                                                            "Name": "VerticalAlignment",
+                                                            "Value": "Bottom"
+                                                        },
+                                                        {
+                                                            "Name": "HorizontalAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "ImageName",
+                                                            "Value": "set:season_rank.json image:ic_honor_lv1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerColor",
+                                                            "Value": "1 1 1 1"
+                                                        }
+                                                    ],
+                                                    "Window": [
+                                                        {
+                                                            "Type": "StaticText",
+                                                            "Name": "SeasonRule-Honor-Lv1-Name",
+                                                            "Property": [
+                                                                {
+                                                                    "Name": "Area",
+                                                                    "Value": "{{0,0},{0,10},{0,0},{0,10}}"
+                                                                },
+                                                                {
+                                                                    "Name": "VerticalAlignment",
+                                                                    "Value": "Bottom"
+                                                                },
+                                                                {
+                                                                    "Name": "HorizontalAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "Text",
+                                                                    "Value": "Bronze"
+                                                                },
+                                                                {
+                                                                    "Name": "Font",
+                                                                    "Value": "HT20"
+                                                                },
+                                                                {
+                                                                    "Name": "WndOpenSound",
+                                                                    "Value": "0"
+                                                                },
+                                                                {
+                                                                    "Name": "WndCloseSound",
+                                                                    "Value": "0"
+                                                                },
+                                                                {
+                                                                    "Name": "TextColor",
+                                                                    "Value": "0.529412 0.262745 0.262745 1"
+                                                                },
+                                                                {
+                                                                    "Name": "TextHorzAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "TextVertAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "TextBorder",
+                                                                    "Value": "true"
+                                                                },
+                                                                {
+                                                                    "Name": "TextLineExtraSpace",
+                                                                    "Value": "0"
+                                                                }
+                                                            ],
+                                                            "Window": [
+                                                                {
+                                                                    "Type": "StaticImage",
+                                                                    "Name": "SeasonRule-Honor-Lv1-Value",
+                                                                    "Property": [
+                                                                        {
+                                                                            "Name": "Area",
+                                                                            "Value": "{{0,-30},{0,20},{0,-10},{0,44}}"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HorizontalAlignment",
+                                                                            "Value": "Centre"
+                                                                        },
+                                                                        {
+                                                                            "Name": "WndOpenSound",
+                                                                            "Value": "0"
+                                                                        },
+                                                                        {
+                                                                            "Name": "WndCloseSound",
+                                                                            "Value": "0"
+                                                                        },
+                                                                        {
+                                                                            "Name": "ImageName",
+                                                                            "Value": "set:season_rank.json image:ic_honor_value"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonTopImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonTopColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonSideImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonSideColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonOverlayerImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonOverlayerColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        }
+                                                                    ],
+                                                                    "Window": [
+                                                                        {
+                                                                            "Type": "StaticText",
+                                                                            "Name": "SeasonRule-Honor-Lv1-Value-Text",
+                                                                            "Property": [
+                                                                                {
+                                                                                    "Name": "Area",
+                                                                                    "Value": "{{0,12},{0,0},{0,12},{0,0}}"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "VerticalAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "HorizontalAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "Text",
+                                                                                    "Value": "1000+"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "WndOpenSound",
+                                                                                    "Value": "0"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "WndCloseSound",
+                                                                                    "Value": "0"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextVertAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextBorder",
+                                                                                    "Value": "true"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextLineExtraSpace",
+                                                                                    "Value": "0"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Layout",
+                                    "Name": "SeasonRule-Honor-Lv2",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0.2,0},{0,0},{0.4,0},{1,0}}"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticImage",
+                                            "Name": "SeasonRule-Honor-Lv2-Bg",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{0,111},{0,139}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Bottom"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "ImageName",
+                                                    "Value": "set:season_rank.json image:bg_honor_lv2"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ],
+                                            "Window": [
+                                                {
+                                                    "Type": "StaticImage",
+                                                    "Name": "SeasonRule-Honor-Lv2-Icon",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,0},{0,-70},{0,155},{0,65}}"
+                                                        },
+                                                        {
+                                                            "Name": "VerticalAlignment",
+                                                            "Value": "Bottom"
+                                                        },
+                                                        {
+                                                            "Name": "HorizontalAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "ImageName",
+                                                            "Value": "set:season_rank.json image:ic_honor_lv2"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerColor",
+                                                            "Value": "1 1 1 1"
+                                                        }
+                                                    ],
+                                                    "Window": [
+                                                        {
+                                                            "Type": "StaticText",
+                                                            "Name": "SeasonRule-Honor-Lv2-Name",
+                                                            "Property": [
+                                                                {
+                                                                    "Name": "Area",
+                                                                    "Value": "{{0,0},{0,10},{0,0},{0,10}}"
+                                                                },
+                                                                {
+                                                                    "Name": "VerticalAlignment",
+                                                                    "Value": "Bottom"
+                                                                },
+                                                                {
+                                                                    "Name": "HorizontalAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "Text",
+                                                                    "Value": "Silver"
+                                                                },
+                                                                {
+                                                                    "Name": "Font",
+                                                                    "Value": "HT20"
+                                                                },
+                                                                {
+                                                                    "Name": "WndOpenSound",
+                                                                    "Value": "0"
+                                                                },
+                                                                {
+                                                                    "Name": "WndCloseSound",
+                                                                    "Value": "0"
+                                                                },
+                                                                {
+                                                                    "Name": "TextColor",
+                                                                    "Value": "0.54902 0.870588 0.917647 1"
+                                                                },
+                                                                {
+                                                                    "Name": "TextHorzAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "TextVertAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "TextBorder",
+                                                                    "Value": "true"
+                                                                },
+                                                                {
+                                                                    "Name": "TextLineExtraSpace",
+                                                                    "Value": "0"
+                                                                }
+                                                            ],
+                                                            "Window": [
+                                                                {
+                                                                    "Type": "StaticImage",
+                                                                    "Name": "SeasonRule-Honor-Lv2-Value",
+                                                                    "Property": [
+                                                                        {
+                                                                            "Name": "Area",
+                                                                            "Value": "{{0,-30},{0,20},{0,-10},{0,44}}"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HorizontalAlignment",
+                                                                            "Value": "Centre"
+                                                                        },
+                                                                        {
+                                                                            "Name": "WndOpenSound",
+                                                                            "Value": "0"
+                                                                        },
+                                                                        {
+                                                                            "Name": "WndCloseSound",
+                                                                            "Value": "0"
+                                                                        },
+                                                                        {
+                                                                            "Name": "ImageName",
+                                                                            "Value": "set:season_rank.json image:ic_honor_value"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonTopImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonTopColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonSideImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonSideColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonOverlayerImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonOverlayerColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        }
+                                                                    ],
+                                                                    "Window": [
+                                                                        {
+                                                                            "Type": "StaticText",
+                                                                            "Name": "SeasonRule-Honor-Lv2-Value-Text",
+                                                                            "Property": [
+                                                                                {
+                                                                                    "Name": "Area",
+                                                                                    "Value": "{{0,12},{0,0},{0,12},{0,0}}"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "VerticalAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "HorizontalAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "Text",
+                                                                                    "Value": "2000+"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "WndOpenSound",
+                                                                                    "Value": "0"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "WndCloseSound",
+                                                                                    "Value": "0"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextVertAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextBorder",
+                                                                                    "Value": "true"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextLineExtraSpace",
+                                                                                    "Value": "0"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Layout",
+                                    "Name": "SeasonRule-Honor-Lv3",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0.4,0},{0,0},{0.6,0},{1,0}}"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticImage",
+                                            "Name": "SeasonRule-Honor-Lv3-Bg",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{0,111},{0,152}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Bottom"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "ImageName",
+                                                    "Value": "set:season_rank.json image:bg_honor_lv3"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ],
+                                            "Window": [
+                                                {
+                                                    "Type": "StaticImage",
+                                                    "Name": "SeasonRule-Honor-Lv3-Icon",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,0},{0,-87},{0,155},{0,48}}"
+                                                        },
+                                                        {
+                                                            "Name": "VerticalAlignment",
+                                                            "Value": "Bottom"
+                                                        },
+                                                        {
+                                                            "Name": "HorizontalAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "ImageName",
+                                                            "Value": "set:season_rank.json image:ic_honor_lv3"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerColor",
+                                                            "Value": "1 1 1 1"
+                                                        }
+                                                    ],
+                                                    "Window": [
+                                                        {
+                                                            "Type": "StaticText",
+                                                            "Name": "SeasonRule-Honor-Lv3-Name",
+                                                            "Property": [
+                                                                {
+                                                                    "Name": "Area",
+                                                                    "Value": "{{0,0},{0,10},{0,0},{0,10}}"
+                                                                },
+                                                                {
+                                                                    "Name": "VerticalAlignment",
+                                                                    "Value": "Bottom"
+                                                                },
+                                                                {
+                                                                    "Name": "HorizontalAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "Text",
+                                                                    "Value": "Gold"
+                                                                },
+                                                                {
+                                                                    "Name": "Font",
+                                                                    "Value": "HT20"
+                                                                },
+                                                                {
+                                                                    "Name": "WndOpenSound",
+                                                                    "Value": "0"
+                                                                },
+                                                                {
+                                                                    "Name": "WndCloseSound",
+                                                                    "Value": "0"
+                                                                },
+                                                                {
+                                                                    "Name": "TextColor",
+                                                                    "Value": "0.984314 0.984314 0.517647 1"
+                                                                },
+                                                                {
+                                                                    "Name": "TextHorzAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "TextVertAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "TextBorder",
+                                                                    "Value": "true"
+                                                                },
+                                                                {
+                                                                    "Name": "TextLineExtraSpace",
+                                                                    "Value": "0"
+                                                                }
+                                                            ],
+                                                            "Window": [
+                                                                {
+                                                                    "Type": "StaticImage",
+                                                                    "Name": "SeasonRule-Honor-Lv3-Value",
+                                                                    "Property": [
+                                                                        {
+                                                                            "Name": "Area",
+                                                                            "Value": "{{0,-30},{0,20},{0,-10},{0,44}}"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HorizontalAlignment",
+                                                                            "Value": "Centre"
+                                                                        },
+                                                                        {
+                                                                            "Name": "WndOpenSound",
+                                                                            "Value": "0"
+                                                                        },
+                                                                        {
+                                                                            "Name": "WndCloseSound",
+                                                                            "Value": "0"
+                                                                        },
+                                                                        {
+                                                                            "Name": "ImageName",
+                                                                            "Value": "set:season_rank.json image:ic_honor_value"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonTopImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonTopColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonSideImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonSideColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonOverlayerImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonOverlayerColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        }
+                                                                    ],
+                                                                    "Window": [
+                                                                        {
+                                                                            "Type": "StaticText",
+                                                                            "Name": "SeasonRule-Honor-Lv3-Value-Text",
+                                                                            "Property": [
+                                                                                {
+                                                                                    "Name": "Area",
+                                                                                    "Value": "{{0,12},{0,0},{0,12},{0,0}}"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "VerticalAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "HorizontalAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "Text",
+                                                                                    "Value": "3000+"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "WndOpenSound",
+                                                                                    "Value": "0"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "WndCloseSound",
+                                                                                    "Value": "0"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextVertAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextBorder",
+                                                                                    "Value": "true"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextLineExtraSpace",
+                                                                                    "Value": "0"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Layout",
+                                    "Name": "SeasonRule-Honor-Lv4",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0.6,0},{0,0},{0.8,0},{1,0}}"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticImage",
+                                            "Name": "SeasonRule-Honor-Lv4-Bg",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{0,111},{0,170}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Bottom"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "ImageName",
+                                                    "Value": "set:season_rank.json image:bg_honor_lv4"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ],
+                                            "Window": [
+                                                {
+                                                    "Type": "StaticImage",
+                                                    "Name": "SeasonRule-Honor-Lv4-Icon",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,0},{0,-108},{0,155},{0,27}}"
+                                                        },
+                                                        {
+                                                            "Name": "VerticalAlignment",
+                                                            "Value": "Bottom"
+                                                        },
+                                                        {
+                                                            "Name": "HorizontalAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "ImageName",
+                                                            "Value": "set:season_rank.json image:ic_honor_lv4"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerColor",
+                                                            "Value": "1 1 1 1"
+                                                        }
+                                                    ],
+                                                    "Window": [
+                                                        {
+                                                            "Type": "StaticText",
+                                                            "Name": "SeasonRule-Honor-Lv4-Name",
+                                                            "Property": [
+                                                                {
+                                                                    "Name": "Area",
+                                                                    "Value": "{{0,0},{0,10},{0,0},{0,10}}"
+                                                                },
+                                                                {
+                                                                    "Name": "VerticalAlignment",
+                                                                    "Value": "Bottom"
+                                                                },
+                                                                {
+                                                                    "Name": "HorizontalAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "Text",
+                                                                    "Value": "Jewel"
+                                                                },
+                                                                {
+                                                                    "Name": "Font",
+                                                                    "Value": "HT20"
+                                                                },
+                                                                {
+                                                                    "Name": "WndOpenSound",
+                                                                    "Value": "0"
+                                                                },
+                                                                {
+                                                                    "Name": "WndCloseSound",
+                                                                    "Value": "0"
+                                                                },
+                                                                {
+                                                                    "Name": "TextColor",
+                                                                    "Value": "0.145098 0.952941 0.996078 1"
+                                                                },
+                                                                {
+                                                                    "Name": "TextHorzAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "TextVertAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "TextBorder",
+                                                                    "Value": "true"
+                                                                },
+                                                                {
+                                                                    "Name": "TextLineExtraSpace",
+                                                                    "Value": "0"
+                                                                }
+                                                            ],
+                                                            "Window": [
+                                                                {
+                                                                    "Type": "StaticImage",
+                                                                    "Name": "SeasonRule-Honor-Lv4-Value",
+                                                                    "Property": [
+                                                                        {
+                                                                            "Name": "Area",
+                                                                            "Value": "{{0,-30},{0,20},{0,-10},{0,44}}"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HorizontalAlignment",
+                                                                            "Value": "Centre"
+                                                                        },
+                                                                        {
+                                                                            "Name": "WndOpenSound",
+                                                                            "Value": "0"
+                                                                        },
+                                                                        {
+                                                                            "Name": "WndCloseSound",
+                                                                            "Value": "0"
+                                                                        },
+                                                                        {
+                                                                            "Name": "ImageName",
+                                                                            "Value": "set:season_rank.json image:ic_honor_value"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonTopImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonTopColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonSideImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonSideColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonOverlayerImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonOverlayerColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        }
+                                                                    ],
+                                                                    "Window": [
+                                                                        {
+                                                                            "Type": "StaticText",
+                                                                            "Name": "SeasonRule-Honor-Lv4-Value-Text",
+                                                                            "Property": [
+                                                                                {
+                                                                                    "Name": "Area",
+                                                                                    "Value": "{{0,12},{0,0},{0,12},{0,0}}"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "VerticalAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "HorizontalAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "Text",
+                                                                                    "Value": "4000+"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "WndOpenSound",
+                                                                                    "Value": "0"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "WndCloseSound",
+                                                                                    "Value": "0"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextVertAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextBorder",
+                                                                                    "Value": "true"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextLineExtraSpace",
+                                                                                    "Value": "0"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Layout",
+                                    "Name": "SeasonRule-Honor-Lv5",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0.8,0},{0,0},{1,0},{1,0}}"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticImage",
+                                            "Name": "SeasonRule-Honor-Lv5-Bg",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{0,111},{0,196}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Bottom"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "ImageName",
+                                                    "Value": "set:season_rank.json image:bg_honor_lv5"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ],
+                                            "Window": [
+                                                {
+                                                    "Type": "StaticImage",
+                                                    "Name": "SeasonRule-Honor-Lv5-Icon",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,0},{0,-134},{0,155},{0,1}}"
+                                                        },
+                                                        {
+                                                            "Name": "VerticalAlignment",
+                                                            "Value": "Bottom"
+                                                        },
+                                                        {
+                                                            "Name": "HorizontalAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "ImageName",
+                                                            "Value": "set:season_rank.json image:ic_honor_lv5"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerColor",
+                                                            "Value": "1 1 1 1"
+                                                        }
+                                                    ],
+                                                    "Window": [
+                                                        {
+                                                            "Type": "StaticText",
+                                                            "Name": "SeasonRule-Honor-Lv5-Name",
+                                                            "Property": [
+                                                                {
+                                                                    "Name": "Area",
+                                                                    "Value": "{{0,0},{0,10},{0,0},{0,10}}"
+                                                                },
+                                                                {
+                                                                    "Name": "VerticalAlignment",
+                                                                    "Value": "Bottom"
+                                                                },
+                                                                {
+                                                                    "Name": "HorizontalAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "Text",
+                                                                    "Value": "King"
+                                                                },
+                                                                {
+                                                                    "Name": "Font",
+                                                                    "Value": "HT20"
+                                                                },
+                                                                {
+                                                                    "Name": "WndOpenSound",
+                                                                    "Value": "0"
+                                                                },
+                                                                {
+                                                                    "Name": "WndCloseSound",
+                                                                    "Value": "0"
+                                                                },
+                                                                {
+                                                                    "Name": "TextColor",
+                                                                    "Value": "0.984314 0.223529 0.701961 1"
+                                                                },
+                                                                {
+                                                                    "Name": "TextHorzAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "TextVertAlignment",
+                                                                    "Value": "Centre"
+                                                                },
+                                                                {
+                                                                    "Name": "TextBorder",
+                                                                    "Value": "true"
+                                                                },
+                                                                {
+                                                                    "Name": "TextLineExtraSpace",
+                                                                    "Value": "0"
+                                                                }
+                                                            ],
+                                                            "Window": [
+                                                                {
+                                                                    "Type": "StaticImage",
+                                                                    "Name": "SeasonRule-Honor-Lv5-Value",
+                                                                    "Property": [
+                                                                        {
+                                                                            "Name": "Area",
+                                                                            "Value": "{{0,-30},{0,20},{0,-10},{0,44}}"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HorizontalAlignment",
+                                                                            "Value": "Centre"
+                                                                        },
+                                                                        {
+                                                                            "Name": "WndOpenSound",
+                                                                            "Value": "0"
+                                                                        },
+                                                                        {
+                                                                            "Name": "WndCloseSound",
+                                                                            "Value": "0"
+                                                                        },
+                                                                        {
+                                                                            "Name": "ImageName",
+                                                                            "Value": "set:season_rank.json image:ic_honor_value"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonTopImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonTopColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonSideImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonSideColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonOverlayerImage",
+                                                                            "Value": ""
+                                                                        },
+                                                                        {
+                                                                            "Name": "HexgonOverlayerColor",
+                                                                            "Value": "1 1 1 1"
+                                                                        }
+                                                                    ],
+                                                                    "Window": [
+                                                                        {
+                                                                            "Type": "StaticText",
+                                                                            "Name": "SeasonRule-Honor-Lv5-Value-Text",
+                                                                            "Property": [
+                                                                                {
+                                                                                    "Name": "Area",
+                                                                                    "Value": "{{0,12},{0,0},{0,12},{0,0}}"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "VerticalAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "HorizontalAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "Text",
+                                                                                    "Value": "5000+"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "WndOpenSound",
+                                                                                    "Value": "0"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "WndCloseSound",
+                                                                                    "Value": "0"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextVertAlignment",
+                                                                                    "Value": "Centre"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextBorder",
+                                                                                    "Value": "true"
+                                                                                },
+                                                                                {
+                                                                                    "Name": "TextLineExtraSpace",
+                                                                                    "Value": "0"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

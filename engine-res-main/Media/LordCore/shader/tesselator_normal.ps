@@ -1,0 +1,21 @@
+#version 100
+
+uniform sampler2D texSampler_texture;
+uniform sampler2D texSampler_lightmap;
+uniform mediump vec4 fogColor;
+
+varying mediump vec4 lightColor;
+varying mediump vec2 lightmapUV;
+varying mediump vec2 texCoord_texture;
+
+void main(void)
+{
+    mediump vec4 albedo = texture2D(texSampler_texture, texCoord_texture);   
+	mediump vec4 lightmapColor = texture2D(texSampler_lightmap, lightmapUV);
+	mediump vec3 result = albedo.xyz * lightmapColor.xyz * lightColor.xyz;
+	// add fog.
+	result = mix(fogColor.xyz, result, lightColor.w);
+	
+	gl_FragColor.xyz = result;
+	gl_FragColor.w = albedo.a;
+}

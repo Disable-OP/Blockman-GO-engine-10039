@@ -1,0 +1,4 @@
+TipType	TipTemplateId	Notice	zh_CN	en_US	pt_BR	ru_RU	ko_KR	de_DE	fr_FR	es_ES	it_IT	in_ID	th_TH	tr_TR	vi_VN	ja_JP
+枚举类型	模板说明	备注	中文	英文	葡萄牙语	俄语	韩语	德语	法语	西语	意大利语	印尼语	泰语	土耳其	越南语	日语
+1031001	GameName	GameName	大农场主	Rancher	Rancher	Rancher	Rancher	Rancher	Rancher	Rancher	Rancher	Rancher	Rancher	Rancher	Rancher	Rancher
+1031002	WelcomeManor		欢迎来到%1s的领地	Welcome to %1s’s manor	Welcome to %1s’s manor	Welcome to %1s’s manor	Welcome to %1s’s manor	Welcome to %1s’s manor	Welcome to %1s’s manor	Welcome to %1s’s manor	Welcome to %1s’s manor	Welcome to %1s’s manor	Welcome to %1s’s manor	Welcome to %1s’s manor	Welcome to %1s’s manor	Welcome to %1s’s manor

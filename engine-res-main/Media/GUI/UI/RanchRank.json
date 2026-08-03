@@ -1,0 +1,178 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "RanchRank",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,-274},{1,-56}}"
+                },
+                {
+                    "Name": "VerticalAlignment",
+                    "Value": "Bottom"
+                },
+                {
+                    "Name": "HorizontalAlignment",
+                    "Value": "Centre"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "StretchType",
+                    "Value": "NineGrid"
+                },
+                {
+                    "Name": "LayoutBackImage",
+                    "Value": "set:ranch_rank.json image:rank_achievement_bg"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "StaticText",
+                    "Name": "RanchRank-Title",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{1,0},{0,64}}"
+                        },
+                        {
+                            "Name": "Text",
+                            "Value": "全球成就榜单"
+                        },
+                        {
+                            "Name": "Font",
+                            "Value": "HT24"
+                        },
+                        {
+                            "Name": "Touchable",
+                            "Value": "false"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "TextColor",
+                            "Value": "0.2 1 0.866667 1"
+                        },
+                        {
+                            "Name": "TextHorzAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "TextVertAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "TextBorder",
+                            "Value": "true"
+                        },
+                        {
+                            "Name": "TextBorderColor",
+                            "Value": "0.235294 0.0862745 0.0313726 1"
+                        },
+                        {
+                            "Name": "TextLineExtraSpace",
+                            "Value": "0"
+                        }
+                    ]
+                },
+                {
+                    "Type": "List",
+                    "Name": "RanchRank-Ranks",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,107},{1,-160},{1,-47}}"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "ClipChild",
+                            "Value": "true"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        }
+                    ]
+                },
+                {
+                    "Type": "Button",
+                    "Name": "RanchRank-Btn-Close",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,-40},{0,6},{0,43},{0,131}}"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Right"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "NormalImage",
+                            "Value": "set:ranch_main.json image:ranch_btn_close"
+                        },
+                        {
+                            "Name": "PushedImage",
+                            "Value": "set:ranch_main.json image:ranch_btn_close"
+                        },
+                        {
+                            "Name": "SoundName",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "HexgonTopImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonTopColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonSideImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonSideColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonOverlayerImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonOverlayerColor",
+                            "Value": "1 1 1 1"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,317 @@
+{"frames": {
+
+"ranch_achievement_rank":
+{
+	"frame": {"x":372,"y":58,"w":70,"h":72},
+	"offset": {"x":0,"y":0,"w":70,"h":72},
+	"sourceSize": {"w":70,"h":72}
+},
+"ranch_add_item_nor":
+{
+	"frame": {"x":795,"y":0,"w":51,"h":50},
+	"offset": {"x":0,"y":0,"w":51,"h":50},
+	"sourceSize": {"w":51,"h":50}
+},
+"ranch_add_item_pre":
+{
+	"frame": {"x":744,"y":0,"w":51,"h":50},
+	"offset": {"x":0,"y":0,"w":51,"h":50},
+	"sourceSize": {"w":51,"h":50}
+},
+"ranch_bg":
+{
+	"frame": {"x":784,"y":581,"w":1162,"h":677},
+	"offset": {"x":0,"y":0,"w":1162,"h":677},
+	"sourceSize": {"w":1162,"h":677}
+},
+"ranch_btn_back":
+{
+	"frame": {"x":895,"y":0,"w":81,"h":53},
+	"offset": {"x":0,"y":0,"w":81,"h":53},
+	"sourceSize": {"w":81,"h":53}
+},
+"ranch_btn_buy":
+{
+	"frame": {"x":512,"y":58,"w":131,"h":74},
+	"offset": {"x":0,"y":0,"w":131,"h":74},
+	"sourceSize": {"w":131,"h":74}
+},
+"ranch_btn_close":
+{
+	"frame": {"x":1787,"y":58,"w":83,"h":125},
+	"offset": {"x":0,"y":0,"w":83,"h":125},
+	"sourceSize": {"w":83,"h":125}
+},
+"ranch_btn_help":
+{
+	"frame": {"x":1205,"y":0,"w":182,"h":54},
+	"offset": {"x":0,"y":0,"w":182,"h":54},
+	"sourceSize": {"w":182,"h":54}
+},
+"ranch_btn_sure":
+{
+	"frame": {"x":1387,"y":0,"w":182,"h":54},
+	"offset": {"x":0,"y":0,"w":182,"h":54},
+	"sourceSize": {"w":182,"h":54}
+},
+"ranch_build_item_nor":
+{
+	"frame": {"x":1093,"y":185,"w":218,"h":380},
+	"offset": {"x":0,"y":0,"w":218,"h":380},
+	"sourceSize": {"w":218,"h":380}
+},
+"ranch_build_item_pre":
+{
+	"frame": {"x":1311,"y":185,"w":218,"h":380},
+	"offset": {"x":0,"y":0,"w":218,"h":380},
+	"sourceSize": {"w":218,"h":380}
+},
+"ranch_build_item_price":
+{
+	"frame": {"x":300,"y":0,"w":38,"h":37},
+	"offset": {"x":0,"y":0,"w":38,"h":37},
+	"sourceSize": {"w":38,"h":37}
+},
+"ranch_clan_rank":
+{
+	"frame": {"x":442,"y":58,"w":70,"h":72},
+	"offset": {"x":0,"y":0,"w":70,"h":72},
+	"sourceSize": {"w":70,"h":72}
+},
+"ranch_common_bg":
+{
+	"frame": {"x":652,"y":581,"w":132,"h":465},
+	"offset": {"x":0,"y":0,"w":132,"h":465},
+	"sourceSize": {"w":132,"h":465}
+},
+"ranch_common_btn_close":
+{
+	"frame": {"x":1383,"y":58,"w":69,"h":94},
+	"offset": {"x":0,"y":0,"w":69,"h":94},
+	"sourceSize": {"w":69,"h":94}
+},
+"ranch_common_btn_sure":
+{
+	"frame": {"x":0,"y":58,"w":302,"h":65},
+	"offset": {"x":0,"y":0,"w":302,"h":65},
+	"sourceSize": {"w":302,"h":65}
+},
+"ranch_common_item_bg":
+{
+	"frame": {"x":586,"y":0,"w":56,"h":49},
+	"offset": {"x":0,"y":0,"w":56,"h":49},
+	"sourceSize": {"w":56,"h":49}
+},
+"ranch_content_bg":
+{
+	"frame": {"x":0,"y":185,"w":151,"h":136},
+	"offset": {"x":0,"y":0,"w":151,"h":136},
+	"sourceSize": {"w":151,"h":136}
+},
+"ranch_done":
+{
+	"frame": {"x":434,"y":0,"w":54,"h":48},
+	"offset": {"x":0,"y":0,"w":54,"h":48},
+	"sourceSize": {"w":54,"h":48}
+},
+"ranch_gift":
+{
+	"frame": {"x":488,"y":0,"w":49,"h":49},
+	"offset": {"x":0,"y":0,"w":49,"h":49},
+	"sourceSize": {"w":49,"h":49}
+},
+"ranch_gift_num":
+{
+	"frame": {"x":537,"y":0,"w":49,"h":49},
+	"offset": {"x":0,"y":0,"w":49,"h":49},
+	"sourceSize": {"w":49,"h":49}
+},
+"ranch_house_bg":
+{
+	"frame": {"x":1529,"y":185,"w":336,"h":396},
+	"offset": {"x":0,"y":0,"w":336,"h":396},
+	"sourceSize": {"w":336,"h":396}
+},
+"ranch_house_up_item_bg":
+{
+	"frame": {"x":1452,"y":58,"w":335,"h":95},
+	"offset": {"x":0,"y":0,"w":335,"h":95},
+	"sourceSize": {"w":335,"h":95}
+},
+"ranch_item_info":
+{
+	"frame": {"x":151,"y":185,"w":136,"h":158},
+	"offset": {"x":0,"y":0,"w":136,"h":158},
+	"sourceSize": {"w":136,"h":158}
+},
+"ranch_item_tip_bg":
+{
+	"frame": {"x":858,"y":185,"w":235,"h":238},
+	"offset": {"x":0,"y":0,"w":235,"h":238},
+	"sourceSize": {"w":235,"h":238}
+},
+"ranch_main_item_bg":
+{
+	"frame": {"x":524,"y":185,"w":334,"h":195},
+	"offset": {"x":0,"y":0,"w":334,"h":195},
+	"sourceSize": {"w":334,"h":195}
+},
+"ranch_multi_tip_btn_next":
+{
+	"frame": {"x":122,"y":0,"w":43,"h":29},
+	"offset": {"x":0,"y":0,"w":43,"h":29},
+	"sourceSize": {"w":43,"h":29}
+},
+"ranch_multi_tip_close":
+{
+	"frame": {"x":1569,"y":0,"w":57,"h":55},
+	"offset": {"x":0,"y":0,"w":57,"h":55},
+	"sourceSize": {"w":57,"h":55}
+},
+"ranch_multi_tip_content":
+{
+	"frame": {"x":435,"y":185,"w":89,"h":177},
+	"offset": {"x":0,"y":0,"w":89,"h":177},
+	"sourceSize": {"w":89,"h":177}
+},
+"ranch_multi_tip_title":
+{
+	"frame": {"x":976,"y":0,"w":229,"h":54},
+	"offset": {"x":0,"y":0,"w":229,"h":54},
+	"sourceSize": {"w":229,"h":54}
+},
+"ranch_operate":
+{
+	"frame": {"x":723,"y":58,"w":80,"h":92},
+	"offset": {"x":0,"y":0,"w":80,"h":92},
+	"sourceSize": {"w":80,"h":92}
+},
+"ranch_order":
+{
+	"frame": {"x":643,"y":58,"w":80,"h":92},
+	"offset": {"x":0,"y":0,"w":80,"h":92},
+	"sourceSize": {"w":80,"h":92}
+},
+"ranch_order_tip_bg":
+{
+	"frame": {"x":803,"y":58,"w":580,"h":94},
+	"offset": {"x":0,"y":0,"w":580,"h":94},
+	"sourceSize": {"w":580,"h":94}
+},
+"ranch_panel_tab_nor":
+{
+	"frame": {"x":1626,"y":0,"w":103,"h":58},
+	"offset": {"x":0,"y":0,"w":103,"h":58},
+	"sourceSize": {"w":103,"h":58}
+},
+"ranch_panel_tab_pre":
+{
+	"frame": {"x":1729,"y":0,"w":103,"h":58},
+	"offset": {"x":0,"y":0,"w":103,"h":58},
+	"sourceSize": {"w":103,"h":58}
+},
+"ranch_prosperity_rank":
+{
+	"frame": {"x":302,"y":58,"w":70,"h":72},
+	"offset": {"x":0,"y":0,"w":70,"h":72},
+	"sourceSize": {"w":70,"h":72}
+},
+"ranch_red_point":
+{
+	"frame": {"x":0,"y":0,"w":22,"h":22},
+	"offset": {"x":0,"y":0,"w":22,"h":22},
+	"sourceSize": {"w":22,"h":22}
+},
+"ranch_sell_item_left_bg":
+{
+	"frame": {"x":1870,"y":58,"w":66,"h":127},
+	"offset": {"x":0,"y":0,"w":66,"h":127},
+	"sourceSize": {"w":66,"h":127}
+},
+"ranch_sell_item_right_bg":
+{
+	"frame": {"x":1936,"y":58,"w":66,"h":127},
+	"offset": {"x":0,"y":0,"w":66,"h":127},
+	"sourceSize": {"w":66,"h":127}
+},
+"ranch_sub_item_nor":
+{
+	"frame": {"x":642,"y":0,"w":51,"h":50},
+	"offset": {"x":0,"y":0,"w":51,"h":50},
+	"sourceSize": {"w":51,"h":50}
+},
+"ranch_sub_item_pre":
+{
+	"frame": {"x":693,"y":0,"w":51,"h":50},
+	"offset": {"x":0,"y":0,"w":51,"h":50},
+	"sourceSize": {"w":51,"h":50}
+},
+"ranch_task_help":
+{
+	"frame": {"x":403,"y":0,"w":31,"h":44},
+	"offset": {"x":0,"y":0,"w":31,"h":44},
+	"sourceSize": {"w":31,"h":44}
+},
+"ranch_time_icon":
+{
+	"frame": {"x":287,"y":185,"w":148,"h":158},
+	"offset": {"x":0,"y":0,"w":148,"h":158},
+	"sourceSize": {"w":148,"h":158}
+},
+"ranch_time_nor":
+{
+	"frame": {"x":22,"y":0,"w":50,"h":23},
+	"offset": {"x":0,"y":0,"w":50,"h":23},
+	"sourceSize": {"w":50,"h":23}
+},
+"ranch_time_pre":
+{
+	"frame": {"x":72,"y":0,"w":50,"h":23},
+	"offset": {"x":0,"y":0,"w":50,"h":23},
+	"sourceSize": {"w":50,"h":23}
+},
+"ranch_tip_dialog":
+{
+	"frame": {"x":0,"y":581,"w":652,"h":425},
+	"offset": {"x":0,"y":0,"w":652,"h":425},
+	"sourceSize": {"w":652,"h":425}
+},
+"ranch_user_icon_bar_nor":
+{
+	"frame": {"x":257,"y":0,"w":43,"h":31},
+	"offset": {"x":0,"y":0,"w":43,"h":31},
+	"sourceSize": {"w":43,"h":31}
+},
+"ranch_user_icon_bar_pre":
+{
+	"frame": {"x":165,"y":0,"w":43,"h":31},
+	"offset": {"x":0,"y":0,"w":43,"h":31},
+	"sourceSize": {"w":43,"h":31}
+},
+"ranch_user_icon_id":
+{
+	"frame": {"x":208,"y":0,"w":49,"h":31},
+	"offset": {"x":0,"y":0,"w":49,"h":31},
+	"sourceSize": {"w":49,"h":31}
+},
+"ranch_user_icon_level":
+{
+	"frame": {"x":846,"y":0,"w":49,"h":52},
+	"offset": {"x":0,"y":0,"w":49,"h":52},
+	"sourceSize": {"w":49,"h":52}
+},
+"ranch_user_icon_prosperity":
+{
+	"frame": {"x":338,"y":0,"w":65,"h":42},
+	"offset": {"x":0,"y":0,"w":65,"h":42},
+	"sourceSize": {"w":65,"h":42}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "ranch_main.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1"
+}
+}

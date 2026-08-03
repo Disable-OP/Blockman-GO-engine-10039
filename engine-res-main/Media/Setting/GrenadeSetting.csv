@@ -1,0 +1,4 @@
+ItemId	ItemIcon	IsExplosion	ExplosionPower	IsExplosionEffect	EffectName	EffectTime	Remark
+手榴弹ID	手榴弹图片	是否产生爆炸	爆炸威力（默认4.0）	是否产生爆炸特效	爆炸特效文件名	爆炸特效时间(毫秒)	备注信息
+425	grenade	1	4	0	#	0	手榴弹
+758	grenade_smoke	0	0	1	mine_halo.effect	3000	烟雾弹

@@ -1,0 +1,125 @@
+{"frames": {
+
+"achievement_1":
+{
+	"frame": {"x":688,"y":0,"w":86,"h":100},
+	"offset": {"x":0,"y":0,"w":86,"h":100},
+	"sourceSize": {"w":86,"h":100}
+},
+"achievement_2":
+{
+	"frame": {"x":602,"y":0,"w":86,"h":100},
+	"offset": {"x":0,"y":0,"w":86,"h":100},
+	"sourceSize": {"w":86,"h":100}
+},
+"achievement_3":
+{
+	"frame": {"x":516,"y":0,"w":86,"h":100},
+	"offset": {"x":0,"y":0,"w":86,"h":100},
+	"sourceSize": {"w":86,"h":100}
+},
+"achievement_4":
+{
+	"frame": {"x":774,"y":0,"w":86,"h":100},
+	"offset": {"x":0,"y":0,"w":86,"h":100},
+	"sourceSize": {"w":86,"h":100}
+},
+"achievement_5":
+{
+	"frame": {"x":430,"y":0,"w":86,"h":100},
+	"offset": {"x":0,"y":0,"w":86,"h":100},
+	"sourceSize": {"w":86,"h":100}
+},
+"achievement_icon":
+{
+	"frame": {"x":76,"y":0,"w":44,"h":44},
+	"offset": {"x":0,"y":0,"w":44,"h":44},
+	"sourceSize": {"w":44,"h":44}
+},
+"achievement_level_nor":
+{
+	"frame": {"x":38,"y":0,"w":38,"h":36},
+	"offset": {"x":0,"y":0,"w":38,"h":36},
+	"sourceSize": {"w":38,"h":36}
+},
+"achievement_level_pre":
+{
+	"frame": {"x":0,"y":0,"w":38,"h":36},
+	"offset": {"x":0,"y":0,"w":38,"h":36},
+	"sourceSize": {"w":38,"h":36}
+},
+"prosperity_up":
+{
+	"frame": {"x":120,"y":0,"w":44,"h":44},
+	"offset": {"x":0,"y":0,"w":44,"h":44},
+	"sourceSize": {"w":44,"h":44}
+},
+"rank_1":
+{
+	"frame": {"x":260,"y":0,"w":48,"h":42},
+	"offset": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42}
+},
+"rank_2":
+{
+	"frame": {"x":212,"y":0,"w":48,"h":42},
+	"offset": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42}
+},
+"rank_3":
+{
+	"frame": {"x":164,"y":0,"w":48,"h":42},
+	"offset": {"x":0,"y":0,"w":48,"h":42},
+	"sourceSize": {"w":48,"h":42}
+},
+"rank_achievement_bg":
+{
+	"frame": {"x":0,"y":809,"w":1006,"h":664},
+	"offset": {"x":0,"y":0,"w":1006,"h":664},
+	"sourceSize": {"w":1006,"h":664}
+},
+"rank_first_1":
+{
+	"frame": {"x":0,"y":100,"w":169,"h":45},
+	"offset": {"x":0,"y":0,"w":169,"h":45},
+	"sourceSize": {"w":169,"h":45}
+},
+"rank_item_bg":
+{
+	"frame": {"x":308,"y":0,"w":56,"h":49},
+	"offset": {"x":0,"y":0,"w":56,"h":49},
+	"sourceSize": {"w":56,"h":49}
+},
+"rank_prosperity_bg":
+{
+	"frame": {"x":0,"y":145,"w":1006,"h":664},
+	"offset": {"x":0,"y":0,"w":1006,"h":664},
+	"sourceSize": {"w":1006,"h":664}
+},
+"rank_second":
+{
+	"frame": {"x":338,"y":100,"w":169,"h":45},
+	"offset": {"x":0,"y":0,"w":169,"h":45},
+	"sourceSize": {"w":169,"h":45}
+},
+"rank_thirdly":
+{
+	"frame": {"x":169,"y":100,"w":169,"h":45},
+	"offset": {"x":0,"y":0,"w":169,"h":45},
+	"sourceSize": {"w":169,"h":45}
+},
+"rank_visit":
+{
+	"frame": {"x":364,"y":0,"w":66,"h":42},
+	"offset": {"x":0,"y":0,"w":66,"h":42},
+	"sourceSize": {"w":66,"h":42}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "ranch_rank.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":2048},
+	"scale": "1"
+}
+}

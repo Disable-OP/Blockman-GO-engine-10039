@@ -1,0 +1,1306 @@
+<?xml version = "1.0" encoding = "GB2312"?>
+<ActorTemplates>
+	<ActorTemplate name="hero_ironman.actor" Originalscale="1 1 1" Skeleton="boy_01.skel" AttackScale="1" TextHeight="0" IsShowShadow="true" WoundBone="" WoundAngle="25" SelectedRingSize="1" SoundName1="" SoundName2="" SoundName3="" SoundName4="" SoundName5="" SoundFileNum="0" Volume="0.8" MinDistance="1" MaxDistance="16" IntervalTime="2" Alpha="1">
+		<BodyParts>			<BodyPart MasterName="1" SlaveName="1" DefaultUse="true" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "showcase01.skin" ChangeColor = "2.10195e-44 3.18179e-41 6.05053e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="1" DefaultUse="true" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "17_trunk_boy.skin" ChangeColor = "2.10195e-44 3.84937e-42 2.52202e+17 0" UVSpeed = "0 0">
+				</Skin>
+				<Skin MeshName = "17_trousers_boy.skin" ChangeColor = "2.10195e-44 3.84516e-42 2.52202e+17 0" UVSpeed = "0 0">
+				</Skin>
+				<StaticMesh>
+					<FileName value="09_shoes_l_widget.mesh"/>
+					<SocketName value="s_foot_l"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="09_shoes_r_widget.mesh"/>
+					<SocketName value="s_foot_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="15_hair_boy.mesh"/>
+					<SocketName value="s_head"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="12_face_boy.mesh"/>
+					<SocketName value="s_head"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>	
+			<BodyPart MasterName="gun" SlaveName="gun_01.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_01.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_02.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_02.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_03.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_03.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_04.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_04.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_05.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_05.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_06.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_06.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_08.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_08.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_09.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_09.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_10.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_10.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_11.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_11.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_12.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_12.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_13.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_13.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_14.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_14.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_15.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_15.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_16.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_16.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_17.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_17.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_18.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_18.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_19.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_19.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_20.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_20.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_2000.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_2000.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_2001.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_2001.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_2002.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_2002.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_2003.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_2003.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_2004.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_2004.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_2005.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_2005.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_2006.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_2006.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_2007.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_2007.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_2008.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_2008.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_2009.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_2009.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_2010.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_2010.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_21.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_21.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_22.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_22.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_23.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_23.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_24.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_24.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_25.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_25.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_26.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_26.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_27.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_27.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_28.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_28.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_29.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_29.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_30.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_30.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_31.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_31.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_32.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_32.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_33.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_33.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_34.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_34.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_35.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_35.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_36.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_36.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_37.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_37.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="gun_38.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="gun_38.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="weapon_02.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_02.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_03.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_03.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_04.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_04.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_05.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_05.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_06.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_06.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_07.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_07.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_08.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_08.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_09.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_09.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_10.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_10.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_11.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_11.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_12.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_12.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_13.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_13.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		 
+			<BodyPart MasterName="gun" SlaveName="weapon_14.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_14.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="weapon_15.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Effect>
+					<FileName value="chuansongmen_luoji.effect"/>
+					<SocketName value="s_hand_r"/>
+					<BeginTime value="0.02"/>
+					<Times value="1"/>
+					<Position_X value="-0.0224816"/>
+					<Position_Y value="-0.0522673"/>
+					<Position_Z value="0.516825"/>
+					<yaw value="-92.974"/>
+					<pitch value="13.0166"/>
+					<roll value="26.2029"/>
+					<scale value="0.5"/>
+					<TimeScale value="1"/>
+					<Alpha value="0"/>
+					<CycleTime value="1"/>
+					<FollowActor value="true"/>
+					<Persist value="false"/>
+					<isSlowdownValuable value="true"/>
+				</Effect>
+				<StaticMesh>
+					<FileName value="weapon_15.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>			<BodyPart MasterName="gun" SlaveName="weapon_16.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_16.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="weapon_17.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="weapon_17.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="gun" SlaveName="weapon_18.mesh" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Effect>
+					<FileName value="jingqiwuqi_01.effect"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="0.3"/>
+					<TimeScale value="1"/>
+					<Alpha value="1"/>
+				</Effect>
+				<Effect>
+					<FileName value="jingqiwuqi_01.effect"/>
+					<SocketName value="s_hand_l"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="0.3"/>
+					<TimeScale value="1"/>
+					<Alpha value="1"/>
+				</Effect>
+				<StaticMesh>
+					<FileName value="weapon_18.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="1700_captainmarvel_weapon_l.mesh"/>
+					<SocketName value="s_hand_l"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+		</BodyParts>
+		<Skills>
+			<Skill Name="aim1" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack02_a.anim" BeginTime = "0" Times = "1" Length = "0.166" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="aim2" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack02_b.anim" BeginTime = "0" Times = "-1" Length = "0.5" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="aim3" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack02_c.anim" BeginTime = "0" Times = "1" Length = "0.433" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="attack" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack01.anim" BeginTime = "0" Times = "1" Length = "0.833" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+				<Effect>
+					<FileName value="attack_bubing01.effect"/>
+					<SocketName value="BuSuiFu"/>
+					<BeginTime value="0.08"/>
+					<Times value="1"/>
+					<Position_X value="-0.256912"/>
+					<Position_Y value="0.513839"/>
+					<Position_Z value="0.821657"/>
+					<yaw value="-92.974"/>
+					<pitch value="13.0166"/>
+					<roll value="26.2029"/>
+					<scale value="2"/>
+					<TimeScale value="1"/>
+					<Alpha value="1"/>
+					<CycleTime value="-1"/>
+					<FollowActor value="true"/>
+					<Persist value="false"/>
+					<isSlowdownValuable value="true"/>
+				</Effect>
+			</Skill>
+			<Skill Name="attack2" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack03.anim" BeginTime = "0" Times = "1" Length = "0.333" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="attack3" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack01.anim" BeginTime = "0" Times = "1" Length = "0.833" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+				<Effect>
+					<FileName value="chuansongmen_luoji.effect"/>
+					<SocketName value="s_hand_r"/>
+					<BeginTime value="0.02"/>
+					<Times value="1"/>
+					<Position_X value="-0.0224816"/>
+					<Position_Y value="-0.0522673"/>
+					<Position_Z value="0.516825"/>
+					<yaw value="-92.974"/>
+					<pitch value="13.0166"/>
+					<roll value="26.2029"/>
+					<scale value="0.5"/>
+					<TimeScale value="1"/>
+					<Alpha value="0"/>
+					<CycleTime value="1"/>
+					<FollowActor value="true"/>
+					<Persist value="false"/>
+					<isSlowdownValuable value="true"/>
+				</Effect>
+			</Skill>
+			<Skill Name="attack4" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack01.anim" BeginTime = "0" Times = "1" Length = "0.833" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+				<Effect>
+					<FileName value="attack_bubing01.effect"/>
+					<SocketName value="BuSuiFu"/>
+					<BeginTime value="0.08"/>
+					<Times value="1"/>
+					<Position_X value="-0.256912"/>
+					<Position_Y value="0.513839"/>
+					<Position_Z value="0.821657"/>
+					<yaw value="-92.974"/>
+					<pitch value="13.0166"/>
+					<roll value="26.2029"/>
+					<scale value="2"/>
+					<TimeScale value="1"/>
+					<Alpha value="1"/>
+					<CycleTime value="-1"/>
+					<FollowActor value="true"/>
+					<Persist value="false"/>
+					<isSlowdownValuable value="true"/>
+				</Effect>
+			</Skill>
+			<Skill Name="attack5" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack01.anim" BeginTime = "0" Times = "1" Length = "0.833" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+				<Effect>
+					<FileName value="attack_bubing01.effect"/>
+					<SocketName value="BuSuiFu"/>
+					<BeginTime value="0.08"/>
+					<Times value="1"/>
+					<Position_X value="-0.256912"/>
+					<Position_Y value="0.513839"/>
+					<Position_Z value="0.821657"/>
+					<yaw value="-92.974"/>
+					<pitch value="13.0166"/>
+					<roll value="26.2029"/>
+					<scale value="2"/>
+					<TimeScale value="1"/>
+					<Alpha value="1"/>
+					<CycleTime value="-1"/>
+					<FollowActor value="true"/>
+					<Persist value="false"/>
+					<isSlowdownValuable value="true"/>
+				</Effect>
+			</Skill>
+			<Skill Name="block1" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_block01_a.anim" BeginTime = "0" Times = "1" Length = "0.566" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="block2" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_block01_b.anim" BeginTime = "0" Times = "-1" Length = "1.1" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="block3" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_block01_c.anim" BeginTime = "0" Times = "1" Length = "0.566" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="christmas_idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "christmas_idle_boy.anim" BeginTime = "0" Times = "-1" Length = "10.033" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="climb_down" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "climb02.anim" BeginTime = "0" Times = "-1" Length = "0.433" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="climb_static" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "climb03.anim" BeginTime = "0" Times = "-1" Length = "1.033" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="climb_up" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "climb01.anim" BeginTime = "0" Times = "-1" Length = "0.7" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="dig" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack03.anim" BeginTime = "0" Times = "1" Length = "0.333" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="drink" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_eat02.anim" BeginTime = "0" Times = "1" Length = "1.1" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="drink_end" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_eat03.anim" BeginTime = "0" Times = "1" Length = "1.1" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="eat" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_eat01.anim" BeginTime = "0" Times = "-1" Length = "1.1" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="eat_end" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_eat03.anim" BeginTime = "0" Times = "1" Length = "1.1" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="fly" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_fly02.anim" BeginTime = "0" Times = "-1" Length = "1.1" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="fly_idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_fly01.anim" BeginTime = "0" Times = "-1" Length = "1.1" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="hammer" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack09.anim" BeginTime = "0" Times = "-1" Length = "0.433" FadeTime = "0.25" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="hammer_idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_stand10.anim" BeginTime = "0" Times = "-1" Length = "1.1" FadeTime = "0.25" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="hello" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_standby01.anim" BeginTime = "0" Times = "1" Length = "1.1" FadeTime = "0.25" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_stand05.anim" BeginTime = "0" Times = "-1" Length = "11.366" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="idle_1" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "christmas_wave_boy.anim" BeginTime = "0" Times = "-1" Length = "8.033" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="idle_2" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "christmas_scratchhead_boy.anim" BeginTime = "0" Times = "-1" Length = "8.033" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="jump1" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_jump01_a.anim" BeginTime = "0" Times = "1" Length = "0.233" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="jump2" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_jump01_b.anim" BeginTime = "0" Times = "-1" Length = "0.433" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="jump3" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_jump01_c.anim" BeginTime = "0" Times = "1" Length = "0.5" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="jump_attack" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack05.anim" BeginTime = "0" Times = "1" Length = "0.366" FadeTime = "0.05" Channel = "" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="pistol_idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_stand06.anim" BeginTime = "0" Times = "1" Length = "1.1" FadeTime = "0.25" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="pistol_reload" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_atstand01.anim" BeginTime = "0" Times = "1" Length = "0.7" FadeTime = "0.25" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="pistol_shoot" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack06.anim" BeginTime = "0" Times = "1" Length = "0.433" FadeTime = "0.25" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="run" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_walk01.anim" BeginTime = "0" Times = "-1" Length = "0.633" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="run_attack" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack04.anim" BeginTime = "0" Times = "1" Length = "0.366" FadeTime = "0.05" Channel = "" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="shovel" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack08.anim" BeginTime = "0" Times = "-1" Length = "0.5" FadeTime = "0.25" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="shovel_idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_stand09.anim" BeginTime = "0" Times = "-1" Length = "1.1" FadeTime = "0.25" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="smg_idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_stand07.anim" BeginTime = "0" Times = "1" Length = "1.1" FadeTime = "0.25" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="smg_reload" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_atstand02.anim" BeginTime = "0" Times = "1" Length = "0.7" FadeTime = "0.25" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="smg_shoot" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack07.anim" BeginTime = "0" Times = "1" Length = "0.433" FadeTime = "0.25" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="sneak" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_stand04.anim" BeginTime = "0" Times = "-1" Length = "1.1" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="sprint" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_walk03.anim" BeginTime = "0" Times = "-1" Length = "0.433" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="swim" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_swim02.anim" BeginTime = "0" Times = "-1" Length = "1.1" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="swim_idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_swim01.anim" BeginTime = "0" Times = "-1" Length = "1.1" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="throw" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack03.anim" BeginTime = "0" Times = "1" Length = "0.333" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="walk" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_walk02.anim" BeginTime = "0" Times = "-1" Length = "1.1" FadeTime = "0.05" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="walk04" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_walk04.anim" BeginTime = "0" Times = "-1" Length = "0.7" FadeTime = "0.25" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="walk05" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_walk05.anim" BeginTime = "0" Times = "-1" Length = "0.7" FadeTime = "0.25" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="walk06" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_walk06.anim" BeginTime = "0" Times = "-1" Length = "0.433" FadeTime = "0.25" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="walk07" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_walk07.anim" BeginTime = "0" Times = "-1" Length = "0.433" FadeTime = "0.25" Channel = "lower" TimeScale = "1">
+				</Animation>
+			</Skill>
+		</Skills>
+		<Anims>
+				<Anim Name="boy_attack01.anim"/>
+				<Anim Name="boy_stand01.anim"/>
+				<Anim Name="boy_walk01.anim"/>
+				<Anim Name="boy_attack02_a.anim"/>
+				<Anim Name="boy_attack02_b.anim"/>
+				<Anim Name="boy_attack02_c.anim"/>
+				<Anim Name="boy_fly01.anim"/>
+				<Anim Name="boy_fly02.anim"/>
+				<Anim Name="boy_jump01_a.anim"/>
+				<Anim Name="boy_jump01_b.anim"/>
+				<Anim Name="boy_jump01_c.anim"/>
+				<Anim Name="boy_stand02.anim"/>
+				<Anim Name="boy_eat01.anim"/>
+				<Anim Name="boy_stand03.anim"/>
+				<Anim Name="boy_attack03.anim"/>
+				<Anim Name="boy_block01_a.anim"/>
+				<Anim Name="boy_block01_b.anim"/>
+				<Anim Name="boy_block01_c.anim"/>
+				<Anim Name="boy_eat02.anim"/>
+				<Anim Name="boy_eat03.anim"/>
+				<Anim Name="boy_stand04.anim"/>
+				<Anim Name="boy_stand05.anim"/>
+				<Anim Name="boy_swim01.anim"/>
+				<Anim Name="boy_swim02.anim"/>
+				<Anim Name="boy_walk02.anim"/>
+				<Anim Name="boy_walk03.anim"/>
+				<Anim Name="boy_attack04.anim"/>
+				<Anim Name="boy_attack05.anim"/>
+				<Anim Name="boy_atstand01.anim"/>
+				<Anim Name="boy_atstand02.anim"/>
+				<Anim Name="boy_attack06.anim"/>
+				<Anim Name="boy_attack07.anim"/>
+				<Anim Name="boy_stand06.anim"/>
+				<Anim Name="boy_stand07.anim"/>
+				<Anim Name="boy_attack08.anim"/>
+				<Anim Name="boy_attack09.anim"/>
+				<Anim Name="boy_stand09.anim"/>
+				<Anim Name="boy_stand10.anim"/>
+				<Anim Name="boy_walk04.anim"/>
+				<Anim Name="boy_walk05.anim"/>
+				<Anim Name="boy_walk06.anim"/>
+				<Anim Name="boy_walk07.anim"/>
+				<Anim Name="boy_standby01.anim"/>
+				<Anim Name="christmas_idle_boy.anim"/>
+				<Anim Name="christmas_scratchhead_boy.anim"/>
+				<Anim Name="christmas_wave_boy.anim"/>
+		</Anims>
+	</ActorTemplate>
+</ActorTemplates>

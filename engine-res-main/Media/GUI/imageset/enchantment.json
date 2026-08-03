@@ -1,0 +1,53 @@
+{"frames": {
+
+"add":
+{
+	"frame": {"x":0,"y":0,"w":62,"h":62},
+	"offset": {"x":0,"y":0,"w":62,"h":62},
+	"sourceSize": {"w":62,"h":62}
+},
+"bg":
+{
+	"frame": {"x":0,"y":278,"w":473,"h":525},
+	"offset": {"x":0,"y":0,"w":473,"h":525},
+	"sourceSize": {"w":473,"h":525}
+},
+"book":
+{
+	"frame": {"x":0,"y":73,"w":334,"h":157},
+	"offset": {"x":0,"y":0,"w":334,"h":157},
+	"sourceSize": {"w":334,"h":157}
+},
+"consume_bedwar_bg":
+{
+	"frame": {"x":208,"y":0,"w":73,"h":73},
+	"offset": {"x":0,"y":0,"w":73,"h":73},
+	"sourceSize": {"w":73,"h":73}
+},
+"consume_bg":
+{
+	"frame": {"x":62,"y":0,"w":73,"h":73},
+	"offset": {"x":0,"y":0,"w":73,"h":73},
+	"sourceSize": {"w":73,"h":73}
+},
+"effect":
+{
+	"frame": {"x":0,"y":230,"w":421,"h":48},
+	"offset": {"x":0,"y":0,"w":421,"h":48},
+	"sourceSize": {"w":421,"h":48}
+},
+"equip_bg":
+{
+	"frame": {"x":135,"y":0,"w":73,"h":73},
+	"offset": {"x":0,"y":0,"w":73,"h":73},
+	"sourceSize": {"w":73,"h":73}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "enchantment.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":1024},
+	"scale": "1"
+}
+}

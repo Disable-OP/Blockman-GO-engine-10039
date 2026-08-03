@@ -1,0 +1,6 @@
+if(${LORD_PLATFORM_LINUX})
+    add_subdirectory(Core)
+else()
+    add_subdirectory(Core)
+    add_subdirectory(GLES2Render)
+endif()

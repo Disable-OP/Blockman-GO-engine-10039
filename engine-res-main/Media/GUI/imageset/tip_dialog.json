@@ -1,0 +1,88 @@
+{
+    "frames": {
+        "btn_close": {
+            "frame": {
+                "y": 0, 
+                "x": 688, 
+                "w": 58, 
+                "h": 59
+            }, 
+            "sourceSize": {
+                "h": 59, 
+                "w": 58
+            }, 
+            "offset": {
+                "y": 0, 
+                "x": 0, 
+                "w": 58, 
+                "h": 59
+            }
+        }, 
+        "btn_cancel": {
+            "frame": {
+                "y": 0, 
+                "x": 532, 
+                "w": 156, 
+                "h": 51
+            }, 
+            "sourceSize": {
+                "h": 51, 
+                "w": 156
+            }, 
+            "offset": {
+                "y": 0, 
+                "x": 0, 
+                "w": 156, 
+                "h": 51
+            }
+        }, 
+        "btn_confirm": {
+            "frame": {
+                "y": 0, 
+                "x": 746, 
+                "w": 109, 
+                "h": 51
+            }, 
+            "sourceSize": {
+                "h": 51, 
+                "w": 109
+            }, 
+            "offset": {
+                "y": 0, 
+                "x": 0, 
+                "w": 109, 
+                "h": 51
+            }
+        }, 
+        "background": {
+            "frame": {
+                "y": 0, 
+                "x": 0, 
+                "w": 532, 
+                "h": 382
+            }, 
+            "sourceSize": {
+                "h": 382, 
+                "w": 532
+            }, 
+            "offset": {
+                "y": 0, 
+                "x": 0, 
+                "w": 532, 
+                "h": 382
+            }
+        }
+    }, 
+    "meta": {
+        "scale": "1", 
+        "format": "RGBA8888", 
+        "app": "http://www.codeandweb.com/texturepacker", 
+        "version": "1.0", 
+        "type": "frame", 
+        "image": "tip_dialog.png", 
+        "size": {
+            "h": 382, 
+            "w": 855
+        }
+    }
+}

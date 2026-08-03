@@ -1,0 +1,35 @@
+{"frames": {
+
+"background":
+{
+	"frame": {"x":0,"y":85,"w":819,"h":504},
+	"offset": {"x":0,"y":0,"w":819,"h":504},
+	"sourceSize": {"w":819,"h":504}
+},
+"button":
+{
+	"frame": {"x":115,"y":0,"w":171,"h":58},
+	"offset": {"x":0,"y":0,"w":171,"h":58},
+	"sourceSize": {"w":171,"h":58}
+},
+"horologe":
+{
+	"frame": {"x":0,"y":0,"w":34,"h":36},
+	"offset": {"x":0,"y":0,"w":34,"h":36},
+	"sourceSize": {"w":34,"h":36}
+},
+"pig":
+{
+	"frame": {"x":34,"y":0,"w":81,"h":85},
+	"offset": {"x":0,"y":0,"w":81,"h":85},
+	"sourceSize": {"w":81,"h":85}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "bird_activity.png",
+	"format": "RGBA8888",
+	"size": {"w":819,"h":589},
+	"scale": "1"
+}
+}

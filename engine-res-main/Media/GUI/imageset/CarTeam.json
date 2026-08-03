@@ -1,0 +1,24 @@
+{"frames": {
+
+"BlueIcon":
+{
+	"frame": {"x":10,"y":10,"w":42,"h":39},
+	"offset": {"x":0,"y":0,"w":42,"h":39},
+	"sourceSize": {"w":42,"h":39}
+},
+"RedIcon":
+{
+	"frame": {"x":10,"y":59,"w":40,"h":37},
+	"offset": {"x":0,"y":0,"w":40,"h":37},
+	"sourceSize": {"w":40,"h":37}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "CarTeam.png",
+	"format": "RGBA8888",
+	"size": {"w":62,"h":106},
+	"scale": "1",
+	"type": "frame"
+}
+}

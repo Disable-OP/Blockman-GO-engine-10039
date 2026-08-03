@@ -1,0 +1,14 @@
+<resources>
+
+	<string name="app_name">BlockManGo</string>
+    <string name="prepare_text">准备资源中(不消耗流量)</string>
+	<string name="download_text">下载资源中</string>
+	<string name="update_text">更新资源中</string>
+	<string name="dialog_title">提示</string>
+	<string name="update_text_tips">需要下载更新包,建议链接wifi, 更新包大小为:</string>
+	<string name="update_app_tips">请安装新版本的应用程序启动</string>
+	<string name="dialog_ok_text">确定</string>
+	<string name="dialog_cancel_text">取消</string>
+	<string name="local_version_text">当前版本:</string>
+	<string name="server_version_text">最新版本:</string>
+</resources>

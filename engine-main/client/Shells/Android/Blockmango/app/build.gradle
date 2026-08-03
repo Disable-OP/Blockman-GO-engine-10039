@@ -1,0 +1,153 @@
+import com.google.gson.Gson
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        applicationId "com.sandboxol.blockmango"
+        minSdkVersion 14
+        targetSdkVersion 22
+        versionCode 16
+        versionName "0.2.16"
+
+//        buildConfigField "String", "MINI_GAME_SERVER_URL", "\"http://dev.sandboxol.com:8945\""
+//        buildConfigField "String", "BLOCK_MAN_MINI_GAME_DISPATCH_URL", "\"http://120.92.133.131:9902\""
+
+        buildConfigField "String", "MINI_GAME_SERVER_URL", "\"http://120.92.158.119\""
+        buildConfigField "String", "BLOCK_MAN_MINI_GAME_DISPATCH_URL", "\"http://120.92.133.131:9902\""
+
+//        externalNativeBuild {
+//            cmake {
+//                arguments '-DANDROID_PLATFORM=android-15', '-DANDROID_STL=gnustl_shared'
+//                //abiFilters 'armeabi'
+//                //abiFilters 'armeabi-v7a'
+//                abiFilters 'arm64-v8a'
+//                //cppFlags '-std=c++11 -pthread -fexceptions -frtti'
+//                cppFlags '-std=c++11 -Wno-format-security'
+//            }
+//        }
+    }
+
+    signingConfigs {
+        release {
+            storeFile file('blockmango.keystore')
+            storePassword '111111'
+            keyAlias 'fbzz'
+            keyPassword '111111'
+        }
+    }
+
+//    externalNativeBuild {
+//        cmake {
+//            path "CMakeLists.txt"
+//        }
+//    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            jniDebuggable true
+        }
+        release {
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            android.applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        def fileName = "app-blockmango-v${defaultConfig.versionName}-build-${defaultConfig.versionCode}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['./libs']
+        }
+    }
+
+    android {
+        useLibrary 'org.apache.http.legacy'
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.android.support:multidex:1.0.3'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+}
+
+task initVersion() {
+    doFirst {
+        File resVersionFile = new File(buildDir, '/../src/main/assets/resources/res.version')
+
+        if (!resVersionFile.exists()) {
+            resVersionFile.createNewFile()
+        }
+
+        outFile(resVersionFile, new Gson().toJson(new ResVersion("2.342.0.0","f9bd6e2dd5d090f008ebaa8eed275bb9")))
+		
+        File engineVersionFile = new File(buildDir, '/../src/main/assets/resources/Media/engineVersion.json')
+        if (!engineVersionFile.exists()) {
+            engineVersionFile.createNewFile()
+        }
+
+        outFile(engineVersionFile, new Gson().toJson(new EngineVersion(90001)))
+    }
+}
+
+void outFile(File file, String str) {
+    FileOutputStream fos = new FileOutputStream(file)
+    PrintWriter pw = new PrintWriter(fos)
+    pw.write(str.toCharArray())
+    pw.flush()
+    fos.close()
+    println('outFile content: ' + str)
+}
+
+class ResVersion {
+    String version
+    String filelistmd5
+
+    ResVersion(String ver, String md5) {
+        version = ver
+        filelistmd5 = md5
+    }
+}
+
+class EngineVersion {
+    int engineVersion
+
+    EngineVersion(int v) {
+        engineVersion = v
+    }
+}
+
+task zipFile(type: Zip) {
+    from "$buildDir/../src/Main"
+    baseName 'baseName1'
+}
+
+afterEvaluate {
+    tasks.findByName("androidDependencies").dependsOn(zipFile)
+    tasks.matching {
+        it.name.startsWith('generate') && (it.name.endsWith('Sources') || it.name.endsWith('Sources'))
+    }.each { task ->
+        println(buildDir)
+        task.dependsOn(initVersion)
+
+    }
+}

@@ -1,0 +1,47 @@
+
+/************************************************************************
+    String
+*************************************************************************/
+class GUIString
+{
+    static const unsigned long npos;
+
+    unsigned long size() const;
+    unsigned long length() const;
+    bool empty() const;
+    unsigned long capacity() const;
+
+    unsigned long& operator[] (unsigned long i);
+    unsigned long& at(unsigned long i);
+    string c_str() const;
+
+    void reserve(unsigned long num=0);
+    void resize(unsigned long num);
+    void resize(unsigned long num, unsigned long codepoint);
+
+    void clear();
+    GUIString& erase();
+    // default len is different from usual to handle ambiguity issue
+    GUIString& erase(unsigned long idx, unsigned long len=1);
+
+    GUIString& replace(unsigned long begin, unsigned long len, const GUIString&s);
+    //GUIString& replace(unsigned long begin, unsigned long len, unsigned long codepoint);
+
+    void swap(GUIString& s);
+    GUIString& insert(unsigned long pos, const GUIString& s);
+    //GUIString& insert(unsigned long pos, unsigned long codepoint);
+
+    unsigned long find(unsigned long codepoint, unsigned long idx=0) const;
+    unsigned long rfind(unsigned long codepoint, unsigned long idx=-1) const;
+    unsigned long find(const GUIString& sub, unsigned long idx=0) const;
+    unsigned long rfind(const GUIString& sub, unsigned long idx=-1) const;
+
+    GUIString substr(unsigned long idx=0, unsigned long len=-1) const;
+
+    void push_back(unsigned long codepoint);
+
+    GUIString();
+    GUIString(unsigned long num, unsigned long codepoint);
+    GUIString(utf8string s);
+    GUIString(const GUIString& s);
+};

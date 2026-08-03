@@ -1,0 +1,15 @@
+.vs
+.vscode
+Build
+LinuxBuild
+Debug
+Release
+obj
+libs
+
+*.a
+*.dll
+*.lib
+*.exe
+*.pdb
+*.vcxproj.user

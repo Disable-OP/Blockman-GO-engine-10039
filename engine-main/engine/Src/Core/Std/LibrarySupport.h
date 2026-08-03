@@ -1,0 +1,6 @@
+#ifndef __LIBRARY_SUPPORT_HEADER__
+#define __LIBRARY_SUPPORT_HEADER__
+
+#define STD_LIBRARY_SUPPORT 17
+
+#endif

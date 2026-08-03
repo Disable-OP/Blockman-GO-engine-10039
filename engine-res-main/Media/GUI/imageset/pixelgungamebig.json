@@ -1,0 +1,53 @@
+{"frames": {
+
+"baoxiang":
+{
+	"frame": {"x":0,"y":0,"w":100,"h":100},
+	"offset": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+"bg":
+{
+	"frame": {"x":100,"y":0,"w":1280,"h":453},
+	"offset": {"x":0,"y":0,"w":1280,"h":453},
+	"sourceSize": {"w":1280,"h":453}
+},
+"frag":
+{
+	"frame": {"x":1380,"y":0,"w":100,"h":100},
+	"offset": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+"hp_max":
+{
+	"frame": {"x":1480,"y":0,"w":163,"h":131},
+	"offset": {"x":0,"y":0,"w":163,"h":131},
+	"sourceSize": {"w":163,"h":131}
+},
+"jinbi":
+{
+	"frame": {"x":1643,"y":0,"w":100,"h":100},
+	"offset": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+"yaoshi":
+{
+	"frame": {"x":1743,"y":0,"w":100,"h":100},
+	"offset": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+"yaoshi_kuang":
+{
+	"frame": {"x":1843,"y":0,"w":100,"h":100},
+	"offset": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "pixelgungamebig.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":512},
+	"scale": "1"
+}
+}

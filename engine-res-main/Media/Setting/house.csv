@@ -1,0 +1,12 @@
+	ItemId	Name	Desc	Icon	Length	Width	Height	Template
+中文备注	手持道具Id(937~946)	多语言名称	多语言描述	对应Item图标	长	宽	高	房子模板
+1级房子	937	house_01	house_desc_01	house_01	15	15	15	Town101.schematic
+2级房子	938	house_02	house_desc_02	house_02	15	15	15	Town102.schematic
+3级房子	939	house_03	house_desc_03	house_03	15	15	15	Town103.schematic
+4级房子	940	house_04	house_desc_04	house_04	15	15	15	Town104.schematic
+5级房子	941	house_05	house_desc_05	house_05	15	15	15	Town105.schematic
+6级房子	942	house_06	house_desc_06	house_06	15	15	15	Town106.schematic
+7级房子	943	house_07	house_desc_07	house_07	15	15	15	Town107.schematic
+8级房子	944	house_08	house_desc_08	house_08	15	15	15	Town108.schematic
+9级房子	945	house_09	house_desc_09	house_09	15	15	15	Town109.schematic
+10级房子	946	house_10	house_desc_10	house_10	15	15	15	Town110.schematic

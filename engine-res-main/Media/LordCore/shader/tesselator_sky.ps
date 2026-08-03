@@ -1,0 +1,13 @@
+#version 100
+
+uniform mediump vec4 ambient;
+
+varying mediump vec4 oFogColor;
+
+
+void main(void)
+{
+   	gl_FragColor = vec4(mix(oFogColor.rgb, ambient.rgb, oFogColor.a), oFogColor.a);
+}
+
+

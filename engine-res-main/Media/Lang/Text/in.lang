@@ -1,0 +1,1137 @@
+﻿## Comments can be added anywhere on a valid line by starting with '##'
+##
+## Note, trailing spaces will NOT be trimmed. If you want room between the end of the string and the start of a
+## comment on the same line, use TABs.
+
+system.message.player.enter.server=%s bergabung permainan ...
+system.message.player.exit.server=%s keluar dari game ...
+# death event	
+system.message.player.death=%s gagal ...
+
+# GUI
+gui.loading.page.connected.server.connecting=Sedang koneksi ke server ...
+gui.loading.page.connected.server.failed=Koneksi ke server gagal, silahkan coba lagi ...
+gui.loading.page.player.login.loggingin=Verifikasi data pengguna sedang diperiksa, tolong tunggu ...
+gui.loading.page.player.login.failure=Verifikasi data pengguna gagal, silahkan masuk ulang
+gui.loading.page.download.map.loading=Sumber peta sedang download ...
+gui.loading.page.download.map.failure=Download sumber peta gagal ...
+gui.loading.page.load.world=Dunia mulai dibuat ...
+gui.loading.page.load.terrain=Generasi medan mulai dibuat...
+gui.chest.inventory=Bilah barang
+gui.chest.small.chest=Kotak
+gui.chest.large.chest=Kotak besar
+gui.close=Tutup
+gui.sure=Menentukan
+gui.cancel=Batal
+gui.rebirth=Hidup kembali
+gui.back=Kembali
+gui.message.network.connection.disconnect=Terputus dari server ...
+gui.message.network.connection.network.error=Sambungan jaringan abnormal, terputus dari server ...
+gui.message.network.connection.kick.out=Terputus dari server ...
+gui.message.account.be.kicked=Nomor akun yang sama login game pada tempat lain,Anda terpaksa offline...
+gui.message.network.server.close.connection=Server menutup koneksi
+gui.message.death=Anda gagal
+gui.message.exit.game=yakin untuk keluar dari game?
+gui.game.setting=Setting game
+gui.back.game=Kembali ke game
+gui.exit.game=Kembali ke APP
+gui.setting.visual.angle=Perspektif
+gui.setting.luminance=Kecerahan
+gui.setting.horizon=Visi
+gui.setting.volume=Volume
+gui.setting.gui.size=Ukuran tombol
+gui.setting.camera.sensitive=Sensitivitas lensa
+gui.setting.jump.sneak.toggle=Melompat/menyelinap
+gui.setting=Setting
+gui.chat.send=Kirim
+tool.bar.player.list.munber.name=Dibutuhkan
+tool.bar.player.list.munber.value=%s%s/%s%s
+gui.exit=Keluar
+dead.summary.title=Hasil
+dead.summary.rank=Pangkat
+dead.summary.reward=Reward
+dead.summary.watch.battle=Tonton
+gui.share=Bagikan
+gui.continue=Terus
+final.summary.rank=Pangkat
+final.summary.player=Pemain
+final.summary.reward=Reward
+
+gui.shop.title=Toko alat peraga
+gui.shop.tab.tool=Alat
+gui.shop.tab.armor=Peralatan
+gui.shop.tab.arms=Senjata
+gui.shop.tab.block=Square
+gui.shop.tab.food=Makanan
+gui.shop.tab.others=Lain
+gui.shop.tab.upgrade=Menatar
+gui.shop.tab.potion=Obat cairan
+gui.shop.tab.diamond=Kas
+
+
+gui.game.loading=Download %d%%...(%.2fm)
+inventory_panel_all=Semua
+inventory_panel_equipment=Peralatan
+inventory_panel_neaten=Finishing
+inventory_panel_materials=Bahan
+crafting_panel_make=Produksi
+lack_of_money=Tanpa uang
+shop_btn_buy=Beli
+gui.main.watch.battle=Menonton ...
+gui_team_red=Merah
+gui_team_blue=Biru
+gui_team_yellow=Kuning
+gui_team_green=Hijau
+gui_team_purple=Ungu
+gui_team_orange=Oranye
+gui.loading.page.check.version.failure=Verifikasi versi gagal!
+gui.loading.page.checking.version=Sedang verifikasi versi, mohon tunggu ...
+gui_team_civilian=Warga sipil
+gui_team_sheriff=Polisi
+gui_team_murderer=Pembunuh
+gui_team_soilder=Tentara
+gui_team_zombie=Zombie
+gui_rewardTip_first=Anda bisa mendapatkan %d koin per hari
+gui_rewardTip_second=Menjadi VIP , anda bisa mendapatkan lebih
+gui_team_police=Polisi
+gui_team_prisoner=Tawanan
+gui_team_criminal=Kriminal
+vehicle_locked=Mobil ini telah dikunci!
+vehicle_full_load=Mobil tersebut sudah tidak muat!
+door_has_no_key=Anda tidak memiliki kunci!
+has_no_gun=Anda tidak memiliki pistol!
+
+#score point
+score_point_kill=Bunuh
+score_point_die=Mati
+score_point_live=Survival
+score_point_serial_kill=Membunuh berturut-turut
+score_point_destroy_bed=Hancurkan
+
+#Firearms browsing
+gui_str_gun_harm=Melukakan
+gui_str_gun_bullet=Peluru
+gui_str_gun_range=Rentang tembak
+gui_str_gun_firing_rate=Kecepatan tembak
+gui_str_gun_deviation=Bias penembakan
+gui_str_gun_range_value=%2.f meter
+gui_str_gun_firing_rate_value=%2.f detik
+gui_str_gun_deviation_value=%2.f
+gui_str_gun_details_text=Gun info
+
+#AppShop
+gui_str_app_shop_shop=Toko
+gui_str_app_shop_limit=Batasi beli %d
+gui_str_app_shop_insufficient_inventory=Stok tidak cukup
+gui_str_app_shop_inventory_is_full=Bilah item sudah penuh
+
+
+default.merchant.name=▢FFFFFFFFPedagang▥
+red.merchant.name=▢FFFF0000Pedagang▥
+blue.merchant.name=▢FF0000FFPedagang▥
+green.merchant.name=▢FF00FF00Pedagang▥
+yellow.merchant.name=▢FFFFFF00Pedagang▥
+purple.merchant.name=▢FF884898Pedagang▥
+orange.merchant.name=▢FFFF8000Pedagang▥
+tool.merchant.name=▢FF0000FFSholve▥
+backpack.merchant.name=▢FFFF0000Paket▥
+carpet.merchant.name=▢FF0000FFKarpet▥
+wool.merchant.name=▢FF0000FFWol▥
+wood.merchant.name=▢FF0000FFKayu▥
+clay.merchant.name=▢FF0000FFTanah liat▥
+light.merchant.name=▢FF0000FFLampu▥
+seed.merchant.name=▢FF0000FFBiji▥
+farmer.merchant.name=▢FF0000FFPembeli Hasil Bumi▥
+stone.merchant.name=▢FF0000FFBatu▥
+
+store.goods.storeUpgrade=Pembaharuan batu untuk barang lebih banyak
+store.goods.ironUpgrade=Pembaharuan besi. Batang besi ganda!
+store.goods.goldUpgrade=Pembaharuan Emas. Batang Emas Ganda!
+store.goods.tem.arrow=8 Anak panah
+store.goods.tem.wool=10 Wol
+store.goods.tem.clay=10 Tanah liat yang mengeras
+store.goods.tem.ladder=10 Tangga
+store.goods.tem.obsidian=10 Obsidian
+store.goods.tem.bread=10 Roti
+store.goods.tem.beefCooked=10 Daging Sapi Panggang
+
+gui.wait.rebirth=Menunggu untuk bangkit
+
+gui_gun_name_1.name=Pistol
+gui_gun_name_2.name=AK 47
+gui_gun_name_3.name=Senapan mesin ringan
+gui_gun_name_4.name=Senapan (SG)
+gui_gun_name_5.name=Granat Tangan
+gui_gun_name_6.name=Senapan sniper
+gui_gun_name_9.name=M4A1
+gui_gun_name_8.name=Senapan sniper 98K
+gui_gun_name_11.name=Pistol Gatling
+gui_gun_name_10.name=Senapan sniper Barrett
+gui_gun_name_12.name=Senapan sniper Mauser
+gui_gun_name_13.name=Senapan sniper 85
+gui_gun_name_14.name=Senapan sniper SVD
+gui_gun_name_15.name=Senjata mesin MK60
+gui_gun_name_16.name=Senjata mesin M4G43
+gui_gun_name_17.name=Senjata mesin M1941
+gui_gun_name_18.name=Senjata mesin DP-28
+gui_gun_name_19.name=Senapan MK14
+gui_gun_name_20.name=Senjata mesin W2000
+gui_gun_name_21.name=Senapan 95
+gui_gun_name_22.name=Senapan M416
+gui_gun_name_23.name=Senapan M16A4
+gui_gun_name_24.name=Senapan Groza
+gui_gun_name_25.name=Senapan mesin pistol Tommy
+gui_gun_name_26.name=Senapan mesin ringan Vector
+gui_gun_name_27.name=Senapan mesin ringan Micro Uzi
+gui_gun_name_28.name=Senapan mesin ringan Type1000
+gui_gun_name_29.name=Senapan M1014
+gui_gun_name_30.name=Senapan S12K (SG)
+gui_gun_name_31.name=Senapan AUG A3
+gui_gun_name_32.name=Senapan mesin ringan UMP9
+gui_gun_name_33.name=Senapan Scar-L
+gui_gun_name_34.name=Senapan mesin ringan MK5
+gui_gun_name_35.name=Senapan AA12 (SG)
+gui_gun_name_36.name=Senapan Sears Ranger
+gui_gun_name_37.name=Pistol R1895
+gui_gun_name_38.name=Pistol Dessert Eagle
+
+gui_bullet_name_1.name=Peluru Pistol
+gui_bullet_name_2.name=Peluru Senapan
+gui_bullet_name_3.name=Peluru Senapan mesin ringan
+gui_bullet_name_4.name=Peluru Senapan (SG)
+gui_bullet_name_5.name=Peluru Senapan sniper
+gui_bullet_general.name=Peluru
+
+item.zhiliaoyao.name=Menyembuhkan
+item.yinshenyao.name=Limunan
+item.tiaotiaoyao.name=Lompat
+item.shouliudan.name=Granat
+item.handcuffs.name=Borgol
+item.key01.name=Kunci
+item.cash.name=Uang
+item.tpScroll01.name=Teleport rumah
+item.tpScroll02.name=Teleport menjelajah
+item.tpScroll03.name=Teleport Scroll
+item.tpScroll04.name=Teleport Scroll
+item.tpScroll05.name=Teleport Scroll
+item.createBridge01.name=Buatlah sebuah jembatan
+item.createBridge02.name=Telur jembatan
+item.createBridge03.name=Telur jembatan
+item.createBridge04.name=Telur jembatan
+item.createBridge05.name=Telur jembatan
+
+gui_jail_break_role_choice_police_tip=Polisi sudah penuh , pilih perampok.
+gui_jail_break_role_choice_bandit_tip=Perampok sudah penuh ,pilih polisi.
+gui_jail_break_role_choice_enter_game=Ikut
+gui_jail_break_role_choice_title=Judul
+gui_jail_break_role_choice_title_police=Polisi
+gui_jail_break_role_choice_title_bandit=Perampok
+
+gui_dialog_tip_title_tip=Tip
+gui_dialog_tip_title_vehicle=Membuka mobil
+gui_dialog_tip_content_unlock_vehicle=Membuka mobil[%s] butuh
+gui_dialog_tip_btn_cancel=Batal
+gui_dialog_tip_btn_sure=OK
+gui_dialog_tip_btn_unlock=Membuka
+gui_dialog_tip_btn_get_currency=Dapatkan uang
+gui_dialog_tip_content_go_app_shop=Uang tidak memadai, Apakah akan pergi ke bursa toko ?
+gui_dialog_tip_revive_msg=Permainan berakhir,bangkit akan membutuhkan biaya (%d)
+gui_dialog_tip_revive_cancel=Akhiri
+gui_dialog_tip_revive_sure=Respawn
+
+jail_item_name_shovel=Sekop untuk menggali tanah
+jail_item_name_key=Kunci
+jail_item_name_bullet=Peluru
+jail_item_name_cash1700=Uang 1,700
+jail_item_name_cash1000=Uang 1,000
+jail_item_name_cash2000=Uang 2,000
+jail_item_name_cash4000=Uang 4,000
+jail_item_name_cash5000=Uang 5,000
+jail_item_name_cash10000=Uang 10,000
+jail_item_name_cash20000=Uang 20,000
+jail_item_name_cash50000=Uang 50,000
+jail_item_name_cash100000=Uang 100,000
+
+gui_buy_goods_successful=Sukses membeli barang
+gui_buy_goods_failure=Gagal membeli barang
+gui_dialog_tip_content_go_npc_merchant=Inventaris anda penuh, perbaharui perlengkapan milik anda
+wordart_player_list=Daftar pemain
+wordart_achievement=Prestasi
+wordart_course=Rintangan
+wordart_game_setting=Pengaturan
+wordart_key_setting=Pengaturan kunci
+wordart_reset_key=Tombol atur alung
+wordart_exit_game=Keluar
+wordart_resume_game=Lanjutkan
+wordart_compound=Buat
+wordart_role=Peran
+wordart_bag=Inventaris
+wordart_inventory_tabs=Tab inversitas
+wordart_chest=Peti
+wordart_shop=Toko
+wordart_shop_tile_name=Toko
+wordart_workbench=Tab kerajinan
+wordart_settlement=Penyelesaian
+
+gui_rank_score=Skor
+gui_rank_day_rank=Harian
+gui_rank_week_rank=Mingguan
+gui_rank_self_score=Skor saya
+item.shovelRenovation.name=Sekop kecil
+item.spatula.name=Sudip
+item.shovelToy.name=Mainan sekop
+item.digBucket.name=Ember
+
+item.shovelRake.name=Menyapu
+item.digShovelIron.name=Sekop militer
+item.shovelBigScooper.name=Sendok raksasa
+item.shovelJackHammer.name=Palu
+item.shovelDrill.name=Bor
+item.shovelEngineerGold.name=Sekop emas
+item.shovelMarching.name=Sekop mekanik
+
+exchangetips_littletoysholve=Perhatian! Daur ulang renovasi sekop
+exchangetips_smalltoysholve=Perhatian! Daur ulang sudip
+exchangetips_mediumtoysholve=Perhatian! Daur ulang sekop mainan
+exchangetips_bucket=Perhatian! Daur ulang ember
+exchangetips_rake=Perhatian! Daur ulang menyapu
+exchangetips_solidersholve=Perhatian! Daur ulang sekop berbaris
+exchangetips_hugesholve=Perhatian! Daur ulang Sendok Besar
+exchangetips_engineersholve=Perhatian! Daur ulang Sekop Insinyur
+
+diggertip1=Sekop kecil : Kekuatan 1
+diggertip2=Spatula:Kekuatan 2
+diggertip3=Mainan sekop:Kekuatan 3
+diggertip4=Ember:Kekuatan 4
+diggertip5=Sapu:Kekuatan 5
+diggertip6=Sendok raksasa:Kekuatan 7
+diggertip7=Sekop militer:Kekuatan 10
+diggertip8=Sekop mekanik:Kekuatan 15
+diggertip9=Palu:Kekuatan 20
+diggertip10=Bor:Kekuatan 50
+diggertip11=Sekop emas:Kekuatan 75
+
+bagpackupdate_2=Perbaharui ke 25
+bagpackupdate_3=Perbaharui ke 40
+bagpackupdate_4=Perbaharui ke 140
+bagpackupdate_5=Perbaharui ke 250
+bagpackupdate_6=Perbaharui ke 480
+bagpackupdate_7=Perbaharui ke 1000
+bagpackupdate_8=Perbaharui ke 1500
+bagpackupdate_9=Perbaharui ke 2500
+bagpackupdate_10=Perbaharui ke 5000
+bagpackupdate_11=Perbaharui ke 7500
+bagpackupdate_12=Perbaharui ke 10000
+bagpackupdate_13=Perbaharui ke 15000
+leveltoptip=Telah mencapai level maksimum
+
+gui_rank_button=Pangkat
+default.rank.name=Pangkat
+gui_dialog_btn_upgrade_bag=Perbaharui tas
+dead.summary.eliminated.rank=Bunuh
+dead.summary.chicken.tip=Selamat atas kemenangannya !
+dead.summary.chicken.tip.luck=Semoga beruntung lain kali !
+toolbar_member_left=Kiri
+toolbar_kill_number=Bunuh
+gui_player_list_item_add_friend=Tambah
+item.medicinePack.name=Ayam
+item.medicinePotion.name=Ramuan
+
+gui_player_list_item_add_friend_msg_sent=Kirim
+gui_player_list_item_add_friend_msg_send_failure=Permintaan teman gagal , coba lagi
+gui_player_list_item_add_friend_msg_agree_failure=Persetujuan gagal , coba lagi
+
+gui_player_list_item_add_friend_btn_agree=Setuju
+gui_player_list_item_add_friend_btn_ignore=Tolak
+gui.setting.pole.toggle=Ganti tiang
+gui_player_list_item_add_friend_msg=Permintaan teman
+
+item.goldHeart.name=Hati emas
+item.goldShoes.name=Sepatu emas
+item.goldArrow.name=Anak panah emas
+item.questionMark.name=Tanda tanya
+
+hide.rank.name=Sembunyikan peringkat
+seek.rank.name=Mencari peringkat
+hide.rank.title=Sembunyikan peringkat
+seek.rank.title=Mencari peringkat
+
+gui_tip_pick_up_goods_title=Mengambil %s
+gui_tip_pick_up_goods_content=Mengambil[%s] biaya
+gui_tip_pick_up_goods_btn_sure=Mengambil
+gui_tip_pick_up_goods_not_exist=Barang tidak ada atau sudah di ambil oleh pemain lain
+gui_tip_pick_up_goods_pay_failure=Pembayaran gagal, mohon ulangi.
+gui_rank_my_rank=Pangkat saya
+gui_rank_jail_break_hero_cops=Polisi pahlawan
+gui_rank_jail_break_top_wanted=Penjahat super
+gui_rank_jail_break_my_hero_cops=Tangkap
+gui_rank_jail_break_my_top_wanted=Bounty
+gui_rank_jail_break_left_score=Tertangkap
+gui_rank_jail_break_right_score=Bounty
+gui_rank_default_title_name=Pangkat
+gui_rank_vice_title_left_name=Harian
+gui_rank_vice_title_right_name=Mingguan
+gui_hide_and_seek_game_time_info=Hitung mundur:%d
+gui_rank_sand_digger_title_name=Pangkat penggali
+
+gui_team_seek=Mencari
+gui_team_hide=Sembunyikan
+
+gui_dialog_tip_title_change_actort=Mengubah
+gui_dialog_tip_content_change_actort=Mengubah [%s] waktu,butuh biaya
+gui_dialog_tip_btn_change_actort=Mengubah
+
+gui_check_point_number=Bulat:%d
+gui_surplus_monster=Monster tersisa:%d
+gui_surplus_check_point_number=Bulat sebelum BOSS:%d
+gui_count_down_time_info=Waktu tersisa: %d
+tool_bar_real_time_rank_title_rank_id=Pangkat
+tool_bar_real_time_rank_title_name=Nama
+tool_bar_real_time_rank_title_rank_title_lev=Level
+tool_bar_real_time_rank_title_rank_title_kills=Bunuh
+tool_bar_real_time_rank_title_rank_title_gold=Emas
+gui_boss_life=[BOSS]Darah : %d / %d
+gui_rank_creepy_aliens_total_clearance=Jumlah
+gui_rank_creepy_aliens_week_clearance=Mingguan
+gui_rank_creepy_aliens_total_check_point=Jumlah
+gui_rank_creepy_aliens_week_check_point=Mingguan
+gui_rank_creepy_aliens_my_total_check_point=Tingkat total
+gui_rank_creepy_aliens_my_week_check_point=Tingkat minggu
+gui_rank_creepy_aliens_my_check_point=Saya
+gui_shop_dont_buy=Terkunci
+gui_shop_has_get=Dimiliki
+gui_shop_has_use=Saat ini
+tool_bar_real_time_rank_btn_name=Pangkat
+gui_shop_goods_tip=Deskripsi :
+
+upgrade.item.helmet.desc=LV ▢FF00FF00%d ▢FFFFFFFFHat\\n+ ▢FF00FF00%d ▢FFFFFFFFHP/10s\\nLV selanjutnya:\\n+ ▢FF00FF00%d ▢FFFFFFFFHP/10s
+upgrade.item.plate.desc=LV ▢FF00FF00%d ▢FFFFFFFFpakaian\\n+ ▢FF00FF00%d ▢FFFFFFFFDEF\\nLV selanjutnya:\\n+ ▢FF00FF00%d ▢FFFFFFFFDEF
+upgrade.item.legs.desc=LV ▢FF00FF00%d ▢FFFFFFFFcelana\\n+ ▢FF00FF00%d ▢FFFFFFFFDarah maksimal\\nLV selanjutnya:\\n+ ▢FF00FF00%d ▢FFFFFFFFDarah maksimal
+upgrade.item.boots.desc=LV ▢FF00FF00%d ▢FFFFFFFFsepatu\\n+ ▢FF00FF00%d ▢FFFFFFFFkecepatan\\nLV selanjutnya:\\n+ ▢FF00FF00%d ▢FFFFFFFFkecepatan
+
+gui.shop.tip.max.level=LV maksimal
+
+prop.attack.value=ATK:%s
+prop.range.value=Jarak:%s
+prop.speed.value=Nilai:%s
+
+gui.shop.tab.prop=Alat
+
+item.propGold.name=Emas * 1.5 (permanen)
+item.propExp.name=EXP * 2 (permanen)
+prop.propSpeed.effect=Percepatan (Permanen)
+
+creepyalients.score.rank.name=Peringkat skor
+creepyalients.level.rank.name=Peringkat level
+creepyalients.score.rank.title=Peringkat skor
+creepyalients.level.rank.title=Peringkat level
+
+creepyalients_gun_name_1.name=Pistol HK P2000
+creepyalients_gun_name_2.name=Senapan AK 47
+creepyalients_gun_name_3.name=Senapan mesin ringan MP9
+creepyalients_gun_name_4.name=Senapan (SG) HAWK-12
+creepyalients_gun_name_6.name=Senapan sniper M40A3
+creepyalients_gun_name_9.name=Senapan M4A1
+creepyalients_gun_name_8.name=Senapan sniper 98K
+creepyalients_gun_name_11.name=Senapan mesin gatling
+creepyalients_gun_name_10.name=Senapan sniper Barett
+creepyalients_gun_name_37.name=Pistol R1895
+creepyalients_gun_name_27.name=Senapan mesin ringan Micro Uzi
+creepyalients_gun_name_36.name=Senapan (SG) Sears Ranger
+creepyalients_gun_name_38.name=Pistol Dessert Eagle
+creepyalients_gun_name_25.name=Senapan mesin ringan Tommy
+creepyalients_gun_name_29.name=Senapan (SG) M1014
+creepyalients_gun_name_28.name=Senapan mesin ringan Type1000
+creepyalients_gun_name_34.name=Senapan mesin ringan MK5
+creepyalients_gun_name_23.name=Senapan M16A4
+creepyalients_gun_name_35.name=Senapan (SG) AA12
+creepyalients_gun_name_26.name=Senapan mesin ringan Vector
+creepyalients_gun_name_24.name=Senapan Groza
+creepyalients_gun_name_18.name=Senapan mesin DP-28
+creepyalients_gun_name_33.name=Senapan SCAR-L
+creepyalients_gun_name_13.name=Senapan sniper 85
+creepyalients_gun_name_21.name=Senapan 95
+creepyalients_gun_name_17.name=Senapan mesin M1941
+creepyalients_gun_name_20.name=Senapan sniper W2000
+creepyalients_gun_name_31.name=Senapan AUG A3
+creepyalients_gun_name_19.name=Senapan MK14
+creepyalients_gun_name_15.name=Senapan mesin MK60
+creepyalients_gun_name_16.name=Senapan mesin MAG43
+
+creepyalients_mon_name01=Subrosian
+creepyalients_mon_name02=Subrosian Raksasa
+creepyalients_mon_name03=Greens
+creepyalients_mon_name04=Greens Raksasa
+creepyalients_mon_name05=Grey
+creepyalients_mon_name06=Greys Raksasa
+creepyalients_mon_name07=Insectosaurus
+creepyalients_mon_name08=Insectosaurus raksasa
+creepyalients_mon_name09=Slime
+creepyalients_mon_name10=Slime Raksasa
+creepyalients_mon_name11=Iblis
+creepyalients_mon_name12=Iblis Raksasa
+creepyalients_mon_name13=Kelinci mistik
+creepyalients_mon_name14=Kelinci mistik raksasa
+creepyalients_mon_name15=Babi hutan
+creepyalients_mon_name16=Babi hutan raksasa
+creepyalients_mon_name17=Malaikat
+creepyalients_mon_name18=Malaikat raksasa
+creepyalients_mon_name19=Dokter gurita
+creepyalients_mon_name20=Pemburu ufo
+
+gui.update.successful=Berhasil untuk meningkatkan
+gui.update.failed=Gagal untuk meningkatkan
+gui_basement_life=Base HP %s
+
+creepyalients_item_name_cash10000=Uang 10,000
+creepyalients_item_name_cash50000=Uang 50,000
+creepyalients_item_name_cash100000=Uang 100,000
+creepyalients_item_name_cash250000=Uang 250,000
+creepyalients_item_name_cash500000=Uang 500,000
+creepyalients_item_name_cash1000000=Uang 1,000,000
+
+gui_real_time_rank_title_one_creepy_aliens=Pangkat
+gui_real_time_rank_title_two_creepy_aliens=Nama
+gui_real_time_rank_title_three_creepy_aliens=Level
+gui_real_time_rank_title_four_creepy_aliens=Bunuh
+gui_real_time_rank_title_five_creepy_aliens=Emas
+
+gui_rank_vice_title_hist_name=Sejarah
+gui_rank_hist_rank=Saya
+score_point_point=Level
+
+default.session.name=NPC
+street.session.name=NPC Iklan
+guidenpc.g1020.01.name=Pemberi tunjuk MiniTown
+gui_dialog_tip_btn_sure_get_manor=Dapat
+gui_dialog_tip_content_get_manor=Dear[%s],Apakah anda mau taman gratis milik ANDA SENDIRI ?
+gui_dialog_tip_content_sell_manor=Dear[%s],Taman anda seharga[%d].Apakah anda ingin MENJUALnya ?
+gui_dialog_tip_content_sure_sell_manor=Menjual Taman anda seharga[%d]?
+gui_manor_radio_info=Detail
+gui_manor_radio_house=Rumah
+gui_manor_radio_furniture=Mebel
+gui_manor_radio_message=Pesan
+gui_manor_info_btn_teleport=Teleport
+gui_manor_info_btn_upgrade=%d
+gui_manor_title_name=%s's Yard
+gui_manor_info_ground=Yard
+gui_manor_info_rose=Suka
+gui_manor_info_seed=Biji
+gui_manor_info_charm=Pesona
+gui_manor_info_value=Nilai
+gui_manor_house_btn_buy=%d membuka
+gui_manor_house_btn_build=Membangun
+gui_manor_furniture_btn_buy=Beli
+gui_manor_furniture_btn_use=Taruh
+gui_manor_furniture_btn_recycle=Jual
+gui_manor_upgrade_info_ground=Area Yard
+gui_manor_upgrade_info_rose=Suka
+gui_manor_upgrade_info_seed=Tanaman
+gui_manor_upgrade_info_charm=Pesona
+gui_manor_upgrade_title=Meningkatkan ke LV %d
+gui_manor_upgrade_expenditure=Seharga
+gui_manor_house_not_can_unlock=Terbuka saat LV %d
+gui_back_platform_top_up=Mata uang
+gui_tip_need_currency=Kekuarangan
+gui_need_back_platform_top_up=Tingkatkan mata uang game
+gui_manor_message_btn_give=Suka
+gui_manor_message_btn_call_on=Kunjungi
+gui_manor_give_rose=Suka
+gui_manor_call_on=Kunjungi
+gui.update.successful=Berhasil untuk meningkatkan
+gui.update.failed=Gagal untuk meningkatkan
+gui_manor_max_level=MAX
+gui_manor_build_house_tip=Membangun rumah membutuhkan waktu. Semua balok dan mebel akan di ulang.Yakin untuk membangun ?
+gui_manor_receive_failure=Gagal dalam mendapatkan taman anda. Mohon coba lagi.
+gui_manor_sell_failure=Gagal dalam menjual taman anda. Mohon coba lagi.
+gui_manor_sell_succeed=Taman terjual !
+gui_manor_give_rose_succeed=Sukses memberi Suka !
+gui_manor_give_rose_failure=SUKA gagal. Mohon coba lagi.
+gui_manor_give_rose_failure_not_manor=Tidak bisa memberi SUKA. Ia tidak memiliki taman.
+gui_manor_give_rose_failure_num_is_zero=Tingkatkan taman anda untuk mendapatkan SUKA lebih banyak
+gui_manor_target_user_not_manor=Tidak bisa mengunjungi. Ia tidak memiliki Taman.
+gui_manor_message_call_on_tip=%s telah mengunujungi taman anda !
+gui_manor_message_give_rose_tip=%s menyukai taman anda !
+gui_manor_message_vegeteal_tip=%s Mencuri hasil panen anda!
+gui_manor_place_and_build_message=Harus berada dalam TAMAN anda
+gui_manor_steal_count_message=Anda tidak bisa nencuri sekarang . Kembali besok atau tingkatkan Taman anda!
+gui_game_setting_background_music=BGM
+gui_manor_call_on_failure=Tidak bisa Kunjungi. Mohon coba lagi
+gui_manor_tp_failure=Tidak bisa teleport. Mohon coba lagi
+gui_manor_operation_failure=Gagal. Mohon coba lagi !
+gui_manor_give_rose_failure_given=Sudah disukai !
+gui_manor_upgrade_failure=Gagal dalam meningkatkan
+gui_manor_lack_of_level_message=Telah meningkatkan Taman anda.
+gui_manor_build_house_message=Bangun rumah Anda sekarang.
+gui_manor_make_money_buy_furniture_message=Cari uang untuk membeli Mebel.
+item.seeds_wheat.name=Benih gandum
+item.seeds_carrot.name=Benih wortel
+item.seeds_tomato.name=Biji tomat
+item.seeds_cabbage.name=Benih kubis
+item.seeds_pea.name=Biji kacang polong
+item.wheat.name=Gandum
+item.carrot.name=Wortel
+item.tomato.name=Tomat
+item.cabbage.name=Kubis
+item.pea.name=Kacang polong
+manor_officer_npc_name=Pejabat kota
+manor_sell_npc_name=Pedagang taman
+npc14.npc.name=Petunjuk
+gui_rank_charm=Pesona
+gui_rank_charm_value=Pesona
+gui_rank_assessment=Nilai
+gui_rank_assessment_price=Nilai
+gui_rank_my_charm=Pangkat
+gui_rank_my_charm_value=Pesona
+gui_rank_my_assessment=Pangkat
+gui_rank_my_assessment_price=Nilai
+
+gui_manor_street_guide_npc_tip=Penjual tidak jauh . Apa yang anda butuhkan ?
+gui_manor_street_npc_tip=Selamat datang di Pusat pembelanjaan
+guidenpc_g1020_01=Klik tombol "Rumah Hijau". Lalu klik tombol "Teleport" untuk pergi ke rumah anda dengan cepat!
+guidenpc_g1020_02=Pergi melalui Pusat Taman. Penjual sedang menunggu.
+guidenpc_g1020_03=Semua penjual menjual barang berbeda . Apa yang anda butuh ?
+guidenpc_g1020_04=Kita akan membangun Patung walikota kita. Anda bisa menjadi walikota kita. Siapa tahu ?
+guidenpc_g1020_05=Carilah banyak teman . Anda bisa dengan mudah mengunjungi  rumah mereka , beri mereka SUKA , atau curi benih mereka!
+guidenpc_g1020_06=Anda bisa menempatkan blok pada area taman anda
+guidenpc_g1020_07=Biaya furnitur banyak . Tetapi itu sepadan.
+guidenpc_g1020_08=Mereka yang memberi SUKA atau mencuri anda , semua akan muncul di pesan. Curi mereka balik atau balas SUKA!
+guidenpc_g1020_09=Butuh rumah bagus yang lebih banyak? Tingkatkan taman anda!
+guidenpc_g1020_10=Terdapat 5 biji. Biji yang mahal membutuhkan waktu yang lebih lama untuk tumbuh dan anda mendapatkan lebih banyak benih.
+guidenpc_g1020_11=Anda bisa nencuri benih yang lain untuk uang
+guidenpc_g1020_12=Memberi suka kepada seseorang , atau disukai , akan memberi anda uang juga
+guidenpc_g1020_13=Carilah banyak teman . Anda bisa dengan mudah mengunjungi  rumah mereka , beri mereka SUKA , atau curi benih mereka!
+guidenpc_g1020_14=Pesona meningkatkan harga taman anda. Anda bisa mendapatkannya dengan disukai ,membangun rumah, Membeli sesuatu
+
+gui_manor_get_already_exists=Anda sudah dapat taman anda. Silahkan tanam , bangun , dan mencari teman.
+gui_manor_sell_not_exists=Anda tidak memiliki taman. Dapatkan satu dari pejabat kota
+gui_manor_call_on_in_vehicle=Teleport gagal. Silahkan keluar dari Mobil.
+gui_manor_call_tp_in_vehicle=Teleport gagal. Silahkan keluar dari Mobil.
+gui_manor_furniture_operation_tip=Mode edit.Klik furniturnya untuk memindahkannya
+gui_manor_is_not_load=Menjual gagal.Taman anda bukan disini. Mohon teleport ke server anda.
+gui_manor_edit_ban_get_on=Anda tidak bisa mengendarai bila anda sebuah furnitur
+gui_manor_is_furniture_actor=Anda furnitur sekarang!
+gui_manor_call_on_failure_vistors_full=Mrngunjungi gagal, Pengunjung penuh
+gui_manor_call_on_failure_version_not_matched=Mengunjungi gagal untuk versi permainan yang tidak konsisten
+gui_manor_sell_failure_by_times=Anda telah menjual taman anda hari ini. Mohon kembali besok
+
+flag.war.swordsman.dsc1=Meningkatkan kecepatan gerakan dan meningkatkan darah
+flag.war.swordsman.dsc2=Pemain tidak menerima kerusakan dalam waktu yang sempit
+flag.war.swordsman.dsc3=Menghasilkan kerusakan pada musuh
+flag.war.shooter.dsc1=Menghasilkan kerusakan ke suatu area
+flag.war.shooter.dsc2=Meningkatkan kerusakan dalam waktu yang sempit
+flag.war.shooter.dsc3=Menghasilkan kerusakan pada musuh dan mengurangi kecepatan gerakan dia
+flag.war.thieves.dsc1=Menjadi tidak terlihat dalam periode waktu
+flag.war.thieves.dsc2=Meningkatkan kecepatan gerakan pemain
+flag.war.thieves.dsc3=Meracuni musuh di area efeknya
+flag.war.wizard.dsc1=Menyembuhkan tim di area efeknya
+flag.war.wizard.dsc2=Menghasilkan kerusakan untuk musuh di area efeknya
+flag.war.wizard.dsc3=Meningkatkan kecepatan gerakan pada tim di area efeknya
+flag.war.bomber.dsc1=Menghasilkan kerusakan pada musuh dari waktu ke waktu di area efeknya
+flag.war.bomber.dsc2=Menghasilkan kerusakan pada musuh di area efeknya
+flag.war.bomber.dsc3=Menghasilkan kerusakan besar pada musuh di area efeknya
+flag.war.icemage.dsc1=Menghasilkan kerusakan pada musuh di area efeknya dan mengurangi kecepatan gerakan mereka
+flag.war.icemage.dsc2=Membekukan musuh di area efeknya
+flag.war.icemage.dsc3=Menghasilkan kerusakan besar pada musuh di area efeknya dan mengurangi kecepatan gerakan mereka
+
+
+flag.war.swordsman.skillname1=Menyerang
+flag.war.swordsman.skillname2=Tembus pandang
+flag.war.swordsman.skillname3=Menghukum
+flag.war.shooter.skillname1=Hujan anak panah
+flag.war.shooter.skillname2=Penembak jitu
+flag.war.shooter.skillname3=Tembakan kepala
+flag.war.thieves.skillname1=Pencuri
+flag.war.thieves.skillname2=Berlari cepat
+flag.war.thieves.skillname3=Bom toxic
+flag.war.wizard.skillname1=Menyembuhkan
+flag.war.wizard.skillname2=Sihir
+flag.war.wizard.skillname3=Menari drum
+flag.war.bomber.skillname1=Napalm
+flag.war.bomber.skillname2=Ledakan
+flag.war.bomber.skillname3=Vitalitas
+flag.war.icemage.skillname1=Badai salju
+flag.war.icemage.skillname2=Beku
+flag.war.icemage.skillname3=Pecahan es
+
+item.skill_01.name=Bakat 1
+item.skill_02.name=Bakat 1
+item.skill_03.name=Bakat 1
+
+parkour.rank.name1=Pangkat trek balap kaktus
+parkour.rank.name2=Pangkat trek balap jatuh bebas
+score_point_flag=Bendera
+
+flag.war.swordsman=Pendekar pedang
+flag.war.shooter=Penembak
+flag.war.thieves=Pencuri
+flag.war.wizard=Penyihir
+flag.war.bomber=Bomberman
+flag.war.icemage=Tukang es
+
+flag.war.select.swordsman=Apakah anda ingin menjadi "Pendekar pedang"?
+flag.war.select.shooter=Apakah anda ingin menjadi "Penembak"?
+flag.war.select.thieves=Apakah anda ingin menjadi "Pencuri"?
+flag.war.select.wizard=Apakah anda ingin menjadi "Penyihir"?
+flag.war.select.bomber=Apakah anda ingin menjadi "Bomberman"?
+flag.war.select.icemage=Apakah anda ingin menjadi "Tukang es"?
+
+flag.war.shop.tab.fashion=Halo
+flag.war.shop.tab.skill=Keterampilan
+
+
+
+flag.war.shop.Halo.name1=Halo penyembuh
+flag.war.shop.Halo.name2=Halo kecepatan
+flag.war.shop.Halo.name3=Halo lompat
+
+flag.war.attribute=Atribut
+
+
+
+
+flag.war.swordsman.dsc1=Menghasilkan 15 kerusakan ke seseorang musuh  --- cooldown: 5; jarak:5
+flag.war.swordsman.dsc2=Sangat meningkatkan kecepatan gerakan pemain untuk 1 detik - cooldown: 9
+flag.war.swordsman.dsc3=Mengurangi kerusakan yang diterima sebanyak 99% untuk 5 detik cooldown:20
+flag.war.shooter.dsc1=Akan menghasilkan kerusakan 10 untuk semua musuh dengan radius 2x2 -cooldown:6; jarak:15
+flag.war.shooter.dsc2=Mengalami 10 kerusakan pada 1 musuh dan menguranginya hingga 40% selama 2 detik - cooldown: 9;jarak:15
+flag.war.shooter.dsc3=Menghasilkan 30 kerusakan ke musuh :cooldown: 20;jarak:25
+flag.war.thieves.dsc1=Menghasilkan 20 kerusakan ke musuh :cooldown: 6;jarak:5
+flag.war.thieves.dsc2=Meningkatkan kecepatan gerakan pemain untuk 3 detik - cooldown:9
+flag.war.thieves.dsc3=Membiarkan pemain untuk menjadi tidak terlihat untuk 3 detik - cooldown:20
+flag.war.wizard.dsc1=Menyembuhkan 10Hp untuk salah satu orang setim cooldown: 4;Jarak:10
+flag.war.wizard.dsc2=Menyebabkan salah satu musuh secara acak di radius 12x12 untuk teracuni dalam 5 detik, menghasilkan 21 kerusakan dalam efek penuh - cooldown: 9
+flag.war.wizard.dsc3=Menyembuhkan semua orang setim di area dengan 8x8 radius ,bertahan 5 detik, mengisi total 600 hp - cooldown: 2; jarak: 10
+flag.war.bomber.dsc1=Akan menyebabkan kerusakan berlanjut ke musuh selama 2 detik, menghasilkan total 6 kerusakan - cooldown: 2;jarak: 12
+flag.war.bomber.dsc2=Menyebabkan 15 kerusakan ke musuh sekitar 3x3 radius dan melambatkan mereka dengan X% dalam 3 detik - cooldown: 9;jarak: 12
+flag.war.bomber.dsc3=Menyebabkan kerusakan ke musuh sekitar 8x8 radius - cooldown: 20;jarak: 30
+flag.war.icemage.dsc1=Menghasilkan 4 kerusakan ke musuh dan melambatkan mereka dengan X% dalam 1 detik - cooldown: 2;jarak: 12
+flag.war.icemage.dsc2=Membekukan musuh sekitar 12x12 radius untuk 3 detik - cooldown: 9
+flag.war.icemage.dsc3=Menyebabkan kerusakan berlanjut dan mengurangi kecepatan musuh dalam 5x5 radius untuk 5 detik, menghasilkan total 18 kerusakan - cooldown: 20;jarak: 12
+
+
+flag.war.swordsman.skillname1=Penyerangan Heroik
+flag.war.swordsman.skillname2=Serangan
+flag.war.swordsman.skillname3=Tangkisan Perisai
+flag.war.shooter.skillname1=Hujan Anak Panah
+flag.war.shooter.skillname2=Anak panah es
+flag.war.shooter.skillname3=Penembak jitu
+flag.war.thieves.skillname1=Mengeluarkan isi perut
+flag.war.thieves.skillname2=Lari
+flag.war.thieves.skillname3=Hilangnya
+flag.war.wizard.skillname1=Pengobatan
+flag.war.wizard.skillname2=Korosi
+flag.war.wizard.skillname3=Gelombang penyembuhan
+flag.war.bomber.skillname1=Bom Mini
+flag.war.bomber.skillname2=Tambang Perlambatan
+flag.war.bomber.skillname3=Bom Mega
+flag.war.icemage.skillname1=Es yang hancur
+flag.war.icemage.skillname2=Membeku
+flag.war.icemage.skillname3=Badai salju
+
+flag.war.swordsman.attribute.dsc=HP:70;ATK:10;DEF:300
+flag.war.shooter.attribute.dsc=HP:50;ATK:8;DEF:200
+flag.war.thieves.attribute.dsc=HP:60;ATK:10;DEF:200
+flag.war.wizard.attribute.dsc=HP:50;ATK:8;DEF:200
+flag.war.bomber.attribute.dsc=HP:50;ATK:8;DEF:200
+flag.war.icemage.attribute.dsc=HP:50;ATK:8;DEF:200
+
+
+flag.war.swordsman.attribute.dsc0=HP:70;ATK:10;DEF:3
+flag.war.shooter.attribute.dsc0=HP:50;ATK:8;DEF:2
+flag.war.thieves.attribute.dsc0=HP:60;ATK:10;DEF:2
+flag.war.wizard.attribute.dsc0=HP:50;ATK:8;DEF:2
+flag.war.bomber.attribute.dsc0=HP:50;ATK:8;DEF:2
+flag.war.icemage.attribute.dsc0=HP:50;ATK:8;DEF:2
+
+
+flag.war.swordsman.dsc11=Menghasilkan 600 kerusakan pada musuh --- cooldown: 5;jarak: 5
+flag.war.swordsman.dsc12=Sangat meningkatkan kecepatan gerak pemain untuk 1 detik - cooldown: 9
+flag.war.swordsman.dsc13=Mengurangi kerusakan yang diterima dengan 99% untuk 5 detik cooldown:20
+flag.war.shooter.dsc11=Menyebabkan 550 kerusakan ke semua musuh sekitar 2x2 radius - cooldown: 6; jarak: 15
+flag.war.shooter.dsc12=Menyebabkan 1000 kerusakan pada sebuah musuh dan melambatkan ia dengan 40% untuk 2 detik - cooldown: 9, jarak: 15
+flag.war.shooter.dsc13=Menyebabkan 3000 kerusakan pada sebuah musuh - cooldown: 20, jarak: 25
+flag.war.thieves.dsc11=Menyebabkan 600 kerusakan pada sebuah musuh  - cooldown: 6, jarak: 5
+flag.war.thieves.dsc12=Meningkatkan kecepatan gerak pemain untuk 3 detik -cooldown: 9
+flag.war.thieves.dsc13=Membiarkan pemain menjadi tidak terlihat untuk 3 detik - cooldown: 20
+flag.war.wizard.dsc11=Menyembuhkan 500 hp pada salah satu pemain setim - cooldown : 4;jarak: 10
+flag.war.wizard.dsc12=Menyebabkan salah satu musuh dalam 12x12 radius untuk teracuni dalam 5 detik, menghasilkan 800 kerusakan dalam efek full - cooldown: 9
+flag.war.wizard.dsc13=Menyembuhkan semua setim dalam area 8x8 radius, bertahan 5 detik, mengisi total 2000 hp - cooldown: 20;jarak: 10
+flag.war.bomber.dsc11=Akan menyebabkan kerusakan berlanjut ke sebuah musuh untuk 2 detik, menghasilkan total 250 kerusakan - cooldown:2, jarak: 12
+flag.war.bomber.dsc12=Menyebabkan 650 kerusakan ke musuh dalam 3x3 radius dan melambatkan mereka dengan 40% untuk 3 detik - cooldown: 9;jarak: 12
+flag.war.bomber.dsc13=Menghasilkan 1500 kerusakan pada musuh sekitar 8x8 radius - cooldown: 20;jarak: 30
+flag.war.icemage.dsc11=Menyebabkan 200 kerusakan ke sebuah musuh dan melambatkan mereka dengan 40% selama 1 detik - cooldown:2 ;jarak:12
+flag.war.icemage.dsc12=Membekukan musuh sekitar 12x12 radius selama 3 detik - cooldown: 9
+flag.war.icemage.dsc13=Menyebabkan kerusakan berlanjut dan mengurangi kecepatan musuh dalam 5x5 radius selama 5 detik, menghasilkan total 1800 kerusakan - cooldown:20 ;jarak: 12
+
+flag.war.swordsman.attribute.dsc1=HP:7500;ATK:300;DEF:500
+flag.war.shooter.attribute.dsc1=HP:4000;ATK:360;DEF:200
+flag.war.thieves.attribute.dsc1=HP:6000;ATK:400;DEF:400
+flag.war.wizard.attribute.dsc1=HP:5000;ATK:180;DEF:250
+flag.war.bomber.attribute.dsc1=HP:4500;ATK:150;DEF:350
+flag.war.icemage.attribute.dsc1=HP:3500;ATK:120;DEF:300
+
+
+flag.war.swordsman.dsc21=Menyebabkan 1000 kerusakan ke sebuah musuh --- cooldown: 9;jarak: 10
+flag.war.swordsman.dsc22=Sangat meningkatkan kecepatan gerak pemain selama 1 detik - cooldown: 9
+flag.war.swordsman.dsc23=Mengurangi kerusakan yang diterima dengan 99% selama 2 detik cooldown:20
+flag.war.shooter.dsc21=Akan menyebabkan 1000 kerusakan ke semua musuh dalam 2x2 radius - cooldown: 6;jarak: 15
+flag.war.shooter.dsc22=Menghasilkan 1500 kerusakan ke sebuah musuh dan melambatkan ia dengan 40% selama 2 detik - cooldown: 9; jarak: 15
+flag.war.shooter.dsc23=Menghasilkan 3000 kerusakan ke sebuah musuh: cooldown: 20; jarak: 25
+flag.war.thieves.dsc21=Menghasilkan 1500 kerusakan ke sebuah musuh: cooldown: 9; jarak: 10
+flag.war.thieves.dsc22=Meningkatkan kecepatan gerakan pemain selama 3 detik - cooldown: 9
+flag.war.thieves.dsc23=Membiarkan pemain untuk menjadi tidak terlihat selama 2 detik - cooldown: 20
+flag.war.wizard.dsc21=Menyembuhkan 300hp untuk pemain setim - cooldown: 3;jarak: 10
+flag.war.wizard.dsc22=Menyebabkan salah satu musuh dalam 12x12 radius menjadi teracuni selama 5 detik, menghasilkan 1200 kerusakan dalam efek fullnya - cooldown: 6
+flag.war.wizard.dsc23=Menyembuhkan semua setim dalam area 8x8 radius, bertahan 5 detik, mengisi total 1200 hp -cooldown: 20;jarak: 10
+flag.war.bomber.dsc21=Akan menyebabkan kerusakan berlanjut ke sebuah musuh selama 2 detik, menghasilkan total 250 kerusakan - cooldown: 2; jarak: 12
+flag.war.bomber.dsc22=Menyebabkan 650 kerusakan pada musuh sekitar 3x3 radius dan melambatkan mereka dengan 40% selama 3 detik - cooldown: 9;jarak :12
+flag.war.bomber.dsc23=Menghasilkan 1500 kerusakan pada musuh sekitar 8x8 radius - cooldown: 20;jarak: 30
+flag.war.icemage.dsc21=Menghasilkan 200 kerusakan pada musuh dan melambatkan mereka dengan 40% selama 1 detik - cooldown: 2; jarak 12
+flag.war.icemage.dsc22=Membekukan musuh sekitar 12x12 radius selama 3 detik - cooldown: 9
+flag.war.icemage.dsc23=Menyebabkan kerusakan berlanjut dan melambatkan musuh dalam 5x5 radius selama 5 detik, menghasilkan total 3000 kerusakan - cooldown: 20; jarak:12
+
+flag.war.swordsman.attribute.dsc2=HP:7500;ATK:250;DEF:500
+flag.war.shooter.attribute.dsc2=HP:4000;ATK:800;DEF:200
+flag.war.thieves.attribute.dsc2=HP:6000;ATK:500;DEF:400
+flag.war.wizard.attribute.dsc2=HP:3000;ATK:180;DEF:250
+flag.war.bomber.attribute.dsc2=HP:4500;ATK:150;DEF:350
+flag.war.icemage.attribute.dsc2=HP:4000;ATK:120;DEF:300
+
+gui_rank_vice_title_hist_name=Semua
+
+parkour.rank.name01=Pangkat trek balap kaktus
+parkour.rank.name02=Pangkat trek balap jatuh bebas
+
+flag.war.shop.Halo.attribute1=Meningkatkan HP maksimal\\n(permanen)
+flag.war.shop.Halo.attribute2=Meningkatkan kecepatan gerak maksimal\\n(permanen)
+flag.war.shop.Halo.attribute3=Meningkatkan ketinggian lompatan maksimal\\n(permanen)
+
+item.skill.chip.chest.1.name=Peti chip(x1)
+item.skill.chip.chest.2.name=Peti chip(x2)
+item.skill.chip.chest.3.name=Peti chip(x3)
+item.skill.book.1.name=Buku Flash
+item.skill.book.2.name=Buku Kecepatan
+item.skill.book.3.name=Buku limunan
+item.skill.book.4.name=Buku Terbang
+item.skill.book.5.name=Buku Tak Terkalahkan
+item.skill.book.6.name=Buku Teleport
+item.skill.book.7.name=Buku Kegelapan
+item.skill.chip.1.name=Chip flash
+item.skill.chip.2.name=Chip kecepatan
+item.skill.chip.3.name=Chip tembus pandang
+item.skill.chip.4.name=Chip terbang
+item.skill.chip.5.name=Chip tak terkalahkan
+item.skill.chip.6.name=Chip terbang
+item.skill.chip.7.name=Chip kegelapan
+
+throw.pot.shop.tab.title=Judul
+throw.pot.chip.chest=Chip peti
+throw.pot.money=Uang
+
+throw.pot.title.name.1=Orang baru
+throw.pot.title.name.2=Meraih ketenaran
+throw.pot.title.name.3=Tidak terhentikan
+throw.pot.title.name.4=Raja TNT
+throw.pot.title.name.5=1000 pembunuhan
+throw.pot.title.name.6=Maha kuasa
+
+gui.shop.tab.skill.book=Buku keterampilan
+gui.shop.tab.skill.book.fragmentation=Chip keterampilan
+throw.pot.last.week.rank=Minggu sebelumnya
+
+throw.pot.title.desc.1=Syarat:Bermain 3 permainan.\\n(Tip:gelar akan muncul diatas kepala bila digunakan!)
+throw.pot.title.desc.2=Syarat:Menjadi No.1 dalam permainan.\\n(Tip:gelar akan muncul diatas kepala bila digunakan!)
+throw.pot.title.desc.3=Syarat:Bermain 50 permainan.\\n(Tip:gelar akan muncul diatas kepala bila digunakan!)
+throw.pot.title.desc.4=Syarat:Bermain 100 permainan.\\n(Tip:gelar akan muncul diatas kepala bila digunakan!)
+throw.pot.title.desc.5=Syarat:Bermain 1000 permainan.\\n(Tip:gelar akan muncul diatas kepala bila digunakan!)
+throw.pot.title.desc.6=Syarat:Memiliki 7 buku keterampilan berbeda.\\n(Tip:gelar akan muncul diatas kepala bila digunakan!)
+item.skill.book.1.desc=Kualitas: Biasa\\nEfek: Berkedip 5 blok depan\\n(Tip:Hanya satu buku keterampilan yang bisa digunakan dalam permainan!)
+item.skill.book.2.desc=Kualitas: Biasa\\nEfek: Meningkatkan kecepatan gerak selama 10 detik\\n(Tip:Hanya satu buku keterampilan yang bisa digunakan dalam permainan!)
+item.skill.book.3.desc=Kualitas: Langka\\nEfek: Tembus pandang selama 5 detik\\n(Tip:Hanya satu buku keterampilan yang bisa digunakan dalam permainan!)
+item.skill.book.4.desc=Kualitas: Langka\\nEfek: Terbang selama 10 detik.\\n(Tip:Hanya satu buku keterampilan yang bisa digunakan dalam permainan!)
+item.skill.book.5.desc=Kualitas: Epik\\nEfek: Tidak terlihat selama 3 detik, tetapi tidak bisa bergerak.\\n(Tip:Hanya satu buku keterampilan yang bisa digunakan dalam permainan!)
+item.skill.book.6.desc=Kualitas: Epik\\nEfek: Semua pemain akan dikirim kembali ke titik kebangkitan.\\n(Tip:Hanya satu buku keterampilan yang bisa digunakan dalam permainan!)
+item.skill.book.7.desc=Kualitas: Epik\\nEfek: Semua pemain kecuali anda akan ditarik ke dalam kegelapan selama 2 detik.\\n(Tip:Hanya satu buku keterampilan yang bisa digunakan dalam permainan!)
+item.skill.chip.1.desc=Kualitas: Biasa\\nTerpakai untuk menukar buku Flash.\\n(Tip:Mendapat uang di setiap akhit permainan.)
+item.skill.chip.2.desc=Kualitas: Biasa\\nTerpakai untuk menukar buku Kecepatan.\\n(Tip:Mendapat uang di setiap akhit permainan.)
+item.skill.chip.3.desc=Kualitas: Langka\\nTerpakai untuk menukar buku Tidak Terlihat.\\n(Tip:Mendapat uang di setiap akhit permainan.)
+item.skill.chip.4.desc=Kualitas: Langka\\nTerpakai untuk menukar buku Terbang.\\n(Tip:Mendapat uang di setiap akhit permainan.)
+item.skill.chip.5.desc=Kualitas: Epik\\nTerpakai untuk buku Tembus Pandang.\\n(Tip:Mendapat uang di setiap akhit permainan.)
+item.skill.chip.6.desc=Kualitas: Epik\\nTerpakai untuk menukar buku Teleport.\\n(Tip:Mendapat uang di setiap akhit permainan.)
+item.skill.chip.7.desc=Kualitas: Epik\\nTerpakai untuk menukar buku Kegelapan.\\n(Tip:Mendapat uang di setiap akhit permainan.)
+item.skill.chip.chest.1.desc=Mendapat chip buku ketermapilan secara acak.\\n(Tip: Mendapat uang di setiap akhir permainan.)
+throw.pot.money.desc=Menjual chip akan menghasilkan uang.\\n(Tip:Chip ekstra bisa dijual disini!)
+
+gui_buildwar_title=Bangun
+gui_buildwar_player_num=%d/%d
+gui_buildwar_left_time=Sisa: %d
+gui_buildwar_grade=%s  (%d S)
+score.rank.name=Pangkat skor
+winner.rank.name=Pangkat menang
+gui_build_war_title_all=Semua
+gui_build_war_guess_result_btn=Hasil
+gui_build_war_guess_item_visit_btn=Lihat
+gui_build_war_guess_item_guess_btn=Tebak
+gui_build_war_guess_title=Tebak(Hati artinya anda menyukai)
+gui_build_war_guess_suc=Tebak sukses
+gui_build_war_guess_tip=Yakin untuk tebak [%s] adalah pemenang?
+shop_btn_select=Memilih
+shop_btn_unlock=Membuka
+gui_dialog_tip_content_unlock_commodity=Membuka[%s]membutuhkan
+gui_build_war_has_guess_item_guess_btn=Selesai
+gui.shop.tab.color=Warna
+gui.shop.tab.wood=Kayu
+gui.shop.tab.stone=Batu
+gui.shop.tab.metal=Logam
+gui_rank_all_rank=Pangkat saya
+gui_rank_all_score_rank=Skor
+gui_rank_all_winner_rank=Menang
+gui_rank_week_score_rank=Skor
+gui_rank_week_winner_rank=Menang
+gui_rank_winner=Menang
+gui_build_war_guess_reward_title=Hadiah
+gui_build_war_guess_result_title=Tebakan
+gui_build_war_my_rank_title=Pangkat
+gui_build_war_my_guess_title=Hasil
+gui_have_already_got_block=Sudah dimiliki
+
+gui.shop.tab.sell=Menjual
+
+gui_shop_lack_of_item=Kekuarangan barang
+gui_player_operation_greetings=Menyambut
+gui_team_resources_max_team_pool=%s Kolam sumber daya
+gui_team_resources_my_team_pool=Sendiri
+gui_team_resources_other_team_pool=Musuh
+gui_settlement_jewel_knight=Kstaria permata (%s)
+gui_jewel_knight_game_name=Ksatria permata
+gui_player_operation_greetings_message=Pemain ▢FFFF0000[%s]▢FFFFFFFF menyambut anda.
+gui_player_operation_greetings_message_for_me=Anda menyambut pemain ▢FFFF0000[%s].
+item.gemstone.name=Permata
+
+gui_rank_victory_title_name=Pangkat kemenangan
+gui_rank_jewel_knight_title_name=Pangkat ksatria
+
+gui_jewel_not_your_team_statue=Ini bukan patung milik tim anda.
+gui_jewel_no_have_jewel=Anda belum punya permata, carilah.
+gui_jewel_fill_team_source=Patung tersebut sedang tidak aktif, isi kolam tersebut dulu.
+
+gem_diggertip1=Sekop, STR:1. Lv selanjutnya:Sekop mekanik, STR:2.
+gem_diggertip2=Sekop Mekanik, STR:2. LV selanjutnya:Sekop Emas, STR:3.
+gem_diggertip3=Sekop Emas, STR:3.
+
+gem_NPC1_name=Latar belakang
+gem_NPC2_name=Aturan
+gem_NPC3_name=Penjual
+gem_NPC4_name=Panduan
+gem_NPC5_name=Perancang
+
+gem_NPC1_content1=Selamat atas terpilihnya oleh batu permara dunia, dan anda akan masuk ke dunia permata dengan pemain terpilih lainnya.
+gem_NPC1_content2=Temukan batu permata dunia dengan tim anda. Disitu akan terdapat 3 tim lainnya bersaingan dengan anda untuk mengembalikan permata ke patung tim sebelum kembali ke dunia asli.
+gem_NPC1_content3=Pemenang akan mendapat hadiah. Pemain yang dengan sukses mengembalikan permata ke patung akan memenangkan gelar Gem Knight.
+gem_NPC1_content4=Tetapi hanya ada satu permata, dan hanya satu tim yang menang. Pemain yang kalah akan bertahan di dunia terkutuk selamanya.
+gem_NPC1_content5=Apakah anda bersedia untuk memulai permainan? Temukan permata sekarang!
+gem_NPC2_content1=Menggali biji di area biji dan kembalikkannya ke penjual sumber daya untuk menukar sumber daya.
+gem_NPC2_content2=Mengisi kolam sumber daya akan mengaktifkan lokasi permata. Area biji menunjukkan namanya dan warnanya adalah biru.
+gem_NPC2_content3=Ketika sebuah pemain mendapat permata, semua pemain akan tahu tim ia dan nama ia, dan akan ada efek spesial untuk ia.Cegah dia dalam mengembalikkan permata ke patungnya.
+gem_NPC2_content4=Meningkatkan peralatan akan membuat anda lebih efektif dalam menemukan batu permata.
+gem_NPC2_content5=Ada berbagai kejutan menunggu anda. Rasa ingin tahu dapat menjadi sesuatu yang baik kadang-kadang.
+gem_NPC3_content=Biji yang terkumpul akan dikembalikan ke tambang untuk sumber daya. \\nEmerland =
+gem_NPC4_content=Banyak kejutan menunggu anda dalam permainan. Lanjutkan dan menangkan permainan.
+gem_NPC5_content=Saya sudah menyiapkan banyak kejutan di sini. Cari mereka sekarang!
+gem_NPC5_content2=Ini adalah permainan untuk pemain yang berani.
+
+gem.win.rank.name=Peringkat kemenangan
+gem.win.rank.title=Peringkat kemenangan
+gem.knight.rank.name=Peringkat ksatria
+gem.knight.rank.title=Peringkat ksatria
+
+gui_keysetting_move_title=Pengaturan gerak
+gui_keysetting_forward=Maju
+gui_keysetting_backward=Mundur
+gui_keysetting_left=Kiri
+gui_keysetting_right=Kanan
+gui_keysetting_shift=Menyelinap
+gui_keysetting_ctrl=Lari
+gui_keysetting_jump=Lompat
+gui_keysetting_inventory=Inventaris
+gui_keysetting_discard_item=Membuang barang
+gui_keysetting_open_inventory=Membuka inventaris
+gui_keysetting_inventory1=Barang1
+gui_keysetting_inventory2=Barang2
+gui_keysetting_inventory3=Barang3
+gui_keysetting_inventory4=Barang4
+gui_keysetting_inventory5=Barang5
+gui_keysetting_inventory6=Barang6
+gui_keysetting_inventory7=Barang7
+gui_keysetting_inventory8=Barang8
+gui_keysetting_inventory9=Barang9
+gui_keysetting_other=Pengulangan Lainnya
+gui_keysetting_chat=Obrolan
+gui_keysetting_map=Map mini
+gui_keysetting_back=ESC
+gui_keysetting_personview=PandanganOrang
+gui_keysetting_chatsend=Mengirim Obrolan
+gui_setting_item_reset_text=Mengulang
+gui_setting_start_set_text=Mohon ulangi
+gui_setting_key_repeat=Pengulangan kunci, mohon ulang
+gui_setting_key_invalid=Kunci salah, mohon ulang
+gui_setting_key_change_suc=Ubah kunci suc
+gui_setting_key_reset_all_suc=Ulang semua kunci suc
+gui_setting_key_reset_suc=Ulang suc
+
+item.equipment.set.1.name=Baju kulit
+item.equipment.set.2.name=Baju rantai
+item.equipment.set.3.name=Baju zirah
+item.equipment.set.4.name=Baju emas
+item.equipment.set.5.name=Baju berlian
+gui.shop.tab.equipment.set=Baju
+score_point_win=Menang
+
+budokai.wins.rank.wins=Menang
+budokai.wins.rank.my.wins=Kemenangan saya
+budokai.no.1.rank.no.1=Kemenangan Terakhir:
+budokai.no.1.rank.my.no.1=Kemenangan Saya
+budokai.score.rank.name=▢FFFFD700Skor    Peringkat
+budokai.wins.rank.name=▢FFFFD700Menang    Peringkat
+budokai.no.1.rank.name=▢FFFFD700Juara    Peringkat
+
+budokai.score.rank.title=Peringkat Skor
+budokai.wins.rank.title=Peringkat Kemenangan
+budokai.no.1.rank.title=Peringkat Juara
+
+item.skill_04.name=Membunuh
+item.skill_05.name=Kekebalan
+item.skill_06.name=Stealth
+item.skill_07.name=Mempercepat
+item.skill_08.name=Imobilitas
+item.skill_09.name=Pengendalian pikiran
+
+gui_shop_tab_enchantment=Enchantment
+shop_btn_have_bought=Dibeli
+gui_real_time_rank_title_kill=Bunuh
+gui_real_time_rank_title_die=Maut
+gui_rank_my_rank_not_rank=Tidak
+
+gui_str_super_shop_shop=Super Shop
+gui_shop_switch=Toggle
+item.purple.pickaxe.name=Purple Pickaxe
+gui.kill.msg.item.message=%s killed %s
+item.grenade.smoke.name=Smoke Grenade
+gui.back.hall=Back Hall
+
+guidenpc.g1021.01.name=Map Contributors
+guidenpc_g1021_01=Hello Im Pain. Thanks for playing on my map. I hope you enjoy it!
+
+guidenpc.g1021.02.name=Map Contributors
+guidenpc_g1021_02=Map name: Colorful City.\\nIntro: It is a city with colorful buildings made by Dipper, Jaque and Mabel.
+
+gui_real_time_rank_title_snowballLevel=Snowball Level
+gui_team_snowmanhp_my_team_pool=Snowman's Hp
+gui_team_snowmanhp_other_team_pool=Snowman's Hp
+
+gui_real_time_rank_title_one_creepy_snowmanbattle=Rank
+gui_real_time_rank_title_two_creepy_snowmanbattle=Nama
+gui_real_time_rank_title_three_creepy_snowmanbattle=Bunuh
+gui_real_time_rank_title_four_creepy_snowmanbattle=Level
+
+tile.iron_block=Iron blocks
+
+item.grenade.tremor.name=Tremor Grenade
+item.frozen.ball.name=Frozen Ball
+item.baseball_stick.name=Baseball Bat
+item.spike_stick.name=Spiked Club
+item.stone_pillar.name=Monolith
+item.enderPearl.name=Flash Pearl
+
+gui.tiger.lottery.choose=Choose
+gui.tiger.lottery.again=Dislike ? Lottery again !
+gui.tiger.lottery.lock=Locked
+
+gui.useItem=Use Item  
+gui.btn.unload=Unload  
+gui.btn.equipped=Equipped  
+gui.gun.store.name=Armory  
+gui.gun.store.quick.upgrade=Speed up  
+gui.chest.lottery.title=Chest
+gui.chest.lottery.hint=Please choose your battle trophy    
+gui.chest.reward.result.title=Congratulations!!!
+gui.chest.lottery.open=Open  
+gui.season.rank.title=Season Rank
+gui.season.rank.countdown=Season ends in: %d days
+gui.season.rank.reward=Reward:
+gui.season.rank.honor=Honor:
+gui.season.rank.battle=To Battle!
+gui.season.reward.title=Season Reward
+gui.season.reward.rank=Rank  ▢FFF9F900%d
+gui.season.reward.last=▢FFD57C00Last Season
+gui.season.reward.current=▢FF00FFAECurrent Season
+gui.season.rule.title=Season Rules  
+
+
+gui_bird_pack_btn_delete=Delete
+gui_bird_pack_btn_equip=Carry
+gui_bird_pack_btn_unequip=Leave
+gui_bird_pack_btn_feed=Feed
+gui_bird_pack_info_attack=Attack: %1.f
+gui_bird_pack_info_speed=Speed: %d
+gui_bird_pack_info_gather=Collect: %1.f fruits every %d sec
+gui_bird_pack_info_convert=Conversion: convert %1.f fruits every %d sec
+gui_bird_pack_info_skill=Skill: %s
+gui_bird_pack_info_talent=Talent: %s
+gui_bird_pack_feed_use_1=Feed 1
+gui_bird_pack_feed_use_10=Feed 10
+gui_bird_pack_feed_use_50=Feed 50
+gui_bird_pack_feed_use_100=Feed 100
+gui_bird_pack=Bag
+gui_bird_fuse=Fusion
+gui_bird_pack_quality=Quality
+gui_bird_pack_level=Level
+gui_bird_pack_sort=Order
+gui_bird_fush_sure=Fusion
+gui_bird_fush_cancel=Reset
+gui_bird_store_desc=Detail
+gui_bird_store_btn_operation_buy=Buy
+gui_bird_store_btn_operation_equip=Equip
+gui_bird_store_btn_operation_unequip=equipped
+
+gui_bird_personal_shop=Store
+gui_bird_personal_shop_details_info=Detail Information
+gui_bird_personal_shop_buy=Buy
+gui_bird_personal_shop_already_buy=Bought
+gui_bird_tip_expenditure=Costs
+gui_bird_tip_nest=Unlock the bird house
+gui_bird_tip_expand_carry=Expand 1 carrying bird
+gui_bird_tip_expand_capacity=Expand 5 bird bag capacity
+gui_bird_tip_lottery=Draw Now
+gui_bird_tip_open_chest=Open Chest
+gui_bird_tip_open_store=Check Item List
+gui_bird_tip_close_store=Close Item List
+gui_bird_lottery_store=Open
+gui_bird_quality_1=▢FFFFFFFFCommon▢FFFFFFFF
+gui_bird_quality_2=▢FF000099Rare▢FFFFFFFF
+gui_bird_quality_3=▢FF660088Epic▢FFFFFFFF
+gui_bird_quality_4=▢FFFFDD00Legendary▢FFFFFFFF
+gui_bird_atlas=Bird Show
+gui_bird_activity=Call out for limited birds
+gui_bird_activity_button=Receive
+gui_bird_activity_day=Day
+gui_bird_mini_tip_open=Talk with %s
+gui_bird_mini_tip_convert=Convert
+gui_bird_mini_tip_stop_convert=Stop Converting
+gui_bird_mini_tip_open_lottery=Draw Now
+gui_bird_tip_use_cube_open_chest=Open chest with Bcubes?
+gui_bird_next_refresh_chest=Next One\\n%s 
+gui_bird_gain_title=Receive Item
+gui_bird_tip_delete_bird=Delete bird 【%s】?
+gui_bird_tip_delete_bird_fail=Failed to delete the last bird.
+gui_bird_next_task_time=Next Task\\n%s
+gui_bird_carry_full_expenditure=Reached the max of carrying amount
+gui_bird_carry_full=Expand 1 place
+gui_bird_capacity_full_expenditure=Bag capacity has reached the max amount.
+gui_bird_capacity_full=Expand 5 capacity
+
+  
+
+gui_bird_pack_info_gather1=Collect:%1.f in %.1f sec
+gui_bird_pack_info_convert1=Convert:%1.f in %.1f sec

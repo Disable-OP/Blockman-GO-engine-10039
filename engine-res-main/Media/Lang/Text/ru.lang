@@ -1,0 +1,1123 @@
+﻿## Comments can be added anywhere on a valid line by starting with '##'	
+##	
+## Note, trailing spaces will NOT be trimmed. If you want room between the end of the string and the start of a	
+## comment on the same line, use TABs.	
+	
+system.message.player.enter.server=Игрок %s присоединился к игре...
+system.message.player.exit.server=Игрок %s покинул игру...
+# death event	
+system.message.player.death=%s ошибка...
+	
+# GUI	
+gui.loading.page.connected.server.connecting=Подключение к серверу...
+gui.loading.page.connected.server.failed=Ошибка подключения! Попробуйте ещё раз...
+gui.loading.page.player.login.loggingin=Проверка пользовательских данных, ждите...
+gui.loading.page.player.login.failure=Ошибка проверки данных! Пожалуйста, перезайдите в игру
+gui.loading.page.download.map.loading=Загрузка ресурсов карты... 
+gui.loading.page.download.map.failure=Ошибка загрузки ресурсов карты... 
+gui.loading.page.load.world=Генерация мира... 
+gui.loading.page.load.terrain=Генерация ландшафта... 
+gui.chest.inventory=Панель предметов
+gui.chest.small.chest=Коробка
+gui.chest.large.chest=Большая коробка
+gui.close=Закрыть
+gui.sure=Да
+gui.cancel=Отмена
+gui.rebirth=Возродиться
+gui.back=Назад
+gui.message.network.connection.disconnect=Отключение от сервера... 
+gui.message.network.connection.network.error=Ошибка сети... Отключение от сервера... 
+gui.message.network.connection.kick.out=Отключение от сервера...
+gui.message.account.be.kicked=Обнаружен вход на другом устройстве. Вы будете отправлены в оффлайн...  
+gui.message.death=Вы проиграли...
+gui.message.exit.game=Выйти из игры?
+gui.game.setting=Настройки игры
+gui.back.game=Продолжить игру
+gui.exit.game=Выйти
+gui.setting.visual.angle=От третьего лица
+gui.setting.luminance=Яркость
+gui.setting.horizon=Поле зрения 
+gui.setting.volume=Громкость
+gui.setting.gui.size=Размер кнопок
+gui.setting.camera.sensitive=Чувствительность
+gui.setting.jump.sneak.toggle=Пыжок/красться
+gui.setting=Настройки
+gui.chat.send=Отправить
+tool.bar.player.list.munber.value=%s%s/%s%s
+gui.exit=Выйти
+dead.summary.title=Резюме
+dead.summary.rank=Место
+dead.summary.reward=Награда
+dead.summary.watch.battle=Следить
+gui.share=Поделиться
+gui.continue=Далее
+final.summary.rank=Место
+final.summary.player=Игрок
+final.summary.reward=Награда
+final.summary.score=Счет
+	
+gui.shop.title=Магазин
+gui.shop.tab.tool=Товар
+gui.shop.tab.armor=Броня
+gui.shop.tab.arms=Оружие
+gui.shop.tab.block=Блоки
+gui.shop.tab.food=Еда
+gui.shop.tab.others=Другое
+gui.shop.tab.upgrade=Обновить
+gui.shop.tab.potion=Зелья
+gui.shop.tab.diamond=Деньги
+	
+gui.game.loading=Загрузка %d%%...(%.2fm)
+inventory_panel_all=Другое
+	
+inventory_panel_equipment=Броня
+inventory_panel_neaten=Организовать
+inventory_panel_materials=Матириалы
+crafting_panel_make=Делать
+tool.bar.player.list.munber.name=Игроки
+lack_of_money=Нет денег
+shop_btn_buy=Купить
+gui.main.watch.battle=Загрузка боя...
+gui_team_red=Красные
+gui_team_blue=Синие
+gui_team_yellow=Жёлтые
+gui_team_green=Зелёные
+gui_team_purple=Фиолетовые
+gui_team_orange=Оранжевые
+gui.loading.page.check.version.failure=Ошибка проверки версии! 
+gui.loading.page.checking.version=Проверка версии... Ждите... 
+gui_team_civilian=Гражданин
+gui_team_sheriff=Шериф
+gui_team_murderer=Убийца
+gui_team_soilder=Солдат
+gui_team_zombie=Зомби
+gui_rewardTip_first=Получайте %d монет в день. 
+gui_rewardTip_second=VIP получить больше.
+gui_team_police=Полиция
+gui_team_prisoner=Узник
+gui_team_criminal=Грабитель
+vehicle_locked=Машина закрыта!
+vehicle_full_load=В машине нет места!
+door_has_no_key=У вас нет ключа!
+has_no_gun=У вас нет оружия!
+	
+#score point	
+score_point_kill=Убийств 
+score_point_die=Смертей
+score_point_live=Жизни
+score_point_serial_kill=Комбо Убийств
+score_point_destroy_bed=Разрушено кроватей
+	
+	
+#Firearms browsing	
+gui_str_gun_harm=Урон
+gui_str_gun_bullet=Пуля
+gui_str_gun_range=Диапазон
+gui_str_gun_firing_rate=Скорострельность
+gui_str_gun_deviation=Отдача
+gui_str_gun_range_value=%2.f метров
+gui_str_gun_firing_rate_value=%2.f секунд
+gui_str_gun_deviation_value=%2.f
+gui_str_gun_details_text=Детали оружия
+	
+#AppShop	
+gui_str_app_shop_shop=Магазин
+gui_str_app_shop_limit=Лимит %d
+gui_str_app_shop_insufficient_inventory=Нет в наличии
+gui_str_app_shop_inventory_is_full=Инвентарь переполнен
+	
+
+	
+default.merchant.name=▢FFFFFFFFТорговец▥
+red.merchant.name=▢FFFF0000Торговец▥
+blue.merchant.name=▢FF0000FFТорговец▥
+green.merchant.name=▢FF00FF00Торговец▥
+yellow.merchant.name=▢FFFFFF00Торговец▥
+purple.merchant.name=▢FF884898Торговец▥
+orange.merchant.name=▢FFFF8000Торговец▥
+tool.merchant.name=▢FF0000FFИнструментов▥
+backpack.merchant.name=▢FFFF0000Рюкзак▥
+carpet.merchant.name=▢FF0000FFКовёр▥
+wool.merchant.name=▢FF0000FFШерсть▥
+wood.merchant.name=▢FF0000FFДревесина▥
+clay.merchant.name=▢FF0000FFГлина▥
+light.merchant.name=▢FF0000FFФонарь▥
+seed.merchant.name=▢FF0000FFСемена▥
+farmer.merchant.name=▢FF0000FFСкупщик▥
+stone.merchant.name=▢FF0000FFКамень▥
+	
+store.goods.storeUpgrade=Доступны новые предметы
+store.goods.ironUpgrade=Двойной железный слиток!
+store.goods.goldUpgrade=Двойной золотой слиток!
+store.goods.tem.arrow=8 стрел
+store.goods.tem.wool=10 дерева
+store.goods.tem.clay=10 блоков глины
+store.goods.tem.ladder=10 лестниц
+store.goods.tem.obsidian=10 обсидиана
+store.goods.tem.bread=10 штук хлеба
+store.goods.tem.beefCooked=10 стейков
+	
+gui.wait.rebirth=Подождите для возрождения
+	
+gui_gun_name_1.name=Пистолет
+gui_gun_name_2.name=АК 47
+gui_gun_name_3.name=Пистолет-пулемет
+gui_gun_name_4.name=Дробовик
+gui_gun_name_5.name=Ручная граната
+gui_gun_name_6.name=Снайперская винтовка
+gui_gun_name_9.name=М4А1
+gui_gun_name_8.name=Снайперская винтовка "98К"
+gui_gun_name_11.name=Пулемет Гатлинга
+gui_gun_name_10.name=Снайперская винтовка Барретта
+gui_gun_name_12.name=Снайперская винтовка Маузера
+gui_gun_name_13.name=Снайперская винтовка 85
+gui_gun_name_14.name=Снайперская винтовка СВД
+gui_gun_name_15.name=Пулемёт "МК60"
+gui_gun_name_16.name=Пулемет "MAG43"
+gui_gun_name_17.name=Пулемёт "М1941"
+gui_gun_name_18.name=Пулемёт "DP-28"
+gui_gun_name_19.name=Винтовка "MK14"
+gui_gun_name_20.name=Снайперская винтовка "W2000"
+gui_gun_name_21.name=Винтовка 95
+gui_gun_name_22.name=Винтовка "M416"
+gui_gun_name_23.name=Винтовка "M16A4"
+gui_gun_name_24.name=Винтовка "Гроза"
+gui_gun_name_25.name=Пистолет-пулемет Томсона
+gui_gun_name_26.name=Пистолет-пулемет Вектора
+gui_gun_name_27.name=Микро-Узи
+gui_gun_name_28.name=Пистолет-пулемет "Type100"
+gui_gun_name_29.name=Дробовик "M1014"
+gui_gun_name_30.name=Дробовик "S12K"
+gui_gun_name_31.name=Винтовка "AUG A3"
+gui_gun_name_32.name=Пистолет-пулемет "UMP9"
+gui_gun_name_33.name=Винтовка "SCAR-L"
+gui_gun_name_34.name=Пистолет-пулемет "MK5"
+gui_gun_name_35.name=Дробовик "AA12"
+gui_gun_name_36.name=Дробовик "Sears Ranger"
+gui_gun_name_37.name=Револьвер "R1895"
+gui_gun_name_38.name=Пистолет "Пустынный Орёл"
+	
+gui_bullet_name_1.name=Пистолетные патроны
+gui_bullet_name_2.name=Винтовочные патроны
+gui_bullet_name_3.name=Патроны для пистолет-пулеметов
+gui_bullet_name_4.name=Дробовые патроны
+gui_bullet_name_5.name=Снайперские патроны
+gui_bullet_general.name=Патрон
+	
+item.zhiliaoyao.name=Регенерация
+item.yinshenyao.name=Невидимость
+item.tiaotiaoyao.name=Прыгучесть
+item.shouliudan.name=Граната
+item.handcuffs.name=Наручники
+item.key01.name=Ключ
+item.cash.name=Деньги
+item.tpScroll01.name=Телепорт домой
+item.tpScroll02.name=Телепорт иследования
+item.tpScroll03.name=Свиток телепорта
+item.tpScroll04.name=Свиток телепорта
+item.tpScroll05.name=Свиток телепорта
+item.createBridge01.name=Создать мост
+item.createBridge02.name=Яйцо моста
+item.createBridge03.name=Яйцо моста
+item.createBridge04.name=Яйцо моста
+item.createBridge05.name=Яйцо моста
+	
+gui_jail_break_role_choice_police_tip=Команда полицейских заполнена. выберите грабителя.
+gui_jail_break_role_choice_bandit_tip=Команда грабителей заполнена. выберите полицейского.
+gui_jail_break_role_choice_enter_game=Вступать
+gui_jail_break_role_choice_title=Подсказка
+gui_jail_break_role_choice_title_police=Полицейский
+gui_jail_break_role_choice_title_bandit=Грабитель
+	
+gui_dialog_tip_title_tip=Подсказка
+gui_dialog_tip_title_vehicle=Разблокировать машину
+gui_dialog_tip_content_unlock_vehicle=Разблокировать машину за[%s]
+gui_dialog_tip_btn_cancel=Отмена
+gui_dialog_tip_btn_sure=ОК
+gui_dialog_tip_btn_unlock=Разблокировать
+gui_dialog_tip_btn_get_currency=Заработайте деньги
+gui_dialog_tip_content_go_app_shop=Недостаточно денег, хотите зайти в магазин обмена?
+gui_dialog_tip_revive_msg=Игра окончена, возрождение будет стоить (%d)
+gui_dialog_tip_revive_cancel=Игра окончена
+gui_dialog_tip_revive_sure=Возродиться
+	
+jail_item_name_shovel=Лопата для рытья песка
+jail_item_name_key=Ключ
+jail_item_name_bullet=Пули
+jail_item_name_cash1700=Деньги\\n1,700
+jail_item_name_cash1000=Деньги\\n1,000
+jail_item_name_cash2000=Деньги\\n2,000
+jail_item_name_cash4000=Деньги\\n4,000
+jail_item_name_cash5000=Деньги\\n5,000
+jail_item_name_cash10000=Деньги\\n10,000
+jail_item_name_cash20000=Деньги\\n20,000
+jail_item_name_cash50000=Деньги\\n50,000
+jail_item_name_cash100000=Деньги\\n100,000
+	
+gui_buy_goods_successful=Предмет куплен
+gui_buy_goods_failure=Ошибка оплаты
+gui_dialog_tip_content_go_npc_merchant=Ваш инвентарь полон! Продать вашу руду и обновить ваше снаряжение?
+wordart_player_list=Список игроков
+wordart_achievement=Достижения 
+wordart_course=Курс
+wordart_game_setting=Настройки игры
+wordart_key_setting=Настройки клавиш
+wordart_reset_key=Сброс клавиш
+wordart_exit_game=Выйти из игры
+wordart_resume_game=Продолжить игру
+wordart_compound=Делать
+wordart_role=Я
+wordart_bag=Инвентарь
+wordart_inventory_tabs=Вкладки инвентаря
+wordart_chest=Коробка
+wordart_shop=Магазин
+wordart_shop_tile_name=Магазин
+wordart_workbench=Верстак
+wordart_settlement=Результат
+	
+gui_rank_score=Счёт
+gui_rank_day_rank=Дневной
+gui_rank_week_rank=Недельный
+gui_rank_self_score=Мой счёт
+item.shovelRenovation.name=Садовая лопатка 
+item.spatula.name=Шпатель
+item.shovelToy.name=Игрушечная лопатка
+item.digBucket.name=Ведро
+	
+item.shovelRake.name=Грабли
+item.digShovelIron.name=Армейская лопата
+item.shovelBigScooper.name=Гигантская ложка
+item.shovelJackHammer.name=Молот
+item.shovelDrill.name=Дрель
+item.shovelEngineerGold.name=Золотая лопата
+item.shovelMarching.name=Механическая лопата
+	
+exchangetips_littletoysholve=Внимание! Обновленные лопаты снова в наличии
+exchangetips_smalltoysholve=Внимание! Шпатели снова в наличии
+exchangetips_mediumtoysholve=Внимание! Игрушечные лопатки снова в наличии
+exchangetips_bucket=Внимание! Вёдра снова в наличии
+exchangetips_rake=Внимание! Грабли снова в наличии
+exchangetips_solidersholve=Внимание! Маршировые лопаты снова в наличии
+exchangetips_hugesholve=Внимание! Большие совки снова в наличии
+exchangetips_engineersholve=Внимание! Инженерные лопаты снова в наличии!
+	
+diggertip1=Садовая лопатка: 1 ед.
+diggertip2=Шпатель: 2 ед.
+diggertip3=Игрушечная лопатка: 3 ед.
+diggertip4=Ведро: 4 ед.
+diggertip5=Грабли: 5 ед.
+diggertip6=Гигантская ложка: 7 ед.
+diggertip7=Армейская лопата: 10 ед.
+diggertip8=Механическая лопата: 15 ед.
+diggertip9=Молот: 20 ед.
+diggertip10=Дрель: 50 ед.
+diggertip11=Золотая лопата: 75 ед.
+	
+bagpackupdate_2=Улучшить до 25
+bagpackupdate_3=Улучшить до 40
+bagpackupdate_4=Улучшить до 140
+bagpackupdate_5=Улучшить до 250
+bagpackupdate_6=Улучшить до 480
+bagpackupdate_7=Улучшить до 100
+bagpackupdate_8=Улучшить до 1,500
+bagpackupdate_9=Улучшить до 2,500
+bagpackupdate_10=Улучшить до 5,000
+bagpackupdate_11=Улучшить до 7,500
+bagpackupdate_12=Улучшить до 100,000
+bagpackupdate_13=Улучшить до 150,000
+leveltoptip=Достигнут макс. уровень
+	
+gui_rank_button=Рейтинг
+default.rank.name=Рейтинг
+gui_dialog_btn_upgrade_bag=Улучшить
+dead.summary.eliminated.rank=Убийств
+dead.summary.chicken.tip=Победа матча !
+dead.summary.chicken.tip.luck=Повезёт в следующий раз!
+toolbar_member_left=Осталось
+toolbar_kill_number=Убийств
+gui_player_list_item_add_friend=Добавить
+item.medicinePack.name=Курица
+item.medicinePotion.name=Зелье
+	
+gui_player_list_item_add_friend_msg_sent=Отправить
+gui_player_list_item_add_friend_msg_send_failure=Ошибка отправки просьбы. Попробуйте ещё раз.
+gui_player_list_item_add_friend_msg_agree_failure=Ошибка принятия просьбы. Попробуйте ещё раз.
+	
+gui_player_list_item_add_friend_btn_agree=Принять
+gui_player_list_item_add_friend_btn_ignore=Отказ
+gui.setting.pole.toggle=Джойстик
+gui_player_list_item_add_friend_msg=Заявки в друзья
+	
+item.goldHeart.name=Золотое сердце
+item.goldShoes.name=Золотые ботинки 
+item.goldArrow.name=Золотая стрела 
+item.questionMark.name=Вопросительный знак
+	
+hide.rank.name=Рейтинг прячущихся
+seek.rank.name=Рейтинг искателей
+hide.rank.title=Рейтинг прячущихся
+seek.rank.title=Рейтинг искателей
+	
+gui_tip_pick_up_goods_title=Подобрать %s
+gui_tip_pick_up_goods_content=Подобрать стоит[%s]
+gui_tip_pick_up_goods_btn_sure=Подобрать
+gui_tip_pick_up_goods_not_exist=Предметы не существуют или подобраны другими игроками
+gui_tip_pick_up_goods_pay_failure=Ошибка оплаты. Попробуйте ещё раз.
+gui_rank_my_rank=Мой рейтинг
+gui_rank_jail_break_hero_cops=Полиция
+gui_rank_jail_break_top_wanted=Разыскиваемых
+gui_rank_jail_break_my_hero_cops=Арест
+gui_rank_jail_break_my_top_wanted=Бонус
+gui_rank_jail_break_left_score=Арест
+gui_rank_jail_break_right_score=Бонус
+gui_rank_default_title_name=Рейтинг
+gui_rank_vice_title_left_name=Дневной
+gui_rank_vice_title_right_name=Недельный
+gui_hide_and_seek_game_time_info=Осталось: %d
+gui_rank_sand_digger_title_name=Рейтинг копателей
+	
+gui_team_seek=Искатели
+gui_team_hide=Прячущиеся
+	
+gui_dialog_tip_title_change_actort=Измениться
+gui_dialog_tip_content_change_actort=Измениться [%s] раз стоит
+gui_dialog_tip_btn_change_actort=Измениться
+	
+gui_check_point_number=Волна: %d
+gui_surplus_monster=Монстров осталось: %d
+gui_surplus_check_point_number=Волн до БОССА: %d
+gui_count_down_time_info=Времени: %d сек.
+tool_bar_real_time_rank_title_rank_id=Рейтинг
+tool_bar_real_time_rank_title_name=Ник
+tool_bar_real_time_rank_title_rank_title_lev=Ур
+tool_bar_real_time_rank_title_rank_title_kills=Убить
+tool_bar_real_time_rank_title_rank_title_gold=Золото
+gui_boss_life=[БОСС]Здоровье : %d / %d
+gui_rank_creepy_aliens_total_clearance=Общий
+gui_rank_creepy_aliens_week_clearance=Недельный
+gui_rank_creepy_aliens_total_check_point=Общий
+gui_rank_creepy_aliens_week_check_point=Недельный
+gui_rank_creepy_aliens_my_total_check_point=Меня
+gui_rank_creepy_aliens_my_week_check_point=Меня
+gui_rank_creepy_aliens_my_check_point=Меня
+gui_shop_dont_buy=Не имеется
+gui_shop_has_get=Имеется
+gui_shop_has_use=Теперь
+tool_bar_real_time_rank_btn_name=Рейтинг 
+gui_shop_goods_tip=Описание:
+	
+upgrade.item.helmet.desc=Ур ▢FF00FF00%d ▢FFFFFFFFШлема\\n+ ▢FF00FF00%d ▢FFFFFFFFЗД/10 сек\\nСледующий Ур:\\n+ ▢FF00FF00%d ▢FFFFFFFFЗД/10сек
+upgrade.item.plate.desc=Ур ▢FF00FF00%d ▢FFFFFFFFНагрудника\\n+ ▢FF00FF00%d ▢FFFFFFFFЗАЩ\\nСледующий Ур:\\n+ ▢FF00FF00%d ▢FFFFFFFFЗАЩ
+upgrade.item.legs.desc=Ур ▢FF00FF00%d ▢FFFFFFFFПонож\\n+ ▢FF00FF00%d ▢FFFFFFFFМакс. ЗД\\nСледующий Ур:\\n+ ▢FF00FF00%d ▢FFFFFFFFМакс. ЗД
+upgrade.item.boots.desc=Ур ▢FF00FF00%d ▢FFFFFFFFБотинок\\n+ ▢FF00FF00%d ▢FFFFFFFFСкорость\\nСледующий Ур:\\n+ ▢FF00FF00%d ▢FFFFFFFFСкорость
+	
+gui.shop.tip.max.level=Макс. Ур.
+	
+prop.attack.value=АТК:%s
+prop.range.value=Дальность атаки:%s
+prop.speed.value=Оценка:%s
+	
+gui.shop.tab.prop=Предметы
+	
+item.propGold.name=Золото x1.5 (навсегда)
+item.propExp.name=Опыт x2 (навсегда)
+prop.propSpeed.effect=Ускорение (навсегда)
+	
+creepyalients.score.rank.name=Рейтинг счёта
+creepyalients.level.rank.name=Рейтинг уровня
+creepyalients.score.rank.title=Рейтинг счёта
+creepyalients.level.rank.title=Рейтинг уровня
+	
+creepyalients_gun_name_1.name=Пистолет "HK P2000"
+creepyalients_gun_name_2.name=Винтовка "AK 47"
+creepyalients_gun_name_3.name=Пистолет-пулемет "MP9"
+creepyalients_gun_name_4.name=Дробовик "HAWK-12"
+creepyalients_gun_name_6.name=Снайперская винтовка "M40A3"
+creepyalients_gun_name_9.name=Винтовка "M4A1"
+creepyalients_gun_name_8.name=Снайперская винтовка "98K"
+creepyalients_gun_name_11.name=Пулемёт Гатлинга
+creepyalients_gun_name_10.name=Снайперская винтовка Баррета
+creepyalients_gun_name_37.name=Револьвер "R1895"
+creepyalients_gun_name_27.name=Микро-Узи
+creepyalients_gun_name_36.name=Дробовик "Sears Ranger"
+creepyalients_gun_name_38.name=Пистолет "Пустынный Орёл"
+creepyalients_gun_name_25.name=Пистолет-пулемет Томсона
+creepyalients_gun_name_29.name=Дробовик "M1014"
+creepyalients_gun_name_28.name=Пистолет-пулемет "Type100"
+creepyalients_gun_name_34.name=Пистолет-пулемет "МК5"
+creepyalients_gun_name_23.name=Винтовка "M16A4"
+creepyalients_gun_name_35.name=Дробовик "AA12"
+creepyalients_gun_name_26.name=Пистолет-пулемёт Вектора
+creepyalients_gun_name_24.name=Винтовка "Гроза"
+creepyalients_gun_name_18.name=Пулемёт "DP-28"
+creepyalients_gun_name_33.name=Винтовка "SCAR-L"
+creepyalients_gun_name_13.name=Снайперская винтовка 85 
+creepyalients_gun_name_21.name=Винтовка 95
+creepyalients_gun_name_17.name=Пулемёт "M1941"
+creepyalients_gun_name_20.name=Снайперская винтовка "W2000"
+creepyalients_gun_name_31.name=Винтовка "AUG A3"
+creepyalients_gun_name_19.name=Винтовка "MK14"
+creepyalients_gun_name_15.name=Пулемёт "MK60"
+creepyalients_gun_name_16.name=Пулемёт "MAG43"
+	
+creepyalients_mon_name01=Субросиан
+creepyalients_mon_name02=Гигантский Субросиан
+creepyalients_mon_name03=Гринс
+creepyalients_mon_name04=Гигантский Гринс
+creepyalients_mon_name05=Грейс
+creepyalients_mon_name06=Гигантский Грейс
+creepyalients_mon_name07=Инсектосаурус
+creepyalients_mon_name08=Гигантский Инсектосаурус
+creepyalients_mon_name09=Слизень
+creepyalients_mon_name10=Гигантский Слизень
+creepyalients_mon_name11=Демон
+creepyalients_mon_name12=Гигантский Демон
+creepyalients_mon_name13=Мистические Кролики
+creepyalients_mon_name14=Гигантские Мистические Кролики
+creepyalients_mon_name15=Летосвин
+creepyalients_mon_name16=Гигантский Летосвин
+creepyalients_mon_name17=Ангел
+creepyalients_mon_name18=Гигантский Ангел
+creepyalients_mon_name19=Доктор Октопус
+creepyalients_mon_name20=НЛО-охотник
+	
+gui.update.successful=Успешно улучшено
+gui.update.failed=Улучшить не удалось
+gui_basement_life=Здоровье Базы %s  
+	
+creepyalients_item_name_cash10000=Деньги \\n10,000
+creepyalients_item_name_cash50000=Деньги \\n50,000
+creepyalients_item_name_cash100000=Деньги \\n100,000
+creepyalients_item_name_cash250000=Деньги \\n250,000
+creepyalients_item_name_cash500000=Деньги \\n500,000
+creepyalients_item_name_cash1000000=Деньги \\n1,000,000
+	
+gui_real_time_rank_title_one_creepy_aliens=Ранг
+gui_real_time_rank_title_two_creepy_aliens=Ник
+gui_real_time_rank_title_three_creepy_aliens=Ур
+gui_real_time_rank_title_four_creepy_aliens=Убийства
+gui_real_time_rank_title_five_creepy_aliens=Золото
+	
+gui_rank_vice_title_hist_name=Исторический рейтинг
+gui_rank_hist_rank=Мой рейтинг
+score_point_point=Ур
+	
+default.session.name=НИП
+street.session.name=Коммерческий НИП
+guidenpc.g1020.01.name=Руководство MiniTown
+gui_dialog_tip_btn_sure_get_manor=Получить
+gui_dialog_tip_content_get_manor=Дорогой(-ая)[%s], Желаете получить ваш сообственный двор бесплатно?
+gui_dialog_tip_content_sell_manor=Дорогой(-ая)[%s], Ваш двор стоит[%d].Вы хотите его ПРОДАТЬ?
+gui_dialog_tip_content_sure_sell_manor=Продать ваш двор за[%d]?
+gui_manor_radio_info=Детали
+gui_manor_radio_house=Дом
+gui_manor_radio_furniture=Мебель
+gui_manor_radio_message=Почта
+gui_manor_info_btn_teleport=Телепорт
+gui_manor_info_btn_upgrade=%d Up
+gui_manor_title_name=Двор игрока %s
+gui_manor_info_ground=Двор
+gui_manor_info_rose=Нравится
+gui_manor_info_seed=Семена
+gui_manor_info_charm=Очарование
+gui_manor_info_value=Цена
+gui_manor_house_btn_buy=%d Иметь
+gui_manor_house_btn_build=Построить
+gui_manor_furniture_btn_buy=Купить
+gui_manor_furniture_btn_use=Деть
+gui_manor_furniture_btn_recycle=Recycle
+gui_manor_upgrade_info_ground=Площадь двора
+gui_manor_upgrade_info_rose=Нравится
+gui_manor_upgrade_info_seed=Растения
+gui_manor_upgrade_info_charm=Очарование
+gui_manor_upgrade_title=Улучшить до Ур. %d
+gui_manor_upgrade_expenditure=Стоит
+gui_manor_house_not_can_unlock=Иметь на Ур. %d
+gui_back_platform_top_up=Перезарядится
+gui_tip_need_currency=Нет/Недостаточно
+gui_need_back_platform_top_up=Перезарядится сейчас?
+gui_manor_message_btn_give=Нравится
+gui_manor_message_btn_call_on=Визит
+gui_manor_give_rose=Нравится
+gui_manor_call_on=Визит
+gui.update.successful=Успешно улучшено
+gui.update.failed=Улучшение не удалось
+gui_manor_max_level=Макс.
+gui_manor_build_house_tip=Строительство дома требует немного времени. Все строения и мебель будут возвращены в инвентарь.
+gui_manor_receive_failure=Не удалось получить ваш Двор. Пожалуйста, попробуйте ещё раз.
+gui_manor_sell_failure=Не удалось продать ваш Двор. Пожалуйста, попробуйте ещё раз.
+gui_manor_sell_succeed=Двор продан!
+gui_manor_give_rose_succeed="Нравится" успешно !
+gui_manor_give_rose_failure="Нравится" не смогли. Попробуйте ещё раз.
+gui_manor_give_rose_failure_not_manor="Нравится" не смогли. Он/Она не имеет двора.
+gui_manor_give_rose_failure_num_is_zero=Улучшите ваш двор чтобы поставить больше отметок "Нравится"
+gui_manor_target_user_not_manor=Невозможно навестить. У его/её нету двора.
+gui_manor_message_call_on_tip=%s навестил(-а) ваш двор!
+gui_manor_message_give_rose_tip=%s  "Нравится" на ваш двор!
+gui_manor_message_vegeteal_tip=%s украл(-а) ваши растения!
+gui_manor_place_and_build_message=Нужно быть в вашем дворе
+gui_manor_steal_count_message=Всё, на сегодня достаточно грабить! Возвращайтесь завтра или улучшите ваш двор!
+gui_game_setting_background_music=ФМ
+gui_manor_call_on_failure=Невозможно навестить, попробуйте ещё раз
+gui_manor_tp_failure=Невозможно телепортироваться, попробуйте ещё раз
+gui_manor_operation_failure=Не удалось, попробуйте ещё раз!
+gui_manor_give_rose_failure_given=Уже "Нравится"
+gui_manor_upgrade_failure=Не удалось улучшиться.
+gui_manor_lack_of_level_message=Улучшите ваш двор.
+gui_manor_build_house_message=Постройте свой дом.
+gui_manor_make_money_buy_furniture_message=Получайте деньги чтобы купить мебель.
+item.seeds_wheat.name=Семена Пшеницы
+item.seeds_carrot.name=Семена Моркови
+item.seeds_tomato.name=Семена Помидора
+item.seeds_cabbage.name=Семена Капусты
+item.seeds_pea.name=Семена Гороха
+item.wheat.name=Пшеница
+item.carrot.name=Морковь
+item.tomato.name=Помидор
+item.cabbage.name=Капуста
+item.pea.name=Горох
+manor_officer_npc_name=Чиновник Городка
+manor_sell_npc_name=Торговец Дворами
+npc14.npc.name=Руководство
+gui_rank_charm=Шарм
+gui_rank_charm_value=Шарм
+gui_rank_assessment=Цена
+gui_rank_assessment_price=Цена
+gui_rank_my_charm=Рейтинг
+gui_rank_my_charm_value=Шарм
+gui_rank_my_assessment=Рейтинг
+gui_rank_my_assessment_price=Цена
+	
+gui_manor_street_guide_npc_tip=Торговцы не за горами. Что вам нужно?
+gui_manor_street_npc_tip=Добро пожаловать на Торговую улицу.
+guidenpc_g1020_01=Нажмите на кнопку зеленого дома. Потом нажмите на кнопку "Телепортироваться" чтобы отправиться к своему дому немедленно!
+guidenpc_g1020_02=Пройдите через Центральный Парк. Торговцы ждут.
+guidenpc_g1020_03=Каждый торговец продает разные вещи. Что вам нужно?
+guidenpc_g1020_04=Мы построим статую мэра нашего городка. Вы можете быть мэром. Кто знает?
+guidenpc_g1020_05=Найдите больше друзей. Вы можете легко посетить их дом или поставить им отметки "Нравится" или украсть их урожай!
+guidenpc_g1020_06=Вы можете разместить блоки в области вашего двора.
+guidenpc_g1020_07=Мебель стоит очень дорого. Но она стоит того.
+guidenpc_g1020_08=Те, кто украл у вас растения или поставил отметку "Нравится", показываются в отделе «Уведомления». Вы можете ограбить их в ответ или поставить отметку "Нравится"!
+guidenpc_g1020_09=Хотите более прекрасные дома? Улучшайте ваш двор!
+guidenpc_g1020_10=Тут всего 5 разновидностей семян. Чем дороже семена, тем дольше они растут, но они дают больше денег.
+guidenpc_g1020_11=Вы можете украсть растения других игроков чтобы получить деньги.
+guidenpc_g1020_12=Поставка и получение отметки "Нравится" могут принести вам деньги
+guidenpc_g1020_13=Найдите больше друзей. Вы можете легко посетить их дом или поставить им отметки "Нравится" или украсть их урожай!
+guidenpc_g1020_14=Очарование увеличивает стоимость вашего двора. Вы можете получить его если вам поставили отметки "Нравится", за постройку дома или же, за покупку вещей.
+	
+gui_manor_get_already_exists=Вы уже получили свой двор. Идите растите, стройте, и заводите друзей.
+gui_manor_sell_not_exists=У вас нету двора. Чего же вы ждёте - получите его от Чиновника Городка!
+gui_manor_call_on_in_vehicle=Телепортироваться не удалось. Вам нужно покинуть машину.
+gui_manor_call_tp_in_vehicle=Телепортироваться не удалось. Вам нужно покинуть машину.
+gui_manor_furniture_operation_tip=Нажмите на мебель чтобы переместить её.
+gui_manor_is_not_load=Не удалось продать. Ваш двор не на этом сервере. Пожалуйста, телепортируйтесь на свой сервер.
+gui_manor_edit_ban_get_on=Вы не можете управлять машиной пока вы редактируете мебель
+gui_manor_is_furniture_actor=Теперь отредактируйте эту мебель!
+gui_manor_call_on_failure_vistors_full=Не удалось посетить, слишком много посетителей
+gui_manor_call_on_failure_version_not_matched=Не удалось посетить так как используется противоречная версия игры. Это значит, что вам или тому, кого вы хотите посетить нужно обновить игру.
+gui_manor_sell_failure_by_times=Не-а! Сегодня вы уже продали свой двор. Возвращайтесь завтра
+	
+flag.war.swordsman.dsc1=повышает скорость передвижения и регенерацию здоровья
+flag.war.swordsman.dsc2=игрок не может получать урон в течении короткого времени
+flag.war.swordsman.dsc3=наносит урон врагу
+flag.war.shooter.dsc1=наносит урон по области
+flag.war.shooter.dsc2=повышает урон на короткое время
+flag.war.shooter.dsc3=наносит урон по врагу и понижает его/её скорость передвижения
+flag.war.thieves.dsc1=становится невидимым на время
+flag.war.thieves.dsc2=повышает скорость передвижения игрока
+flag.war.thieves.dsc3=отравляет врагов в области эффекта
+flag.war.wizard.dsc1=регенерирует товарищей по командне в области эффекта
+flag.war.wizard.dsc2=наносит урон по врагам в течении времени в области эффекта
+flag.war.wizard.dsc3=повышает скорость передвижения товарищей в области эффекта
+flag.war.bomber.dsc1=наносит урон по врагам в течении времени в области эффекта
+flag.war.bomber.dsc2=наносит урон по врагам в области эффекта
+flag.war.bomber.dsc3=наносит массивный урон по врагам в области эффекта
+flag.war.icemage.dsc1=наносит урон по врагам в области эффекта и понижает их скорость передвижения
+flag.war.icemage.dsc2=замораживает врагов в области эффекта
+flag.war.icemage.dsc3=наносит массивный урон по врагам в области эффекта и понижает их скорость передвижения
+	
+	
+flag.war.swordsman.skillname1=зарядка
+flag.war.swordsman.skillname2=неуязвимость
+flag.war.swordsman.skillname3=божья кара
+flag.war.shooter.skillname1=дождь из стрел
+flag.war.shooter.skillname2=меткий стрелок
+flag.war.shooter.skillname3=выстрел в голову
+flag.war.thieves.skillname1=вор
+flag.war.thieves.skillname2=ускорение
+flag.war.thieves.skillname3=токсичная бомба
+flag.war.wizard.skillname1=регенерация
+flag.war.wizard.skillname2=колдовство
+flag.war.wizard.skillname3=барабанные танцы
+flag.war.bomber.skillname1=напалм
+flag.war.bomber.skillname2=взрыв
+flag.war.bomber.skillname3=динамичность
+flag.war.icemage.skillname1=метель
+flag.war.icemage.skillname2=заморозка
+flag.war.icemage.skillname3=ледяные осколки
+	
+item.skill_01.name=навык 1
+item.skill_02.name=навык 2
+item.skill_03.name=навык 3
+	
+parkour.rank.name1=Трассы кактусов
+parkour.rank.name2=Трассы свободного падения
+score_point_flag=флаги
+	
+flag.war.swordsman=мечник
+flag.war.shooter=стрелок
+flag.war.thieves=вор
+flag.war.wizard=маг
+flag.war.bomber=подрывник
+flag.war.icemage=мастер
+	
+flag.war.select.swordsman=Вы точно хотите стать "мечником"?
+flag.war.select.shooter=Вы точно хотите стать "стрелком"?
+flag.war.select.thieves=Вы точно хотите стать "вором"?
+flag.war.select.wizard=Вы точно хотите стать "магом"?
+flag.war.select.bomber=Вы точно хотите стать "подрывником"?
+flag.war.select.icemage=Вы точно хотите стать "мастером"?
+	
+flag.war.shop.tab.fashion=Ореол
+flag.war.shop.tab.skill=навык
+  	
+	
+	
+flag.war.shop.Halo.name1=Ореол регенерации
+flag.war.shop.Halo.name2=Ореол скорости
+flag.war.shop.Halo.name3=Ореол прыгучести
+	
+flag.war.attribute=атрибут
+  	
+	
+	
+	
+flag.war.swordsman.dsc1=Наносит 15 урона врагу --- перезарядка: 5; диапазон: 5
+flag.war.swordsman.dsc2=Значительно повышает скорость передвижения игрока на 1 секунду --- перезарядка: 9
+flag.war.swordsman.dsc3=Снижает получемый урон на 99% в течении 5 секунд --- перезарядка: 20
+flag.war.shooter.dsc1=Наносит 10 урона каждому врагу в радиусе 2х2 --- перезарядка: 6; диапазон: 15
+flag.war.shooter.dsc2=Наносит 10 урона врагу и замедляет его/её на X% на 2 секунды --- перезарядка: 9; диапазон: 15
+flag.war.shooter.dsc3=Наносит 30 урона врагу --- перезарядка: 20; диапазон: 25
+flag.war.thieves.dsc1=Наносит 20 урона врагу --- перезарядка: 6; диапазон: 5
+flag.war.thieves.dsc2=Повышает скорость передвижения игрока на 3 секунды --- перезарядка: 9
+flag.war.thieves.dsc3=Позволяет игроку стать невидимым на 3 секунды --- перезарядка: 20
+flag.war.wizard.dsc1=Регенирирует 10 жизней товарищу по команде --- перезарядка: 4; диапазон: 10
+flag.war.wizard.dsc2=Одному случайному врагу в радиусе 12x12 будет выдан эффект отравления на 5 секунд, наносит 21 урона на полном эффекте --- перезарядка: 9
+flag.war.wizard.dsc3=Регенерирует всех товарищей по команде в радиусе 8x8, максимум на 5 секунд, ввостанавливает всего 600 здоровья --- перезарядка: 20; диапазон: 10
+flag.war.bomber.dsc1=Начнёт наносить урон врагу в течении 2 секунд, в результате враг получит 6 урона --- перезарядка: 2; диапазон: 12
+flag.war.bomber.dsc2=Наносит 15 урона врагам в радиусе 3х3 и замедляет их на X% на 3 секунды --- перезарядка: 9; радиус: 12
+flag.war.bomber.dsc3=Наносит 20 урона врагам в радиусе 8х8 --- перезарядка: 20; диапазон: 30
+flag.war.icemage.dsc1=Наносит 4 урона врагу и замедляет его на X% на одну секунду --- перезарядка: 2; диапазон: 12
+flag.war.icemage.dsc2=Замораживает врагов в радиусе 12х12 на 3 секунды --- перезарядка: 9
+flag.war.icemage.dsc3=Причиняет урон и замедляет скорость врагов в радиусе 5х5 в течении 5 секунд, в результате чего врагу будет нанесено 18 урона --- перезарядка: 20; диапазон: 12
+	
+	
+flag.war.swordsman.skillname1=Героический Удар
+flag.war.swordsman.skillname2=Зарядка
+flag.war.swordsman.skillname3=Блок Щита
+flag.war.shooter.skillname1=Дождь из стрел
+flag.war.shooter.skillname2=Ледяные стрелы
+flag.war.shooter.skillname3=Меткость
+flag.war.thieves.skillname1=Опустошение
+flag.war.thieves.skillname2=Ускорение
+flag.war.thieves.skillname3=Исчезновение
+flag.war.wizard.skillname1=Лечение
+flag.war.wizard.skillname2=Окисление
+flag.war.wizard.skillname3=Исцеляющая волна
+flag.war.bomber.skillname1=Мини Бомба
+flag.war.bomber.skillname2=Замедление Мин
+flag.war.bomber.skillname3=Мега Бомбы
+flag.war.icemage.skillname1=Измельчение льда
+flag.war.icemage.skillname2=Заморозка
+flag.war.icemage.skillname3=Метель
+	
+flag.war.swordsman.attribute.dsc=ЗД:70;АТК:10;ЗАЩ:300
+flag.war.shooter.attribute.dsc=ЗД:50;АТК:8;ЗАЩ:200
+flag.war.thieves.attribute.dsc=ЗД:60;АТК:10;ЗАЩ:200
+flag.war.wizard.attribute.dsc=ЗД:50;АТК:8;ЗАЩ:200
+flag.war.bomber.attribute.dsc=ЗД:50;АТК:8;ЗАЩ:200
+flag.war.icemage.attribute.dsc=ЗД:50;АТК:8;ЗАЩ:200
+	
+	
+flag.war.swordsman.attribute.dsc0=ЗД:70;АТК:10;ЗАЩ:3
+flag.war.shooter.attribute.dsc0=ЗД:50;АТК:8;ЗАЩ:2
+flag.war.thieves.attribute.dsc0=ЗД:60;АТК:10;ЗАЩ:2
+flag.war.wizard.attribute.dsc0=ЗД:50;АТК:8;ЗАЩ:2
+flag.war.bomber.attribute.dsc0=ЗД:50;АТК:8;ЗАЩ:2
+flag.war.icemage.attribute.dsc0=ЗД:50;АТК:8;ЗАЩ:2
+  	
+	
+flag.war.swordsman.dsc11=Наносит 600 урона врагу --- перезарядка: 5; диапазон: 5
+flag.war.swordsman.dsc12=Значительно повышает скорость передвижения игрока на 1 секунду --- перезарядка: 9
+flag.war.swordsman.dsc13=Снижает получемый урон на 99% в течении 5 секунд --- перезарядка: 20
+flag.war.shooter.dsc11=Наносит 550 урона каждому врагу в радиусе 2х2 --- перезарядка: 6; диапазон: 15
+flag.war.shooter.dsc12=Наносит 1000 урона врагу и замедляет его/её на 40% на 2 секунды --- перезарядка: 9; диапазон: 15
+flag.war.shooter.dsc13=Наносит 3000 урона врагу --- перезарядка: 20; диапазон: 25
+flag.war.thieves.dsc11=Наносит 600 урона врагу --- перезарядка: 6; диапазон: 5
+flag.war.thieves.dsc12=Повышает скорость передвижения игрока на 3 секунды --- перезарядка: 9
+flag.war.thieves.dsc13=Позволяет игроку стать невидимым на 3 секунды --- перезарядка: 20
+flag.war.wizard.dsc11=Регенирирует 500 жизней товарищу по команде --- перезарядка: 4; диапазон: 10
+flag.war.wizard.dsc12=Одному случайному врагу в радиусе 12x12 будет выдан эффект отравления на 5 секунд, наносит 800 урона на полном эффекте --- перезарядка: 9
+flag.war.wizard.dsc13=Регенерирует всех товарищей по команде в радиусе 8x8, максимум на 5 секунд, ввостанавливает всего 2000 здоровья --- перезарядка: 20; диапазон: 10
+flag.war.bomber.dsc11=Начнёт наносить урон врагу в течении 2 секунд, в результате враг получит 250 урона --- перезарядка: 2; диапазон: 12
+flag.war.bomber.dsc12=Наносит 650 урона врагам в радиусе 3х3 и замедляет их на 40% на 3 секунды --- перезарядка: 9; радиус: 12
+flag.war.bomber.dsc13=Наносит 1500 урона врагам в радиусе 8х8 --- перезарядка: 20; диапазон: 30
+flag.war.icemage.dsc11=Наносит 200 урона врагу и замедляет его на 40% на одну секунду --- перезарядка: 2; диапазон: 12
+flag.war.icemage.dsc12=Замораживает врагов в радиусе 12х12 на 3 секунды --- перезарядка: 9
+flag.war.icemage.dsc13=Причиняет урон и замедляет скорость врагов в радиусе 5х5 в течении 5 секунд, в результате чего врагу будет нанесено 1800 урона --- перезарядка: 20; диапазон: 12
+	
+flag.war.swordsman.attribute.dsc1=ЗД:7500;АТК:300;ЗАЩ:500
+flag.war.shooter.attribute.dsc1=ЗД:4000;АТК:360;ЗАЩ:200
+flag.war.thieves.attribute.dsc1=ЗД:6000;АТК:400;ЗАЩ:400
+flag.war.wizard.attribute.dsc1=ЗД:5000;АТК:180;ЗАЩ:250
+flag.war.bomber.attribute.dsc1=ЗД:4500;АТК:150;ЗАЩ:350
+flag.war.icemage.attribute.dsc1=ЗД:3500;АТК:120;ЗАЩ:300
+  	
+	
+flag.war.swordsman.dsc21=Наносит 1000 урона врагу --- перезарядка: 9; диапазон: 10
+flag.war.swordsman.dsc22=Значительно повышает скорость передвижения игрока на 1 секунду --- перезарядка: 9
+flag.war.swordsman.dsc23=Снижает получемый урон на 99% в течении 2 секунд --- перезарядка: 20
+flag.war.shooter.dsc21=Наносит 1000 урона каждому врагу в радиусе 2х2 --- перезарядка: 6; диапазон: 15
+flag.war.shooter.dsc22=Наносит 1500 урона врагу и замедляет его/её на 40% на 2 секунды --- перезарядка: 9; диапазон: 15
+flag.war.shooter.dsc23=Наносит 3000 урона врагу --- перезарядка: 20; диапазон: 25
+flag.war.thieves.dsc21=Наносит 1500 урона врагу --- перезарядка: 9; диапазон: 10
+flag.war.thieves.dsc22=Повышает скорость передвижения игрока на 3 секунды --- перезарядка: 9
+flag.war.thieves.dsc23=Позволяет игроку стать невидимым на 2 секунды --- перезарядка: 20
+flag.war.wizard.dsc21=Регенерирует 300 жизней товарищу по команде --- перезарядка: 3; диапазон: 10
+flag.war.wizard.dsc22=Одному случайному врагу в радиусе 12x12 будет выдан эффект отравления на 5 секунд, наносит 1200 урона на полном эффекте --- перезарядка: 6
+flag.war.wizard.dsc23=Регенерирует всех товарищей по команде в радиусе 8x8, максимум на 5 секунд, ввостанавливает всего 1200 здоровья --- перезарядка: 20; диапазон: 10
+flag.war.bomber.dsc21=Начнёт наносить урон врагу в течении 2 секунд, в результате враг получит 250 урона --- перезарядка: 2; диапазон: 12
+flag.war.bomber.dsc22=Наносит 650 урона врагам в радиусе 3х3 и замедляет их на 40% на 3 секунды --- перезарядка: 9; радиус: 12
+flag.war.bomber.dsc23=Наносит 1500 урона врагам в радиусе 8х8 --- перезарядка: 20; диапазон: 30
+flag.war.icemage.dsc21=Наносит 200 урона врагу и замедляет его на 40% на одну секунду --- перезарядка: 2; диапазон: 12
+flag.war.icemage.dsc22=Замораживает врагов в радиусе 12х12 на 3 секунды --- перезарядка: 9
+flag.war.icemage.dsc23=Причиняет урон и замедляет скорость врагов в радиусе 5х5 в течении 5 секунд, в результате чего врагу будет нанесено 3000 урона --- перезарядка: 20; диапазон: 12
+	
+flag.war.swordsman.attribute.dsc2=ЗД:7500;АТК:250;ЗАЩ:500
+flag.war.shooter.attribute.dsc2=ЗД:4000;АТК:800;ЗАЩ:200
+flag.war.thieves.attribute.dsc2=ЗД:6000;АТК:500;ЗАЩ:400
+flag.war.wizard.attribute.dsc2=ЗД:3000;АТК:180;ЗАЩ:250
+flag.war.bomber.attribute.dsc2=ЗД:4500;АТК:150;ЗАЩ:350
+flag.war.icemage.attribute.dsc2=ЗД:4000;АТК:120;ЗАЩ:300
+  	
+gui_rank_vice_title_hist_name=Всё
+	
+parkour.rank.name01=Рейтинг Трека Кактусов
+parkour.rank.name02=Рейтинг Трека Свободного Падения
+	
+flag.war.shop.Halo.attribute1=Повышает максимальное здоровье\\n(навсегда)
+flag.war.shop.Halo.attribute2=Повышает скорость передвижения\\n(навсегда)
+flag.war.shop.Halo.attribute3=Повышает высоту прыжка\\n(навсегда)
+	
+item.skill.chip.chest.1.name=Обломок\\n(x1)
+item.skill.chip.chest.2.name=Обломок\\n(x2)
+item.skill.chip.chest.3.name=Обломок\\n(x3)
+item.skill.book.1.name=Книга вспышки
+item.skill.book.2.name=Книга скорости
+item.skill.book.3.name=Книга невидимости
+item.skill.book.4.name=Книга полёта
+item.skill.book.5.name=Книга неуязвимости
+item.skill.book.6.name=Книга телепортирования
+item.skill.book.7.name=Чёрная книга
+item.skill.chip.1.name=Осколок вспышки
+item.skill.chip.2.name=Осколок скорости
+item.skill.chip.3.name=Осколок невидимости
+item.skill.chip.4.name=Осколок полёта
+item.skill.chip.5.name=Осколок неуязвимости
+item.skill.chip.6.name=Осколок телепортирования
+item.skill.chip.7.name=Чёрный осколок
+	
+throw.pot.shop.tab.title=Звания
+throw.pot.chip.chest=Осколок
+throw.pot.money=Деньги
+	
+throw.pot.title.name.1=Новичок
+throw.pot.title.name.2=Выстрел к славе
+throw.pot.title.name.3=Непобедимый
+throw.pot.title.name.4=Король динамита
+throw.pot.title.name.5=1000 убийств
+throw.pot.title.name.6=Всемогущий
+	
+gui.shop.tab.skill.book=Навыка
+gui.shop.tab.skill.book.fragmentation=Осколок
+throw.pot.last.week.rank=Последняя Неделя
+	
+throw.pot.title.desc.1=Условие: Сыграйте 3 раунда.\\n(Подсказка: звания будут отображаться над головой при использовании!)
+throw.pot.title.desc.2=Условие: Займите 1 место в игре.\\n(Подсказка: звания будут отображаться над головой при использовании!)
+throw.pot.title.desc.3=Условие: Сыграйте 50 раундов.\\n(Подсказка: звания будут отображаться над головой при использовании!)
+throw.pot.title.desc.4=Условие: Сыграйте 100 раундов.\\n(Подсказка: звания будут отображаться над головой при использовании!)
+throw.pot.title.desc.5=Условие: Получите 1000 очков.\\n(Подсказка: звания будут отображаться над головой при использовании!)
+throw.pot.title.desc.6=Условие: Получите 7 разных книжек навыков.\\n(Подсказка: звания будут отображаться над головой при использовании!)
+item.skill.book.1.desc=Качество: Обычный\\nЭффекты: Мигание на 5 блоков вперед\\n(Подсказка: только одна книга навыков может быть использована в игре!)
+item.skill.book.2.desc=Качество: Обычный\\nЭффекты: Повышение скорости передвижения на 10сек\\n(Подсказка: только одна книга навыков может быть использована в игре!)
+item.skill.book.3.desc=Качество: Редкий\\nЭффекты: Невидимость на 5 сек, при атаке невидимость отключится\\n(Подсказка: только одна книга навыков может быть использована в игре!)
+item.skill.book.4.desc=Качество: Редкий\\nЭффекты: Полёт на 10 сек.\\n(Подсказка: только одна книга навыков может быть использована в игре!)
+item.skill.book.5.desc=Качество: Эпичный\\nЭффекты: Неуязвимость на 3 секунды, но нельзя двигаться.\\n(Подсказка: только одна книга навыков может быть использована в игре!)
+item.skill.book.6.desc=Качество: Эпичный\\nЭффекты: Все игроки будут отправлены обратно на точку появления.\\n(Подсказка: только одна книга навыков может быть использована в игре!)
+item.skill.book.7.desc=Качество: Эпичный\\nЭффекты: Все игроки кроме вас будут окружены темнотой на 2 сек.\\n(Подсказка: только одна книга навыков может быть использована в игре!)
+item.skill.chip.1.desc=Качество: Обычный\\nНужно обменять книгу Вспышки.\\n(Подсказка: Получите деньги в конце каждого раунда.)
+item.skill.chip.2.desc=Качество: Обычный\\nНужно обменять книгу Скорости.\\n(Подсказка: Получите деньги в конце каждого раунда.)
+item.skill.chip.3.desc=Качество: Редкий\\nНужно обменять книгу Невидимости.\\n(Подсказка: Получите деньги в конце каждого раунда.)
+item.skill.chip.4.desc=Качество: Редкий\\nНужно обменять книгу Полёта.\\n(Подсказка: Получите деньги в конце каждого раунда.)
+item.skill.chip.5.desc=Качество: Эпичный\\nНужно обменять книгу Неуязвимости.\\n(Подсказка: Получите деньги в конце каждого раунда.)
+item.skill.chip.6.desc=Качество: Эпичный\\nНужно обменять книгу Телепортирования.\\n(Подсказка: Получите деньги в конце каждого раунда.)
+item.skill.chip.7.desc=Качество: Эпичный\\nНужно обменять Чёрную книгу.\\n(Подсказка: Получите деньги в конце каждого раунда.)
+item.skill.chip.chest.1.desc=Случайно получите осколок навыка.\\n(Подсказка: Получите деньги в конце каждого раунда.)
+throw.pot.money.desc=Продажа осколков может принести деньги.\\n(Подсказка: Получите деньги в конце каждого раунда.)
+	
+gui_buildwar_title=Строить
+gui_buildwar_player_num=%d/%d
+gui_buildwar_left_time=Осталось: %d
+gui_buildwar_grade=%s  (%d сек.)
+score.rank.name=Рейтинг Очков
+winner.rank.name=Рейтинг Побед
+gui_build_war_title_all=Всё
+gui_build_war_guess_result_btn=Результат
+gui_build_war_guess_item_visit_btn=Визит
+gui_build_war_guess_item_guess_btn=Пари
+gui_build_war_guess_title=Пари(сердечко значит что вам понравилось)
+gui_build_war_guess_suc=Вы успешно угадали
+gui_build_war_guess_tip=Что [%s] станет победителем?
+shop_btn_select=Выбрать
+shop_btn_unlock=Купить
+gui_dialog_tip_content_unlock_commodity=Купить стоит[%s]
+gui_build_war_has_guess_item_guess_btn=Готово
+gui.shop.tab.color=Цвет
+gui.shop.tab.wood=Дерево
+gui.shop.tab.stone=Камень
+gui.shop.tab.metal=Метал
+gui_rank_all_rank=Мой Рейтинг
+gui_rank_all_score_rank=Очки
+gui_rank_all_winner_rank=Победа
+gui_rank_week_score_rank=Очки
+gui_rank_week_winner_rank=Победа
+gui_rank_winner=Победа
+gui_build_war_guess_reward_title=Награда
+gui_build_war_guess_result_title=Угадай
+gui_build_war_my_rank_title=Мой ранг
+gui_build_war_my_guess_title=Результат
+gui_have_already_got_block=Уже имеется
+	
+gui.shop.tab.sell=Продать
+	
+gui_shop_lack_of_item=Отсутствие товара
+gui_player_operation_greetings=Привет
+gui_team_resources_max_team_pool=%s Бассейн Ресурсов
+gui_team_resources_my_team_pool=Ваш бассейн
+gui_team_resources_other_team_pool=Бассейны врагов
+gui_settlement_jewel_knight=Gem Knight  (%s)
+gui_jewel_knight_game_name=Gem Knight
+gui_player_operation_greetings_message=Игрок ▢FFFF0000[%s]▢FFFFFFFF поприветствовал вас.
+gui_player_operation_greetings_message_for_me=Вы поприветствовали игрока ▢FFFF0000[%s].
+item.gemstone.name=Драгоценность
+	
+gui_rank_victory_title_name=Рейтинг Победителей
+gui_rank_jewel_knight_title_name=Рейтинг Рыцарей
+	
+gui_jewel_not_your_team_statue=Это статуя чужой команды.
+gui_jewel_no_have_jewel=У вас нету драгоценности в инвентаре, найдите её.
+gui_jewel_fill_team_source=Статуя ещё не активирована, сначала наполните бассейн ресурсов
+	
+gem_diggertip1=Лопата, МОЩ:1. Следующий Ур:Механическая Лопата, МОЩ:2.
+gem_diggertip2=Механическая Лопата, МОЩ:2. Следующий Ур:Золотая Лопата, МОЩ:3.
+gem_diggertip3=Золотая Лопата, МОЩ:3.
+	
+gem_NPC1_name=Предыстория
+gem_NPC2_name=Правила
+gem_NPC3_name=Торговец
+gem_NPC4_name=Руководство
+gem_NPC5_name=Строитель
+	
+gem_NPC1_content1=Поздравляем, Вас выбрали Мировой Драгоценностью, и вы войдете в мир драгоценных камней с другими игроками.
+gem_NPC1_content2=Ищите Мировую Драгоценность со своими товарищами по команде. Против вас будут ещё три команды, которые будут конкурировать с вами, чтобы вернуть драгоценный камень в статую, прежде чем вернуться в реальный мир.
+gem_NPC1_content3=Победители будут вознаграждены. Игрок, который успешно вернет драгоценный камень в статую, выиграет звание рыцаря драгоценных камней.
+gem_NPC1_content4=Но есть только один камень, и победит только одна команда. Проигравшые игроки останутся в этом проклятом мире навсегда.
+gem_NPC1_content5=Вы готовы начать игру! Ищите драгоценность сейчас!
+gem_NPC2_content1=Копайте руду в рудной зоне и возвращайте ее торговцу ресурсов для получения денег.
+gem_NPC2_content2=Заполнение любого бассейна ресурсов активирует местоположение драгоценного камня. Область руды показывает свое название, а цвет текста - синий.
+gem_NPC2_content3=Когда игрок получает драгоценный камень, все игроки будут знать его команду и его имя, и под ним будут специальные эффекты. Не позволяйте ему вернуть драгоценный камень в статую.
+gem_NPC2_content4=Улучшение инструментов поможет вам более эффективно находить драгоценные камни.
+gem_NPC2_content5=Вас ждет множество сюрпризов. Иногда любопытство может сильно помочь.
+gem_NPC3_content=Собранная руда будет возвращена в шахту ресурсов. \\nИзумруд =
+gem_NPC4_content=Вас ждет множество сюрпризов. Идите только вперёд и выиграйте игру!
+gem_NPC5_content=Дорогие игроки, я Shahe_Yida, дизайнер игры. Я приготовил много сюрпризов на этой карте. Ищите их сейчас!
+gem_NPC5_content2=Умный игрок, это для тебя.
+	
+gem.win.rank.name=Рейтинг Побед
+gem.win.rank.title=Рейтинг Побед
+gem.knight.rank.name=Рейтинг Рыцарей
+gem.knight.rank.title=Рейтинг Рыцарей
+	
+gui_keysetting_move_title=Настройка движения
+gui_keysetting_forward=Вперёд
+gui_keysetting_backward=Назад
+gui_keysetting_left=Влево
+gui_keysetting_right=Вправо
+gui_keysetting_shift=Красться
+gui_keysetting_ctrl=Бег
+gui_keysetting_jump=Прыжок
+gui_keysetting_inventory=Инвентарь
+gui_keysetting_discard_item=Выкинуть предмет
+gui_keysetting_open_inventory=Открыть инвентарь
+gui_keysetting_inventory1=Предмет 1
+gui_keysetting_inventory2=Предмет 2
+gui_keysetting_inventory3=Предмет 3
+gui_keysetting_inventory4=Предмет 4
+gui_keysetting_inventory5=Предмет 5
+gui_keysetting_inventory6=Предмет 6
+gui_keysetting_inventory7=Предмет 7
+gui_keysetting_inventory8=Предмет 8
+gui_keysetting_inventory9=Предмет 9
+gui_keysetting_other=Остальное
+gui_keysetting_chat=Чат
+gui_keysetting_map=Мини карта
+gui_keysetting_back=Меню
+gui_keysetting_personview=Изменить камеру
+gui_keysetting_chatsend=Отправить в чате
+gui_setting_item_reset_text=Сброс
+gui_setting_start_set_text=Пожалуйста сбросьте
+gui_setting_key_repeat=Повтор кнопки, пожалуйста попробуйте другую кнопку
+gui_setting_key_invalid=Неверная кнопка, пожалуйста сбросьте
+gui_setting_key_change_suc=Изменение кнопки успешно
+gui_setting_key_reset_all_suc=Сброс всех кнопок прошёл успешно
+gui_setting_key_reset_suc=Сброс успешно
+	
+item.equipment.set.1.name=Кожаный набор
+item.equipment.set.2.name=Кольчужный набор
+item.equipment.set.3.name=Набор брони
+item.equipment.set.4.name=Золотой набор
+item.equipment.set.5.name=Алмазный набор
+gui.shop.tab.equipment.set=Набор
+score_point_win=Победы
+	
+budokai.wins.rank.wins=Победы
+budokai.wins.rank.my.wins=Мои победы
+budokai.no.1.rank.no.1=Финальные победы:
+budokai.no.1.rank.my.no.1=Мои победы:
+budokai.score.rank.name=▢FFFFD700Рейтинг    Очков
+budokai.wins.rank.name=▢FFFFD700Рейтинг    Побед
+budokai.no.1.rank.name=▢FFFFD700Рейтинг    Финальных    Побед
+	
+budokai.score.rank.title=Рейтинг Очков
+budokai.wins.rank.title=Рейтинг Побед
+budokai.no.1.rank.title=Рейтинг Финальных Побед
+	
+item.skill_04.name=Удар
+item.skill_05.name=Иммунитет
+item.skill_06.name=Плащ
+item.skill_07.name=Ускорение
+item.skill_08.name=Неподвижность
+item.skill_09.name=Контроль мыслей
+
+gui_shop_tab_enchantment=Enchantment
+shop_btn_have_bought=Purchased
+gui_real_time_rank_title_kill=Kills
+gui_real_time_rank_title_die=Death
+gui_rank_my_rank_not_rank=Нет
+  
+gui_str_super_shop_shop=Super Shop  
+gui_shop_switch=Toggle  
+item.purple.pickaxe.name=Purple Pickaxe
+  
+gui.kill.msg.item.message=%s killed %s  
+item.grenade.smoke.name=Smoke Grenade  
+gui.back.hall=Back Hall
+
+item.grenade.tremor.name=Tremor Grenade
+item.frozen.ball.name=Frozen Ball
+item.baseball_stick.name=Baseball Bat
+item.spike_stick.name=Spiked Club
+item.stone_pillar.name=Monolith
+item.enderPearl.name=Flash Pearl
+
+gui.tiger.lottery.choose=Choose
+gui.tiger.lottery.again=Dislike ? Lottery again !
+gui.tiger.lottery.lock=Locked
+
+gui.useItem=Use Item  
+gui.btn.unload=Unload  
+gui.btn.equipped=Equipped  
+gui.gun.store.name=Armory  
+gui.gun.store.quick.upgrade=Speed up  
+gui.chest.lottery.title=Chest
+gui.chest.lottery.hint=Please choose your battle trophy    
+gui.chest.reward.result.title=Congratulations!!!
+gui.chest.lottery.open=Open  
+gui.season.rank.title=Season Rank
+gui.season.rank.countdown=Season ends in: %d days
+gui.season.rank.reward=Reward:
+gui.season.rank.honor=Honor:
+gui.season.rank.battle=To Battle!
+gui.season.reward.title=Season Reward
+gui.season.reward.rank=Rank  ▢FFF9F900%d
+gui.season.reward.last=▢FFD57C00Last Season
+gui.season.reward.current=▢FF00FFAECurrent Season
+gui.season.rule.title=Season Rules  
+
+
+gui_bird_pack_btn_delete=Delete
+gui_bird_pack_btn_equip=Carry
+gui_bird_pack_btn_unequip=Leave
+gui_bird_pack_btn_feed=Feed
+gui_bird_pack_info_attack=Attack: %1.f
+gui_bird_pack_info_speed=Speed: %d
+gui_bird_pack_info_gather=Collect: %1.f fruits every %d sec
+gui_bird_pack_info_convert=Conversion: convert %1.f fruits every %d sec
+gui_bird_pack_info_skill=Skill: %s
+gui_bird_pack_info_talent=Talent: %s
+gui_bird_pack_feed_use_1=Feed 1
+gui_bird_pack_feed_use_10=Feed 10
+gui_bird_pack_feed_use_50=Feed 50
+gui_bird_pack_feed_use_100=Feed 100
+gui_bird_pack=Bag
+gui_bird_fuse=Fusion
+gui_bird_pack_quality=Quality
+gui_bird_pack_level=Level
+gui_bird_pack_sort=Order
+gui_bird_fush_sure=Fusion
+gui_bird_fush_cancel=Reset
+gui_bird_store_desc=Detail
+gui_bird_store_btn_operation_buy=Buy
+gui_bird_store_btn_operation_equip=Equip
+gui_bird_store_btn_operation_unequip=equipped
+
+gui_bird_personal_shop=Store
+gui_bird_personal_shop_details_info=Detail Information
+gui_bird_personal_shop_buy=Buy
+gui_bird_personal_shop_already_buy=Bought
+gui_bird_tip_expenditure=Costs
+gui_bird_tip_nest=Unlock the bird house
+gui_bird_tip_expand_carry=Expand 1 carrying bird
+gui_bird_tip_expand_capacity=Expand 5 bird bag capacity
+gui_bird_tip_lottery=Draw Now
+gui_bird_tip_open_chest=Open Chest
+gui_bird_tip_open_store=Check Item List
+gui_bird_tip_close_store=Close Item List
+gui_bird_lottery_store=Open
+gui_bird_quality_1=▢FFFFFFFFCommon▢FFFFFFFF
+gui_bird_quality_2=▢FF000099Rare▢FFFFFFFF
+gui_bird_quality_3=▢FF660088Epic▢FFFFFFFF
+gui_bird_quality_4=▢FFFFDD00Legendary▢FFFFFFFF
+gui_bird_atlas=Bird Show
+gui_bird_activity=Call out for limited birds
+gui_bird_activity_button=Receive
+gui_bird_activity_day=Day
+gui_bird_mini_tip_open=Talk with %s
+gui_bird_mini_tip_convert=Convert
+gui_bird_mini_tip_stop_convert=Stop Converting
+gui_bird_mini_tip_open_lottery=Draw Now
+gui_bird_tip_use_cube_open_chest=Open chest with Bcubes?
+gui_bird_next_refresh_chest=Next One\\n%s 
+gui_bird_gain_title=Receive Item
+gui_bird_tip_delete_bird=Delete bird 【%s】?
+gui_bird_tip_delete_bird_fail=Failed to delete the last bird.
+gui_bird_next_task_time=Next Task\\n%s
+gui_bird_carry_full_expenditure=Reached the max of carrying amount
+gui_bird_carry_full=Expand 1 place
+gui_bird_capacity_full_expenditure=Bag capacity has reached the max amount.
+gui_bird_capacity_full=Expand 5 capacity
+
+  
+
+gui_bird_pack_info_gather1=Collect:%1.f in %.1f sec
+gui_bird_pack_info_convert1=Convert:%1.f in %.1f sec

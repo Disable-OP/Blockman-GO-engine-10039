@@ -1,0 +1,47 @@
+{"frames": {
+
+"ranch_icon_achievement":
+{
+	"frame": {"x":0,"y":0,"w":334,"h":195},
+	"offset": {"x":0,"y":0,"w":334,"h":195},
+	"sourceSize": {"w":334,"h":195}
+},
+"ranch_icon_community":
+{
+	"frame": {"x":334,"y":0,"w":334,"h":195},
+	"offset": {"x":0,"y":0,"w":334,"h":195},
+	"sourceSize": {"w":334,"h":195}
+},
+"ranch_icon_factory":
+{
+	"frame": {"x":668,"y":0,"w":334,"h":195},
+	"offset": {"x":0,"y":0,"w":334,"h":195},
+	"sourceSize": {"w":334,"h":195}
+},
+"ranch_icon_farming":
+{
+	"frame": {"x":0,"y":195,"w":334,"h":195},
+	"offset": {"x":0,"y":0,"w":334,"h":195},
+	"sourceSize": {"w":334,"h":195}
+},
+"ranch_icon_house":
+{
+	"frame": {"x":334,"y":195,"w":334,"h":195},
+	"offset": {"x":0,"y":0,"w":334,"h":195},
+	"sourceSize": {"w":334,"h":195}
+},
+"ranch_icon_storage":
+{
+	"frame": {"x":668,"y":195,"w":334,"h":195},
+	"offset": {"x":0,"y":0,"w":334,"h":195},
+	"sourceSize": {"w":334,"h":195}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "ranch_icon.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":512},
+	"scale": "1"
+}
+}

@@ -1,0 +1,35 @@
+{"frames": {
+
+"ad_btn":
+{
+	"frame": {"x":0,"y":0,"w":51,"h":35},
+	"offset": {"x":0,"y":0,"w":51,"h":35},
+	"sourceSize": {"w":51,"h":35}
+},
+"ending_draw":
+{
+	"frame": {"x":51,"y":0,"w":558,"h":107},
+	"offset": {"x":0,"y":0,"w":558,"h":107},
+	"sourceSize": {"w":558,"h":107}
+},
+"ending_fail":
+{
+	"frame": {"x":609,"y":0,"w":558,"h":107},
+	"offset": {"x":0,"y":0,"w":558,"h":107},
+	"sourceSize": {"w":558,"h":107}
+},
+"ending_victory":
+{
+	"frame": {"x":1167,"y":0,"w":675,"h":107},
+	"offset": {"x":0,"y":0,"w":675,"h":107},
+	"sourceSize": {"w":675,"h":107}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "ending_status.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":128},
+	"scale": "1"
+}
+}

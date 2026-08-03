@@ -1,0 +1,124 @@
+{
+    "frames": {
+        "again": {
+            "frame": {
+                "y": 0, 
+                "x": 89, 
+                "w": 47, 
+                "h": 45
+            }, 
+            "sourceSize": {
+                "h": 45, 
+                "w": 47
+            }, 
+            "offset": {
+                "y": 0, 
+                "x": 0, 
+                "w": 47, 
+                "h": 45
+            }
+        }, 
+        "lock": {
+            "frame": {
+                "y": 0, 
+                "x": 0, 
+                "w": 42, 
+                "h": 64
+            }, 
+            "sourceSize": {
+                "h": 64, 
+                "w": 42
+            }, 
+            "offset": {
+                "y": 0, 
+                "x": 0, 
+                "w": 42, 
+                "h": 64
+            }
+        }, 
+        "frame": {
+            "frame": {
+                "y": 281, 
+                "x": 0, 
+                "w": 745, 
+                "h": 667
+            }, 
+            "sourceSize": {
+                "h": 667, 
+                "w": 745
+            }, 
+            "offset": {
+                "y": 0, 
+                "x": 0, 
+                "w": 745, 
+                "h": 667
+            }
+        }, 
+        "mask": {
+            "frame": {
+                "y": 0, 
+                "x": 305, 
+                "w": 169, 
+                "h": 281
+            }, 
+            "sourceSize": {
+                "h": 281, 
+                "w": 169
+            }, 
+            "offset": {
+                "y": 0, 
+                "x": 0, 
+                "w": 169, 
+                "h": 281
+            }
+        }, 
+        "item": {
+            "frame": {
+                "y": 0, 
+                "x": 136, 
+                "w": 169, 
+                "h": 281
+            }, 
+            "sourceSize": {
+                "h": 281, 
+                "w": 169
+            }, 
+            "offset": {
+                "y": 0, 
+                "x": 0, 
+                "w": 169, 
+                "h": 281
+            }
+        }, 
+        "select": {
+            "frame": {
+                "y": 0, 
+                "x": 42, 
+                "w": 47, 
+                "h": 45
+            }, 
+            "sourceSize": {
+                "h": 45, 
+                "w": 47
+            }, 
+            "offset": {
+                "y": 0, 
+                "x": 0, 
+                "w": 47, 
+                "h": 45
+            }
+        }
+    }, 
+    "meta": {
+        "scale": "1", 
+        "format": "RGBA8888", 
+        "app": "http://www.codeandweb.com/texturepacker", 
+        "version": "1.0", 
+        "type": "frame", 
+        "image": "tiger_lottery.png", 
+        "size": {
+            "h": 1024, 
+            "w": 1024
+        }
+    }
+}

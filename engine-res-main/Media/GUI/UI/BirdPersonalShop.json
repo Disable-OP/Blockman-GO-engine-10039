@@ -1,0 +1,974 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "BirdPersonalShop",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,1},{0,-2},{1,1},{1,-2}}"
+                },
+                {
+                    "Name": "HorizontalAlignment",
+                    "Value": "Centre"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "Layout",
+                    "Name": "BirdPersonalShop-Content",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,54},{1,-29},{1,-22}}"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "Touchable",
+                            "Value": "false"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "StretchType",
+                            "Value": "NineGrid"
+                        },
+                        {
+                            "Name": "StretchOffset",
+                            "Value": "100 100 100 100"
+                        },
+                        {
+                            "Name": "LayoutBackImage",
+                            "Value": "set:bird_personalShop.json image:backgroud"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "StaticText",
+                            "Name": "BirdPersonalShop-Title",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,0},{0,373},{0,57}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "Shop"
+                                },
+                                {
+                                    "Name": "Font",
+                                    "Value": "HT24"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextHorzAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextVertAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextBorder",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "TextBorderColor",
+                                    "Value": "0.101961 0.298039 0.262745 1"
+                                },
+                                {
+                                    "Name": "TextLineExtraSpace",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "BirdPersonalShop-Tabs",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,45},{0,-21},{0,235},{0.8789,-31}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "BirdPersonalShop-Items",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,252},{0,-21},{1,-276},{1,-99}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "StretchType",
+                                    "Value": "NineGrid"
+                                },
+                                {
+                                    "Name": "StretchOffset",
+                                    "Value": "8 50 8 8"
+                                },
+                                {
+                                    "Name": "LayoutBackImage",
+                                    "Value": "set:bird_personalShop.json image:itemBack"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "Layout",
+                                    "Name": "BirdPersonalShop-ItemList",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,8},{0,8},{1,-67},{1,-8}}"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Layout",
+                                    "Name": "BirdPersonalShop-SollBar",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,-4},{0,0},{0,51},{1,-8}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Right"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "StretchType",
+                                            "Value": "NineGrid"
+                                        },
+                                        {
+                                            "Name": "StretchOffset",
+                                            "Value": "10 10 10 10"
+                                        },
+                                        {
+                                            "Name": "LayoutBackImage",
+                                            "Value": "set:bird_pack.json image:soll_nor"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "Button",
+                                            "Name": "BirdPersonalShop-SollUp",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,3},{0,49},{0,56}}"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "NormalImage",
+                                                    "Value": "set:bird_pack.json image:soll_up"
+                                                },
+                                                {
+                                                    "Name": "PushedImage",
+                                                    "Value": "set:bird_pack.json image:soll_up"
+                                                },
+                                                {
+                                                    "Name": "SoundName",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Type": "Slider",
+                                            "Name": "BirdPersonalShop-ListRollBar",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{1,0},{1,-200}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "StretchType",
+                                                    "Value": "NineGrid"
+                                                },
+                                                {
+                                                    "Name": "StretchOffset",
+                                                    "Value": "10 10 10 10"
+                                                },
+                                                {
+                                                    "Name": "Progress",
+                                                    "Value": "0.5"
+                                                },
+                                                {
+                                                    "Name": "ProgressHeaderImage",
+                                                    "Value": "set:bird_pack.json image:soll_btn"
+                                                },
+                                                {
+                                                    "Name": "ProgressIsVertical",
+                                                    "Value": "true"
+                                                },
+                                                {
+                                                    "Name": "QuickSlide",
+                                                    "Value": "true"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Type": "Button",
+                                            "Name": "BirdPersonalShop-SollDown",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,-3},{0,49},{0,50}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Bottom"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "NormalImage",
+                                                    "Value": "set:bird_pack.json image:soll_down"
+                                                },
+                                                {
+                                                    "Name": "PushedImage",
+                                                    "Value": "set:bird_pack.json image:soll_down"
+                                                },
+                                                {
+                                                    "Name": "SoundName",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "BirdPersonalShop-Details",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,-43},{0,-21},{0,184},{1,-99}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Right"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "Layout",
+                                    "Name": "BirdPersonalShop-Image",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,12},{0,158},{0,154}}"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "StretchType",
+                                            "Value": "NineGrid"
+                                        },
+                                        {
+                                            "Name": "LayoutBackImage",
+                                            "Value": "set:bird_personalShop.json image:image"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticImage",
+                                            "Name": "BirdPersonalShop-Image-Detail",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Layout",
+                                    "Name": "BirdPersonalShop-Info",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0.2826,5},{1,0},{0.2826,291}}"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "StretchType",
+                                            "Value": "NineGrid"
+                                        },
+                                        {
+                                            "Name": "StretchOffset",
+                                            "Value": "15 15 15 10"
+                                        },
+                                        {
+                                            "Name": "LayoutBackImage",
+                                            "Value": "set:bird_personalShop.json image:details"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticText",
+                                            "Name": "BirdPersonalShop-Info-Name",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{1,0},{0,35}}"
+                                                },
+                                                {
+                                                    "Name": "Text",
+                                                    "Value": "Details"
+                                                },
+                                                {
+                                                    "Name": "Font",
+                                                    "Value": "HT20"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "TextHorzAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "TextVertAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "TextBorder",
+                                                    "Value": "true"
+                                                },
+                                                {
+                                                    "Name": "TextBorderColor",
+                                                    "Value": "0.101961 0.298039 0.262745 1"
+                                                },
+                                                {
+                                                    "Name": "TextLineExtraSpace",
+                                                    "Value": "0"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Type": "StaticText",
+                                            "Name": "BirdPersonalShop-Info-Detail",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,9},{0,40},{1,0},{0.85,40}}"
+                                                },
+                                                {
+                                                    "Name": "Text",
+                                                    "Value": "Attack: 10"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "TextWordWrap",
+                                                    "Value": "true"
+                                                },
+                                                {
+                                                    "Name": "TextBorder",
+                                                    "Value": "true"
+                                                },
+                                                {
+                                                    "Name": "TextBorderColor",
+                                                    "Value": "0.101961 0.298039 0.262745 1"
+                                                },
+                                                {
+                                                    "Name": "TextLineExtraSpace",
+                                                    "Value": "0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Layout",
+                                    "Name": "BirdPersonalShop-Buy",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,0},{1,0},{0,116}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Bottom"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "Layout",
+                                            "Name": "BirdPersonalShop-Buy-Money",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{1,0},{0,42}}"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                }
+                                            ],
+                                            "Window": [
+                                                {
+                                                    "Type": "StaticImage",
+                                                    "Name": "BirdPersonalShop-Money-Icon",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,-12},{0,0},{0,24},{0,36}}"
+                                                        },
+                                                        {
+                                                            "Name": "VerticalAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "HorizontalAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "Touchable",
+                                                            "Value": "false"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "ImageName",
+                                                            "Value": "set:bird_pack.json image:fruitCoin"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerColor",
+                                                            "Value": "1 1 1 1"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Type": "StaticText",
+                                                    "Name": "BirdPersonalShop-Money-Num",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,31},{0,0},{0,85},{1,0}}"
+                                                        },
+                                                        {
+                                                            "Name": "VerticalAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "HorizontalAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "Text",
+                                                            "Value": "300"
+                                                        },
+                                                        {
+                                                            "Name": "Font",
+                                                            "Value": "HT20"
+                                                        },
+                                                        {
+                                                            "Name": "Touchable",
+                                                            "Value": "false"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "TextHorzAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "TextVertAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "TextBorder",
+                                                            "Value": "true"
+                                                        },
+                                                        {
+                                                            "Name": "TextBorderColor",
+                                                            "Value": "0.101961 0.298039 0.262745 1"
+                                                        },
+                                                        {
+                                                            "Name": "TextLineExtraSpace",
+                                                            "Value": "0"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Type": "Button",
+                                            "Name": "BirdPersonalShop-Buy-Button",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,45},{0,174},{0,103}}"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "Text",
+                                                    "Value": "Buy"
+                                                },
+                                                {
+                                                    "Name": "Font",
+                                                    "Value": "HT20"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "StretchType",
+                                                    "Value": "NineGrid"
+                                                },
+                                                {
+                                                    "Name": "StretchOffset",
+                                                    "Value": "0 0 0 10"
+                                                },
+                                                {
+                                                    "Name": "TextBorder",
+                                                    "Value": "true"
+                                                },
+                                                {
+                                                    "Name": "TextBorderColor",
+                                                    "Value": "0.101961 0.298039 0.262745 1"
+                                                },
+                                                {
+                                                    "Name": "NormalImage",
+                                                    "Value": "set:bird_personalShop.json image:buyButtonNor"
+                                                },
+                                                {
+                                                    "Name": "PushedImage",
+                                                    "Value": "set:bird_personalShop.json image:buyButtonPre"
+                                                },
+                                                {
+                                                    "Name": "SoundName",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "TextRenderOffset",
+                                                    "Value": "0 -2"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Button",
+                            "Name": "BirdPersonalShop-Close",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,0},{0,85},{0,90}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Right"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "NormalImage",
+                                    "Value": "set:bird_pack.json image:close"
+                                },
+                                {
+                                    "Name": "PushedImage",
+                                    "Value": "set:bird_pack.json image:close"
+                                },
+                                {
+                                    "Name": "SoundName",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "HexgonTopImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonTopColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonSideImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonSideColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonOverlayerImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonOverlayerColor",
+                                    "Value": "1 1 1 1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

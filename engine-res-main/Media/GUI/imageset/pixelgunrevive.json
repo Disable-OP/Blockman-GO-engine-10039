@@ -1,0 +1,113 @@
+{"frames": {
+
+"bg1":
+{
+	"frame": {"x":190,"y":204,"w":118,"h":118},
+	"offset": {"x":0,"y":0,"w":118,"h":118},
+	"sourceSize": {"w":118,"h":118}
+},
+"bg2":
+{
+	"frame": {"x":90,"y":204,"w":100,"h":100},
+	"offset": {"x":0,"y":0,"w":100,"h":100},
+	"sourceSize": {"w":100,"h":100}
+},
+"bg3":
+{
+	"frame": {"x":0,"y":204,"w":90,"h":90},
+	"offset": {"x":0,"y":0,"w":90,"h":90},
+	"sourceSize": {"w":90,"h":90}
+},
+"left_blue":
+{
+	"frame": {"x":224,"y":151,"w":224,"h":53},
+	"offset": {"x":0,"y":0,"w":224,"h":53},
+	"sourceSize": {"w":224,"h":53}
+},
+"left_red":
+{
+	"frame": {"x":0,"y":151,"w":224,"h":53},
+	"offset": {"x":0,"y":0,"w":224,"h":53},
+	"sourceSize": {"w":224,"h":53}
+},
+"rankbg":
+{
+	"frame": {"x":248,"y":0,"w":88,"h":44},
+	"offset": {"x":0,"y":0,"w":88,"h":44},
+	"sourceSize": {"w":88,"h":44}
+},
+"revive_blue":
+{
+	"frame": {"x":0,"y":0,"w":30,"h":33},
+	"offset": {"x":0,"y":0,"w":30,"h":33},
+	"sourceSize": {"w":30,"h":33}
+},
+"revive_red":
+{
+	"frame": {"x":30,"y":0,"w":30,"h":33},
+	"offset": {"x":0,"y":0,"w":30,"h":33},
+	"sourceSize": {"w":30,"h":33}
+},
+"right_blue":
+{
+	"frame": {"x":0,"y":98,"w":224,"h":53},
+	"offset": {"x":0,"y":0,"w":224,"h":53},
+	"sourceSize": {"w":224,"h":53}
+},
+"right_red":
+{
+	"frame": {"x":224,"y":98,"w":224,"h":53},
+	"offset": {"x":0,"y":0,"w":224,"h":53},
+	"sourceSize": {"w":224,"h":53}
+},
+"select_blue":
+{
+	"frame": {"x":224,"y":45,"w":224,"h":53},
+	"offset": {"x":0,"y":0,"w":224,"h":53},
+	"sourceSize": {"w":224,"h":53}
+},
+"select_red":
+{
+	"frame": {"x":0,"y":45,"w":224,"h":53},
+	"offset": {"x":0,"y":0,"w":224,"h":53},
+	"sourceSize": {"w":224,"h":53}
+},
+"time_bg":
+{
+	"frame": {"x":336,"y":0,"w":41,"h":45},
+	"offset": {"x":0,"y":0,"w":41,"h":45},
+	"sourceSize": {"w":41,"h":45}
+},
+"tou_blue_left":
+{
+	"frame": {"x":107,"y":0,"w":47,"h":42},
+	"offset": {"x":0,"y":0,"w":47,"h":42},
+	"sourceSize": {"w":47,"h":42}
+},
+"tou_blue_right":
+{
+	"frame": {"x":201,"y":0,"w":47,"h":42},
+	"offset": {"x":0,"y":0,"w":47,"h":42},
+	"sourceSize": {"w":47,"h":42}
+},
+"tou_red_left":
+{
+	"frame": {"x":154,"y":0,"w":47,"h":42},
+	"offset": {"x":0,"y":0,"w":47,"h":42},
+	"sourceSize": {"w":47,"h":42}
+},
+"tou_red_right":
+{
+	"frame": {"x":60,"y":0,"w":47,"h":42},
+	"offset": {"x":0,"y":0,"w":47,"h":42},
+	"sourceSize": {"w":47,"h":42}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "pixelgunrevive.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":512},
+	"scale": "1"
+}
+}

@@ -1,0 +1,187 @@
+SoundId	IsRepeat	RepeatInterval_min	RepeatInterval_max	SoundFile	Type	SubType	Desc	
+0	0	0	0	Media/Sound/random/click 			点击确定按钮	
+1	0	0	0	Media/Sound/note/bd			点击取消按钮	
+2	0	0	0	Media/Sound/ui/error			错误操作	
+3	0	0	0	Media/Sound/ui/result_c			无效操作	
+4	0	0	0	Media/Sound/note/hat			打开一级面板	
+5	0	0	0	Media/Sound/note/hat			关闭一级面板	
+6	0	0	0	Media/Sound/note/button_hit			打开二级或更低级面板	
+7	0	0	0	Media/Sound/note/button_hit			关闭二级或更低级面板	
+8	0	0	0	Media/Sound/random/successful_hit			弹出提示窗	
+9	0	0	0	Media/Sound/random/successful_hit			邮件	
+10	0	0	0	Media/Sound/note/bass			私聊	
+11	0	0	0	Media/Sound/ui/count_down_normal			倒计时，普通	
+12	0	0	0	Media/Sound/ui/count_down_special			倒计时，急迫	
+13	0	0	0	Media/Sound/ui/gold_buy_01			获得物品	
+14	0	0	0	Media/Sound/ui/gold_buy_02			获得金币	
+15	0	0	0	Media/Sound/note/bass			获得钻石	
+16	0	0	0	Media/Sound/random/boy_hurt 			男玩家受击	
+17	0	0	0	Media/Sound/random/girl_hurt 			女玩家受击	
+18	0	0	0	Media/Sound/random/boy_hurt 			玩家受击3	
+19	0	0	0	Media/Sound/random/bow 			拉弓	
+20	0	0	0	Media/Sound/random/bowhit			发射	
+21	0	0	0	Media/Sound/random/bowhit			发射火箭	
+22	0	0	0	Media/Sound/random/bowhit			发射特殊箭	
+23	0	0	0	Media/Sound/mob/zombie/hurt			僵尸受伤	
+24	0	0	0	Media/Sound/mob/zombie/death			僵尸死亡	
+25	0	0	0	Media/Sound/dig/lay			放置草方块	
+26	0	0	0	Media/Sound/dig/grass_dig			破坏草方块	
+27	0	0	0	Media/Sound/dig/lay			放置泥方块	
+28	0	0	0	Media/Sound/dig/earth_dig			破坏泥方块	
+29	0	0	0	Media/Sound/dig/lay			放置木方块	
+30	0	0	0	Media/Sound/dig/wood_dig			破坏木方块	
+31	0	0	0	Media/Sound/dig/lay			放置软质方块	
+32	0	0	0	Media/Sound/dig/sand_dig			破坏软质方块	
+33	0	0	0	Media/Sound/dig/lay			放置沙子方块	
+34	0	0	0	Media/Sound/dig/sand_dig			破坏沙子方块	
+35	0	0	0	Media/Sound/dig/lay			放置雪方块	
+36	0	0	0	Media/Sound/dig/snow_dig			破坏雪方块	
+37	0	0	0	Media/Sound/dig/lay			放置石方块	
+38	0	0	0	Media/Sound/dig/stone_dig			破坏石方块	
+39	0	0	0	Media/Sound/dig/lay			放置铁方块	
+40	0	0	0	Media/Sound/dig/gold_dig			破坏铁方块	
+41	0	0	0	Media/Sound/dig/lay			放置金方块	
+42	0	0	0	Media/Sound/dig/gold_dig			破坏金方块	
+43	0	0	0	Media/Sound/dig/lay			放置钻石方块	
+44	0	0	0	Media/Sound/dig/gold_dig			破坏钻石方块	
+45	0	0	0	Media/Sound/step/cloth			行走布质地面	
+46	0	0	0	Media/Sound/step/grass			行走草地	
+47	0	0	0	Media/Sound/step/sand			行走沙地	
+48	0	0	0	Media/Sound/step/gravel			行走碎石地	
+49	0	0	0	Media/Sound/step/ladder			行走梯子	
+50	0	0	0	Media/Sound/step/stone			行走石地板、金属	
+51	0	0	0	Media/Sound/step/wood			行走木地板	
+52	0	0	0	Media/Sound/step/snow			引信	
+53	0	0	0	Media/Sound/random/glass			碎玻璃	
+54	0	0	0	Media/Sound/random/click			木按钮	
+55	0	0	0	Media/Sound/random/wooden_door/open			开木门	
+56	0	0	0	Media/Sound/random/wooden_door/close 			关木门	
+57	0	0	0	Media/Sound/random/iron_door/open			开铁门	
+58	0	0	0	Media/Sound/random/iron_door/close			关铁门	
+59	0	0	0	Media/Sound/step/snow			传送门	
+60	0	0	0	Media/Sound/random/fuse			发出嘶嘶声	
+61	0	0	0	Media/Sound/random/explode			爆炸	
+62	0	0	0	Media/Sound/step/snow			隐身状态	
+63	0	0	0	Media/Sound/step/snow			加速状态	
+64	0	0	0	Media/Sound/step/snow			跳跃状态	
+65	0	0	0	Media/Sound/step/snow			夜视状态	
+66	1	0	0	Media/Sound/ambient/weather/rain			下雨	
+67	0	0	0	Media/Sound/ambient/weather/thunder			打雷	
+68	0	0	0	Media/Sound/liquid/lava			熔岩	
+69	0	0	0	Media/Sound/liquid/water			流水	
+70	0	0	0	Media/Sound/note/hat			点击	
+71	0	0	0	Media/Sound/random/door_open			开门	
+72	0	0	0	Media/Sound/random/door_close			关门	
+73	0	0	0	Media/Sound/random/anvil_break 			random.anvil_break	
+74	0	0	0	Media/Sound/random/anvil_use 			random.anvil_use	
+75	0	0	0	Media/Sound/random/anvil_land 			random.anvil_land	
+76	0	0	0	Media/Sound/random/glass			random.glass	
+77	0	0	0	Media/Sound/liquid/swim			liquid.swim	
+78	0	0	0	Media/Sound/enchant/thorns/hit			damage.thorns	
+79	0	0	0	Media/Sound/liquid/splash			liquid.splash	
+80	0	0	0	Media/Sound/random/bowhit			random.bowhit	
+81	0	0	0	Media/Sound/random/pop 			random.pop	
+82	0	0	0	Media/Sound/random/break 			random.break	
+83	0	0	0	Media/Sound/damage/fallbig			damage.fallbig	
+84	0	0	0	Media/Sound/damage/fallsmall			damage.fallsmall	
+85	0	0	0	Media/Sound/random/orb 			random.orb	
+86	0	0	0	Media/Sound/random/levelup 			random.levelup	
+87	0	0	0	Media/Sound/random/burp 			random.burp	
+88	0	0	0	Media/Sound/fire/ignite 			fire.ignite	
+89	0	0	0	Media/Sound/random/chestopen			random.chestopen	
+90	0	0	0	Media/Sound/random/chestclosed			random.chestclosed	
+91	0	0	0	Media/Sound/tile/piston/out 			tile.piston.out	
+92	0	0	0	Media/Sound/tile/piston/in 			tile.piston.in	
+93	0	0	0	Media/Sound/liquid/lavapop 			liquid.lavapop	
+94	0	0	0	Media/Sound/fire/fire 			fire.fire	
+95	0	0	0	Media/Sound/step/snow				
+97	0	0	0	Media/Sound/random/glass			放置玻璃	
+98	0	0	0	Media/Sound/random/glass			破坏玻璃	
+99	0	0	0	Media/Sound/random/glass_walk			玻璃上行走	
+100	0	0	0	Media/Sound/dig/lay			放置布制方块（羊毛）	
+101	0	0	0	Media/Sound/dig/sand_dig			破坏布制方块过程（羊毛）	
+102	0	0	0	Media/Sound/step/snow			step on snow	
+103	0	0	0	Media/Sound/step/ladder			place ladder block	
+104	0	0	0	Media/Sound/step/ladder			break ladder block	
+105	0	0	0	Media/Sound/random/anvil_land 			place anvil block	
+106	0	0	0	Media/Sound/step/snow			step on anvil	
+107	0	0	0	Media/Sound/random/drink			random.drink	
+108	0	0	0	Media/Sound/random/eat			random.eat	
+109	0	0	0	Media/Sound/step/snow			mob.wither.spawn	
+110	0	0	0	Media/Sound/step/snow			mob.enddragon.end	
+120	0	0	0	Media/Sound/random/Shoot_Pistol		枪械	手枪枪声	
+121	0	0	0	Media/Sound/random/Shoot_AK		枪械	AK枪声	
+122	0	0	0	Media/Sound/random/Shoot_Submachine		枪械	冲锋枪	
+123	0	0	0	Media/Sound/random/Shoot_Shotguns		枪械	散弹枪	
+124	0	0	0	Media/Sound/random/Shoot_Sniper		枪械	狙击枪	
+125	0	0	0	Media/Sound/random/No_Bullet			空发音效	
+126	0	0	0	Media/Sound/random/Load_Pistol			手枪换弹夹	
+127	0	0	0	Media/Sound/random/Load_AK			步枪换弹夹	
+128	0	0	0	Media/Sound/mob/zombie/say			僵尸音效	
+130	0	0	0	Media/Sound/random/Gatling_Shot		枪械	加特林音效	
+131	0	0	0	Media/Sound/random/reload_light			换弹夹	
+132	0	0	0	Media/Sound/random/98k		枪械	98k	
+133	0	0	0	Media/Sound/random/baleite		枪械	巴雷特	
+134	0	0	0	Media/Sound/random/m4a1		枪械	m4a1	
+135	0	0	0	Media/Sound/note/grade1			建筑战争打分1	
+136	0	0	0	Media/Sound/note/grade2			建筑战争打分2	
+137	0	0	0	Media/Sound/note/grade3			建筑战争打分3	
+138	0	0	0	Media/Sound/note/grade4			建筑战争打分4	
+139	0	0	0	Media/Sound/note/grade5			建筑战争打分5	
+140	0	0	0	Media/Sound/note/grade6			建筑战争打分6	
+141	0	0	0	Media/Sound/note/telepos			建筑战争传送	
+142	0	0	0	Media/Sound/note/trans			建筑战争环节切换	
+143	0	0	0	Media/Sound/note/fire			建筑战争烟花	
+201	0	0	0	Media/Sound/random/gun_SD			散弹 	
+202	0	0	0	Media/Sound/random/gun_jiguangju			激光狙击	
+203	0	0	0	Media/Sound/random/gun_jiguangbu			激光步枪	
+204	0	0	0	Media/Sound/random/gun_jiguang			激光长按	
+205	0	0	0	Media/Sound/random/gun_huojiantong			火箭筒	
+300	0	0	0	Media/Sound/ThrowPot/dark_skill			黑暗技能	
+301	0	0	0	Media/Sound/ThrowPot/equip_title			装备称号	
+302	0	0	0	Media/Sound/ThrowPot/flash_skill			闪现技能	
+303	0	0	0	Media/Sound/ThrowPot/fly_skill			飞行技能	
+304	0	0	0	Media/Sound/ThrowPot/get_TNT			获得TNT	
+305	0	0	0	Media/Sound/ThrowPot/invincible_skill			无敌技能	
+306	0	0	0	Media/Sound/ThrowPot/invisibility_skill			隐身技能	
+307	0	0	0	Media/Sound/ThrowPot/speed_skill			加速技能	
+308	0	0	0	Media/Sound/ThrowPot/teleport_skill			传送技能	
+309	0	0	0	Media/Sound/ThrowPot/throw_TNT			传递别人TNT	
+310	0	0	0	Media/Sound/ThrowPot/TNT_boom			TNT爆炸	
+311	0	0	0	Media/Sound/dig/air_dig			空挥拳	
+312	0	0	0	Media/Sound/damage/kill_person			击杀玩家	
+10000	1	35	10	Media/Sound/bgm/theme_sea			主题音乐1	
+10001	1	35	10	Media/Sound/bgm/theme_home			主题音乐2	
+10002	0	0	0	Media/Sound/bgm/theme_dead			死亡	
+10003	0	0	0	Media/Sound/ui/game_complete			游戏结束	可删除
+10004	0	0	0	Media/Sound/ambient/plane		plane	飞机音效	
+10005	1	35	10	Media/Sound/bgm/loading			加载界面音乐	
+10006	1	35	10	Media/Sound/bgm/theme_snowballbattle			主题音乐	
+10007	1	35	10	Media/Sound/bgm/theme_snowballbattle_waiting			等待进入音乐	
+10008	1	35	10	Media/Sound/bgm/theme_zombie			主题音乐	
+10009	1	35	10	Media/Sound/bgm/theme_zombie_waiting			等待进入音乐	
+10010	1	0	0	Media/Sound/bgm/theme_skywar			主题音乐	
+10011	1	35	10	Media/Sound/bgm/theme_skywar_waiting			等待进入音乐	
+10012	1	35	10	Media/Sound/bgm/theme_TNTrun			主题音乐	
+10013	1	35	10	Media/Sound/bgm/theme_sanddigger			主题音乐	
+10014	1	35	10	Media/Sound/bgm/theme_sanddigger_waiting			等待进入音乐	
+10015	1	35	10	Media/Sound/bgm/theme_jailbreak			主题音乐	
+10016	1	35	10	Media/Sound/bgm/theme_jailbreak_waiting			等待进入音乐	
+10017	1	35	10	Media/Sound/bgm/theme_hungergame			主题音乐	
+10018	1	35	10	Media/Sound/bgm/theme_hungergame_waiting			等待进入音乐	
+10019	1	35	10	Media/Sound/bgm/theme_hideandseek			主题音乐	
+10020	1	35	10	Media/Sound/bgm/theme_hideandseek_waiting			等待进入音乐	
+10021	1	35	10	Media/Sound/bgm/theme_clanwar			主题音乐	可删除
+10022	1	35	10	Media/Sound/bgm/theme_murdermystery			主题音乐	
+10023	0	0	0	Media/Sound/ui/game_complete_win			游戏结束，胜利	
+10024	0	0	0	Media/Sound/ui/game_complete_lose			游戏结束，失败	
+10025	0	0	0	Media/Sound/bgm/turntozombie			变僵尸	
+10026	0	0	0	Media/Sound/random/landing			降落	
+10027	0	0	0	Media/Sound/random/hit			攻击音效	需要替换
+10028	0	0	0	Media/Sound/bgm/crash			塌方	TNT跑酷独有
+10029	1	0	0	Media/Sound/bgm/theme_parkour			主题音乐	彩虹跑酷
+10030	1	0	0	Media/Sound/bgm/theme_buildbattle			主题音乐	建筑战争
+10031	1	35	10	Media/Sound/ThrowPot/theme_ThrowPot_waiting			等待进入音乐	丢锅大战
+10032	1	0	0	Media/Sound/bgm/ranchers			主题音乐	农场
+10033	0	0	0	Media/Sound/ui/game_complete_lose			游戏结束，平局	
+10034	0	0	0	Media/Sound/bgm/chase_sneer			嘲讽音效	

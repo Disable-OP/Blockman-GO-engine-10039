@@ -1,0 +1,71 @@
+ActorName	Width	Length	Height	Remark
+Actor文件名	宽度（>0）	长度（>0）	高度（>0）	备注信息
+boy.actor	0.6	0.6	1.8	男主人公
+girl.actor	0.6	0.6	1.8	女主人公
+car01.actor	2	4	1.3	白色警车
+demon.actor	1	1	2	恶魔
+egg_blue.actor	0.6	0.6	0.8	蓝色龙蛋
+egg_green.actor	0.6	0.6	0.8	绿色龙蛋
+egg_red.actor	0.6	0.6	0.8	红色龙蛋
+egg_yellow.actor	0.6	0.6	0.8	黄色龙蛋
+superwall_sentry.actor	2	2	2.5	战墙防御塔
+superwall_sentry_die.actor	1	2	2	战墙防御塔废墟
+superwall_wither.actor	1	2	2.5	战墙凋零
+superwall_wither_die.actor	1	2	1	战墙凋零废墟
+ranchers_warehouse.actor	12	12	12	农场仓库
+snowmanbattle_red.actor	0.6	0.6	2.3	红色雪人
+snowmanbattle_blue.actor	0.6	0.6	2.3	蓝色雪人
+FlagWar_flag_red.actor	0.7	0.7	4	红色旗帜
+FlagWar_flag_blue.actor	0.7	0.7	4	蓝色旗帜
+cs_gun_39.actor	0.7	0.7	0.5	AK-47步枪
+cs_gun_40.actor	0.7	0.7	0.5	AUG步枪
+cs_gun_41.actor	0.7	0.7	0.5	AWP狙击枪
+cs_gun_42.actor	0.7	0.7	0.5	格洛克
+cs_gun_43.actor	0.7	0.7	0.5	M4A1步枪
+cs_gun_44.actor	0.7	0.7	0.5	p90
+cs_gun_45.actor	0.7	0.7	0.5	SSG狙击枪
+cs_gun_46.actor	0.7	0.7	0.5	SG步枪
+cs_gun_47.actor	0.7	0.7	0.5	usp
+cs_gun_48.actor	0.7	0.7	0.5	uzi
+cs_gun_36.actor	0.7	0.7	0.5	截短霰弹枪
+cs_gun_38.actor	0.7	0.7	0.5	沙鹰
+cs_gun_29.actor	0.7	0.7	0.5	M1014霰弹枪
+cs_gun_15.actor	0.7	0.7	0.5	M249机关枪
+cs_gun_03.actor	0.7	0.7	0.5	ump冲锋枪
+cs_gun_49.actor	0.7	0.7	0.5	
+cs_gun_50.actor	0.7	0.7	0.5	
+cs_gun_51.actor	0.7	0.7	0.5	
+cs_gun_52.actor	0.7	0.7	0.5	
+cs_gun_53.actor	0.7	0.7	0.5	
+cs_gun_54.actor	0.7	0.7	0.5	
+cs_gun_55.actor	0.7	0.7	0.5	
+cs_gun_56.actor	0.7	0.7	0.5	
+cs_gun_57.actor	0.7	0.7	0.5	
+cs_gun_58.actor	0.7	0.7	0.5	
+watch_green_car.actor	2	2	2	绿车
+watch_orange_car.actor	2	2	2	橙车
+watch_yellow_car.actor	2	2	2	黄车
+box1.actor	1.4	0.8	0.8	箱子开
+box2.actor	1.4	0.8	0.8	箱子半开
+box3.actor	1.4	0.8	0.8	箱子关
+cane1.actor	0.3	0.3	1	圣诞棍（斜）
+cane2.actor	0.3	0.3	1	圣诞棍（竖）
+coke.actor	0.15	0.15	0.4	可乐
+desk04.actor	1.5	0.8	0.8	工作台
+drawer.actor	0.8	0.8	0.8	床头柜
+empty.actor	0.1	0.1	0.1	空
+gift.actor	0.8	0.8	0.7	圣诞礼物
+laptop.actor	0.6	0.6	0.6	手提电脑
+mug.actor	0.25	0.25	0.3	杯子
+phone.actor	0.25	0.4	0.25	座式电话
+sack.actor	0.3	0.3	0.5	礼物袋
+sock01.actor	0.3	0.3	0.3	袜子白
+sock02.actor	0.3	0.3	0.3	袜子灰
+sock03.actor	0.3	0.3	0.3	袜子绿
+sofa.actor	2.2	1.3	1.5	沙发
+tree02.actor	0.5	0.5	1.5	圣诞树（小型）
+television.actor	1.5	0.5	0.75	电视
+chicken.actor	0.4	0.4	0.6	鸡
+pig.actor	0.8	0.5	0.5	猪
+rabbit.actor	0.4	0.4	0.4	兔子
+sheep.actor	0.8	0.8	0.75	羊

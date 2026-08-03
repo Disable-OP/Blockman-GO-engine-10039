@@ -1,0 +1,119 @@
+{"frames": {
+
+"arrow":
+{
+	"frame": {"x":343,"y":0,"w":33,"h":43},
+	"offset": {"x":0,"y":0,"w":33,"h":43},
+	"sourceSize": {"w":33,"h":43}
+},
+"click":
+{
+	"frame": {"x":0,"y":117,"w":73,"h":73},
+	"offset": {"x":0,"y":0,"w":73,"h":73},
+	"sourceSize": {"w":73,"h":73}
+},
+"dialog_background":
+{
+	"frame": {"x":0,"y":199,"w":128,"h":136},
+	"offset": {"x":0,"y":0,"w":128,"h":136},
+	"sourceSize": {"w":128,"h":136}
+},
+"dialog_click":
+{
+	"frame": {"x":376,"y":0,"w":44,"h":51},
+	"offset": {"x":0,"y":0,"w":44,"h":51},
+	"sourceSize": {"w":44,"h":51}
+},
+"dialog_title":
+{
+	"frame": {"x":28,"y":0,"w":155,"h":35},
+	"offset": {"x":0,"y":0,"w":155,"h":35},
+	"sourceSize": {"w":155,"h":35}
+},
+"drak_green":
+{
+	"frame": {"x":223,"y":0,"w":40,"h":40},
+	"offset": {"x":0,"y":0,"w":40,"h":40},
+	"sourceSize": {"w":40,"h":40}
+},
+"frame":
+{
+	"frame": {"x":127,"y":51,"w":191,"h":66},
+	"offset": {"x":0,"y":0,"w":191,"h":66},
+	"sourceSize": {"w":191,"h":66}
+},
+"frame_pre":
+{
+	"frame": {"x":318,"y":51,"w":191,"h":66},
+	"offset": {"x":0,"y":0,"w":191,"h":66},
+	"sourceSize": {"w":191,"h":66}
+},
+"gray":
+{
+	"frame": {"x":183,"y":0,"w":40,"h":40},
+	"offset": {"x":0,"y":0,"w":40,"h":40},
+	"sourceSize": {"w":40,"h":40}
+},
+"light_green":
+{
+	"frame": {"x":303,"y":0,"w":40,"h":40},
+	"offset": {"x":0,"y":0,"w":40,"h":40},
+	"sourceSize": {"w":40,"h":40}
+},
+"lottery_background":
+{
+	"frame": {"x":128,"y":199,"w":311,"h":279},
+	"offset": {"x":0,"y":0,"w":311,"h":279},
+	"sourceSize": {"w":311,"h":279}
+},
+"lottery_money_background":
+{
+	"frame": {"x":0,"y":51,"w":127,"h":60},
+	"offset": {"x":0,"y":0,"w":127,"h":60},
+	"sourceSize": {"w":127,"h":60}
+},
+"lottery_picture":
+{
+	"frame": {"x":319,"y":117,"w":82,"h":82},
+	"offset": {"x":0,"y":0,"w":82,"h":82},
+	"sourceSize": {"w":82,"h":82}
+},
+"lottery_picture1":
+{
+	"frame": {"x":155,"y":117,"w":82,"h":82},
+	"offset": {"x":0,"y":0,"w":82,"h":82},
+	"sourceSize": {"w":82,"h":82}
+},
+"lottery_picture2":
+{
+	"frame": {"x":237,"y":117,"w":82,"h":82},
+	"offset": {"x":0,"y":0,"w":82,"h":82},
+	"sourceSize": {"w":82,"h":82}
+},
+"lottery_picture3":
+{
+	"frame": {"x":73,"y":117,"w":82,"h":82},
+	"offset": {"x":0,"y":0,"w":82,"h":82},
+	"sourceSize": {"w":82,"h":82}
+},
+"pink":
+{
+	"frame": {"x":263,"y":0,"w":40,"h":40},
+	"offset": {"x":0,"y":0,"w":40,"h":40},
+	"sourceSize": {"w":40,"h":40}
+},
+"special_box":
+{
+	"frame": {"x":0,"y":0,"w":28,"h":25},
+	"offset": {"x":0,"y":0,"w":28,"h":25},
+	"sourceSize": {"w":28,"h":25}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "bird_task.png",
+	"format": "RGBA8888",
+	"size": {"w":509,"h":478},
+	"scale": "1"
+}
+}

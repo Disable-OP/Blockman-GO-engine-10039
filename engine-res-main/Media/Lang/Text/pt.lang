@@ -1,0 +1,1077 @@
+﻿## Comments can be added anywhere on a valid line by starting with '##'	
+##	
+## Note, trailing spaces will NOT be trimmed. If you want room between the end of the string and the start of a	
+## comment on the same line, use TABs.	
+	
+system.message.player.enter.server=%s Entrou no jogo...
+system.message.player.exit.server=%s Saiu do Jogo
+# death event	
+system.message.player.death=%s falhou ...
+	
+# GUI	
+gui.loading.page.connected.server.connecting=Conectando ao servidor agora ...
+gui.loading.page.connected.server.failed=Falha ao conectar,Por favor Tente novamente
+gui.loading.page.player.login.loggingin=Verificando os dados do usuário, aguarde ...
+gui.loading.page.player.login.failure=A verificação do usuário falhou, por favor entre novamente
+gui.loading.page.download.map.loading=Carregando recursos do mapa...
+gui.loading.page.download.map.failure=Falha ao carregar os recursos...
+gui.loading.page.load.world=Construindo O Mundo...
+gui.loading.page.load.terrain=Construindo Terreno
+gui.chest.inventory=Barra de Intens
+gui.chest.small.chest=Caixa
+gui.chest.large.chest=Caixa grande
+gui.close=Fechar
+gui.sure=Certo
+gui.cancel=Cancelar
+gui.rebirth=Renascer
+gui.back=Voltar
+gui.message.network.connection.disconnect=Desconectado do servidor...
+gui.message.network.connection.network.error=Sua internet caiu,Você foi desconectado...
+gui.message.network.connection.kick.out=Desconectado do servidor...
+gui.message.account.be.kicked=Você digitou a mesma conta, você vai ter que fica offline...
+gui.message.death=Você falhou...
+gui.message.exit.game=Sair do Jogo ?
+gui.game.setting=Configurações do jogo
+gui.back.game=Voltar ao jogo
+gui.exit.game=Voltar ao app
+gui.setting.visual.angle=ângulo de visualização
+gui.setting.luminance=Brilho
+gui.setting.horizon=Visão
+gui.setting.volume=Volume
+gui.setting.gui.size=Tamanho do botão
+gui.setting.camera.sensitive=Sensibilidade
+gui.setting.jump.sneak.toggle=Pular/Shift
+gui.setting=Configuração
+gui.chat.send=Enviar
+tool.bar.player.list.munber.value=%s%s/%s%s
+gui.exit=Sair
+dead.summary.title=Resumo
+dead.summary.rank=Rank
+dead.summary.reward=Recompensa
+dead.summary.watch.battle=Assistir
+gui.share=Compartilhar
+gui.continue=Novamente
+final.summary.rank=Rank
+final.summary.player=Jogador
+final.summary.reward=Recompensa
+	
+gui.shop.title=Loja
+gui.shop.tab.tool=Item
+gui.shop.tab.armor=Armaduras
+gui.shop.tab.arms=Armas
+gui.shop.tab.block=Blocos
+gui.shop.tab.food=Comida
+gui.shop.tab.others=Outros
+gui.shop.tab.upgrade=Melhorar
+gui.shop.tab.potion=Poção
+gui.shop.tab.diamond=Dinheiro
+	
+gui.game.loading=Carregando %d%%...(%.2fm)
+inventory_panel_all=TODOS
+	
+inventory_panel_equipment=Equipamento
+inventory_panel_neaten=Organizar
+inventory_panel_materials=Material
+crafting_panel_make=Fazer
+tool.bar.player.list.munber.name=Necessário
+lack_of_money=Falta de dinheiro
+shop_btn_buy=Buy
+gui.main.watch.battle=Esperando...
+gui_team_red=Vermelho
+gui_team_blue=Azul
+gui_team_yellow=Amarelo
+gui_team_green=Verde
+gui_team_purple=Roxo
+gui_team_orange=Laranja
+gui.loading.page.check.version.failure=Verifique sua versão,Falha!
+gui.loading.page.checking.version=Verificando sua versão,Por favor espere...
+gui_team_civilian=Civis
+gui_team_sheriff=Xerife
+gui_team_murderer=Assassino
+gui_team_soilder=Soldado
+gui_team_zombie=Zombie
+gui_rewardTip_first=Você pode obter %d moedas por dia
+gui_rewardTip_second=Sendo um VIP, você pode obter mais
+gui_team_police=Polícia
+gui_team_prisoner=Prisioneiro
+gui_team_criminal=Criminoso
+vehicle_locked=O veículo foi bloqueado!
+vehicle_full_load=O veículo não tem mais assentos!
+door_has_no_key=Você não tem nenhuma chave!
+has_no_gun=Você não tem nenhuma arma!
+	
+#score point	
+score_point_kill=Matou
+score_point_die=Morreu
+score_point_live=Vidas
+score_point_serial_kill=Assassinatos em série
+score_point_destroy_bed=Camas destruídas
+	
+#Firearms browsing	
+gui_str_gun_harm=Danos
+gui_str_gun_bullet=Projétils
+gui_str_gun_range=Distância
+gui_str_gun_firing_rate=Taxa de fogo
+gui_str_gun_deviation=Desvio de fogo
+gui_str_gun_range_value=%2.f metros
+gui_str_gun_firing_rate_value=%2.f segundos
+gui_str_gun_deviation_value=%2.f
+gui_str_gun_details_text=Detalhes das armas de fogo
+
+#AppShop	
+gui_str_app_shop_shop=Loja
+gui_str_app_shop_limit=Limites %d
+gui_str_app_shop_insufficient_inventory=Falta de estoque
+gui_str_app_shop_inventory_is_full=Seu inventário está cheio
+
+
+default.merchant.name=▢FFFFFFFFmercante▥
+red.merchant.name=▢FFFF0000mercante▥
+blue.merchant.name=▢FF0000FFmercante▥
+green.merchant.name=▢FF00FF00mercante▥
+yellow.merchant.name=▢FFFFFF00mercante▥
+purple.merchant.name=▢FF884898mercante▥
+orange.merchant.name=▢FFFF8000mercante▥
+tool.merchant.name=▢FF0000FFPá▥
+backpack.merchant.name=▢FFFF0000Pacote▥
+carpet.merchant.name=▢FF0000FFTapete▥
+wool.merchant.name=▢FF0000FFLã▥
+wood.merchant.name=▢FF0000FFMadeira▥
+clay.merchant.name=▢FF0000FFArgila▥
+light.merchant.name=▢FF0000FFLuz▥
+seed.merchant.name=▢FF0000FFSemente▥
+farmer.merchant.name=▢FF0000FFComprador colheita▥
+stone.merchant.name=▢FF0000FFPedra▥
+	
+store.goods.storeUpgrade=Atualização da loja para mais itens
+store.goods.ironUpgrade=Atualização de ferro. Lingote de ferro duplo!
+store.goods.goldUpgrade=Atualização de ouro. Lingote de ouro duplo!
+store.goods.tem.arrow=8 setas
+store.goods.tem.wool=10 lãs
+store.goods.tem.clay=10 argilas endurecidas
+store.goods.tem.ladder=10 escadas
+store.goods.tem.obsidian=10 obsidianas
+store.goods.tem.bread=10 Pães 
+store.goods.tem.beefCooked=10 carnes cozidas
+	
+gui.wait.rebirth=Espere para reviver
+
+gui_gun_name_1.name=Pistola
+gui_gun_name_2.name=AK 47
+gui_gun_name_3.name=Metralhadora de mão
+gui_gun_name_4.name=Espingardas
+gui_gun_name_5.name=Granada de mão
+gui_gun_name_6.name=Sniper Rifle
+gui_gun_name_9.name=M4A1
+gui_gun_name_8.name=Rifle sniper 98k
+gui_gun_name_11.name=Metralhadora
+gui_gun_name_10.name=Rifle de precisão de Barrett
+gui_gun_name_12.name=Rifle Mauser Sniper
+gui_gun_name_13.name=Rifle de Sniper 85
+gui_gun_name_14.name=Rifle sniper svd
+gui_gun_name_15.name=Metralhadora MK60
+gui_gun_name_16.name=Pistola MAG43
+gui_gun_name_17.name=M1941 metralhadora
+gui_gun_name_18.name=Metralhadora DP-28
+gui_gun_name_19.name=Rifle MK14
+gui_gun_name_20.name=Rifle de Sniper W2000
+gui_gun_name_21.name=95 rifle
+gui_gun_name_22.name=Rifle M416
+gui_gun_name_23.name=Rifle M16A4
+gui_gun_name_24.name=Rifle Groza
+gui_gun_name_25.name=Tommy Gun Submachine Gun
+gui_gun_name_26.name=Arma de submachine de vetor
+gui_gun_name_27.name=Micro-metralhadora Uzi
+gui_gun_name_28.name=Pistola-metralhadora Type100
+gui_gun_name_29.name=Espingardas M1014
+gui_gun_name_30.name=Espingardas S12K
+gui_gun_name_31.name=Rifle AUG A3
+gui_gun_name_32.name=Pistola-metralhadora UMP9
+gui_gun_name_33.name=Rifle SCAR-L
+gui_gun_name_34.name=Pistola-metralhadora MK5
+gui_gun_name_35.name=AA12 Espingardas
+gui_gun_name_36.name=Espingardas Sears Ranger
+gui_gun_name_37.name=Pistola R1895
+gui_gun_name_38.name=Pistola de Águia De Sobremesa
+
+gui_bullet_name_1.name=Bala de pistola
+gui_bullet_name_2.name=Bala de rifle
+gui_bullet_name_3.name=Bala de metralhadora
+gui_bullet_name_4.name=Bala de espingarda
+gui_bullet_name_5.name=Bala do rifle do atirador furtivo
+gui_bullet_general.name=Bala
+	
+item.zhiliaoyao.name=Curar
+item.yinshenyao.name=Invisibilidade
+item.tiaotiaoyao.name=Saltar
+item.shouliudan.name=Grenade
+item.handcuffs.name=Algemas
+item.key01.name=Chave
+item.cash.name=Dinheiro
+item.tpScroll01.name=Ir para casa
+item.tpScroll02.name=Teleport of Explore
+item.tpScroll03.name=Pergaminho de teletransporte
+item.tpScroll04.name=Pergaminho de teletransporte
+item.tpScroll05.name=Pergaminho de teletransporte
+item.createBridge01.name=Faça uma ponte
+item.createBridge02.name=Ovo ponte
+item.createBridge03.name=Ovo ponte
+item.createBridge04.name=Ovo ponte
+item.createBridge05.name=Ovo ponte
+	
+gui_jail_break_role_choice_police_tip=A polícia está cheia, por favor escolha ladrão.
+gui_jail_break_role_choice_bandit_tip=Ladrões estão cheios, por favor escolha polícia.
+gui_jail_break_role_choice_enter_game=Junte
+gui_jail_break_role_choice_title=Título
+gui_jail_break_role_choice_title_police=Polícia
+gui_jail_break_role_choice_title_bandit=Ladrão
+	
+gui_dialog_tip_title_tip=Gorjeta
+gui_dialog_tip_title_vehicle=Desbloquear carro
+gui_dialog_tip_content_unlock_vehicle=Desbloquear carro [%s] precisa
+gui_dialog_tip_btn_cancel=Cancelar
+gui_dialog_tip_btn_sure=OK
+gui_dialog_tip_btn_unlock=Desbloquear
+gui_dialog_tip_btn_get_currency=Ganhar dinheiro
+gui_dialog_tip_content_go_app_shop=Dinheiro inadequado, seja para ir para a troca de loja?
+gui_dialog_tip_revive_msg=Fim de jogo, o respawn custará (%d)
+gui_dialog_tip_revive_cancel=Fim de jogo
+gui_dialog_tip_revive_sure=renascido
+	
+jail_item_name_shovel=Pá para cavar areias
+jail_item_name_key=Chave
+jail_item_name_bullet=Bala
+jail_item_name_cash1700=Dinheiro 1700
+jail_item_name_cash1000=Dinheiro 1000
+jail_item_name_cash2000=Dinheiro 2000
+jail_item_name_cash4000=Dinheiro 4000
+jail_item_name_cash5000=Dinheiro 5000
+jail_item_name_cash10000=Dinheiro 10000
+jail_item_name_cash20000=Dinheiro 20000
+jail_item_name_cash50000=Dinheiro 50000
+jail_item_name_cash100000=Dinheiro 100000
+	
+gui_buy_goods_successful=Compre o sucesso das mercadorias
+gui_buy_goods_failure=Falha ao comprar
+gui_dialog_tip_content_go_npc_merchant=Seu inventário está cheio, venda estes minérios e atualize seu equipamento?
+wordart_player_list=jogadores
+wordart_achievement=Realização
+wordart_course=Curso
+wordart_game_setting=Configuração do jogo
+wordart_exit_game=Sair do jogo
+wordart_resume_game=Retomar jogo
+wordart_compound=fazer
+wordart_role=Função
+wordart_bag=Inventário
+wordart_inventory_tabs=Guias de inventário
+wordart_chest=Box
+wordart_shop=Loja
+wordart_shop_tile_name=Loja
+wordart_workbench=Mesa de trabalho
+wordart_settlement=Assentamento
+
+gui_rank_score=Ponto
+gui_rank_day_rank=Diária
+gui_rank_week_rank=Semanal
+gui_rank_self_score=Ponto
+item.shovelRenovation.name=Pá pequena
+item.spatula.name=Espátula
+item.shovelToy.name=Brinquedo Pá
+item.digBucket.name=Balde
+
+item.shovelRake.name=Ancinho
+item.digShovelIron.name=Pá militar
+item.shovelBigScooper.name=Colher gigante
+item.shovelJackHammer.name=Martelo
+item.shovelDrill.name=Broca
+item.shovelEngineerGold.name=Pá de ouro
+item.shovelMarching.name=Pá mecânica
+	
+exchangetips_littletoysholve=Atenção! Renovação Reciclagem de Pá
+exchangetips_smalltoysholve=Atenção! Reciclagem de Espátula
+exchangetips_mediumtoysholve=Atenção! Reciclagem de pá de brinquedo
+exchangetips_bucket=Atenção! Reciclagem de Caçambas
+exchangetips_rake=Atenção! Reciclagem de ancinho
+exchangetips_solidersholve=Atenção! Marchando Reciclagem de Pá
+exchangetips_hugesholve=Atenção! Reciclagem da colher grande
+exchangetips_engineersholve=Atenção! Engenheiro resolva a Reciclagem
+	
+diggertip1=Pequena pá: Potência 1
+diggertip2=Espátula: Potência 2
+diggertip3=Pá Brinquedo: Power 3
+diggertip4=Balde: Potência 4
+diggertip5=Ancinho: Potência 5
+diggertip6=Colher gigante: poder 7
+diggertip7=Pá militar: Power 10
+diggertip8=Pá mecânica: Potência 15
+diggertip9=Martelo: poder 20
+diggertip10=Broca: Potência 50
+diggertip11=Pá de ouro: poder 75
+
+bagpackupdate_2=Atualize para 25
+bagpackupdate_3=Atualize para 40
+bagpackupdate_4=Atualize para 140
+bagpackupdate_5=Atualize para 250
+bagpackupdate_6=Atualize para 480
+bagpackupdate_7=Atualize para 1000
+bagpackupdate_8=Atualize para 1500
+bagpackupdate_9=Atualize para 2500
+bagpackupdate_10=Atualize para 5000
+bagpackupdate_11=Atualize para 7500
+bagpackupdate_12=Atualize para 10000
+bagpackupdate_13=Atualize para 15000
+leveltoptip=Nível máximo atingido
+
+gui_rank_button=Ranking
+default.rank.name=Ranking
+gui_dialog_btn_upgrade_bag=Bolsa de atualização
+dead.summary.eliminated.rank=Mata
+dead.summary.chicken.tip=Parabéns por ganhar o jogo,
+dead.summary.chicken.tip.luck=Boa sorte na próxima vez!
+toolbar_member_left=Esquerda
+toolbar_kill_number=Matar
+gui_player_list_item_add_friend=Adicionar
+item.medicinePack.name=Frango
+item.medicinePotion.name=Poção
+
+gui_player_list_item_add_friend_msg_sent=Enviar
+gui_player_list_item_add_friend_msg_send_failure=A solicitação de amizade falhou, tente novamente
+gui_player_list_item_add_friend_msg_agree_failure=Concordar pedido falhou, tente novamente
+
+gui_player_list_item_add_friend_btn_agree=Aceitar
+gui_player_list_item_add_friend_btn_ignore=Ignorar
+gui.setting.pole.toggle=Interruptor de pólo
+gui_player_list_item_add_friend_msg=Pedido de amizade
+
+item.goldHeart.name=Coração de ouro
+item.goldShoes.name=Sapatos Dourados
+item.goldArrow.name=Flecha Dourada
+item.questionMark.name=Ponto de interrogação
+
+hide.rank.name=Escondedor Ranking
+seek.rank.name=Procurador Ranking
+hide.rank.title=Escondedor Ranking
+seek.rank.title=Procurador Ranking
+
+gui_tip_pick_up_goods_title=Pegar%s
+gui_tip_pick_up_goods_content=Pegar [%s] custa dinheiro
+gui_tip_pick_up_goods_btn_sure=Pegar
+gui_tip_pick_up_goods_not_exist=Itens não existentes ou recolhidos por outros jogadores
+gui_tip_pick_up_goods_pay_failure=Pagamento falido, por favor, tente novamente.
+gui_rank_my_rank=Minha ranking
+gui_rank_jail_break_hero_cops=Policiais Heroicos
+gui_rank_jail_break_top_wanted=Top Procurado
+gui_rank_jail_break_my_hero_cops=Preso
+gui_rank_jail_break_my_top_wanted=Recompensa
+gui_rank_jail_break_left_score=Preso
+gui_rank_jail_break_right_score=Recompensa
+gui_rank_default_title_name=Ranking
+gui_rank_vice_title_left_name=Diariamente
+gui_rank_vice_title_right_name=Semanal
+gui_hide_and_seek_game_time_info=Contagem regressiva:%d
+gui_rank_sand_digger_title_name=Escavador De Areia
+	
+gui_team_seek=Procurador
+gui_team_hide=Escondedor
+	
+gui_dialog_tip_title_change_actort=Mudança
+gui_dialog_tip_content_change_actort=Mude [%s] vezes, precisa custar
+gui_dialog_tip_btn_change_actort=Mudança
+
+gui_check_point_number=Ondas:%d
+gui_surplus_monster=Monstros permanece:%d
+gui_surplus_check_point_number=Ondas antes do BOSS:%d
+gui_count_down_time_info=Tempo restante:%d seg
+tool_bar_real_time_rank_title_rank_id=Ranking
+tool_bar_real_time_rank_title_name=Nome
+tool_bar_real_time_rank_title_rank_title_lev=Nível
+tool_bar_real_time_rank_title_rank_title_kills=Mata
+tool_bar_real_time_rank_title_rank_title_gold=Ouro
+gui_boss_life=[BOSS] HP:%d /%d
+gui_rank_creepy_aliens_total_clearance=Nível total
+gui_rank_creepy_aliens_week_clearance=Nível da semana
+gui_rank_creepy_aliens_total_check_point=Total
+gui_rank_creepy_aliens_week_check_point=Nível da semana
+gui_rank_creepy_aliens_my_total_check_point=Meu nível
+gui_rank_creepy_aliens_my_week_check_point=Meu nível
+gui_rank_creepy_aliens_my_check_point=Meu nível
+gui_shop_dont_buy=Não possuído
+gui_shop_has_get=Possuído
+gui_shop_has_use=Usando
+tool_bar_real_time_rank_btn_name=Ranking
+gui_shop_goods_tip=Descrição:
+
+upgrade.item.helmet.desc=LV ▢FF00FF00%d ▢FFFFFFFFHat \\n + ▢FF00FF00%d ▢FFFFFFFFHP/10s\\nPróximo LV: \\n + ▢FF00FF00%d ▢FFFFFFFFHP/10s
+upgrade.item.plate.desc=LV ▢FF00FF00%d ▢FFFFFFFFroupas \\n + ▢FF00FF00%d ▢FFFFFFFFDEF \\nPróximo LV: \\n + ▢FF00FF00%d ▢FFFFFFFFDEF
+upgrade.item.legs.desc=LV ▢FF00FF00%d ▢FFFFFFFFtrossas \\n + ▢FF00FF00%d ▢FFFFFFFFMáx HP \\nPróximo LV: \\n + ▢FF00FF00%d ▢FFFFFFFFMáx HP
+upgrade.item.boots.desc=LV ▢FF00FF00%d ▢FFFFFFFFshoes \\n + ▢FF00FF00%d ▢FFFFFFFFspeed \\nPróximo LV: \\n + ▢FF00FF00%d ▢FFFFFFFFspeed
+
+gui.shop.tip.max.level=MAX LV
+
+prop.attack.value=ATK:%s
+prop.range.value=Alcance:%s
+prop.speed.value=Taxa:%s
+
+gui.shop.tab.prop=Ferramentas
+
+item.propGold.name=Ouro * 1,5 (permanente)
+item.propExp.name=EXP * 2 (permanente)
+prop.propSpeed.effect=Aceleração (permanente)
+
+creepyalients.score.rank.name=Ranking de pontuação
+creepyalients.level.rank.name=Ranking de nível
+creepyalients.score.rank.title=Ranking de pontuação
+creepyalients.level.rank.title=Ranking de nível
+
+creepyalients_gun_name_1.name=Pistola HK P2000
+creepyalients_gun_name_2.name=Rifle AK 47
+creepyalients_gun_name_3.name=Pistola-metralhadora MP9
+creepyalients_gun_name_4.name=Espingardas HAWK-12
+creepyalients_gun_name_6.name=Rifle de Sniper M40A3
+creepyalients_gun_name_9.name=Rifle M4A1
+creepyalients_gun_name_8.name=Rifle de Sniper 98K
+creepyalients_gun_name_11.name=Metralhadora Gatling
+creepyalients_gun_name_10.name=Barrett Sniper Rifle
+creepyalients_gun_name_37.name=Pistola R1895
+creepyalients_gun_name_27.name=Micro-metralhadora Uzi
+creepyalients_gun_name_36.name=Espingardas Sears Ranger
+creepyalients_gun_name_38.name=Pistola de Águia de Sobremesa
+creepyalients_gun_name_25.name=Tommy Submachine Gun
+creepyalients_gun_name_29.name=Espingardas M1014
+creepyalients_gun_name_28.name=Pistola-metralhadora Type100
+creepyalients_gun_name_34.name=Pistola-metralhadora MK5
+creepyalients_gun_name_23.name=Rifle M16A4
+creepyalients_gun_name_35.name=AA12 Espingardas
+creepyalients_gun_name_26.name=Arma de submachine de vetor
+creepyalients_gun_name_24.name=Rifle Groza
+creepyalients_gun_name_18.name=Metralhadora DP-28
+creepyalients_gun_name_33.name=Rifle SCAR-L
+creepyalients_gun_name_13.name=85 Rifle De Sniper
+creepyalients_gun_name_21.name=95 Rifle
+creepyalients_gun_name_17.name=M1941 metralhadora
+creepyalients_gun_name_20.name=Rifle de Sniper W2000
+creepyalients_gun_name_31.name=AUG A3 Rifle
+creepyalients_gun_name_19.name=Rifle MK14
+creepyalients_gun_name_15.name=Metralhadora MK60
+creepyalients_gun_name_16.name=Pistola MAG43
+
+creepyalients_mon_name01=Subrosiano
+creepyalients_mon_name02=Subrosiano Gigante
+creepyalients_mon_name03=Verdes
+creepyalients_mon_name04=Verdes Gigantes
+creepyalients_mon_name05=Cinzas
+creepyalients_mon_name06=Cinzas Gigantes
+creepyalients_mon_name07=Insectosaurus
+creepyalients_mon_name08=Insectossauro gigante
+creepyalients_mon_name09=Lodo
+creepyalients_mon_name10=Lodo Gigante
+creepyalients_mon_name11=Demônio
+creepyalients_mon_name12=Demônio gigante
+creepyalients_mon_name13=Coelhos místicos
+creepyalients_mon_name14=Coelhos Místicos Gigantes
+creepyalients_mon_name15=Pigbat
+creepyalients_mon_name16=Pigbat gigante
+creepyalients_mon_name17=Anjo
+creepyalients_mon_name18=Anjo gigante
+creepyalients_mon_name19=Polvo médico
+creepyalients_mon_name20=Caçador UFO
+
+gui.update.successful=Bem sucedido ao atualizar
+gui.update.failed=Falha ao atualizar
+gui_basement_life=Base HP %s
+	
+creepyalients_item_name_cash10000=Dinheiro 10000
+creepyalients_item_name_cash50000=Dinheiro 50000
+creepyalients_item_name_cash100000=Dinheiro 100000
+creepyalients_item_name_cash250000=Dinheiro 250000
+creepyalients_item_name_cash500000=Dinheiro 500000
+creepyalients_item_name_cash1000000=Dinheiro 1000000
+	
+gui_real_time_rank_title_one_creepy_aliens=Ranking
+gui_real_time_rank_title_two_creepy_aliens=Nome
+gui_real_time_rank_title_three_creepy_aliens=Nível
+gui_real_time_rank_title_four_creepy_aliens=Matanças
+gui_real_time_rank_title_five_creepy_aliens=Ouro
+
+gui_rank_vice_title_hist_name=História
+gui_rank_hist_rank=Minha Ranking
+score_point_point=Nível
+
+default.session.name=NPC
+street.session.name=NPC Comercial
+guidenpc.g1020.01.name=Guia MiniTown
+gui_dialog_tip_btn_sure_get_manor=Obter
+gui_dialog_tip_content_get_manor=Prezado (a) [%s], Você deseja um estaleiro grátis SEU PRÓPRIO?
+gui_dialog_tip_content_sell_manor=Caro [%s], Seu quintal vale [%d]. Você quer VENDER?
+gui_dialog_tip_content_sure_sell_manor=Vender o seu quintal ao preço de [%d]?
+gui_manor_radio_info=Detalhes
+gui_manor_radio_house=Casa
+gui_manor_radio_furniture=Mobília
+gui_manor_radio_message=Mensagem
+gui_manor_info_btn_teleport=Teleporte
+gui_manor_info_btn_upgrade=%d Acima
+gui_manor_title_name=%s Quintal
+gui_manor_info_ground=Quintal
+gui_manor_info_rose=Gostar
+gui_manor_info_seed=Semente
+gui_manor_info_charm=Charme
+gui_manor_info_value=Valor
+gui_manor_house_btn_buy=%d desbloqueio
+gui_manor_house_btn_build=Construir
+gui_manor_furniture_btn_buy=Comprar
+gui_manor_furniture_btn_use=Colocar
+gui_manor_furniture_btn_recycle=Reciclar
+gui_manor_upgrade_info_ground=Área de Pátio
+gui_manor_upgrade_info_rose=Gostos
+gui_manor_upgrade_info_seed=Plantas
+gui_manor_upgrade_info_charm=Charme
+gui_manor_upgrade_title=Atualize para LV %d
+gui_manor_upgrade_expenditure=Custo
+gui_manor_house_not_can_unlock=Desbloqueio em LV %d
+gui_back_platform_top_up=Recarrega
+gui_tip_need_currency=Falta de
+gui_need_back_platform_top_up=Recarregue agora?
+gui_manor_message_btn_give=Gostar
+gui_manor_message_btn_call_on=Visita
+gui_manor_give_rose=Gostar
+gui_manor_call_on=Visita
+gui.update.successful=Bem sucedido ao atualizar
+gui.update.failed=Falha ao atualizar
+gui_manor_max_level=MAX
+gui_manor_build_house_tip=Construir uma casa precisa de algum tempo. Todos os blocos e móveis serão redefinidos. Certifique-se de construir?
+gui_manor_receive_failure=Não conseguiu obter o seu quintal. Tente novamente.
+gui_manor_sell_failure=Falha ao vender seu quintal. Tente novamente.
+gui_manor_sell_succeed=Quintal Vendido!
+gui_manor_give_rose_succeed=Sucesso Gostei!
+gui_manor_give_rose_failure=Gostei falhou. Tente novamente.
+gui_manor_give_rose_failure_not_manor=Não é possível Ele não tem YARD.
+gui_manor_give_rose_failure_num_is_zero=Atualize seu quintal para obter mais LIKEs
+gui_manor_target_user_not_manor=Não é possível visitar. Ele não tem QUINTAL.
+gui_manor_message_call_on_tip=%s visitou seu quintal!
+gui_manor_message_give_rose_tip=%s gostou do seu quintal!
+gui_manor_message_vegeteal_tip=%s Roubou suas colheitas!
+gui_manor_place_and_build_message=Precisa estar no seu QUINTAL.
+gui_manor_steal_count_message=Você não pode roubar hoje. Volte amanhã ou melhore seu quintal!
+gui_game_setting_background_music=BGM
+gui_manor_call_on_failure=Não é possível visitar. Tente novamente
+gui_manor_tp_failure=Não pode se teletransportar. Tente novamente
+gui_manor_operation_failure=Falhou. Tente novamente!
+gui_manor_give_rose_failure_given=Já gostou!
+gui_manor_upgrade_failure=Falha ao atualizar
+gui_manor_lack_of_level_message=Atualize seu quintal.
+gui_manor_build_house_message=Construa sua casa agora.
+gui_manor_make_money_buy_furniture_message=Ganhar dinheiro para comprar móveis.
+item.seeds_wheat.name=Semente De Trigo
+item.seeds_carrot.name=Semente de Cenoura
+item.seeds_tomato.name=Semente de Tomate
+item.seeds_cabbage.name=Semente de Repolho
+item.seeds_pea.name=Semente de Ervilha
+item.wheat.name=Trigo
+item.carrot.name=Cenoura
+item.tomato.name=Tomate
+item.cabbage.name=Repolho
+item.pea.name=Ervilha
+manor_officer_npc_name=Oficiais da cidade
+manor_sell_npc_name=Comerciante de quintal
+npc14.npc.name=Guia
+gui_rank_charm=Charme
+gui_rank_charm_value=Charme
+gui_rank_assessment=Valor
+gui_rank_assessment_price=Valor
+gui_rank_my_charm=Minha ranking
+gui_rank_my_charm_value=Charme
+gui_rank_my_assessment=Meu ranking
+gui_rank_my_assessment_price=Valor
+	
+gui_manor_street_guide_npc_tip=Mercadores não estão longe. O que você precisa?
+gui_manor_street_npc_tip=Bem-vindo ao Shopping Rua.
+guidenpc_g1020_01=Clique no botão "casa verde". Em seguida, clique em "Teleporte" para ir para sua casa imediatamente!
+guidenpc_g1020_02=Atravesse o Center Park. Comerciantes estão esperando.
+guidenpc_g1020_03=Todo comerciante vende materiais diferentes. O que você precisa?
+guidenpc_g1020_04=Vamos construir uma estátua para o nosso prefeito da cidade. Você pode ser o prefeito. Quem sabe?
+guidenpc_g1020_05=Faça mais amigos. Você pode facilmente visitar sua casa, ou dar-lhes gostos, ou roubar suas colheitas!
+guidenpc_g1020_06=Você pode colocar blocos na área do seu quintal.
+guidenpc_g1020_07=Móveis custam muito. Mas vale a pena.
+guidenpc_g1020_08=Aqueles que te roubaram ou gostaram de você, todos aparecem em Mensagens. Roube de volta ou responda gostei!
+guidenpc_g1020_09=Precisa de casas mais bonitas? Atualize seu quintal!
+guidenpc_g1020_10=Existem 5 sementes. Sementes caras levam mais tempo para crescer e você ganha mais Culturas.
+guidenpc_g1020_11=Você pode roubar as outras colheitas por dinheiro.
+guidenpc_g1020_12=Dar a alguém, ou ser amado, também lhe dará dinheiro
+guidenpc_g1020_13=Faça mais amigos. Você pode facilmente visitar sua casa, ou dar-lhes gostos, ou roubar suas colheitas!
+guidenpc_g1020_14=O encanto aumenta o valor do seu quintal. Você pode obtê-lo sendo estimado, construindo casas, comprando coisas.
+
+gui_manor_get_already_exists=Você tem o seu quintal. Vá plantando, construindo e fazendo amigos.
+gui_manor_sell_not_exists=Você não tem o Yard. Receba um do oficial da cidade
+gui_manor_call_on_in_vehicle=Teleport falhou. Você deve deixar o carro.
+gui_manor_call_tp_in_vehicle=Teleport falhou. Você deve deixar o carro.
+gui_manor_furniture_operation_tip=Modo de edição. Clique em móveis para movê-los
+gui_manor_is_not_load=Falha na venda. Seu quintal não está aqui. Por favor, teleporte para o seu servidor.
+gui_manor_edit_ban_get_on=Você não pode dirigir enquanto você é um mobiliário
+gui_manor_is_furniture_actor=Você é uma mobília agora!
+gui_manor_call_on_failure_vistors_full=Visita falhou, visitantes completos
+gui_manor_call_on_failure_version_not_matched=Visita falhada por versão do jogo inconsistente
+gui_manor_sell_failure_by_times=Você vendeu o quintal hoje. Volte amanhã
+
+flag.war.swordsman.dsc1=Aumentar a velocidade de movimento e regenerar a saúde
+flag.war.swordsman.dsc2=Jogador não recebe dano por um curto período de tempo
+flag.war.swordsman.dsc3=Causa dano a um inimigo
+flag.war.shooter.dsc1=Causa dano a uma área
+flag.war.shooter.dsc2=Aumentar o dano por um curto período de tempo
+flag.war.shooter.dsc3=Causa dano a um inimigo e diminui sua velocidade de movimento
+flag.war.thieves.dsc1=Torna-se invisível por um período de tempo
+flag.war.thieves.dsc2=Aumenta a velocidade de movimento do jogador
+flag.war.thieves.dsc3=Envenena inimigos na área de efeito
+flag.war.wizard.dsc1=Cura colegas de equipe na área de efeito
+flag.war.wizard.dsc2=Causa dano ao longo do tempo a inimigos na área de efeito
+flag.war.wizard.dsc3=Aumentar a velocidade de movimento dos companheiros de equipe na área de efeito
+flag.war.bomber.dsc1=Causa dano ao longo do tempo a inimigos na área de efeito
+flag.war.bomber.dsc2=Causa dano a inimigos na área de efeito
+flag.war.bomber.dsc3=Causa dano massivo a inimigos na área de efeito
+flag.war.icemage.dsc1=Causa dano aos inimigos na área de efeito e diminui sua velocidade de movimento
+flag.war.icemage.dsc2=Congelar inimigos na área de efeito
+flag.war.icemage.dsc3=Causa dano massivo a um inimigo e diminui sua velocidade de movimento
+	
+	
+flag.war.swordsman.skillname1=Carregar
+flag.war.swordsman.skillname2=Invencibilidade
+flag.war.swordsman.skillname3=Julgamento
+flag.war.shooter.skillname1=Chuva de seta
+flag.war.shooter.skillname2=Atirador afiado
+flag.war.shooter.skillname3=Tiros na Cabeça
+flag.war.thieves.skillname1=Ladrao
+flag.war.thieves.skillname2=Arrancada
+flag.war.thieves.skillname3=Bomba tóxica
+flag.war.wizard.skillname1=Curar
+flag.war.wizard.skillname2=Feitiçaria
+flag.war.wizard.skillname3=Dança do tambor
+flag.war.bomber.skillname1=Napalm
+flag.war.bomber.skillname2=Explosão
+flag.war.bomber.skillname3=Dinâmico
+flag.war.icemage.skillname1=Nevasca
+flag.war.icemage.skillname2=Congelar
+flag.war.icemage.skillname3=Pedaços de gelo
+
+item.skill_01.name=Habilidade 1
+item.skill_02.name=Habilidade 2
+item.skill_03.name=Habilidade 3
+
+parkour.rank.name1=Ranking da trilha do cacto
+parkour.rank.name2=Ranking da faixa de queda livre
+score_point_flag=Bandeira capturada
+
+flag.war.swordsman=Espadachim
+flag.war.shooter=Atirador
+flag.war.thieves=Ladrões
+flag.war.wizard=Mago
+flag.war.bomber=Bombardeiro
+flag.war.icemage=Mestre
+
+flag.war.select.swordsman=Você quer ser "Espadachim"?
+flag.war.select.shooter=Você quer ser "Atirador"?
+flag.war.select.thieves=Você quer ser "Ladrões"?
+flag.war.select.wizard=Você quer ser "Mago"?
+flag.war.select.bomber=Você quer ser "Bombardeiro"?
+flag.war.select.icemage=Você quer ser "Mestre"?
+
+flag.war.shop.tab.fashion=Halo
+flag.war.shop.tab.skill=Habilidade
+
+
+
+flag.war.shop.Halo.name1=Curar Halo
+flag.war.shop.Halo.name2=Speed Halo
+flag.war.shop.Halo.name3=Salte Halo
+
+flag.war.attribute=Atributo
+
+
+
+
+flag.war.swordsman.dsc1=Causa 15 de dano a um inimigo --- Recarga: 5; Alcance: 5
+flag.war.swordsman.dsc2=Aumenta a velocidade de movimento do jogador por um segundo - Recarga: 9
+flag.war.swordsman.dsc3=Reduz o dano recebido em 99% por 5 segundos - Recarga: 20
+flag.war.shooter.dsc1=Causará 10 pontos de dano a todos os inimigos em um raio de 2x2 - Recarga: 6; Alcance: 15
+flag.war.shooter.dsc2=Causa 10 de dano a um inimigo e diminui-o em X% por 2 segundos - Recarga: 9; Alcance: 15
+flag.war.shooter.dsc3=Causa 30 de dano a um inimigo: - Recarga: 20; Alcance: 25
+flag.war.thieves.dsc1=Causa 20 de dano a um inimigo - Recarga: 6; Alcance: 5
+flag.war.thieves.dsc2=Aumenta a velocidade de movimento do jogador por 3 segundos - recarga: 9
+flag.war.thieves.dsc3=Permite que o jogador fique invisível por 3 segundos - recarga: 20
+flag.war.wizard.dsc1=Cura 10hp a um companheiro de equipe - Recarga: 4; Alcance: 10
+flag.war.wizard.dsc2=Faz com que 1 inimigo aleatório no raio 12x12 seja envenenado por 5 segundos, causa 21 de dano em efeito total - Recarga: 9
+flag.war.wizard.dsc3=Cura todos os companheiros de chá na área de um raio de 8X8, com duração de 5 segundos, restaurando um total de 600 cv - Tempo de recarga: 20; Alcance: 10
+flag.war.bomber.dsc1=Causará dano contínuo a um inimigo por 2 segundos, resultando em um total de 6 pontos de dano - resfriamento: 2; alcance: 12
+flag.war.bomber.dsc2=Causar 15 de dano a inimigos dentro de um raio de 3x3 e retardá-los em X% por 3 segundos - Recarga: 9; Alcance: 12
+flag.war.bomber.dsc3=Causa 20 de dano a inimigos em um raio de 8x8 - Recarga: 20; Alcance: 30
+flag.war.icemage.dsc1=Causa 4 pontos de dano a um inimigo e diminui-os em X% por um segundo - Recarga: 2; Alcance: 12
+flag.war.icemage.dsc2=Congela inimigos dentro de um raio de 12x12 por 3 segundos - Tempo de Recarga: 9
+flag.war.icemage.dsc3=Causa dano contínuo e desacelera os inimigos em um raio de 5x5 por 5 segundos, resultando em um total de 18 pontos de dano - Recarga: 20; Alcance: 12
+
+
+flag.war.swordsman.skillname1=Golpe Heroico
+flag.war.swordsman.skillname2=Carregar
+flag.war.swordsman.skillname3=Bloco escudo
+flag.war.shooter.skillname1=Chuva de Flechas
+flag.war.shooter.skillname2=Flecha Gelada
+flag.war.shooter.skillname3=Atirador afiado
+flag.war.thieves.skillname1=Eviscerar
+flag.war.thieves.skillname2=arrancada
+flag.war.thieves.skillname3=Desaparecimento
+flag.war.wizard.skillname1=Tratamento
+flag.war.wizard.skillname2=Corrosão
+flag.war.wizard.skillname3=A onda de cura
+flag.war.bomber.skillname1=O mini bomba
+flag.war.bomber.skillname2=Minas de desaceleração
+flag.war.bomber.skillname3=Mega Bombas
+flag.war.icemage.skillname1=Gelo moído
+flag.war.icemage.skillname2=Congelando
+flag.war.icemage.skillname3=Tempestade de neve
+	
+flag.war.swordsman.attribute.dsc=HP:70;ATK:10;DEF:300
+flag.war.shooter.attribute.dsc=HP:50;ATK:8;DEF:200
+flag.war.thieves.attribute.dsc=HP:60;ATK:10;DEF:200
+flag.war.wizard.attribute.dsc=HP:50;ATK:8;DEF:200
+flag.war.bomber.attribute.dsc=HP:50;ATK:8;DEF:200
+flag.war.icemage.attribute.dsc=HP:50;ATK:8;DEF:200
+
+
+flag.war.swordsman.attribute.dsc0=HP:70;ATK:10;DEF:3
+flag.war.shooter.attribute.dsc0=HP:50;ATK:8;DEF:2
+flag.war.thieves.attribute.dsc0=HP:60;ATK:10;DEF:2
+flag.war.wizard.attribute.dsc0=HP:50;ATK:8;DEF:2
+flag.war.bomber.attribute.dsc0=HP:50;ATK:8;DEF:2
+flag.war.icemage.attribute.dsc0=HP:50;ATK:8;DEF:2
+  	
+	
+flag.war.swordsman.dsc11=Causa 600 de dano a um inimigo --- Recarga: 5; Alcance: 5
+flag.war.swordsman.dsc12=Velocidade de movimento do jogador aumentada para 1s - tempo de recarga: 9
+flag.war.swordsman.dsc13=Reduz o dano recebido em 99% por 5 segundos Recarga: 20
+flag.war.shooter.dsc11=Causa 550 de dano a todos os inimigos dentro do raio de 2x2 - Recarga: 6; Alcance: 15
+flag.war.shooter.dsc12=Causa 1000 de dano a um inimigo e diminui em 40% por 2 segundos - Recarga: 9; Alcance: 15
+flag.war.shooter.dsc13=Causa 3000 de dano a um inimigo: recarga: 20; Alcance: 25
+flag.war.thieves.dsc11=Causa 600 de dano a um inimigo - Recarga: 6; Alcance: 5
+flag.war.thieves.dsc12=Aumenta a velocidade de movimento do jogador por 3 segundos - Recarga: 9
+flag.war.thieves.dsc13=Permite que o jogador fique invisível por 3 segundos - Recarga: 20
+flag.war.wizard.dsc11=Cura 500 hp para um companheiro de equipe - Recarga: 4; Alcance: 10
+flag.war.wizard.dsc12=Faz com que 1 inimigo aleatório no raio 12x12 seja envenenado por 5 segundos, causa 800 de dano em efeito total - Recarga: 9
+flag.war.wizard.dsc13=Cura todos os companheiros de chá na área de um raio de 8X8, com duração de 5 segundos, restaurando um total de 2000 hp - Tempo de recarga: 20; Alcance: 10
+flag.war.bomber.dsc11=Causará dano contínuo a um inimigo por 2 segundos, resultando em um total de 250 de dano - Recarga: 2; Alcance: 12
+flag.war.bomber.dsc12=Causar 650 de dano aos inimigos em um raio de 3x3 e retardá-los em 40% por 3 segundos - Recarga: 9; Alcance: 12
+flag.war.bomber.dsc13=Causa 1500 de dano a inimigos em um raio de 8x8 - Recarga: 20; Alcance: 30
+flag.war.icemage.dsc11=Causa 200 de dano a um inimigo e diminui em 40% por um segundo - Recarga: 2; Alcance: 12
+flag.war.icemage.dsc12=Congela inimigos dentro de um raio de 12x12 por 3 segundos - Tempo de recarga: 9
+flag.war.icemage.dsc13=Causa dano contínuo e desacelera os inimigos em um raio de 5x5 por 5 segundos, resultando em um total de 1800 pontos de dano - Recarga: 20; Alcance: 12
+	
+flag.war.swordsman.attribute.dsc1=HP:7500;ATK:300;DEF:500
+flag.war.shooter.attribute.dsc1=HP:4000;ATK:360;DEF:200
+flag.war.thieves.attribute.dsc1=HP:6000;ATK:400;DEF:400
+flag.war.wizard.attribute.dsc1=HP:5000;ATK:180;DEF:250
+flag.war.bomber.attribute.dsc1=HP:4500;ATK:150;DEF:350
+flag.war.icemage.attribute.dsc1=HP:3500;ATK:120;DEF:300
+  	
+	
+flag.war.swordsman.dsc21=Causa 1000 de dano a um inimigo - recarga: 9; intervalo: 10
+flag.war.swordsman.dsc22=Aumenta a velocidade de movimento do jogador por um segundo - cooldown: 9
+flag.war.swordsman.dsc23=Reduz em 99% o dano recebido por 2 segundos cooldown: 20
+flag.war.shooter.dsc21=Causará 1000 pontos de dano a todos os inimigos em um raio de 2x2 - recarga: 6; intervalo: 15
+flag.war.shooter.dsc22=Causa 1500 de dano a um inimigo e diminui em 40% por 2 segundos - recarga: 9; intervalo: 15
+flag.war.shooter.dsc23=Causa 3000 de dano a um inimigo: recarga: 20; alcance: 25
+flag.war.thieves.dsc21=Causa 1500 de dano a um inimigo - recarga: 9; intervalo: 10
+flag.war.thieves.dsc22=Aumenta a velocidade de movimento do jogador por 3 segundos - recarga: 9
+flag.war.thieves.dsc23=Permite que o jogador fique invisível por 2 segundos - recarga: 20
+flag.war.wizard.dsc21=Cura 300hp a um companheiro de equipe - recarga: 3; intervalo: 10
+flag.war.wizard.dsc22=Faz com que 1 inimigo aleatório no raio 12x12 seja envenenado por 5 segundos, causa 1200 de dano em efeito total - cooldown: 6
+flag.war.wizard.dsc23=Cura todos os companheiros de chá na área de um raio de 8X8, com duração de 5 segundos, restaurando um total de 1200 hp - tempo de recarga: 20; intervalo: 10
+flag.war.bomber.dsc21=Causará dano contínuo a um inimigo por 2 segundos, resultando em um total de 250 de dano - recarga: 2; alcance: 12
+flag.war.bomber.dsc22=Causar 650 de dano aos inimigos em um raio de 3x3 e retardá-los em 40% por 3 segundos - recarga: 9; alcance: 12
+flag.war.bomber.dsc23=Causa 1500 de dano a inimigos em um raio de 8x8 - recarga: 20; alcance: 30
+flag.war.icemage.dsc21=Causa 200 de dano a um inimigo e diminui em 40% por um segundo - cooldown: 2; alcance: 12
+flag.war.icemage.dsc22=Congela inimigos dentro de um raio de 12x12 por 3 segundos - tempo de espera: 9
+flag.war.icemage.dsc23=Causa dano contínuo e desacelera os inimigos em um raio de 5x5 por 5 segundos, resultando em um total de 3000 pontos de dano - recarga: 20; alcance: 12
+	
+flag.war.swordsman.attribute.dsc2=HP:7500;ATK:250;DEF:500
+flag.war.shooter.attribute.dsc2=HP:4000;ATK:800;DEF:200
+flag.war.thieves.attribute.dsc2=HP:6000;ATK:500;DEF:400
+flag.war.wizard.attribute.dsc2=HP:3000;ATK:180;DEF:250
+flag.war.bomber.attribute.dsc2=HP:4500;ATK:150;DEF:350
+flag.war.icemage.attribute.dsc2=HP:4000;ATK:120;DEF:300
+  	
+gui_rank_vice_title_hist_name=Tudo
+	
+parkour.rank.name01=Ranking da trilha do cacto
+parkour.rank.name02=Ranking de Trilha em Queda Livre
+	
+flag.war.shop.Halo.attribute1=Aumentar maxium Hp \\n (permanente)
+flag.war.shop.Halo.attribute2=Aumentar a velocidade de movimento \\n (permanente)
+flag.war.shop.Halo.attribute3=Aumentar a altura do salto \\n (permanente)
+	
+item.skill.chip.chest.1.name=Baú de Chip (x1)
+item.skill.chip.chest.2.name=Peito de Chips (x2)
+item.skill.chip.chest.3.name=Peito de Chips (x3)
+item.skill.book.1.name=Livro em flash
+item.skill.book.2.name=Livro de velocidade
+item.skill.book.3.name=Livro de invisibilidade
+item.skill.book.4.name=Livro voar
+item.skill.book.5.name=Livro invencível
+item.skill.book.6.name=Livro de teleporte
+item.skill.book.7.name=Livro escuro
+item.skill.chip.1.name=Chip de flash
+item.skill.chip.2.name=Chip de velocidade
+item.skill.chip.3.name=Chip de invisibilidade
+item.skill.chip.4.name=Chip de voar
+item.skill.chip.5.name=Chip invencível
+item.skill.chip.6.name=Chip de teleporte
+item.skill.chip.7.name=Chip de escuridão
+	
+throw.pot.shop.tab.title=Título
+throw.pot.chip.chest=Baú de lascas
+throw.pot.money=Dinheiro
+	
+throw.pot.title.name.1=Iniciante
+throw.pot.title.name.2=Tiro para a fama
+throw.pot.title.name.3=Imparável
+throw.pot.title.name.4=TNT King
+throw.pot.title.name.5=1000 mortes
+throw.pot.title.name.6=Todo-poderoso
+	
+gui.shop.tab.skill.book=Livro
+gui.shop.tab.skill.book.fragmentation=Chip
+throw.pot.last.week.rank=Semana passada
+	
+throw.pot.title.desc.1=Condição: Jogue 3 jogos. \\n (Dica: os títulos aparecerão acima da cabeça quando usados!)
+throw.pot.title.desc.2=Condição: Seja No.1 em um jogo. \\n (Dica: os títulos aparecerão acima da cabeça quando usados!)
+throw.pot.title.desc.3=Condição: Jogue 50 jogos. \\n (Dica: os títulos aparecerão acima da cabeça quando usados!)
+throw.pot.title.desc.4=Condição: Jogue 100 jogos. \\n (Dica: os títulos aparecerão acima da cabeça quando usados!)
+throw.pot.title.desc.5=Condição: Obtenha 1000 pontos. \\n (Dica: os títulos aparecerão acima da cabeça quando usados!)
+throw.pot.title.desc.6=Condição: Tem 7 livros de habilidades diferentes. \\n (Dica: os títulos aparecerão acima da cabeça quando usados!)
+item.skill.book.1.desc=Qualidade: Ordinário \\n Efeitos: 5 blocos piscando para a frente \\n (Dica: Apenas um livro de habilidades pode ser usado em um jogo!)
+item.skill.book.2.desc=Qualidade: Efeitos comuns: Aumentar a velocidade de movimento dentro de 10s (Dica: Apenas um livro de habilidades pode ser usado em um jogo!)
+item.skill.book.3.desc=Qualidade: Raros \\n Efeitos: Invisibilidade dentro de 5s, atacar ou ser atacado aparecerá. \\n (Dica: Apenas um livro de habilidades pode ser usado em um jogo!)
+item.skill.book.4.desc=Qualidade: Raros \\n Efeitos: Voe com menos de 10s. \\n (Dica: Apenas um livro de habilidades pode ser usado em um jogo!)
+item.skill.book.5.desc=Qualidade: Épico \\nEfeitos: Invencível em 3s, mas não pode ser movido. \\n (Dica: Apenas um livro de habilidades pode ser usado em um jogo!)
+item.skill.book.6.desc=Quality: Epic \\nEffects: Todos os jogadores serão enviados de volta ao ponto de respawn. \\n (Dica: Apenas um livro de habilidades pode ser usado em um jogo!)
+item.skill.book.7.desc=Qualidade: Epic \\n Efeitos: Todos os jogadores, exceto você, mergulharão na escuridão dentro de 2 segundos. \\n (Dica: Apenas um livro de habilidades pode ser usado em um jogo!)
+item.skill.chip.1.desc=Qualidade: Ordinário \\nUsado para trocar o livro Flash. \\n (Dica: Ganhe dinheiro no final de cada jogo).
+item.skill.chip.2.desc=Qualidade: Ordinário \\nUsado para trocar o Speed book. \\n (Dica: Ganhe dinheiro no final de cada jogo).
+item.skill.chip.3.desc=Qualidade: Raro \\nUsado para trocar Invisibility book. \\n (Dica: Ganhe dinheiro no final de cada jogo).
+item.skill.chip.4.desc=Qualidade: Raro \\nUsado para trocar o livro Fly. \\n (Dica: Ganhe dinheiro no final de cada jogo).
+item.skill.chip.5.desc=Qualidade: Épico \\nUsado para trocar o livro Invencível. \\n (Dica: Ganhe dinheiro no final de cada jogo.)
+item.skill.chip.6.desc=Qualidade: Épico \\nUsado para trocar o livro de Teleporte. \\n (Dica: Ganhe dinheiro no final de cada jogo.)
+item.skill.chip.7.desc=Qualidade: Épico \\nUsado para trocar Livro escuro. \\n (Dica: Ganhe dinheiro no final de cada jogo.)
+item.skill.chip.chest.1.desc=Obtenha um chip de livro de habilidades aleatoriamente. \\n (Dica: Ganhe dinheiro no final de cada jogo).
+throw.pot.money.desc=A venda de fichas pode resultar em dinheiro. \\n (Dica: fichas extras podem ser vendidas aqui!)
+	
+gui_buildwar_title=Build Battle
+gui_buildwar_player_num=%d /%d
+gui_buildwar_left_time=Esquerda:%d
+gui_buildwar_grade=%s (%d S)
+score.rank.name=Ranking Pontod
+winner.rank.name=Ranking de Vencedor
+gui_build_war_title_all=Tudo
+gui_build_war_guess_result_btn=Resultado
+gui_build_war_guess_item_visit_btn=Visita
+gui_build_war_guess_item_guess_btn=Aposta
+gui_build_war_guess_title=Adivinha (Coração significa que você gosta)
+gui_build_war_guess_suc=Adivinhar com Sucesso
+gui_build_war_guess_tip=É certo adivinhar [%s] o vencedor?
+shop_btn_select=Selecione
+shop_btn_unlock=Desbloquear
+gui_dialog_tip_content_unlock_commodity=Desbloquear [%s] precisa
+gui_build_war_has_guess_item_guess_btn=Feito
+gui.shop.tab.color=Cor
+gui.shop.tab.wood=Madeira
+gui.shop.tab.stone=Pedra
+gui.shop.tab.metal=Metal
+gui_rank_all_rank=Minha ranking
+gui_rank_all_score_rank=Ponto
+gui_rank_all_winner_rank=Ganhar
+gui_rank_week_score_rank=Ponto
+gui_rank_week_winner_rank=Ganhar
+gui_rank_winner=Ganhar
+gui_build_war_guess_reward_title=Recompensa
+gui_build_war_guess_result_title=Aposta
+gui_build_war_my_rank_title=My rank
+gui_build_war_my_guess_title=Resultado
+gui_have_already_got_block=Já tive isso
+	
+gui.shop.tab.sell=Vender
+	
+gui_shop_lack_of_item=Falta de item
+gui_player_operation_greetings=Cumprimentar
+gui_team_resources_max_team_pool=%s pool de recursos
+gui_team_resources_my_team_pool=Piscina própria
+gui_team_resources_other_team_pool=Piscina Inimiga
+gui_settlement_jewel_knight=Cavaleiro de Gema (%s)
+gui_jewel_knight_game_name=Gem Knight
+gui_player_operation_greetings_message=O jogador ▢FFFF0000 [%s] ▢FFFFFFFF cumprimenta você.
+gui_player_operation_greetings_message_for_me=Você cumprimenta o jogador ▢FFFF0000 [%s].
+item.gemstone.name=Gema
+	
+gui_rank_victory_title_name=Ranking do vencedor
+gui_rank_jewel_knight_title_name=Ranking do cavaleiro
+	
+gui_jewel_not_your_team_statue=Esta não é uma estátua da sua equipe.
+gui_jewel_no_have_jewel=Você não tem uma jóia, procure agora.
+gui_jewel_fill_team_source=A estátua não está ativada, preencha a piscina primeiro.
+	
+gem_diggertip1=Pá, STR: 1. Próxima LV: Pá Mecânica, STR: 2.
+gem_diggertip2=Pá Mecânica, STR: 2. Próxima LV: Gold Shovel, STR: 3.
+gem_diggertip3=Pá de ouro, STR: 3.
+	
+gem_NPC1_name=História de fundo
+gem_NPC2_name=Regras
+gem_NPC3_name=Comerciante
+gem_NPC4_name=Guia
+gem_NPC5_name=Desenhista
+	
+gem_NPC1_content1=Parabéns por ser selecionado pela pedra preciosa mundial, e você entrará no mundo da gema com outros jogadores selecionados.
+gem_NPC1_content2=Procure por pedras preciosas mundiais com seus companheiros de equipe. Haverá outras três equipes competindo com você para devolver a gema à equipe da estátua antes de retornar ao mundo real.
+gem_NPC1_content3=Os vencedores serão recompensados. O jogador que devolver a gema com sucesso à estátua vai ganhar o título de Gem Knight.
+gem_NPC1_content4=Mas há apenas uma gema e apenas uma equipe vencerá. O jogador derrotado permanecerá no mundo amaldiçoado para sempre.
+gem_NPC1_content5=Você está pronto para começar o jogo? Procure por gem now!
+gem_NPC2_content1=Cavar o minério na área do minério e trazê-lo de volta para o comerciante de recursos para trocar recursos.
+gem_NPC2_content2=Preencher qualquer pool de recursos ativará a localização da gema. Área de minério mostra seu nome e a cor é azul.
+gem_NPC2_content3=Quando um jogador recebe uma gema, todos os jogadores irão conhecer sua equipe e seu nome, e haverá efeitos especiais nele. Evite que ele coloque a gema de volta na estátua.
+gem_NPC2_content4=As ferramentas de atualização tornarão você mais eficiente na localização de pedras preciosas.
+gem_NPC2_content5=Há muitas surpresas esperando por você. Curiosidade pode ser uma coisa boa às vezes.
+gem_NPC3_content=O minério coletado será trazido de volta para o meu para recursos。 \\nEmerald =
+gem_NPC4_content=Muitas surpresas esperando por você no jogo. Vá em frente e ganhe o jogo.
+gem_NPC5_content=Caros jogadores, sou Shahe_Yida, o designer do jogo. Eu preparei muitas surpresas aqui. Olhe para eles agora!
+gem_NPC5_content2=Jogadores inteligente, isso é para você.
+	
+gem.win.rank.name=Ranking do vencedor
+gem.win.rank.title=Ranking do vencedor
+gem.knight.rank.name=Ranking do cavaleiro
+gem.knight.rank.title=Ranking do cavaleiro
+	
+item.equipment.set.1.name=Terno de couro
+item.equipment.set.2.name=Terno de cadeia
+item.equipment.set.3.name=Terno de armadura
+item.equipment.set.4.name=Terno de ouro
+item.equipment.set.5.name=Terno diamante
+gui.shop.tab.equipment.set=Traje
+score_point_win=Vitórias
+	
+budokai.wins.rank.wins=Vitórias
+budokai.wins.rank.my.wins=Vitórias
+budokai.no.1.rank.no.1=Vitórias Finais:
+budokai.no.1.rank.my.no.1=Vitórias:
+budokai.score.rank.name=▢FFFFD700Ranking Pontos
+budokai.wins.rank.name=▢FFFFD700Ranking de Vitórias
+budokai.no.1.rank.name=▢FFFFD700Ranking Vitórias Final
+	
+budokai.score.rank.title=Ranking Pontos
+budokai.wins.rank.title=Ranking Vitórias
+budokai.no.1.rank.title=Ranking Vitórias Final
+	
+item.skill_04.name=Arrasar
+item.skill_05.name=Imunidade
+item.skill_06.name=Capa
+item.skill_07.name=Acelerar
+item.skill_08.name=Imobilidade
+item.skill_09.name=Controle mental
+
+gui_str_super_shop_shop=Super Shop
+gui_shop_switch=Toggle
+item.purple.pickaxe.name=Purple Pickaxe
+gui.kill.msg.item.message=%s killed %s
+item.grenade.smoke.name=Smoke Grenade
+gui.back.hall=Back Hall
+
+item.grenade.tremor.name=Tremor Grenade
+item.frozen.ball.name=Frozen Ball
+item.baseball_stick.name=Baseball Bat
+item.spike_stick.name=Spiked Club
+item.stone_pillar.name=Monolith
+item.enderPearl.name=Flash Pearl
+
+gui.tiger.lottery.choose=Choose
+gui.tiger.lottery.again=Dislike ? Lottery again !
+gui.tiger.lottery.lock=Locked
+
+gui.useItem=Use Item  
+gui.btn.unload=Unload  
+gui.btn.equipped=Equipped  
+gui.gun.store.name=Armory  
+gui.gun.store.quick.upgrade=Speed up  
+gui.chest.lottery.title=Chest
+gui.chest.lottery.hint=Please choose your battle trophy    
+gui.chest.reward.result.title=Congratulations!!!
+gui.chest.lottery.open=Open  
+gui.season.rank.title=Season Rank
+gui.season.rank.countdown=Season ends in: %d days
+gui.season.rank.reward=Reward:
+gui.season.rank.honor=Honor:
+gui.season.rank.battle=To Battle!
+gui.season.reward.title=Season Reward
+gui.season.reward.rank=Rank  ▢FFF9F900%d
+gui.season.reward.last=▢FFD57C00Last Season
+gui.season.reward.current=▢FF00FFAECurrent Season
+gui.season.rule.title=Season Rules  
+
+
+gui_bird_pack_btn_delete=Delete
+gui_bird_pack_btn_equip=Carry
+gui_bird_pack_btn_unequip=Leave
+gui_bird_pack_btn_feed=Feed
+gui_bird_pack_info_attack=Attack: %1.f
+gui_bird_pack_info_speed=Speed: %d
+gui_bird_pack_info_gather=Collect: %1.f fruits every %d sec
+gui_bird_pack_info_convert=Conversion: convert %1.f fruits every %d sec
+gui_bird_pack_info_skill=Skill: %s
+gui_bird_pack_info_talent=Talent: %s
+gui_bird_pack_feed_use_1=Feed 1
+gui_bird_pack_feed_use_10=Feed 10
+gui_bird_pack_feed_use_50=Feed 50
+gui_bird_pack_feed_use_100=Feed 100
+gui_bird_pack=Bag
+gui_bird_fuse=Fusion
+gui_bird_pack_quality=Quality
+gui_bird_pack_level=Level
+gui_bird_pack_sort=Order
+gui_bird_fush_sure=Fusion
+gui_bird_fush_cancel=Reset
+gui_bird_store_desc=Detail
+gui_bird_store_btn_operation_buy=Buy
+gui_bird_store_btn_operation_equip=Equip
+gui_bird_store_btn_operation_unequip=equipped
+
+gui_bird_personal_shop=Store
+gui_bird_personal_shop_details_info=Detail Information
+gui_bird_personal_shop_buy=Buy
+gui_bird_personal_shop_already_buy=Bought
+gui_bird_tip_expenditure=Costs
+gui_bird_tip_nest=Unlock the bird house
+gui_bird_tip_expand_carry=Expand 1 carrying bird
+gui_bird_tip_expand_capacity=Expand 5 bird bag capacity
+gui_bird_tip_lottery=Draw Now
+gui_bird_tip_open_chest=Open Chest
+gui_bird_tip_open_store=Check Item List
+gui_bird_tip_close_store=Close Item List
+gui_bird_lottery_store=Open
+gui_bird_quality_1=▢FFFFFFFFCommon▢FFFFFFFF
+gui_bird_quality_2=▢FF000099Rare▢FFFFFFFF
+gui_bird_quality_3=▢FF660088Epic▢FFFFFFFF
+gui_bird_quality_4=▢FFFFDD00Legendary▢FFFFFFFF
+gui_bird_atlas=Bird Show
+gui_bird_activity=Call out for limited birds
+gui_bird_activity_button=Receive
+gui_bird_activity_day=Day
+gui_bird_mini_tip_open=Talk with %s
+gui_bird_mini_tip_convert=Convert
+gui_bird_mini_tip_stop_convert=Stop Converting
+gui_bird_mini_tip_open_lottery=Draw Now
+gui_bird_tip_use_cube_open_chest=Open chest with Bcubes?
+gui_bird_next_refresh_chest=Next One\\n%s 
+gui_bird_gain_title=Receive Item
+gui_bird_tip_delete_bird=Delete bird 【%s】?
+gui_bird_tip_delete_bird_fail=Failed to delete the last bird.
+gui_bird_next_task_time=Next Task\\n%s
+gui_bird_carry_full_expenditure=Reached the max of carrying amount
+gui_bird_carry_full=Expand 1 place
+gui_bird_capacity_full_expenditure=Bag capacity has reached the max amount.
+gui_bird_capacity_full=Expand 5 capacity
+
+  
+
+gui_bird_pack_info_gather1=Collect:%1.f in %.1f sec
+gui_bird_pack_info_convert1=Convert:%1.f in %.1f sec

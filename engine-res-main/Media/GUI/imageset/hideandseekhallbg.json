@@ -1,0 +1,17 @@
+{"frames": {
+
+"bg":
+{
+	"frame": {"x":0,"y":0,"w":1280,"h":336},
+	"offset": {"x":0,"y":0,"w":1280,"h":336},
+	"sourceSize": {"w":1280,"h":336}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "hideandseekhallbg.png",
+	"format": "RGBA8888",
+	"size": {"w":1280,"h":336},
+	"scale": "1"
+}
+}

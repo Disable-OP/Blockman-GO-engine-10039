@@ -1,0 +1,114 @@
+{"frames": {
+
+"Aim":
+{
+	"frame": {"x":0,"y":0,"w":74,"h":74},
+	"sourceSize": {"w":74,"h":74},
+    "offset": {"x": 0,"y": 0}
+},
+"CancalAim":
+{
+	"frame": {"x":74,"y":0,"w":74,"h":74},
+	"sourceSize": {"w":74,"h":74},
+    "offset": {"x": 0,"y": 0}
+},
+"CancelGunDetail":
+{
+	"frame": {"x":148,"y":0,"w":63,"h":63},
+	"sourceSize": {"w":63,"h":63},
+    "offset": {"x": 0,"y": 0}
+},
+"GunBg":
+{
+	"frame": {"x":211,"y":0,"w":351,"h":155},
+	"sourceSize": {"w":351,"h":155},
+    "offset": {"x": 0,"y": 0}
+},
+"GunNameBg":
+{
+	"frame": {"x":562,"y":0,"w":382,"h":50},
+	"sourceSize": {"w":382,"h":50},
+    "offset": {"x": 0,"y": 0}
+},
+"LeftShoot":
+{
+	"frame": {"x":944,"y":0,"w":74,"h":74},
+	"sourceSize": {"w":74,"h":74},
+    "offset": {"x": 0,"y": 0}
+},
+"ReloadBullet":
+{
+	"frame": {"x":1018,"y":0,"w":74,"h":74},
+	"sourceSize": {"w":74,"h":74},
+    "offset": {"x": 0,"y": 0}
+},
+"RightShoot":
+{
+	"frame": {"x":1092,"y":0,"w":74,"h":74},
+	"sourceSize": {"w":74,"h":74},
+    "offset": {"x": 0,"y": 0}
+},
+"ShowGunDetail":
+{
+	"frame": {"x":1166,"y":0,"w":63,"h":63},
+	"sourceSize": {"w":63,"h":63},
+    "offset": {"x": 0,"y": 0}
+},
+"SniperSight":
+{
+	"frame": {"x":0,"y":155,"w":1280,"h":720},
+	"sourceSize": {"w":1280,"h":720},
+    "offset": {"x": 0,"y": 0}
+},
+"ThrowGun":
+{
+	"frame": {"x":0,"y":74,"w":74,"h":74},
+	"sourceSize": {"w":74,"h":74},
+    "offset": {"x": 0,"y": 0}
+},
+"HeadShot":
+{
+	"frame": {"x":569,"y":56,"w":43,"h":44},
+	"sourceSize": {"w":43,"h":44},
+    "offset": {"x": 0,"y": 0}
+},
+"Kill_1":
+{
+	"frame": {"x":617,"y":56,"w":45,"h":44},
+	"sourceSize": {"w":45,"h":44},
+    "offset": {"x": 0,"y": 0}
+},
+"Kill_2":
+{
+	"frame": {"x":665,"y":56,"w":45,"h":44},
+	"sourceSize": {"w":45,"h":44},
+    "offset": {"x": 0,"y": 0}
+},
+"Kill_3":
+{
+	"frame": {"x":713,"y":56,"w":45,"h":44},
+	"sourceSize": {"w":45,"h":44},
+    "offset": {"x": 0,"y": 0}
+},
+"Kill_4":
+{
+	"frame": {"x":761,"y":56,"w":45,"h":44},
+	"sourceSize": {"w":45,"h":44},
+    "offset": {"x": 0,"y": 0}
+},
+"Kill_5":
+{
+	"frame": {"x":809,"y":56,"w":45,"h":44},
+	"sourceSize": {"w":45,"h":44},
+    "offset": {"x": 0,"y": 0}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "gun.png",
+	"format": "RGBA8888",
+	"size": {"w":1280,"h":875},
+	"scale": "1",
+	"type": "frame"
+}
+}

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{74F249C2-57DF-4984-9741-2070B81CD840}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>WinShell_Clothes</RootNamespace>
+    <ProjectName>WinShell_Clothes</ProjectName>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\..\..\..\..\res\client</OutDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\..\..\..\res\client\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\..\..\..\..\res\client\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;LORD_STATIC;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../Src;../../../../engine/Src/Core;../../../../engine/Dependencies/RapidXml/Include;../../../../engine/Dependencies/g3log/win32/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>../../../Bin/Debug;../../../../engine/Bin/Debug;../../../../engine/Dependencies/Lua\Win32\Lib;../../../../engine/Dependencies/Zlib/Win32/Lib;../../../../engine/Dependencies/luajit/prebuilt/Win32;../../../../engine/Dependencies/g3log/win32/lib;../../../../engine/Dependencies/FreeImage/Win32/Lib;../../../../engine/Dependencies/FreeType/Win32/Lib;../../../../engine/Dependencies/opengles_v2/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Clothes_d.lib;LordGLES2Render_d.lib;LordCore_d.lib;Lua.lib;ws2_32.lib;Imm32.lib;winmm.lib;DbgHelp.lib;zlib_d.lib;g3logger_d.lib;FreeImage.lib;FreeType.lib;libEGL.lib;libGLESv2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ProgramDatabaseFile>../../../Bin/Debug/$(TargetName).pdb</ProgramDatabaseFile>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+      <Profile>true</Profile>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(ProjectDir)..\..\..\..\client\Bin\$(ConfigurationName)\WinShell_Clothes_d.pdb" "$(ProjectDir)..\..\..\..\..\res\client\"
+copy "$(ProjectDir)..\..\..\..\engine\Dependencies\FreeImage\Win32\Bin\FreeImage.dll" "$(ProjectDir)..\..\..\..\..\res\client\"
+copy "$(ProjectDir)..\..\..\..\engine\Dependencies\opengles_v2\Lib\libEGL.dll" "$(ProjectDir)..\..\..\..\..\res\client\"
+copy "$(ProjectDir)..\..\..\..\engine\Dependencies\opengles_v2\Lib\libGLESv2.dll" "$(ProjectDir)..\..\..\..\..\res\client\"
+copy "$(ProjectDir)..\..\..\..\logic\dependencies\curl\win32\Lib\libcurl_d.dll" "$(ProjectDir)..\..\..\..\..\res\client\"
+copy "$(ProjectDir)..\..\..\..\logic\dependencies\zip\win32\Lib\zip_d.dll" "$(ProjectDir)..\..\..\..\..\res\client\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;LORD_STATIC;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../Src/;../../../Src/Blockman;../../../../engine/Src/Core;../../../../logic/Src;../../../curl/Windows/Include;../../../../logic/dependencies/win32;../../../../engine/Dependencies/g3log/win32/include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>../../../Bin/Release;../../../../engine/Bin/Release;../../../../logic/Bin/Release;../../../../engine/Dependencies/Lua/Win32/Lib;../../../../engine/Dependencies/ZLib/Win32/Lib;../../../../logic/dependencies/win32/raknet/lib/release;../../../../logic/dependencies/cpr/win32/lib;../../../../logic/dependencies/curl/win32/lib;../../../../logic/dependencies/zip/win32/lib;../../../../logic/dependencies/libzippp/win32/lib;../../../../engine/Dependencies/g3log/win32/lib;../../../../engine/Dependencies/FreeImage/Win32/Lib;../../../../engine/Dependencies/FreeType/Win32/Lib;../../../../engine/Dependencies/opengles_v2/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>GameClient.lib;LordCore.lib;logic.lib;LordGLES2Render.lib;Lua.lib;winmm.lib;libcurl_imp.lib;DbgHelp.lib;raknet.lib;ws2_32.lib;zlib.lib;cpr.lib;libzippp.lib;zip.lib;g3logger.lib;FreeImage.lib;FreeType.lib;libEGL.lib;libGLESv2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(ProjectDir)..\..\..\..\server\Bin\$(ConfigurationName)\GameServer.exe" "$(ProjectDir)..\..\..\..\..\res\client\"
+copy "$(ProjectDir)..\..\..\..\logic\dependencies\curl\win32\lib\libcurl.dll" "$(ProjectDir)..\..\..\..\..\res\client\"
+copy "$(ProjectDir)..\..\..\..\logic\dependencies\zip\win32\lib\zip.dll" "$(ProjectDir)..\..\..\..\..\res\client\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../../Src/;../../../../Common/Src;../../../../engine/Src/Core;../../../curl/Windows/Include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>../../../Bin/RelWithDebInfo;../../../../common/Bin/RelWithDebInfo;../../../../engine/Bin/RelWithDebInfo;../../../../engine/Dependencies/Lua/Win32/Lib;../../../curl/Windows/Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>GameClient.lib;LordCore.lib;common.lib;LordGLES2Render.lib;Lua.lib;winmm.lib;libcurl_imp.lib;DbgHelp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>copy "$(ProjectDir)..\..\..\..\engine\Bin\$(ConfigurationName)\LordCore.dll" "$(ProjectDir)..\..\..\..\..\res\client\"
+copy "$(ProjectDir)..\..\..\..\engine\Bin\\$(ConfigurationName)\LordCore.pdb" "$(ProjectDir)..\..\..\..\..\res\client\"
+copy "$(ProjectDir)..\..\..\..\engine\Bin\\$(ConfigurationName)\LordGLES2Render.dll" "$(ProjectDir)..\..\..\..\..\res\client\"
+copy "$(ProjectDir)..\..\..\..\engine\Bin\\$(ConfigurationName)\LordGLES2Render.pdb" "$(ProjectDir)..\..\..\..\..\res\client\"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="WinShell_Clothes.ico" />
+    <None Include="ReadMe.txt" />
+    <None Include="small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WinShell_Clothes.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="ShellInterfaceWin32.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WinShell_Clothes.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ShellInterfaceWin32.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="WinShell_Clothes.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

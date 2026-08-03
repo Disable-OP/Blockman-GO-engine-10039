@@ -1,0 +1,29 @@
+{"frames": {
+
+"pole_bg":
+{
+	"frame": {"x":0,"y":0,"w":240,"h":240},
+	"offset": {"x":0,"y":0,"w":240,"h":240},
+	"sourceSize": {"w":240,"h":240}
+},
+"pole_center":
+{
+	"frame": {"x":240,"y":0,"w":240,"h":240},
+	"offset": {"x":0,"y":0,"w":240,"h":240},
+	"sourceSize": {"w":240,"h":240}
+},
+"pole_move":
+{
+	"frame": {"x":480,"y":0,"w":240,"h":240},
+	"offset": {"x":0,"y":0,"w":240,"h":240},
+	"sourceSize": {"w":240,"h":240}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "pole.png",
+	"format": "RGBA8888",
+	"size": {"w":720,"h":240},
+	"scale": "1"
+}
+}

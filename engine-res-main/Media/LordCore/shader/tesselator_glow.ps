@@ -1,0 +1,10 @@
+#version 100
+
+uniform mediump vec4 ambient;
+varying mediump vec4 color;
+
+void main(void)
+{
+	gl_FragColor = color * ambient;
+}
+

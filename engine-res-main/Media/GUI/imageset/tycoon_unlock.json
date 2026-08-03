@@ -1,0 +1,47 @@
+{"frames": {
+
+"current_info":
+{
+	"frame": {"x":25,"y":0,"w":25,"h":25},
+	"offset": {"x":0,"y":0,"w":25,"h":25},
+	"sourceSize": {"w":25,"h":25}
+},
+"info_bg":
+{
+	"frame": {"x":274,"y":480,"w":215,"h":318},
+	"offset": {"x":0,"y":0,"w":215,"h":318},
+	"sourceSize": {"w":215,"h":318}
+},
+"radar_doctorstrange":
+{
+	"frame": {"x":0,"y":480,"w":274,"h":240},
+	"offset": {"x":0,"y":0,"w":274,"h":240},
+	"sourceSize": {"w":274,"h":240}
+},
+"radar_thanos":
+{
+	"frame": {"x":0,"y":240,"w":274,"h":240},
+	"offset": {"x":0,"y":0,"w":274,"h":240},
+	"sourceSize": {"w":274,"h":240}
+},
+"radar_thor":
+{
+	"frame": {"x":50,"y":0,"w":274,"h":240},
+	"offset": {"x":0,"y":0,"w":274,"h":240},
+	"sourceSize": {"w":274,"h":240}
+},
+"standard_info":
+{
+	"frame": {"x":0,"y":0,"w":25,"h":25},
+	"offset": {"x":0,"y":0,"w":25,"h":25},
+	"sourceSize": {"w":25,"h":25}
+}},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "tycoon_unlock.png",
+	"format": "RGBA8888",
+	"size": {"w":512,"h":1024},
+	"scale": "1"
+}
+}

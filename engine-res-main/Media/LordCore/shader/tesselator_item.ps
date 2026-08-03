@@ -1,0 +1,16 @@
+#version 100
+
+uniform mediump vec4 fogColor;
+
+varying mediump vec4 lightColor;
+varying mediump vec2 texCoord;
+
+void main(void)
+{
+	mediump vec3 result = lightColor.rgb;
+	result = mix(fogColor.xyz, result, lightColor.w);
+	
+	gl_FragColor.xyz = result;
+	// texCoord is not used.
+	gl_FragColor.w = lightColor.w + texCoord.x;
+}

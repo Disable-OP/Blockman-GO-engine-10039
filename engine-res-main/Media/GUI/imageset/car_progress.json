@@ -1,0 +1,76 @@
+{"frames": {
+"car_progress_bg":
+{
+	"frame": {"x":0,"y":0,"w":114,"h":11},
+	"offset": {"x":0,"y":0,"w":114,"h":11},
+	"sourceSize": {"w":114,"h":11}
+},
+"car_progress_green":
+{
+	"frame": {"x":115,"y":1,"w":112,"h":9},
+	"offset": {"x":0,"y":0,"w":112,"h":9},
+	"sourceSize": {"w":112,"h":11}
+},
+"car_progress_red":
+{
+	"frame": {"x":0,"y":12,"w":112,"h":9},
+	"offset": {"x":0,"y":0,"w":112,"h":9},
+	"sourceSize": {"w":112,"h":11}
+},
+"car_progress_yellow":
+{
+	"frame": {"x":115,"y":12,"w":112,"h":9},
+	"offset": {"x":0,"y":0,"w":112,"h":9},
+	"sourceSize": {"w":112,"h":11}
+},
+"left_green_car":
+{
+	"frame": {"x":0,"y":24,"w":31,"h":31},
+	"offset": {"x":0,"y":0,"w":31,"h":31},
+	"sourceSize": {"w":31,"h":31}
+},
+"right_green_car":
+{
+	"frame": {"x":34,"y":24,"w":31,"h":31},
+	"offset": {"x":0,"y":0,"w":31,"h":31},
+	"sourceSize": {"w":31,"h":31}
+},
+"left_red_car":
+{
+	"frame": {"x":68,"y":24,"w":31,"h":31},
+	"offset": {"x":0,"y":0,"w":31,"h":31},
+	"sourceSize": {"w":31,"h":31}
+},
+"right_red_car":
+{
+	"frame": {"x":102,"y":24,"w":31,"h":31},
+	"offset": {"x":0,"y":0,"w":31,"h":31},
+	"sourceSize": {"w":31,"h":31}
+},
+"left_yellow_car":
+{
+	"frame": {"x":136,"y":24,"w":31,"h":31},
+	"offset": {"x":0,"y":0,"w":31,"h":31},
+	"sourceSize": {"w":31,"h":31}
+},
+"right_yellow_car":
+{
+	"frame": {"x":170,"y":24,"w":31,"h":31},
+	"offset": {"x":0,"y":0,"w":31,"h":31},
+	"sourceSize": {"w":31,"h":31}
+},
+"car_progress_panel":
+{
+	"frame": {"x":0,"y":59,"w":201,"h":136},
+	"offset": {"x":0,"y":0,"w":201,"h":136},
+	"sourceSize": {"w":201,"h":136}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "car_progress.png",
+	"format": "RGBA8888",
+	"size": {"w":230,"h":195},
+	"scale": "1"
+}
+}

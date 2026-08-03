@@ -1,0 +1,1760 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "StoreGunDetail",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,0},{0,0},{1,0},{1,0}}"
+                },
+                {
+                    "Name": "AlwaysOnTop",
+                    "Value": "true"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "Button",
+                    "Name": "StoreGunDetail-Close",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,1},{0,0},{1,1},{1,0}}"
+                        },
+                        {
+                            "Name": "BackgroundColor",
+                            "Value": "0 0 0 0.313726"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "SoundName",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "HexgonTopImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonTopColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonSideImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonSideColor",
+                            "Value": "1 1 1 1"
+                        },
+                        {
+                            "Name": "HexgonOverlayerImage",
+                            "Value": ""
+                        },
+                        {
+                            "Name": "HexgonOverlayerColor",
+                            "Value": "1 1 1 1"
+                        }
+                    ]
+                },
+                {
+                    "Type": "Layout",
+                    "Name": "StoreGunDetail-Content",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{0.45,0},{0.75,0}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "StretchType",
+                            "Value": "NineGrid"
+                        },
+                        {
+                            "Name": "LayoutBackImage",
+                            "Value": "set:gun_store.json image:bg_detail"
+                        }
+                    ],
+                    "Window": [
+                        {
+                            "Type": "StaticText",
+                            "Name": "StoreGunDetail-Name",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0,5},{1,-8},{0.112,5}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "黑帮大佬BiuBiu枪"
+                                },
+                                {
+                                    "Name": "Font",
+                                    "Value": "HT20"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextHorzAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextVertAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextBorder",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "TextLineExtraSpace",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "StaticText",
+                            "Name": "StoreGunDetail-Tag",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0.112,6},{1,0},{0.112,36}}"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "史诗级"
+                                },
+                                {
+                                    "Name": "Font",
+                                    "Value": "HT12"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "TextHorzAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextVertAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "TextBorder",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "TextLineExtraSpace",
+                                    "Value": "0"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "ActorWindow",
+                            "Name": "StoreGunDetail-Actor",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0.1,0},{0.3,0},{0.4,0}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowActorName",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "ActorWindowSkillName",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "ActorWindowRotateX",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowRotateY",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowRotateZ",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "ActorWindowScale",
+                                    "Value": "1"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "StoreGunDetail-Damage",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0.48,0},{0.9,0},{0.48,45}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "Layout",
+                                    "Name": "StoreGunDetail-Damage-Progress",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,43},{0,0},{1,-38},{0,25}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "StretchType",
+                                            "Value": "NineGrid"
+                                        },
+                                        {
+                                            "Name": "StretchOffset",
+                                            "Value": "5 5 5 5"
+                                        },
+                                        {
+                                            "Name": "LayoutBackImage",
+                                            "Value": "set:gun_store.json image:detail_progress_nor"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "Layout",
+                                            "Name": "StoreGunDetail-Damage-Progress-Default",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{0.25,0},{0,25.5}}"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "StretchType",
+                                                    "Value": "NineGrid"
+                                                },
+                                                {
+                                                    "Name": "StretchOffset",
+                                                    "Value": "4 4 4 4"
+                                                },
+                                                {
+                                                    "Name": "LayoutBackImage",
+                                                    "Value": "set:gun_store.json image:detail_progress_red"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Type": "ProgressBar",
+                                            "Name": "StoreGunDetail-Damage-Progress-Value",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{0.76,0},{0,25.5}}"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Right"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "StretchType",
+                                                    "Value": "NineGrid"
+                                                },
+                                                {
+                                                    "Name": "StretchOffset",
+                                                    "Value": "4 4 4 4"
+                                                },
+                                                {
+                                                    "Name": "ProgressImage",
+                                                    "Value": "set:gun_store.json image:detail_progress_green"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Type": "StaticText",
+                                            "Name": "StoreGunDetail-Damage-Progress-Text",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{0,0},{0,25}}"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "Text",
+                                                    "Value": "28"
+                                                },
+                                                {
+                                                    "Name": "Font",
+                                                    "Value": "HT12"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "TextHorzAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "TextVertAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "TextBorder",
+                                                    "Value": "true"
+                                                },
+                                                {
+                                                    "Name": "TextLineExtraSpace",
+                                                    "Value": "0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "StaticImage",
+                                    "Name": "StoreGunDetail-Damage-Icon",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,0},{0,45},{0,45}}"
+                                        },
+                                        {
+                                            "Name": "Text",
+                                            "Value": "65"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "StretchType",
+                                            "Value": "NineGrid"
+                                        },
+                                        {
+                                            "Name": "StretchOffset",
+                                            "Value": "2 2 2 2"
+                                        },
+                                        {
+                                            "Name": "ImageName",
+                                            "Value": "set:gun_store.json image:detail_damage"
+                                        },
+                                        {
+                                            "Name": "HexgonTopImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonTopColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonSideImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonSideColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerColor",
+                                            "Value": "1 1 1 1"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticImage",
+                                            "Name": "StoreGunDetail-Damage-Icon-Child",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{0,32},{0,28}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "HorizontalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "ImageName",
+                                                    "Value": "set:gun_store.json image:ic_damage"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Button",
+                                    "Name": "StoreGunDetail-Damage-Max",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,0},{0,40},{0,25}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Right"
+                                        },
+                                        {
+                                            "Name": "Text",
+                                            "Value": "65"
+                                        },
+                                        {
+                                            "Name": "Font",
+                                            "Value": "HT12"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "StretchType",
+                                            "Value": "NineGrid"
+                                        },
+                                        {
+                                            "Name": "StretchOffset",
+                                            "Value": "2 2 2 2"
+                                        },
+                                        {
+                                            "Name": "BtnTextColor",
+                                            "Value": "0.996078 0.635294 0.027451 1"
+                                        },
+                                        {
+                                            "Name": "TextBorder",
+                                            "Value": "true"
+                                        },
+                                        {
+                                            "Name": "NormalImage",
+                                            "Value": "set:gun_store.json image:detail_progress_max"
+                                        },
+                                        {
+                                            "Name": "SoundName",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "HexgonTopImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonTopColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonSideImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonSideColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerColor",
+                                            "Value": "1 1 1 1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "StaticText",
+                                    "Name": "StoreGunDetail-Damage-Max-Text",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,-14},{0,40},{0,11}}"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Right"
+                                        },
+                                        {
+                                            "Name": "Text",
+                                            "Value": "Max"
+                                        },
+                                        {
+                                            "Name": "Font",
+                                            "Value": "HT12"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "TextColor",
+                                            "Value": "0.992157 0.686275 0.0588235 1"
+                                        },
+                                        {
+                                            "Name": "TextHorzAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "TextVertAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "TextBorder",
+                                            "Value": "true"
+                                        },
+                                        {
+                                            "Name": "TextLineExtraSpace",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "StoreGunDetail-Infos",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0,0},{0.58,0},{0.88,0},{0.81,0}}"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Centre"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "StretchType",
+                                    "Value": "NineGrid"
+                                },
+                                {
+                                    "Name": "StretchOffset",
+                                    "Value": "10 10 20 2"
+                                },
+                                {
+                                    "Name": "LayoutBackImage",
+                                    "Value": "set:gun_store.json image:detail_infos"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "Layout",
+                                    "Name": "StoreGunDetail-Attribute",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,10},{0,16},{0.5,-5},{1,0}}"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "Layout",
+                                            "Name": "StoreGunDetail-ShootSpeed",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,0},{1,0},{0,28}}"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "StretchType",
+                                                    "Value": "NineGrid"
+                                                },
+                                                {
+                                                    "Name": "StretchOffset",
+                                                    "Value": "2 2 2 2"
+                                                },
+                                                {
+                                                    "Name": "LayoutBackImage",
+                                                    "Value": "set:gun_store.json image:detail_infos_item"
+                                                }
+                                            ],
+                                            "Window": [
+                                                {
+                                                    "Type": "StaticImage",
+                                                    "Name": "StoreGunDetail-ShootSpeed-Icon",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,0},{0,0},{0,32},{0,28}}"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "ImageName",
+                                                            "Value": "set:gun_store.json image:ic_shootspeed"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerColor",
+                                                            "Value": "1 1 1 1"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Type": "StaticText",
+                                                    "Name": "StoreGunDetail-ShootSpeed-Text",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,32},{0,0},{0,32},{0,28}}"
+                                                        },
+                                                        {
+                                                            "Name": "Text",
+                                                            "Value": "射速"
+                                                        },
+                                                        {
+                                                            "Name": "Font",
+                                                            "Value": "HT12"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "TextVertAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "TextBorder",
+                                                            "Value": "true"
+                                                        },
+                                                        {
+                                                            "Name": "TextLineExtraSpace",
+                                                            "Value": "0"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Type": "StaticText",
+                                                    "Name": "StoreGunDetail-ShootSpeed-Value",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,-8},{0,0},{0,-8},{1,0}}"
+                                                        },
+                                                        {
+                                                            "Name": "HorizontalAlignment",
+                                                            "Value": "Right"
+                                                        },
+                                                        {
+                                                            "Name": "Text",
+                                                            "Value": "88"
+                                                        },
+                                                        {
+                                                            "Name": "Font",
+                                                            "Value": "HT12"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "TextHorzAlignment",
+                                                            "Value": "Right"
+                                                        },
+                                                        {
+                                                            "Name": "TextVertAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "TextBorder",
+                                                            "Value": "true"
+                                                        },
+                                                        {
+                                                            "Name": "TextLineExtraSpace",
+                                                            "Value": "0"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Type": "Layout",
+                                            "Name": "StoreGunDetail-Bullet",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,0},{0,34},{1,0},{0,62}}"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "StretchType",
+                                                    "Value": "NineGrid"
+                                                },
+                                                {
+                                                    "Name": "StretchOffset",
+                                                    "Value": "2 2 2 2"
+                                                },
+                                                {
+                                                    "Name": "LayoutBackImage",
+                                                    "Value": "set:gun_store.json image:detail_infos_item"
+                                                }
+                                            ],
+                                            "Window": [
+                                                {
+                                                    "Type": "StaticImage",
+                                                    "Name": "StoreGunDetail-Bullet-Icon",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,0},{0,0},{0,32},{0,28}}"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "ImageName",
+                                                            "Value": "set:gun_store.json image:ic_bullet"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonTopColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonSideColor",
+                                                            "Value": "1 1 1 1"
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerImage",
+                                                            "Value": ""
+                                                        },
+                                                        {
+                                                            "Name": "HexgonOverlayerColor",
+                                                            "Value": "1 1 1 1"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Type": "StaticText",
+                                                    "Name": "StoreGunDetail-Bullet-Text",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,32},{0,0},{0,32},{1,0}}"
+                                                        },
+                                                        {
+                                                            "Name": "Text",
+                                                            "Value": "子弹"
+                                                        },
+                                                        {
+                                                            "Name": "Font",
+                                                            "Value": "HT12"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "TextVertAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "TextBorder",
+                                                            "Value": "true"
+                                                        },
+                                                        {
+                                                            "Name": "TextLineExtraSpace",
+                                                            "Value": "0"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "Type": "StaticText",
+                                                    "Name": "StoreGunDetail-Bullet-Value",
+                                                    "Property": [
+                                                        {
+                                                            "Name": "Area",
+                                                            "Value": "{{0,-8},{0,0},{0,-8},{1,0}}"
+                                                        },
+                                                        {
+                                                            "Name": "HorizontalAlignment",
+                                                            "Value": "Right"
+                                                        },
+                                                        {
+                                                            "Name": "Text",
+                                                            "Value": "88"
+                                                        },
+                                                        {
+                                                            "Name": "Font",
+                                                            "Value": "HT12"
+                                                        },
+                                                        {
+                                                            "Name": "WndOpenSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "WndCloseSound",
+                                                            "Value": "0"
+                                                        },
+                                                        {
+                                                            "Name": "TextHorzAlignment",
+                                                            "Value": "Right"
+                                                        },
+                                                        {
+                                                            "Name": "TextVertAlignment",
+                                                            "Value": "Centre"
+                                                        },
+                                                        {
+                                                            "Name": "TextBorder",
+                                                            "Value": "true"
+                                                        },
+                                                        {
+                                                            "Name": "TextLineExtraSpace",
+                                                            "Value": "0"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Layout",
+                                    "Name": "StoreGunDetail-Property",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0.5,5},{0,16},{1,-10},{1,0}}"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Button",
+                            "Name": "StoreGunDetail-Action-Use",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{0.05,0},{-0.05,0},{0.05,100},{-0.05,45}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "装备"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "StretchType",
+                                    "Value": "NineGrid"
+                                },
+                                {
+                                    "Name": "StretchOffset",
+                                    "Value": "4 4 4 4"
+                                },
+                                {
+                                    "Name": "TextBorder",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "NormalImage",
+                                    "Value": "set:gun_store.json image:btn_green"
+                                },
+                                {
+                                    "Name": "PushedImage",
+                                    "Value": "set:gun_store.json image:btn_green"
+                                },
+                                {
+                                    "Name": "SoundName",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "HexgonTopImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonTopColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonSideImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonSideColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonOverlayerImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonOverlayerColor",
+                                    "Value": "1 1 1 1"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "StoreGunDetail-Damage-Add",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{-0.21,-96},{-0.05,-4},{-0.00999999,-96},{-0.05,33}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Right"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "StretchType",
+                                    "Value": "NineGrid"
+                                },
+                                {
+                                    "Name": "StretchOffset",
+                                    "Value": "10 3 10 3"
+                                },
+                                {
+                                    "Name": "LayoutBackImage",
+                                    "Value": "set:gun_store.json image:bg_price"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "StaticImage",
+                                    "Name": "StoreGunDetail-Damage-Add-Icon",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0.125,0},{0,0},{0.125,32},{0,28}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "ImageName",
+                                            "Value": "set:gun_store.json image:ic_damage"
+                                        },
+                                        {
+                                            "Name": "HexgonTopImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonTopColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonSideImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonSideColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerColor",
+                                            "Value": "1 1 1 1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "StaticText",
+                                    "Name": "StoreGunDetail-Damage-Add-Value",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0.125,32},{0,0},{0.125,102},{0,28}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "Text",
+                                            "Value": "+1"
+                                        },
+                                        {
+                                            "Name": "Font",
+                                            "Value": "HT12"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "TextColor",
+                                            "Value": "0.196078 0.984314 0.109804 1"
+                                        },
+                                        {
+                                            "Name": "TextVertAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "TextBorder",
+                                            "Value": "true"
+                                        },
+                                        {
+                                            "Name": "TextLineExtraSpace",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "StoreGunDetail-Price",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{-0.05,-96},{-0.05,-4},{0.15,-96},{-0.05,33}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Right"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "StretchType",
+                                    "Value": "NineGrid"
+                                },
+                                {
+                                    "Name": "StretchOffset",
+                                    "Value": "10 4 10 4"
+                                },
+                                {
+                                    "Name": "LayoutBackImage",
+                                    "Value": "set:gun_store.json image:bg_price"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "StaticImage",
+                                    "Name": "StoreGunDetail-Price-Icon",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0.125,0},{0,0},{0.125,28},{0,28}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "ImageName",
+                                            "Value": "set:app_shop.json image:app_shop_diamonds_mods"
+                                        },
+                                        {
+                                            "Name": "HexgonTopImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonTopColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonSideImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonSideColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerColor",
+                                            "Value": "1 1 1 1"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "StaticText",
+                                    "Name": "StoreGunDetail-Price-Value",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0.125,32},{0,0},{0.725,32},{0,28}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "Text",
+                                            "Value": "30"
+                                        },
+                                        {
+                                            "Name": "Font",
+                                            "Value": "HT12"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "TextColor",
+                                            "Value": "0.976471 0.996078 0.203922 1"
+                                        },
+                                        {
+                                            "Name": "TextVertAlignment",
+                                            "Value": "Centre"
+                                        },
+                                        {
+                                            "Name": "TextBorder",
+                                            "Value": "true"
+                                        },
+                                        {
+                                            "Name": "TextLineExtraSpace",
+                                            "Value": "0"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Button",
+                            "Name": "StoreGunDetail-Action-Buy",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{-0.05,0},{-0.05,0},{-0.05,100},{-0.05,45}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Right"
+                                },
+                                {
+                                    "Name": "Text",
+                                    "Value": "购买"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "StretchType",
+                                    "Value": "NineGrid"
+                                },
+                                {
+                                    "Name": "StretchOffset",
+                                    "Value": "4 4 4 4"
+                                },
+                                {
+                                    "Name": "TextBorder",
+                                    "Value": "true"
+                                },
+                                {
+                                    "Name": "NormalImage",
+                                    "Value": "set:gun_store.json image:btn_green"
+                                },
+                                {
+                                    "Name": "PushedImage",
+                                    "Value": "set:gun_store.json image:btn_green"
+                                },
+                                {
+                                    "Name": "SoundName",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "HexgonTopImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonTopColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonSideImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonSideColor",
+                                    "Value": "1 1 1 1"
+                                },
+                                {
+                                    "Name": "HexgonOverlayerImage",
+                                    "Value": ""
+                                },
+                                {
+                                    "Name": "HexgonOverlayerColor",
+                                    "Value": "1 1 1 1"
+                                }
+                            ]
+                        },
+                        {
+                            "Type": "Layout",
+                            "Name": "StoreGunDetail-Upgrade-Action",
+                            "Property": [
+                                {
+                                    "Name": "Area",
+                                    "Value": "{{-0.05,0},{-0.05,0},{0.85,0},{-0.05,100}}"
+                                },
+                                {
+                                    "Name": "VerticalAlignment",
+                                    "Value": "Bottom"
+                                },
+                                {
+                                    "Name": "HorizontalAlignment",
+                                    "Value": "Right"
+                                },
+                                {
+                                    "Name": "Touchable",
+                                    "Value": "false"
+                                },
+                                {
+                                    "Name": "WndOpenSound",
+                                    "Value": "0"
+                                },
+                                {
+                                    "Name": "WndCloseSound",
+                                    "Value": "0"
+                                }
+                            ],
+                            "Window": [
+                                {
+                                    "Type": "Layout",
+                                    "Name": "StoreGunDetail-Countdown",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,-45},{0,100},{0,-15}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Bottom"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Right"
+                                        },
+                                        {
+                                            "Name": "Touchable",
+                                            "Value": "false"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        }
+                                    ],
+                                    "Window": [
+                                        {
+                                            "Type": "StaticImage",
+                                            "Name": "StoreGunDetail-Countdown-Icon",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,-1},{0,0},{0,24},{0,25}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "ImageName",
+                                                    "Value": "set:gun_store.json image:ic_countdown"
+                                                },
+                                                {
+                                                    "Name": "HexgonTopImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonTopColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonSideImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonSideColor",
+                                                    "Value": "1 1 1 1"
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerImage",
+                                                    "Value": ""
+                                                },
+                                                {
+                                                    "Name": "HexgonOverlayerColor",
+                                                    "Value": "1 1 1 1"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "Type": "StaticText",
+                                            "Name": "StoreGunDetail-Countdown-Value",
+                                            "Property": [
+                                                {
+                                                    "Name": "Area",
+                                                    "Value": "{{0,23},{0,0},{0,98},{0,25}}"
+                                                },
+                                                {
+                                                    "Name": "VerticalAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "Text",
+                                                    "Value": "00:00:00"
+                                                },
+                                                {
+                                                    "Name": "Font",
+                                                    "Value": "HT12"
+                                                },
+                                                {
+                                                    "Name": "Touchable",
+                                                    "Value": "false"
+                                                },
+                                                {
+                                                    "Name": "WndOpenSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "WndCloseSound",
+                                                    "Value": "0"
+                                                },
+                                                {
+                                                    "Name": "TextHorzAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "TextVertAlignment",
+                                                    "Value": "Centre"
+                                                },
+                                                {
+                                                    "Name": "TextLineExtraSpace",
+                                                    "Value": "0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Type": "Button",
+                                    "Name": "StoreGunDetail-Action-Upgrade",
+                                    "Property": [
+                                        {
+                                            "Name": "Area",
+                                            "Value": "{{0,0},{0,0},{0,100},{0,45}}"
+                                        },
+                                        {
+                                            "Name": "VerticalAlignment",
+                                            "Value": "Bottom"
+                                        },
+                                        {
+                                            "Name": "HorizontalAlignment",
+                                            "Value": "Right"
+                                        },
+                                        {
+                                            "Name": "Text",
+                                            "Value": "升级"
+                                        },
+                                        {
+                                            "Name": "WndOpenSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "WndCloseSound",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "StretchType",
+                                            "Value": "NineGrid"
+                                        },
+                                        {
+                                            "Name": "StretchOffset",
+                                            "Value": "4 4 4 4"
+                                        },
+                                        {
+                                            "Name": "TextBorder",
+                                            "Value": "true"
+                                        },
+                                        {
+                                            "Name": "NormalImage",
+                                            "Value": "set:gun_store.json image:btn_yellow"
+                                        },
+                                        {
+                                            "Name": "PushedImage",
+                                            "Value": "set:gun_store.json image:btn_yellow"
+                                        },
+                                        {
+                                            "Name": "SoundName",
+                                            "Value": "0"
+                                        },
+                                        {
+                                            "Name": "HexgonTopImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonTopColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonSideImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonSideColor",
+                                            "Value": "1 1 1 1"
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerImage",
+                                            "Value": ""
+                                        },
+                                        {
+                                            "Name": "HexgonOverlayerColor",
+                                            "Value": "1 1 1 1"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

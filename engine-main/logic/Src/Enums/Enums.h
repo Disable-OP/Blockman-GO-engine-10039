@@ -1,0 +1,48 @@
+#pragma once
+namespace BLOCKMAN {
+
+	enum class SkillType
+	{
+		NONE,
+		DEFENSE,
+		SPRINT,
+		RELEASE_TOXIC
+	};
+
+	enum class ResultCode
+	{
+		UNKNOWN = -1,
+		COMMON = 0,
+		PAY_SUCCESS =1,
+		ITEM_NOT_EXIST = 2,
+		LACK_MONEY = 3,
+		INVENTORY_FULL = 4,
+		PAY_FAILURE = 5,
+		CALL_MANOR = 6,
+		SELL_MANOR_SUCCEED = 7,
+		MANOR_BAN_OPERATION = 8,
+		RANCH_ORDER_HELP_RESULT = 9,
+		MAIL_RECEIVE_RESULT = 10,
+		GIVE_GIFT = 11,
+		RANCH_STORAGE_FULL = 12,
+		BIRD_RECEIVE_TASK = 13,
+		BIRD_BUY_PERMISSION = 14,
+	};
+
+	enum class PutFurnitureStatus
+	{
+		START,
+		SURE,
+		CANCEL,
+		EDIT_START,
+		EDIT_SURE,
+		EDIT_CANCEL,
+	};
+
+	enum class BroadcastType {
+		COMMON = 0,
+		RANCH_ORDER_HELP,
+		RANCH_ORDER_FINISH,
+		RANCH_RANK_ENTER_GAME
+	};
+}

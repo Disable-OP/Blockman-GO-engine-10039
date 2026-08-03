@@ -1,0 +1,202 @@
+<?xml version = "1.0" encoding = "GB2312"?>
+<ActorTemplates>
+	<ActorTemplate name="ranchers_building_01.actor" Originalscale="1 1 1" Skeleton="snack_plant01.skel" AttackScale="1" TextHeight="0" IsShowShadow="true" WoundBone="" WoundAngle="25" SelectedRingSize="1" SoundName1="" SoundName2="" SoundName3="" SoundName4="" SoundName5="" SoundFileNum="0" Volume="0.8" MinDistance="1" MaxDistance="16" IntervalTime="2" Alpha="1">
+		<BodyParts>
+			<BodyPart MasterName="body" SlaveName="0" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031000_storage.skin" ChangeColor = "2.10195e-44 5.46506e-42 2.53327e+17 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="1" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031001_cowbarn.skin" ChangeColor = "2.10195e-44 5.47207e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="11" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031101_feedmill.skin" ChangeColor = "2.10195e-44 5.5057e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="12" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031102_bakery.skin" ChangeColor = "2.10195e-44 5.5057e-42 7.20161e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="13" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031103_dairyfactory.skin" ChangeColor = "2.10195e-44 5.50991e-42 7.20161e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="14" DefaultUse="true" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031104_sugarfactory.skin" ChangeColor = "2.10195e-44 1.33404e-41 5.16509e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="15" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031105_weavingfactory.skin" ChangeColor = "2.10195e-44 5.52812e-42 3.44643e+30 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="16" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031106_sewingworkshop.skin" ChangeColor = "2.10195e-44 5.53793e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="17" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031107_snack.skin" ChangeColor = "2.10195e-44 5.54634e-42 7.20161e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="18" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031108_foodcourt.skin" ChangeColor = "2.10195e-44 5.54774e-42 7.20161e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="19" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031109_paper.skin" ChangeColor = "2.10195e-44 5.55194e-42 3.74654e-34 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="2" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031002_chickenbarn.skin" ChangeColor = "2.10195e-44 5.47768e-42 1.65732e+19 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="20" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031110_icecreamfactory.skin" ChangeColor = "2.10195e-44 5.90087e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="21" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031111_cake.skin" ChangeColor = "2.10195e-44 6.2624e-42 2.64019e+20 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="22" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031112_jamfactory.skin" ChangeColor = "2.10195e-44 6.60852e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="23" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031113_rubber.skin" ChangeColor = "2.10195e-44 6.96305e-42 7.19392e+31 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="24" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031114_plastic.skin" ChangeColor = "2.10195e-44 7.31338e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="25" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031115_candyfactory.skin" ChangeColor = "2.10195e-44 7.6637e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="3" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031003_sheepbarn.skin" ChangeColor = "2.10195e-44 5.49309e-42 1.65732e+19 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="4" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031004_honeyfactory.skin" ChangeColor = "2.10195e-44 5.4987e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="40" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031130_forging.skin" ChangeColor = "2.10195e-44 8.01963e-42 2.65172e+20 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="41" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031131_chain.skin" ChangeColor = "2.10195e-44 8.37136e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="42" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031132_abdominal.skin" ChangeColor = "2.10195e-44 8.71888e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="44" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031134_pipeplant.skin" ChangeColor = "2.10195e-44 9.07201e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="46" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031136_materialfactory.skin" ChangeColor = "2.10195e-44 9.42513e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="47" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031137_warehouse.skin" ChangeColor = "2.10195e-44 9.78667e-42 2.68631e+20 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="49" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031139_partsfactory.skin" ChangeColor = "2.10195e-44 1.01412e-41 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="50" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031140_outlet.skin" ChangeColor = "2.10195e-44 1.31428e-41 5.16509e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="51" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031141_inlet.skin" ChangeColor = "2.10195e-44 1.31428e-41 5.16509e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="53" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031143_transferin.skin" ChangeColor = "2.10195e-44 1.31456e-41 5.16509e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="54" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031144_tranferout.skin" ChangeColor = "2.10195e-44 1.31484e-41 5.16509e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="55" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031145_smallfeeder.skin" ChangeColor = "2.10195e-44 1.31512e-41 5.16509e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="56" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031146_midfeeder.skin" ChangeColor = "2.10195e-44 1.3154e-41 5.16509e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="58" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031148_smallstorage.skin" ChangeColor = "2.10195e-44 1.31554e-41 5.16509e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="59" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1031149_midtorage.skin" ChangeColor = "2.10195e-44 1.31596e-41 5.16509e+22 0" UVSpeed = "0 0">
+				</Skin>
+			</BodyPart>
+		</BodyParts>
+		<Skills>
+			<Skill Name="finish" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "snack_plant01_stand01.anim" BeginTime = "0" Times = "-1" Length = "3.366" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+				<Effect>
+					<FileName value="30gantanhao_m.effect"/>
+					<SocketName value="BuSuiFu"/>
+					<BeginTime value="0"/>
+					<Times value="-1"/>
+					<Position_X value="0"/>
+					<Position_Y value="2.58191"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1.5"/>
+					<TimeScale value="0.5"/>
+					<Alpha value="1"/>
+					<CycleTime value="-1"/>
+					<FollowActor value="true"/>
+					<Persist value="false"/>
+					<isSlowdownValuable value="true"/>
+				</Effect>
+			</Skill>
+			<Skill Name="idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "snack_plant01_stand01.anim" BeginTime = "0" Times = "-1" Length = "3.366" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+			</Skill>
+			<Skill Name="run" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "snack_plant01_stand01.anim" BeginTime = "0" Times = "-1" Length = "3.366" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+				<Effect>
+					<FileName value="jiayuantexiao01_zhiyin2.effect"/>
+					<SocketName value="BuSuiFu"/>
+					<BeginTime value="0"/>
+					<Times value="1"/>
+					<Position_X value="0"/>
+					<Position_Y value="2.19719"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1.5"/>
+					<TimeScale value="0.8"/>
+					<Alpha value="1"/>
+					<CycleTime value="-1"/>
+					<FollowActor value="true"/>
+					<Persist value="false"/>
+					<isSlowdownValuable value="true"/>
+				</Effect>
+			</Skill>
+		</Skills>
+		<Anims>
+				<Anim Name="snack_plant01_stand01.anim"/>
+		</Anims>
+	</ActorTemplate>
+</ActorTemplates>

@@ -1,0 +1,108 @@
+<?xml version = "1.0" encoding = "GB2312"?>
+<ActorTemplates>
+	<ActorTemplate name="hero_deadpool_js.actor" Originalscale="1 1 1" Skeleton="boy_01.skel" AttackScale="1" TextHeight="0" IsShowShadow="true" WoundBone="" WoundAngle="25" SelectedRingSize="1" SoundName1="" SoundName2="" SoundName3="" SoundName4="" SoundName5="" SoundFileNum="0" Volume="0.8" MinDistance="1" MaxDistance="16" IntervalTime="2" Alpha="1">
+		<BodyParts>
+			<BodyPart MasterName="body" SlaveName="1" DefaultUse="true" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "1700_trousers_deadpool2.skin" ChangeColor = "2.10195e-44 3.16806e-41 1.72272e+25 0" UVSpeed = "0 0">
+				</Skin>
+				<Skin MeshName = "1700_trunk_deadpool2.skin" ChangeColor = "2.10195e-44 3.18697e-41 1.72272e+25 0" UVSpeed = "0 0">
+				</Skin>
+				<StaticMesh>
+					<FileName value="1700_deadpool_face.mesh"/>
+					<SocketName value="s_head"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="1700_deadpool_shoes_l.mesh"/>
+					<SocketName value="s_foot_l"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="1700_deadpool_shoes_r.mesh"/>
+					<SocketName value="s_foot_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="1700_hair_deadpool2.mesh"/>
+					<SocketName value="s_head"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="1700_deadpool_wing.mesh"/>
+					<SocketName value="s_back"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="1700_deadpool_weapon.mesh"/>
+					<SocketName value="s_hand_r"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			
+		</BodyParts>
+		<Skills>
+			<Skill Name="idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "boy_attack01.anim" BeginTime = "0" Times = "1" Length = "0.833" FadeTime = "0.05" Channel = "upper" TimeScale = "1">
+				</Animation>
+				<Effect>
+					<FileName value="attack_bubing01.effect"/>
+					<SocketName value="BuSuiFu"/>
+					<BeginTime value="0.08"/>
+					<Times value="1"/>
+					<Position_X value="-0.256912"/>
+					<Position_Y value="0.513839"/>
+					<Position_Z value="0.821657"/>
+					<yaw value="-92.974"/>
+					<pitch value="13.0166"/>
+					<roll value="26.2029"/>
+					<scale value="2"/>
+					<TimeScale value="1"/>
+					<Alpha value="1"/>
+					<CycleTime value="-1"/>
+					<FollowActor value="true"/>
+					<Persist value="false"/>
+					<isSlowdownValuable value="true"/>
+				</Effect>
+			</Skill>
+		</Skills>
+		<Anims>
+				<Anim Name="boy_attack01.anim"/>
+		</Anims>
+	</ActorTemplate>
+</ActorTemplates>

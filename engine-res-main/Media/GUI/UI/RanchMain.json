@@ -1,0 +1,236 @@
+{
+    "Dialog": {
+        "Window": {
+            "Type": "Layout",
+            "Name": "RanchMain",
+            "Property": [
+                {
+                    "Name": "Area",
+                    "Value": "{{0,11},{0,11},{1,-11},{1,-11}}"
+                },
+                {
+                    "Name": "Touchable",
+                    "Value": "false"
+                },
+                {
+                    "Name": "WndOpenSound",
+                    "Value": "0"
+                },
+                {
+                    "Name": "WndCloseSound",
+                    "Value": "0"
+                }
+            ],
+            "Window": [
+                {
+                    "Type": "RanchFunctionItem",
+                    "Name": "RanchMain-House",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{0.3333,-5},{0.5,-1}}"
+                        },
+                        {
+                            "Name": "Text",
+                            "Value": "House"
+                        },
+                        {
+                            "Name": "BackgroundColor",
+                            "Value": "1 1 1 0"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "ImageName",
+                            "Value": "set:ranch_icon.json image:ranch_icon_house"
+                        }
+                    ]
+                },
+                {
+                    "Type": "RanchFunctionItem",
+                    "Name": "RanchMain-Storage",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{0.3333,-5},{0.5,-1}}"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "Text",
+                            "Value": "Storage"
+                        },
+                        {
+                            "Name": "BackgroundColor",
+                            "Value": "1 1 1 0"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "ImageName",
+                            "Value": "set:ranch_icon.json image:ranch_icon_storage"
+                        }
+                    ]
+                },
+                {
+                    "Type": "RanchFunctionItem",
+                    "Name": "RanchMain-Factory",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{0.3333,-5},{0.5,-1}}"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Right"
+                        },
+                        {
+                            "Name": "Text",
+                            "Value": "Factory"
+                        },
+                        {
+                            "Name": "BackgroundColor",
+                            "Value": "1 1 1 0"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "ImageName",
+                            "Value": "set:ranch_icon.json image:ranch_icon_factory"
+                        }
+                    ]
+                },
+                {
+                    "Type": "RanchFunctionItem",
+                    "Name": "RanchMain-Farming",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{0.3333,-5},{0.5,-1}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Bottom"
+                        },
+                        {
+                            "Name": "Text",
+                            "Value": "Farming"
+                        },
+                        {
+                            "Name": "BackgroundColor",
+                            "Value": "1 1 1 0"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "ImageName",
+                            "Value": "set:ranch_icon.json image:ranch_icon_farming"
+                        }
+                    ]
+                },
+                {
+                    "Type": "RanchFunctionItem",
+                    "Name": "RanchMain-Community",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{0.3333,-5},{0.5,-1}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Bottom"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Centre"
+                        },
+                        {
+                            "Name": "Text",
+                            "Value": "Community"
+                        },
+                        {
+                            "Name": "BackgroundColor",
+                            "Value": "1 1 1 0"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "ImageName",
+                            "Value": "set:ranch_icon.json image:ranch_icon_community"
+                        }
+                    ]
+                },
+                {
+                    "Type": "RanchFunctionItem",
+                    "Name": "RanchMain-Achievement",
+                    "Property": [
+                        {
+                            "Name": "Area",
+                            "Value": "{{0,0},{0,0},{0.3333,-5},{0.5,-1}}"
+                        },
+                        {
+                            "Name": "VerticalAlignment",
+                            "Value": "Bottom"
+                        },
+                        {
+                            "Name": "HorizontalAlignment",
+                            "Value": "Right"
+                        },
+                        {
+                            "Name": "Text",
+                            "Value": "Achievement"
+                        },
+                        {
+                            "Name": "BackgroundColor",
+                            "Value": "1 1 1 0"
+                        },
+                        {
+                            "Name": "WndOpenSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "WndCloseSound",
+                            "Value": "0"
+                        },
+                        {
+                            "Name": "ImageName",
+                            "Value": "set:ranch_icon.json image:ranch_icon_achievement"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

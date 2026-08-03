@@ -1,0 +1,26 @@
+/********************************************************************
+filename: 	GLES2Render.h
+file path:	dev\engine\Src\GLES2Render\
+
+version:	1
+author:		ajohn
+company:	supernano
+*********************************************************************/
+
+#ifndef __LORD_GLES2RENDER_H__
+#define __LORD_GLES2RENDER_H__
+
+#include "GLES2RenderStd.h"
+
+#include "GLES2GPUBuffer.h"
+#include "GLES2ShaderProgram.h"
+#include "GLES2RenderState.h"
+#include "GLES2Texture.h"
+#include "GLES2RenderTargetView.h"
+#include "GLES2DepthStencilView.h"
+#include "GLES2FrameBuffer.h"
+#include "GLES2RenderInput.h"
+#include "GLES2Mapping.h"
+#include "GLES2Renderer.h"
+
+#endif

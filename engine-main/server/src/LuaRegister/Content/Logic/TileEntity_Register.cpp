@@ -1,0 +1,432 @@
+
+#include "TileEntity/TileEntity.h"
+#include "TileEntity/TileEntityInventory.h"
+#include "TileEntity/TileEntitys.h"
+#include "LuaRegister/Template/LuaRegister.h"
+using namespace BLOCKMAN;
+
+using namespace LUA_REGISTER;
+
+
+// Register Class TileEntity
+_BEGIN_REGISTER_CLASS(TileEntity)
+_CLASSREGISTER_AddBaseClass(ObjectAlloc)
+_CLASSREGISTER_AddCtor(int )
+_CLASSREGISTER_AddStaticMember(createAndLoadEntity, TileEntity::createAndLoadEntity)
+_CLASSREGISTER_AddMember(getBlock, TileEntity::getBlock)
+_CLASSREGISTER_AddMember(getBlockMetadata, TileEntity::getBlockMetadata)
+_CLASSREGISTER_AddMember(getClassName, TileEntity::getClassName)
+_CLASSREGISTER_AddMember(getDistanceFrom, TileEntity::getDistanceFrom)
+_CLASSREGISTER_AddMember(getMaxRenderDistanceSquared, TileEntity::getMaxRenderDistanceSquared)
+_CLASSREGISTER_AddStaticMember(getSuperClassID, TileEntity::getSuperClassID)
+_CLASSREGISTER_AddMember(getWorldObj, TileEntity::getWorldObj)
+_CLASSREGISTER_AddMember(hasWorldObj, TileEntity::hasWorldObj)
+_CLASSREGISTER_AddStaticMember(initialize, TileEntity::initialize)
+_CLASSREGISTER_AddMember(invalidate, TileEntity::invalidate)
+_CLASSREGISTER_AddMember(isInvalid, TileEntity::isInvalid)
+_CLASSREGISTER_AddMember(onInventoryChanged, TileEntity::onInventoryChanged)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntity::readFromNBT)
+_CLASSREGISTER_AddMember(receiveClientEvent, TileEntity::receiveClientEvent)
+_CLASSREGISTER_AddMember(setWorldObj, TileEntity::setWorldObj)
+_CLASSREGISTER_AddMember(updateContainingBlockInfo, TileEntity::updateContainingBlockInfo)
+_CLASSREGISTER_AddMember(updateEntity, TileEntity::updateEntity)
+_CLASSREGISTER_AddMember(validate, TileEntity::validate)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntity::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+// Register Class TileEntityBeacon
+_BEGIN_REGISTER_CLASS(TileEntityBeacon)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddBaseClass(IInventory)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(closeChest, TileEntityBeacon::closeChest)
+_CLASSREGISTER_AddMember(decrStackSize, TileEntityBeacon::decrStackSize)
+_CLASSREGISTER_AddMember(getInvName, TileEntityBeacon::getInvName)
+_CLASSREGISTER_AddMember(getInventoryStackLimit, TileEntityBeacon::getInventoryStackLimit)
+_CLASSREGISTER_AddMember(getLevels, TileEntityBeacon::getLevels)
+_CLASSREGISTER_AddMember(getMaxRenderDistanceSquared, TileEntityBeacon::getMaxRenderDistanceSquared)
+_CLASSREGISTER_AddMember(getPrimaryEffect, TileEntityBeacon::getPrimaryEffect)
+_CLASSREGISTER_AddMember(getSecondaryEffect, TileEntityBeacon::getSecondaryEffect)
+_CLASSREGISTER_AddMember(getSizeInventory, TileEntityBeacon::getSizeInventory)
+_CLASSREGISTER_AddMember(getStackInSlot, TileEntityBeacon::getStackInSlot)
+_CLASSREGISTER_AddMember(getStackInSlotOnClosing, TileEntityBeacon::getStackInSlotOnClosing)
+_CLASSREGISTER_AddStaticMember(initialize, TileEntityBeacon::initialize)
+_CLASSREGISTER_AddMember(isInvNameLocalized, TileEntityBeacon::isInvNameLocalized)
+_CLASSREGISTER_AddMember(isItemValidForSlot, TileEntityBeacon::isItemValidForSlot)
+_CLASSREGISTER_AddMember(isUseableByPlayer, TileEntityBeacon::isUseableByPlayer)
+_CLASSREGISTER_AddMember(openChest, TileEntityBeacon::openChest)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityBeacon::readFromNBT)
+_CLASSREGISTER_AddMember(setCustomName, TileEntityBeacon::setCustomName)
+_CLASSREGISTER_AddMember(setInventorySlotContents, TileEntityBeacon::setInventorySlotContents)
+_CLASSREGISTER_AddMember(setLevels, TileEntityBeacon::setLevels)
+_CLASSREGISTER_AddMember(setPrimaryEffect, TileEntityBeacon::setPrimaryEffect)
+_CLASSREGISTER_AddMember(setSecondaryEffect, TileEntityBeacon::setSecondaryEffect)
+_CLASSREGISTER_AddMember(shouldRender, TileEntityBeacon::shouldRender)
+_CLASSREGISTER_AddMember(updateEntity, TileEntityBeacon::updateEntity)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityBeacon::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityBrewingStand
+_BEGIN_REGISTER_CLASS(TileEntityBrewingStand)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddBaseClass(ISidedInventory)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(canExtractItem, TileEntityBrewingStand::canExtractItem)
+_CLASSREGISTER_AddMember(canInsertItem, TileEntityBrewingStand::canInsertItem)
+_CLASSREGISTER_AddMember(closeChest, TileEntityBrewingStand::closeChest)
+_CLASSREGISTER_AddMember(decrStackSize, TileEntityBrewingStand::decrStackSize)
+_CLASSREGISTER_AddMember(getAccessibleSlotsFromSide, TileEntityBrewingStand::getAccessibleSlotsFromSide)
+_CLASSREGISTER_AddMember(getBrewTime, TileEntityBrewingStand::getBrewTime)
+_CLASSREGISTER_AddMember(getFilledSlots, TileEntityBrewingStand::getFilledSlots)
+_CLASSREGISTER_AddMember(getInvName, TileEntityBrewingStand::getInvName)
+_CLASSREGISTER_AddMember(getInventoryStackLimit, TileEntityBrewingStand::getInventoryStackLimit)
+_CLASSREGISTER_AddMember(getSizeInventory, TileEntityBrewingStand::getSizeInventory)
+_CLASSREGISTER_AddMember(getStackInSlot, TileEntityBrewingStand::getStackInSlot)
+_CLASSREGISTER_AddMember(getStackInSlotOnClosing, TileEntityBrewingStand::getStackInSlotOnClosing)
+_CLASSREGISTER_AddMember(isInvNameLocalized, TileEntityBrewingStand::isInvNameLocalized)
+_CLASSREGISTER_AddMember(isItemValidForSlot, TileEntityBrewingStand::isItemValidForSlot)
+_CLASSREGISTER_AddMember(isUseableByPlayer, TileEntityBrewingStand::isUseableByPlayer)
+_CLASSREGISTER_AddMember(openChest, TileEntityBrewingStand::openChest)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityBrewingStand::readFromNBT)
+_CLASSREGISTER_AddMember(setBrewTime, TileEntityBrewingStand::setBrewTime)
+_CLASSREGISTER_AddMember(setCustomName, TileEntityBrewingStand::setCustomName)
+_CLASSREGISTER_AddMember(setInventorySlotContents, TileEntityBrewingStand::setInventorySlotContents)
+_CLASSREGISTER_AddMember(updateEntity, TileEntityBrewingStand::updateEntity)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityBrewingStand::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityChest
+_BEGIN_REGISTER_CLASS(TileEntityChest)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddBaseClass(IInventory)
+_CLASSREGISTER_AddCtor(int )
+_CLASSREGISTER_AddMember(clearChest, TileEntityChest::clearChest)
+_CLASSREGISTER_AddMember(initByItem, TileEntityChest::initByItem)
+_CLASSREGISTER_AddMember(initByGunItem, TileEntityChest::initByGunItem)
+_CLASSREGISTER_AddMember(addEchantmentItem, TileEntityChest::addEchantmentItem)
+_CLASSREGISTER_AddMember(checkForAdjacentChests, TileEntityChest::checkForAdjacentChests)
+_CLASSREGISTER_AddMember(closeChest, TileEntityChest::closeChest)
+_CLASSREGISTER_AddMember(decrStackSize, TileEntityChest::decrStackSize)
+_CLASSREGISTER_AddMember(getChestType, TileEntityChest::getChestType)
+_CLASSREGISTER_AddMember(getInvName, TileEntityChest::getInvName)
+_CLASSREGISTER_AddMember(getInventoryStackLimit, TileEntityChest::getInventoryStackLimit)
+_CLASSREGISTER_AddMember(getSizeInventory, TileEntityChest::getSizeInventory)
+_CLASSREGISTER_AddMember(getStackInSlot, TileEntityChest::getStackInSlot)
+_CLASSREGISTER_AddMember(getStackInSlotOnClosing, TileEntityChest::getStackInSlotOnClosing)
+_CLASSREGISTER_AddMember(invalidate, TileEntityChest::invalidate)
+_CLASSREGISTER_AddMember(isInvNameLocalized, TileEntityChest::isInvNameLocalized)
+_CLASSREGISTER_AddMember(isItemValidForSlot, TileEntityChest::isItemValidForSlot)
+_CLASSREGISTER_AddMember(isUseableByPlayer, TileEntityChest::isUseableByPlayer)
+_CLASSREGISTER_AddMember(onInventoryChanged, TileEntityChest::onInventoryChanged)
+_CLASSREGISTER_AddMember(openChest, TileEntityChest::openChest)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityChest::readFromNBT)
+_CLASSREGISTER_AddMember(receiveClientEvent, TileEntityChest::receiveClientEvent)
+_CLASSREGISTER_AddMember(setChestGuiName, TileEntityChest::setChestGuiName)
+_CLASSREGISTER_AddMember(setInventorySlotContents, TileEntityChest::setInventorySlotContents)
+_CLASSREGISTER_AddMember(updateContainingBlockInfo, TileEntityChest::updateContainingBlockInfo)
+_CLASSREGISTER_AddMember(updateEntity, TileEntityChest::updateEntity)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityChest::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityDispenser
+_BEGIN_REGISTER_CLASS(TileEntityDispenser)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddBaseClass(IInventory)
+_CLASSREGISTER_AddCtor(int )
+_CLASSREGISTER_AddMember(addItem, TileEntityDispenser::addItem)
+_CLASSREGISTER_AddMember(closeChest, TileEntityDispenser::closeChest)
+_CLASSREGISTER_AddMember(decrStackSize, TileEntityDispenser::decrStackSize)
+_CLASSREGISTER_AddMember(getInvName, TileEntityDispenser::getInvName)
+_CLASSREGISTER_AddMember(getInventoryStackLimit, TileEntityDispenser::getInventoryStackLimit)
+_CLASSREGISTER_AddMember(getRandomStackFromInventory, TileEntityDispenser::getRandomStackFromInventory)
+_CLASSREGISTER_AddMember(getSizeInventory, TileEntityDispenser::getSizeInventory)
+_CLASSREGISTER_AddMember(getStackInSlot, TileEntityDispenser::getStackInSlot)
+_CLASSREGISTER_AddMember(getStackInSlotOnClosing, TileEntityDispenser::getStackInSlotOnClosing)
+_CLASSREGISTER_AddMember(isInvNameLocalized, TileEntityDispenser::isInvNameLocalized)
+_CLASSREGISTER_AddMember(isItemValidForSlot, TileEntityDispenser::isItemValidForSlot)
+_CLASSREGISTER_AddMember(isUseableByPlayer, TileEntityDispenser::isUseableByPlayer)
+_CLASSREGISTER_AddMember(openChest, TileEntityDispenser::openChest)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityDispenser::readFromNBT)
+_CLASSREGISTER_AddMember(setCustomName, TileEntityDispenser::setCustomName)
+_CLASSREGISTER_AddMember(setInventorySlotContents, TileEntityDispenser::setInventorySlotContents)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityDispenser::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityDropper
+_BEGIN_REGISTER_CLASS(TileEntityDropper)
+_CLASSREGISTER_AddBaseClass(TileEntityDispenser)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(getInvName, TileEntityDropper::getInvName)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityFurnace
+_BEGIN_REGISTER_CLASS(TileEntityFurnace)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddBaseClass(ISidedInventory)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(canExtractItem, TileEntityFurnace::canExtractItem)
+_CLASSREGISTER_AddMember(canInsertItem, TileEntityFurnace::canInsertItem)
+_CLASSREGISTER_AddMember(canSmelt, TileEntityFurnace::canSmelt)
+_CLASSREGISTER_AddMember(closeChest, TileEntityFurnace::closeChest)
+_CLASSREGISTER_AddMember(decrStackSize, TileEntityFurnace::decrStackSize)
+_CLASSREGISTER_AddMember(getAccessibleSlotsFromSide, TileEntityFurnace::getAccessibleSlotsFromSide)
+_CLASSREGISTER_AddMember(getBurnTimeRemainingScaled, TileEntityFurnace::getBurnTimeRemainingScaled)
+_CLASSREGISTER_AddMember(getCookProgressScaled, TileEntityFurnace::getCookProgressScaled)
+_CLASSREGISTER_AddMember(getInvName, TileEntityFurnace::getInvName)
+_CLASSREGISTER_AddMember(getInventoryStackLimit, TileEntityFurnace::getInventoryStackLimit)
+_CLASSREGISTER_AddStaticMember(getItemBurnTime, TileEntityFurnace::getItemBurnTime)
+_CLASSREGISTER_AddMember(getSizeInventory, TileEntityFurnace::getSizeInventory)
+_CLASSREGISTER_AddMember(getStackInSlot, TileEntityFurnace::getStackInSlot)
+_CLASSREGISTER_AddMember(getStackInSlotOnClosing, TileEntityFurnace::getStackInSlotOnClosing)
+_CLASSREGISTER_AddMember(isBurning, TileEntityFurnace::isBurning)
+_CLASSREGISTER_AddMember(isInvNameLocalized, TileEntityFurnace::isInvNameLocalized)
+_CLASSREGISTER_AddStaticMember(isItemFuel, TileEntityFurnace::isItemFuel)
+_CLASSREGISTER_AddMember(isItemValidForSlot, TileEntityFurnace::isItemValidForSlot)
+_CLASSREGISTER_AddMember(isUseableByPlayer, TileEntityFurnace::isUseableByPlayer)
+_CLASSREGISTER_AddMember(onInventoryChanged, TileEntityFurnace::onInventoryChanged)
+_CLASSREGISTER_AddMember(openChest, TileEntityFurnace::openChest)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityFurnace::readFromNBT)
+_CLASSREGISTER_AddMember(setGuiDisplayName, TileEntityFurnace::setGuiDisplayName)
+_CLASSREGISTER_AddMember(setInventorySlotContents, TileEntityFurnace::setInventorySlotContents)
+_CLASSREGISTER_AddMember(smeltItem, TileEntityFurnace::smeltItem)
+_CLASSREGISTER_AddMember(updateEntity, TileEntityFurnace::updateEntity)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityFurnace::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityHopper
+_BEGIN_REGISTER_CLASS(TileEntityHopper)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddBaseClass(IHopper)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(closeChest, TileEntityHopper::closeChest)
+_CLASSREGISTER_AddMember(decrStackSize, TileEntityHopper::decrStackSize)
+_CLASSREGISTER_AddStaticMember(getCaptureItem, TileEntityHopper::getCaptureItem)
+_CLASSREGISTER_AddMember(getInvName, TileEntityHopper::getInvName)
+_CLASSREGISTER_AddStaticMember(getInventoryAboveHopper, TileEntityHopper::getInventoryAboveHopper)
+_CLASSREGISTER_AddStaticMember(getInventoryAtLocation, TileEntityHopper::getInventoryAtLocation)
+_CLASSREGISTER_AddMember(getInventoryStackLimit, TileEntityHopper::getInventoryStackLimit)
+_CLASSREGISTER_AddMember(getPos, TileEntityHopper::getPos)
+_CLASSREGISTER_AddMember(getSizeInventory, TileEntityHopper::getSizeInventory)
+_CLASSREGISTER_AddMember(getStackInSlot, TileEntityHopper::getStackInSlot)
+_CLASSREGISTER_AddMember(getStackInSlotOnClosing, TileEntityHopper::getStackInSlotOnClosing)
+_CLASSREGISTER_AddMember(getWorldObj, TileEntityHopper::getWorldObj)
+_CLASSREGISTER_AddStaticMember(insertItem, TileEntityHopper::insertItem)
+_CLASSREGISTER_AddStaticMember(insertStack, TileEntityHopper::insertStack)
+_CLASSREGISTER_AddMember(isCoolingDown, TileEntityHopper::isCoolingDown)
+_CLASSREGISTER_AddMember(isInvNameLocalized, TileEntityHopper::isInvNameLocalized)
+_CLASSREGISTER_AddMember(isItemValidForSlot, TileEntityHopper::isItemValidForSlot)
+_CLASSREGISTER_AddMember(isUseableByPlayer, TileEntityHopper::isUseableByPlayer)
+_CLASSREGISTER_AddMember(onInventoryChanged, TileEntityHopper::onInventoryChanged)
+_CLASSREGISTER_AddMember(openChest, TileEntityHopper::openChest)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityHopper::readFromNBT)
+_CLASSREGISTER_AddMember(setInventoryName, TileEntityHopper::setInventoryName)
+_CLASSREGISTER_AddMember(setInventorySlotContents, TileEntityHopper::setInventorySlotContents)
+_CLASSREGISTER_AddMember(setTransferCooldown, TileEntityHopper::setTransferCooldown)
+_CLASSREGISTER_AddStaticMember(suckItemsIntoHopper, TileEntityHopper::suckItemsIntoHopper)
+_CLASSREGISTER_AddMember(updateEntity, TileEntityHopper::updateEntity)
+_CLASSREGISTER_AddMember(updateHopper, TileEntityHopper::updateHopper)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityHopper::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityCommandBlock
+_BEGIN_REGISTER_CLASS(TileEntityCommandBlock)
+_CLASSREGISTER_AddBaseClass(TileEntity /*)
+_CLASSREGISTER_AddBaseClass(ICommandSender*/)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(executeCommandOnPowered, TileEntityCommandBlock::executeCommandOnPowered)
+_CLASSREGISTER_AddMember(getCommand, TileEntityCommandBlock::getCommand)
+_CLASSREGISTER_AddMember(getCommandSenderName, TileEntityCommandBlock::getCommandSenderName)
+_CLASSREGISTER_AddMember(getPlayerCoordinates, TileEntityCommandBlock::getPlayerCoordinates)
+_CLASSREGISTER_AddMember(getSuccessCount, TileEntityCommandBlock::getSuccessCount)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityCommandBlock::readFromNBT)
+_CLASSREGISTER_AddMember(setCommand, TileEntityCommandBlock::setCommand)
+_CLASSREGISTER_AddMember(setCommandSenderName, TileEntityCommandBlock::setCommandSenderName)
+_CLASSREGISTER_AddMember(setSuccessCount, TileEntityCommandBlock::setSuccessCount)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityCommandBlock::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityComparator
+_BEGIN_REGISTER_CLASS(TileEntityComparator)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(getOutputSignal, TileEntityComparator::getOutputSignal)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityComparator::readFromNBT)
+_CLASSREGISTER_AddMember(setOutputSignal, TileEntityComparator::setOutputSignal)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityComparator::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityDaylightDetector
+_BEGIN_REGISTER_CLASS(TileEntityDaylightDetector)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(updateEntity, TileEntityDaylightDetector::updateEntity)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityEnchantmentTable
+_BEGIN_REGISTER_CLASS(TileEntityEnchantmentTable)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(getName, TileEntityEnchantmentTable::getName)
+_CLASSREGISTER_AddMember(hasCustomName, TileEntityEnchantmentTable::hasCustomName)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityEnchantmentTable::readFromNBT)
+_CLASSREGISTER_AddMember(setCustomName, TileEntityEnchantmentTable::setCustomName)
+_CLASSREGISTER_AddMember(updateEntity, TileEntityEnchantmentTable::updateEntity)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityEnchantmentTable::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityEndPortal
+_BEGIN_REGISTER_CLASS(TileEntityEndPortal)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddCtor()
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityEnderChest
+_BEGIN_REGISTER_CLASS(TileEntityEnderChest)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(closeChest, TileEntityEnderChest::closeChest)
+_CLASSREGISTER_AddMember(invalidate, TileEntityEnderChest::invalidate)
+_CLASSREGISTER_AddMember(isUseableByPlayer, TileEntityEnderChest::isUseableByPlayer)
+_CLASSREGISTER_AddMember(openChest, TileEntityEnderChest::openChest)
+_CLASSREGISTER_AddMember(receiveClientEvent, TileEntityEnderChest::receiveClientEvent)
+_CLASSREGISTER_AddMember(updateEntity, TileEntityEnderChest::updateEntity)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityMobSpawner
+_BEGIN_REGISTER_CLASS(TileEntityMobSpawner)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityMobSpawner::readFromNBT)
+_CLASSREGISTER_AddMember(receiveClientEvent, TileEntityMobSpawner::receiveClientEvent)
+_CLASSREGISTER_AddMember(updateEntity, TileEntityMobSpawner::updateEntity)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityMobSpawner::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityNote
+_BEGIN_REGISTER_CLASS(TileEntityNote)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(changePitch, TileEntityNote::changePitch)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityNote::readFromNBT)
+_CLASSREGISTER_AddMember(triggerNote, TileEntityNote::triggerNote)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityNote::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityPiston
+_BEGIN_REGISTER_CLASS(TileEntityPiston)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddCtor(int , int , int , bool , bool )
+_CLASSREGISTER_AddMember(clearPistonTileEntity, TileEntityPiston::clearPistonTileEntity)
+_CLASSREGISTER_AddMember(getBlockMetadata, TileEntityPiston::getBlockMetadata)
+_CLASSREGISTER_AddMember(getOffset, TileEntityPiston::getOffset)
+_CLASSREGISTER_AddMember(getOffsetX, TileEntityPiston::getOffsetX)
+_CLASSREGISTER_AddMember(getOffsetY, TileEntityPiston::getOffsetY)
+_CLASSREGISTER_AddMember(getOffsetZ, TileEntityPiston::getOffsetZ)
+_CLASSREGISTER_AddMember(getPistonOrientation, TileEntityPiston::getPistonOrientation)
+_CLASSREGISTER_AddMember(getProgress, TileEntityPiston::getProgress)
+_CLASSREGISTER_AddMember(getStoredBlockID, TileEntityPiston::getStoredBlockID)
+_CLASSREGISTER_AddMember(isExtending, TileEntityPiston::isExtending)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityPiston::readFromNBT)
+_CLASSREGISTER_AddMember(shouldRenderHead, TileEntityPiston::shouldRenderHead)
+_CLASSREGISTER_AddMember(updateEntity, TileEntityPiston::updateEntity)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityPiston::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntityRecordPlayer
+_BEGIN_REGISTER_CLASS(TileEntityRecordPlayer)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(getRecord, TileEntityRecordPlayer::getRecord)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntityRecordPlayer::readFromNBT)
+_CLASSREGISTER_AddMember(setRecord, TileEntityRecordPlayer::setRecord)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntityRecordPlayer::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntitySign
+_BEGIN_REGISTER_CLASS(TileEntitySign)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(getPlayer, TileEntitySign::getPlayer)
+_CLASSREGISTER_AddMember(isEditable, TileEntitySign::isEditable)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntitySign::readFromNBT)
+_CLASSREGISTER_AddMember(setEditable, TileEntitySign::setEditable)
+_CLASSREGISTER_AddMember(setPlayer, TileEntitySign::setPlayer)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntitySign::writeToNBT)
+_CLASSREGISTER_AddMember(getText, TileEntitySign::getText)
+_CLASSREGISTER_AddMember(setText, TileEntitySign::setText)
+_CLASSREGISTER_AddMember(clearAllTexts, TileEntitySign::clearAllTexts)
+_END_REGISTER_CLASS()
+
+
+
+
+// Register Class TileEntitySkull
+_BEGIN_REGISTER_CLASS(TileEntitySkull)
+_CLASSREGISTER_AddBaseClass(TileEntity)
+_CLASSREGISTER_AddCtor()
+_CLASSREGISTER_AddMember(getExtraType, TileEntitySkull::getExtraType)
+_CLASSREGISTER_AddMember(getSkullRotation, TileEntitySkull::getSkullRotation)
+_CLASSREGISTER_AddMember(getSkullType, TileEntitySkull::getSkullType)
+_CLASSREGISTER_AddMember(readFromNBT, TileEntitySkull::readFromNBT)
+_CLASSREGISTER_AddMember(setSkullRotation, TileEntitySkull::setSkullRotation)
+_CLASSREGISTER_AddMember(setSkullType, TileEntitySkull::setSkullType)
+_CLASSREGISTER_AddMember(writeToNBT, TileEntitySkull::writeToNBT)
+_END_REGISTER_CLASS()
+
+
+
+

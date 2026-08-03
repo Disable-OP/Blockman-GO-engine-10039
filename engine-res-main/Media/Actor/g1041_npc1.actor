@@ -1,0 +1,203 @@
+<?xml version = "1.0" encoding = "GB2312"?>
+<ActorTemplates>
+	<ActorTemplate name="g1041_npc1.actor" Originalscale="1 1 1" Skeleton="g1041_npc_01.skel" AttackScale="1" TextHeight="0" IsShowShadow="true" WoundBone="" WoundAngle="25" SelectedRingSize="1" SoundName1="" SoundName2="" SoundName3="" SoundName4="" SoundName5="" SoundFileNum="0" Volume="0.8" MinDistance="1" MaxDistance="16" IntervalTime="2" Alpha="1">
+		<BodyParts>
+			<BodyPart MasterName="body" SlaveName="1" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_npc_01_limbs.skin" ChangeColor = "2.10195e-44 9.08041e-43 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+				<StaticMesh>
+					<FileName value="g1041_npc_01_body.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="g1041_npc_01_nose.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="2" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_npc_03_limbs.skin" ChangeColor = "2.10195e-44 2.9133e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+				<StaticMesh>
+					<FileName value="g1041_npc_03_body.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="g1041_npc_03_hat.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="g1041_npc_03_nose.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="3" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_npc_04_hat.skin" ChangeColor = "2.10195e-44 4.5276e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+				<Skin MeshName = "g1041_npc_04_limbs.skin" ChangeColor = "2.10195e-44 5.53933e-42 2.29589e-39 0" UVSpeed = "0 0">
+				</Skin>
+				<StaticMesh>
+					<FileName value="g1041_npc_04_body.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="g1041_npc_04_nose.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="4" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_npc_05_limbs.skin" ChangeColor = "2.10195e-44 5.90647e-42 8.26521e-40 0" UVSpeed = "0 0">
+				</Skin>
+				<StaticMesh>
+					<FileName value="g1041_npc_05_body.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="5" DefaultUse="false" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<Skin MeshName = "g1041_npc_06_limbs.skin" ChangeColor = "2.10195e-44 6.6898e-42 1.4013e-45 0" UVSpeed = "0 0">
+				</Skin>
+				<StaticMesh>
+					<FileName value="g1041_npc_06_body.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="0"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="1"/>
+				</StaticMesh>
+			</BodyPart>
+			<BodyPart MasterName="body" SlaveName="6" DefaultUse="true" EdgeColor="1 1 1 1" ColorParams="1 1 1 1" Group="">
+				<StaticMesh>
+					<FileName value="g1041_npc_fly_ear.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="1.2"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="2"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="g1041_npc_fly_hair.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="1.2"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="2"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="g1041_npc_fly_misc.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="1.2"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="2"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="g1041_npc_fly_nose.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="1.2"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="2"/>
+				</StaticMesh>
+				<StaticMesh>
+					<FileName value="g1041_npc_fly_body.mesh"/>
+					<SocketName value="Bone009"/>
+					<Position_X value="0"/>
+					<Position_Y value="1.2"/>
+					<Position_Z value="0"/>
+					<yaw value="0"/>
+					<pitch value="0"/>
+					<roll value="0"/>
+					<scale value="2"/>
+				</StaticMesh>
+			</BodyPart>
+		</BodyParts>
+		<Skills>
+			<Skill Name="idle" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "g1041_npc_01_idle.anim" BeginTime = "0" Times = "-1" Length = "2.033" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+				<ActorScaleChange  beginScale = "1" endScale = "1" >
+				</ActorScaleChange>
+			</Skill>
+			<Skill Name="wave" EnableWound="false" UserDefineTime="-2" TextMode="0">
+				<Animation Name = "g1041_npc_01_wave.anim" BeginTime = "0" Times = "-1" Length = "2.033" FadeTime = "0.25" Channel = "" TimeScale = "1">
+				</Animation>
+				<ActorScaleChange  beginScale = "1" endScale = "1" >
+				</ActorScaleChange>
+			</Skill>
+		</Skills>
+		<Anims>
+				<Anim Name="g1041_npc_01_idle.anim"/>
+				<Anim Name="g1041_npc_01_wave.anim"/>
+		</Anims>
+	</ActorTemplate>
+</ActorTemplates>
