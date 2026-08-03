@@ -128,6 +128,34 @@ void C2SInitPacketHandles::handlePacket(std::shared_ptr<ClientPeer>& clientPeer,
 		sender->sendGameInfo(clientPeer->getRakssid(), pPlayer->entityId, adjustPos,
 			CraftingManager::Instance()->getRecipeNameList(), pworld->getWorldInfo().isTimeStopped(), pPlayer->m_sex, Server::Instance()->getGameType(), pPlayer->m_defaultIdle);
 
+		// Server-authoritative worldgen: send the client the world's
+		// spawn point + world type + dimension BEFORE any chunk data.
+		// The client uses this to set up its WorldClient spawn location
+		// (overriding the local hardcoded seed) and to know whether to
+		// expect chunk data packets from the server.
+		{
+			auto cfg = Server::Instance()->getConfig();
+			auto s2cWorldInfo = LORD::make_shared<S2CPacketWorldInfo>();
+			// Hash the seed — the raw seed never leaves the server.
+			// (Simple FNV-1a; collision-resistant enough for this purpose.)
+			uint64_t seedHash = 14695981039346656037ULL;
+			uint64_t seedBits = (uint64_t)pworld->getSeed();
+			for (int b = 0; b < 64; b += 8)
+			{
+				seedHash ^= (seedBits >> b) & 0xff;
+				seedHash *= 1099511628211ULL;
+			}
+			s2cWorldInfo->m_worldSeedHash = (ui64)seedHash;
+			s2cWorldInfo->m_spawnX = adjustPos.x;
+			s2cWorldInfo->m_spawnY = adjustPos.y;
+			s2cWorldInfo->m_spawnZ = adjustPos.z;
+			s2cWorldInfo->m_gameType  = (ui8)Server::Instance()->getClientGameType();
+			s2cWorldInfo->m_worldType = (ui8)(cfg.worldType & 0xff);
+			s2cWorldInfo->m_dimension = (ui8)0;  // overworld
+			s2cWorldInfo->encode();
+			Server::Instance()->getNetwork()->sendPacket(s2cWorldInfo, clientPeer->getRakssid(), /*reliable=*/true);
+		}
+
 		if (attrExisted) {
 			sender->sendUserAttr(clientPeer->getRakssid(), pPlayer->entityId, attrInfo);
 

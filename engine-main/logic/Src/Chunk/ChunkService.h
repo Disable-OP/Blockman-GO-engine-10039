@@ -57,6 +57,17 @@ namespace BLOCKMAN
 			m_cache.setCenter(x, z);
 		}
 
+		// Server-authoritative worldgen: inject a chunk that arrived over
+		// the network (S2CPacketChunkData on the client). Adds it to the
+		// cache and runs prepareChunk so the renderer picks it up. Safe
+		// to call from any thread — the cache uses a mutex internally.
+		void injectChunk(const ChunkPtr& chunk)
+		{
+			if (!chunk || chunk->isNonexistent()) return;
+			m_cache.add(chunk);
+			prepareChunk(chunk);
+		}
+
 		void reset()
 		{
 			m_cache.setCenter(0, 0);
@@ -104,6 +115,14 @@ namespace BLOCKMAN
 
 	protected:
 		virtual void prepareChunk(const ChunkPtr& chunk);
+
+		// Server-authoritative worldgen hook: called by getChunk() when
+		// the local provider returns a NonexistentChunk (i.e., the chunk
+		// is not on disk). The base-class default is a no-op. The client
+		// overrides this to send C2SRequestChunk to the server; the
+		// server replies async with S2CPacketChunkData, which the client
+		// injects via injectChunk().
+		virtual void onChunkMiss(int /*x*/, int /*z*/) {}
 
 	private:
 		bool m_supportAsync = true;

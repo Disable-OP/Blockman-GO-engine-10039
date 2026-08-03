@@ -2,6 +2,7 @@
 #include "ServerWorldProvider.h"
 #include "Blockman/Chunk/ChunkServiceServer.h"
 #include "Blockman/Chunk/ChunkReadableStorageFileServer.h"
+#include "Chunk/ChunkProviderCustom.h"
 #include "WorldServerListener.h"
 #include "ServerShop.h"
 
@@ -29,6 +30,15 @@
 #include "Blockman/World/BlockFruitsManager.h"
 #include "Setting/SkillSetting.h"
 #include "LuaRegister/Template/TableVisitor.h"
+
+// Custom world-type value. Lives in the "extended" range so it does not
+// collide with vanilla TERRAIN_TYPE_* values (0..3). Picked up by
+// ServerWorldProviderSurface::createChunkGenerator() to return
+// ChunkProviderCustom (sky islands).
+namespace {
+constexpr int TERRAIN_TYPE_CUSTOM = 100;
+}
+
 namespace BLOCKMAN
 {
 
@@ -136,6 +146,53 @@ ServerWorld *ServerWorld::createWorld(const String& name)
 	return pServerWorld;
 }
 
+ServerWorld *ServerWorld::createWorld(const String& name, int64_t worldSeed, int worldType)
+{
+	// Pick the seed: caller-supplied if non-zero, else the built-in default.
+	// The default is intentionally NOT zero — a zero seed produces a
+	// pathological world (no random scatter), so we substitute a known
+	// interesting one.
+	i64 seed = (worldSeed != 0) ? worldSeed : test_rand[testIndex];
+
+	// Map our extended worldType values onto the TERRAIN_TYPE enum that
+	// WorldSettings understands. TERRAIN_TYPE_CUSTOM is mapped to
+	// TERRAIN_TYPE_DEFAULT here — the actual custom-generator dispatch
+	// happens in ServerWorldProviderSurface::createChunkGenerator()
+	// (which checks worldObj->getWorldInfo().getTerrainType()).
+	// We stash the CUSTOM marker by passing it through WorldSettings as
+	// the "generateOptions" string — a hack, but it survives the path
+	// from here to the provider without touching WorldInfo's enum.
+	TERRAIN_TYPE terrainType = TERRAIN_TYPE_DEFAULT;
+	String generatorOptions;
+	if (worldType == TERRAIN_TYPE_CUSTOM)
+	{
+		terrainType = TERRAIN_TYPE_DEFAULT;   // base type — provider checks options
+		generatorOptions = "custom";           // signal to provider
+	}
+	else if (worldType >= 0 && worldType < TERRAIN_TYPE_COUNT)
+	{
+		terrainType = (TERRAIN_TYPE)worldType;
+	}
+
+	WorldSettings worldSetting(seed, GAME_TYPE_SURVIVAL, false, false, terrainType);
+	if (!generatorOptions.empty())
+	{
+		worldSetting.func_82750_a(generatorOptions);
+	}
+
+	GameSettings  *gamesSetting = LordNew GameSettings();
+	WorldProvider *worldProvider = ServerWorldProvider::getProviderForDimension(0);
+
+	ServerWorld *pServerWorld = LordNew ServerWorld(name, worldProvider, worldSetting, gamesSetting->getLoadChunksRange());
+	pServerWorld->createChunkService(gamesSetting->getLoadChunksRange());
+	pServerWorld->m_gamesSetting = gamesSetting;
+
+	IWorldEventListener* listener = LordNew WorldServerListener(pServerWorld);
+	pServerWorld->addWorldListener(listener);
+
+	return pServerWorld;
+}
+
 void ServerWorld::destroy()
 {
 	for (auto i : m_worldListeners) {
@@ -150,7 +207,28 @@ void ServerWorld::destroy()
 ChunkService * ServerWorld::createChunkService(int loadRange)
 {
 	m_pChunkService = LordNew ChunkServiceServer(this);
-	m_pChunkService->useReadableStorage<ChunkReadableStorageFileServer>(this, Root::Instance()->getMapPath());
+
+	// Custom-world path: when the provider's generateOptions is the
+	// "custom" marker (set by ServerWorld::createWorld(name, seed, worldType)
+	// when RoomGameConfig::worldType == TERRAIN_TYPE_CUSTOM), wire the
+	// ChunkProviderCustom directly as the chunk provider. This means
+	// `ChunkService::getChunk(x, z)` will *generate* the chunk on demand
+	// instead of reading it from disk — exactly the "spawn in a new world"
+	// behaviour the user asked for. Storage is still Anvil region files so
+	// block edits are written to disk (they just don't get read back,
+	// because the provider is the generator, not the disk reader).
+	//
+	// Vanilla path: use the storage file as both provider and storage —
+	// unchanged from the original behaviour for non-custom world types.
+	if (m_provider && m_provider->generateOptions == "custom")
+	{
+		m_pChunkService->useChunkProvider<ChunkProviderCustom>(this, this->getSeed());
+		m_pChunkService->useChunkStorage<ChunkReadableStorageFileServer>(this, Root::Instance()->getMapPath());
+	}
+	else
+	{
+		m_pChunkService->useReadableStorage<ChunkReadableStorageFileServer>(this, Root::Instance()->getMapPath());
+	}
 	return m_pChunkService;
 }
 

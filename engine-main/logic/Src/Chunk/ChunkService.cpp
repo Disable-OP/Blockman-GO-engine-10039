@@ -20,6 +20,15 @@ namespace BLOCKMAN
 		{
 			chunk = m_chunkProvider->provideChunk(x, z);
 			LordAssert(chunk);
+			// Server-authoritative worldgen: if the local provider
+			// couldn't find the chunk (disk miss → NonexistentChunk),
+			// fire the onChunkMiss hook. On the client this sends
+			// C2SRequestChunk; on the server it's a no-op (the server
+			// IS the authority, so a miss means "doesn't exist").
+			if (chunk->isNonexistent())
+			{
+				onChunkMiss(x, z);
+			}
 			m_cache.add(chunk);
 			prepareChunk(chunk);
 		}

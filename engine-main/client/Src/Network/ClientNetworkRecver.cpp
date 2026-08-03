@@ -8,6 +8,7 @@
 #include "Network/S2CPacketHandles/S2CGamePacketHandles.h"
 #include "Network/S2CPacketHandles/S2CRanchPacketHandles.h"
 #include "Network/S2CPacketHandles/S2CBirdSimulatorPacketHandles.h"
+#include "Network/S2CPacketHandles/S2CChunkPacketHandles.h"
 #include "Network/protocol/AutoRegisterPacketS2C.h"
 #include "Network/S2CPacketDispatch.h"
 #include "Object/Root.h"
@@ -26,6 +27,7 @@ ClientNetworkRecver::ClientNetworkRecver()
 	m_packetDispatch->registerClass<S2CGamePacketHandles>();
 	m_packetDispatch->registerClass<S2CRanchPacketHandles>();
 	m_packetDispatch->registerClass<S2CBirdSimulatorPacketHandles>();
+	m_packetDispatch->registerClass<S2CChunkPacketHandles>();
 }
 
 void ClientNetworkRecver::recvPacket(std::shared_ptr<DataPacket> &packet)

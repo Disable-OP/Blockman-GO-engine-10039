@@ -1477,3 +1477,11 @@ void ClientPacketSender::sendBirdSetDress(i64 birdId, i32 dressType, i32 dressId
 	packet->dressId = dressId;
 	GameClient::CGame::Instance()->getNetwork()->sendPacket(packet, true);
 }
+
+void ClientPacketSender::sendRequestChunk(int32_t chunkX, int32_t chunkZ)
+{
+	auto packet = LORD::make_shared<C2SPacketRequestChunk>();
+	packet->m_chunkX = chunkX;
+	packet->m_chunkZ = chunkZ;
+	GameClient::CGame::Instance()->getNetwork()->sendPacket(packet, true);
+}

@@ -48,7 +48,13 @@ public class EchoesGLSurfaceView extends GLSurfaceView implements EnterMiniGameT
     // -------------------------------------------------------------------------
     private static final boolean LOCAL_MODE = true;
     private static final int LOCAL_SERVER_PORT = 19130;
-    private static final long LOCAL_WORLD_SEED = 0L;  // 0 → server's built-in test seed
+
+    // Whether each app launch should generate a brand-new world (random seed)
+    // or use a fixed seed (useful for testing / reproducibility).
+    // When true: a new java.util.Random().nextLong() seed is generated on
+    // every initGame() call. When false: LOCAL_WORLD_SEED_FIXED is used.
+    private static final boolean LOCAL_WORLD_RANDOM_SEED = true;
+    private static final long LOCAL_WORLD_SEED_FIXED = 0L;  // 0 → server's built-in default
 
     // ===========================================================
     // Constructors
@@ -354,16 +360,27 @@ public class EchoesGLSurfaceView extends GLSurfaceView implements EnterMiniGameT
             //      127.0.0.1:LOCAL_SERVER_PORT with a stub user/token.
             //   3. Invoke onEnterMiniGame directly with code=1.
             //
+            // When LOCAL_WORLD_RANDOM_SEED is true, a new random seed is
+            // generated on every launch — so each session is a NEW world
+            // with different terrain (sky islands in different shapes).
+            //
             // See docs/WORLDGEN.md and docs/ARCHITECTURE.md.
-            android.util.Log.i("EchoesGLSurfaceView", "LOCAL_MODE: starting in-process server on 127.0.0.1:" + LOCAL_SERVER_PORT);
+            long worldSeed = LOCAL_WORLD_RANDOM_SEED
+                    ? new java.util.Random().nextLong()
+                    : LOCAL_WORLD_SEED_FIXED;
+
+            android.util.Log.i("EchoesGLSurfaceView",
+                "LOCAL_MODE: starting in-process server on 127.0.0.1:" + LOCAL_SERVER_PORT
+                + " seed=" + worldSeed);
 
             String workDir = strRootPath;
-            ServerService.startInProcess(LOCAL_SERVER_PORT, workDir, LOCAL_WORLD_SEED);
+            ServerService.startInProcess(LOCAL_SERVER_PORT, workDir, worldSeed);
 
-            // Give the server a moment to bind the UDP socket. The client
-            // will retry the RakNet connect for ~10 seconds if it fails
-            // immediately, so a short sleep here is sufficient.
-            try { Thread.sleep(300); } catch (InterruptedException ignored) {}
+            // Give the server a moment to bind the UDP socket + generate the
+            // spawn chunk. The client will retry the RakNet connect for ~10
+            // seconds if it fails immediately, so a short sleep here is
+            // sufficient.
+            try { Thread.sleep(500); } catch (InterruptedException ignored) {}
 
             Dispatch localDispatch = new Dispatch();
             localDispatch.gAddr = "127.0.0.1:" + LOCAL_SERVER_PORT;

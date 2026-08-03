@@ -187,3 +187,117 @@ A future task will introduce a `LORD_SERVER` compile flag that excludes the enti
   `ClientPeer`, request chunks, assert the streamed `S2CChunkData` matches the snapshot.
 - **Client guard test**: the client build must fail to link if any `WorldGenerator/*.cpp` is
   referenced from `client/Src/`.
+
+## 9. Custom world type — TERRAIN_TYPE_CUSTOM (sky islands)
+
+The fork ships a **custom world generator** (`ChunkProviderCustom`) that produces a
+distinctive "sky islands" world: floating blobs of stone/grass/dirt at varying heights,
+separated by air, with no ocean and no bedrock floor. This is the default world type for
+the in-process LOCAL_MODE server.
+
+### 9.1 Why a custom generator
+
+The vanilla `ChunkProviderGenerate` (overworld) is great for the original matchmaking
+game, but it expects a full biome/structure pipeline that is not yet wired on the local
+server. `ChunkProviderCustom` is self-contained — it only needs `NoiseGeneratorOctaves`
+(no `BiomeGen`, no `MapGenerate`, no `StructureStart`) — so it works end-to-end on the
+phone today, and gives the user something visually distinct from the default overworld so
+they can immediately tell "this is the new custom world".
+
+### 9.2 Where it lives
+
+| File | Role |
+|---|---|
+| `engine-main/logic/Src/Chunk/ChunkProviderCustom.{h,cpp}` | The generator itself. Subclasses `IChunkProvider`. Uses 4-octave `NoiseGeneratorOctaves` for density + 2-octave for column height variation. |
+| `engine-main/server/src/Blockman/World/ServerWorldProvider.cpp` | `ServerWorldProviderSurface::createChunkGenerator()` returns `ChunkProviderCustom` when the world's `generateOptions` field is the string `"custom"`. |
+| `engine-main/server/src/Blockman/World/ServerWorld.cpp` | `createChunkService()` checks the same marker and wires `ChunkProviderCustom` directly as the chunk provider (instead of the disk reader). |
+| `engine-main/server/src/Server.cpp` | `Server::init()` reads `m_config.worldType`; when it's `100` (TERRAIN_TYPE_CUSTOM), it force-generates chunk (0,0) and probes for a safe spawn Y. |
+| `engine-main/server/src/ServerJni.cpp` | Stashes the Java-supplied `seed` into `RoomGameConfig::worldSeed` and sets `worldType = 100` by default. |
+| `engine-main/server/src/Network/RoomClient.h` | `RoomGameConfig` now has `int64_t worldSeed` and `int worldType` fields. |
+| `engine-main/client/Shells/Android/Blockmango/app/src/main/java/com/sandboxol/blockmango/EchoesGLSurfaceView.java` | `LOCAL_WORLD_RANDOM_SEED = true` — each launch generates a fresh random seed via `new java.util.Random().nextLong()`, so every session is a NEW world. |
+
+### 9.3 Configuration flow
+
+```
+Java: ServerService.nativeServerStart(port, workDir, seed)
+            │
+            ▼
+ServerJni.cpp: g_serverWorldSeed = seed
+               g_serverWorldType = 100 (TERRAIN_TYPE_CUSTOM)
+            │
+            ▼
+serverThreadMain(): cfg.worldSeed = g_serverWorldSeed.load()
+                    cfg.worldType = g_serverWorldType
+            │
+            ▼
+Server::init(cfg): m_config = cfg
+                   m_serverWorld = ServerWorld::createWorld(name, cfg.worldSeed, cfg.worldType)
+            │
+            ▼
+ServerWorld::createWorld(name, seed, 100):
+    WorldSettings settings(seed, ..., TERRAIN_TYPE_DEFAULT, ...)
+    settings.func_82750_a("custom")  // stash the marker
+    World* w = new ServerWorld(..., settings, ...)
+    // World ctor calls m_provider->registerWorld(this) which copies
+    // settings.getGenerateOptions() → m_provider->generateOptions == "custom"
+    w->createChunkService(loadRange)
+            │
+            ▼
+ServerWorld::createChunkService():
+    if (m_provider->generateOptions == "custom") {
+        m_pChunkService->useChunkProvider<ChunkProviderCustom>(this, this->getSeed());
+        m_pChunkService->useChunkStorage<ChunkReadableStorageFileServer>(this, mapPath);
+    } else {
+        m_pChunkService->useReadableStorage<ChunkReadableStorageFileServer>(this, mapPath);
+    }
+```
+
+### 9.4 Why we use the generator directly (not the disk reader)
+
+`ChunkService::useReadableStorage<T>()` sets `m_chunkProvider = T` AND `m_chunkStorage = T`.
+For the custom world type, we want chunks to be **generated fresh on each request**, not
+loaded from disk. So we split the two:
+- `useChunkProvider<ChunkProviderCustom>` — `getChunk(x, z)` always generates fresh
+- `useChunkStorage<ChunkReadableStorageFileServer>` — `saveChunk` still writes to disk
+
+This means block edits made during a session ARE persisted to disk, but they are NEVER
+read back (because the provider is the generator, not the disk reader). Effectively, every
+app launch produces a brand-new world — exactly what the user asked for. The disk writes
+are a harmless side effect (and could be turned off entirely by skipping `useChunkStorage`).
+
+### 9.5 Runtime chunk request flow (client ↔ server)
+
+```
+Client: Blockman::generateWorld() preloads 7×7 spawn-area chunks
+            │
+            ▼
+ChunkServiceClient::getChunk(x, z)
+    cache miss → m_chunkProvider->provideChunk(x, z)
+              → ChunkReadableStorageFileClient returns NonexistentChunk (no .mca file)
+    onChunkMiss(x, z) → ClientPacketSender::sendRequestChunk(x, z) → C2SPacketRequestChunk
+            │
+            ▼
+Server: C2SChunkPacketHandles::handlePacket(C2SPacketRequestChunk)
+    ChunkService::getChunk(x, z) → ChunkProviderCustom::provideChunk(x, z)
+    encodeChunkToBlob(chunk) → S2CPacketChunkData → sendPacket
+            │
+            ▼
+Client: S2CChunkPacketHandles::handlePacket(S2CPacketChunkData)
+    ZlibInputStream + deserialize<ChunkWithMeta> → Chunk*
+    ChunkService::injectChunk(chunkPtr) → cache + prepareChunk
+    Next getChunk(x, z) hits the cache
+```
+
+### 9.6 Seed propagation contract
+
+- The Java side generates a fresh `long worldSeed` on every `initGame()` call (when
+  `LOCAL_WORLD_RANDOM_SEED = true`).
+- The seed is passed via JNI to `nativeServerStart(port, workDir, seed)`.
+- The C++ side stashes it in `g_serverWorldSeed`, then copies it into `RoomGameConfig::worldSeed`.
+- `ServerWorld::createWorld(name, seed, worldType)` builds a `WorldSettings(seed, ...)`.
+- The `WorldSettings` seed flows through `WorldInfo::m_randomSeed` → `World::getSeed()`
+  → `ChunkProviderCustom::ChunkProviderCustom(world, seed)`.
+- The seed hash (FNV-1a) is sent to the client in `S2CPacketWorldInfo::m_worldSeedHash`
+  — the raw seed never leaves the server, so the client cannot reproduce the terrain
+  locally even if it wanted to.
+

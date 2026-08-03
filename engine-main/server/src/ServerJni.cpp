@@ -52,15 +52,22 @@ std::atomic<bool>             g_serverRunning{false};
 std::string                   g_serverWorkDir;
 int                           g_serverPort = 19130;
 
+// Anonymous-namespace holder for the seed the Java side handed us.
+// Set by nativeServerStart, read by serverThreadMain.
+std::atomic<int64_t> g_serverWorldSeed{0};
+int                  g_serverWorldType = 100;  // TERRAIN_TYPE_CUSTOM = sky islands
+
 // The server thread boots Server with a synthesised standalone config:
 //   - DISABLE_ROOM=1  (no external room server)
 //   - All HTTP endpoints stubbed to localhost:1 (server runs without any
 //     external HTTP services — connection refused, requests fail fast)
-//   - World seed: fixed default (override via nativeServerStart's seed arg)
+//   - World seed: from nativeServerStart's `seed` arg (or default if 0)
+//   - World type: TERRAIN_TYPE_CUSTOM (sky islands) by default
 //   - Map dir: <workDir>/world
 void serverThreadMain()
 {
-        LOGI("Server thread starting; port=%d workDir=%s", g_serverPort, g_serverWorkDir.c_str());
+        LOGI("Server thread starting; port=%d workDir=%s seed=%lld",
+                g_serverPort, g_serverWorkDir.c_str(), (long long)g_serverWorldSeed.load());
 
         try {
                 RoomGameConfig cfg;
@@ -93,6 +100,11 @@ void serverThreadMain()
                 cfg.redisDbIp = "";
                 cfg.redisPort = 0;
                 cfg.redisDbPassword = "";
+
+                // Custom world generation: pass the Java-supplied seed through
+                // to WorldSettings. Default type = sky islands (TERRAIN_TYPE_CUSTOM=100).
+                cfg.worldSeed = g_serverWorldSeed.load();
+                cfg.worldType = g_serverWorldType;
 
                 Server server;
                 server.init(cfg);
@@ -146,9 +158,10 @@ Java_com_sandboxol_blockmango_ServerService_nativeServerStart(
         g_serverWorkDir = wd ? wd : "/data/data/com.sandboxol.blockmango/files";
         env->ReleaseStringUTFChars(workDir, wd);
 
-        // seed is currently ignored — ServerWorld uses its own test_rand array.
-        // Wiring a custom seed through to WorldSettings is a future task.
-        (void)seed;
+        // Stash the seed for the server thread. 0 → use default test seed
+        // inside ServerWorld (preserves the old behaviour for callers that
+        // don't supply one).
+        g_serverWorldSeed.store((int64_t)seed);
 
         g_serverThread = std::unique_ptr<std::thread>(new std::thread(serverThreadMain));
         g_serverThread->detach();

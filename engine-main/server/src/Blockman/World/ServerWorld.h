@@ -88,8 +88,16 @@ public:
 	ServerWorld(const String& name, WorldProvider* _provider, const WorldSettings& settings, int loadRange);
 	virtual ~ServerWorld(void);
 
-	//static std::shared_ptr<ServerWorld> createWorld(const String & path);
+	// Original single-arg overload — preserved for callers that don't supply
+	// custom world-gen options (uses the built-in default seed + TERRAIN_TYPE_DEFAULT).
 	static ServerWorld * createWorld(const String & name);
+
+	// Config-driven overload: takes the seed + worldType from RoomGameConfig
+	// (which is what ServerJni.cpp sets from the Java side). When worldType ==
+	// TERRAIN_TYPE_CUSTOM (100), the world uses ChunkProviderCustom (sky
+	// islands). When worldSeed == 0, the built-in default seed is used.
+	static ServerWorld * createWorld(const String & name, int64_t worldSeed, int worldType);
+
 	void destroy();
 
 	ChunkService* createChunkService(int loadRange) override;

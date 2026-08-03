@@ -432,7 +432,48 @@ void Server::init(const RoomGameConfig& rgConfig)
 	m_tickThread->setPriority(ThreadPriority::HIGH);
 
 	String tmpStr = String(m_config.gameName.c_str());
-	m_serverWorld = ServerWorld::createWorld(tmpStr);
+	// Pass world seed + type from RoomGameConfig through to ServerWorld.
+	// For non-LOCAL_MODE servers (Linux/Win32 standalone), the config
+	// fields default to (0, TERRAIN_TYPE_DEFAULT) so behaviour is
+	// unchanged from the original single-arg createWorld() path.
+	m_serverWorld = ServerWorld::createWorld(tmpStr, m_config.worldSeed, m_config.worldType);
+
+	// For the custom world type (sky islands), the hardcoded spawn at
+	// (4, 60, -17) may land the player in mid-air or embedded in stone.
+	// Force-generate the spawn chunk and probe for a safe Y so the
+	// player actually stands on solid ground when they enter the world.
+	if (m_config.worldType == 100 /* TERRAIN_TYPE_CUSTOM */ && m_serverWorld && m_serverWorld->getChunkService())
+	{
+		auto chunkSvc = m_serverWorld->getChunkService();
+		// Force-load chunk (0, 0) — this runs ChunkProviderCustom and
+		// caches the result so the first client RequestChunk is fast.
+		auto chunk = chunkSvc->getChunk(0, 0);
+		if (chunk && !chunk->isNonexistent())
+		{
+			// Probe every column in chunk (0,0) — that's 16x16 = 256
+			// candidate spawn positions. Pick the first column whose
+			// top solid block is in a safe range (above bedrock, below
+			// the world ceiling). ChunkProviderCustom generates sky
+			// islands centred on y=64, so any column with a non-zero
+			// height value is a viable spawn.
+			int safeY = 0;
+			for (int dx = 0; dx < 16 && safeY == 0; ++dx)
+			{
+				for (int dz = 0; dz < 16 && safeY == 0; ++dz)
+				{
+					int h = m_serverWorld->getHeightValue(dx, dz);
+					if (h > 1 && h < 127)
+					{
+						m_initPos.x = dx;
+						m_initPos.y = h;     // stand on top of the highest block
+						m_initPos.z = dz;
+						safeY = h;
+					}
+				}
+			}
+			// If we found nothing, leave the default (4, 60, -17).
+		}
+	}
 
 	tmpStr = String(m_config.monitorAddr.c_str());
 	StringArray arr = StringUtil::Split(tmpStr, ":");

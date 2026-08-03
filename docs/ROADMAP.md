@@ -26,7 +26,7 @@ touched under `engine-main/` or `engine-res-main/`).
 
 ---
 
-## M1 — In-process server on Android + worldgen wiring  🚧
+## M1 — In-process server on Android + worldgen wiring  ✅
 
 **Goal:** The phone runs BOTH the client (`libBlockMan.so`) AND the server
 (`libGameServer.so`) in one APK. The server runs actual world generation. The
@@ -58,6 +58,18 @@ client connects to `127.0.0.1:19130` directly — no PC, no external tools.
       do NOT quarantine it.
 - [x] Add `.github/workflows/android-build.yml` with **`workflow_dispatch`
       only** (no push trigger) to conserve the 0.5 GB Actions storage quota.
+- [x] **Custom world generation**: wrote `ChunkProviderCustom` (sky islands)
+      and wired it as the default world type for LOCAL_MODE. See
+      [`docs/WORLDGEN.md` §9](WORLDGEN.md#9-custom-world-type--terrain_type_custom-sky-islands).
+- [x] **Full client ↔ server chunk pipeline**: client sends `C2SRequestChunk`
+      on cache miss; server generates via `ChunkProviderCustom`; client decodes
+      `S2CChunkData` and injects into cache. No more dead code paths.
+- [x] **Per-launch random seed**: each app launch produces a brand-new world
+      (configurable via `LOCAL_WORLD_RANDOM_SEED` in `EchoesGLSurfaceView.java`).
+- [x] **Safe spawn computation**: server force-generates chunk (0,0) and probes
+      for a solid block to stand on, instead of using a hardcoded (4, 60, -17).
+- [x] **`S2CPacketWorldInfo` sent on login**: client receives spawn pos + world
+      type + dimension + seed hash (raw seed never leaves the server).
 - [ ] First green CI run on `workflow_dispatch` — produces a signed debug APK.
 - [ ] Verify on a real device: install APK, launch, see terrain render.
 
@@ -69,6 +81,7 @@ client connects to `127.0.0.1:19130` directly — no PC, no external tools.
   in-process server. World terrain renders (proving the chunk pipeline works).
 - `grep -rn "throw std::logic_error" engine-main/server/src/Blockman/World/`
   returns no matches (the worldgen stub is gone).
+- Each app launch shows DIFFERENT terrain (random seed → different sky islands).
 
 ---
 

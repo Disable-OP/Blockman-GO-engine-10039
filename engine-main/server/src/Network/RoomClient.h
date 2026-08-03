@@ -58,6 +58,21 @@ public:
 
     int heartbeatInterval;
 	std::string gameRankParams;
+
+	// ---------------------------------------------------------------------
+	// World generation (added for in-process LOCAL_MODE server).
+	//
+	// worldSeed: 64-bit seed passed from Java (ServerService.nativeServerStart
+	//            → RoomGameConfig → Server::init → ServerWorld::createWorld →
+	//            WorldSettings → ChunkProviderCustom/Generate). When 0, the
+	//            server falls back to its built-in default seed.
+	//
+	// worldType: TERRAIN_TYPE_* value (see BM_TypeDef.h). TERRAIN_TYPE_CUSTOM
+	//            (=100) requests the sky-islands generator (ChunkProviderCustom).
+	//            Other values fall through to the vanilla providers.
+	// ---------------------------------------------------------------------
+	int64_t     worldSeed = 0;
+	int         worldType = 0;  // default = TERRAIN_TYPE_DEFAULT
 public:
 	void debugPrint() const;
 };

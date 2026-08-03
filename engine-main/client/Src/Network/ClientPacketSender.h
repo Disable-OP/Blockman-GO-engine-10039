@@ -219,6 +219,13 @@ public:
 	void sendBirdTask(i32 entityId, i32 taskId);
 	void sendBirdFeed(i64 birdId, i32 foodId, i32 num);
 	void sendBirdSetDress(i64 birdId, i32 dressType, i32 dressId);
+
+	// Server-authoritative world generation: ask the server for one chunk.
+	// Called by ChunkServiceClient when a cache miss would otherwise return
+	// NonexistentChunk (i.e., the local Anvil dir doesn't have the chunk).
+	// The server replies with S2CPacketChunkData, which the client-side
+	// S2CChunkPacketHandles decodes and injects into the chunk cache.
+	void sendRequestChunk(int32_t chunkX, int32_t chunkZ);
 };
 
 #endif

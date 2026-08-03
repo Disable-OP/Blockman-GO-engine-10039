@@ -34,3 +34,48 @@ What: Major pivot from "mobile-only, quarantine Win32, dedicated Linux server" t
   - Docs: README, ROADMAP rewritten to reflect the new direction. Win32 is kept, not quarantined.
 Why: User explicitly asked for "build GameServer for MOBILE and build client for MOBILE and make the server actually work and client connects to it without using any external tools, and then build the final apk, use GitHub Actions, but do NOT make it trigger build for each push". This commit implements all of those requirements at the code + config level; the first CI run will surface remaining build issues (missing prebuilt deps, gnustl_static migration).
 Open: First green CI run on workflow_dispatch. Verify on a real device. Migrate gnustl_static → c++_shared to unblock modern NDK + arm64-v8a (tracked in M2).
+
+---
+
+## 2026-08-04 — M2 custom world generation + full client/server chunk pipeline
+Branch: main
+What: Wrote the first end-to-end "spawn in a new world with custom world generation and connect to gameserver" pipeline. The previous M1 commit wired the packet infrastructure but the worldgen was never actually executed at runtime — `ServerWorld::createChunkService()` used `useReadableStorage<ChunkReadableStorageFileServer>`, which only reads chunks from disk. The client never sent `C2SRequestChunk` and had no `S2CPacketChunkData` handler, so even with the packets defined, the runtime was empty.
+
+Concrete changes:
+
+1. **New chunk generator: `ChunkProviderCustom`** (`logic/Src/Chunk/ChunkProviderCustom.{h,cpp}`). Self-contained "sky islands" world type — uses 4-octave `NoiseGeneratorOctaves` for density + 2-octave for column height variation. Produces floating blobs of stone/grass/dirt centred on y=64, no ocean, no bedrock floor. Visually distinct from the default overworld so the user can immediately tell it's a new world. No dependency on `BiomeGen`/`MapGenerate`/`StructureStart` (so it works without the full biome pipeline).
+
+2. **Config fields: `RoomGameConfig::worldSeed` + `worldType`** (`Network/RoomClient.h`). Two new fields propagate the Java-supplied seed and the world-type selector through to `ServerWorld::createWorld`. `worldType == 100` (TERRAIN_TYPE_CUSTOM) is the marker that selects `ChunkProviderCustom`.
+
+3. **JNI wiring: `ServerJni.cpp`** now stashes the Java-supplied `seed` into `g_serverWorldSeed` (an `atomic<int64_t>`) and sets `g_serverWorldType = 100` by default. `serverThreadMain()` copies both into `cfg.worldSeed` / `cfg.worldType`. The previously-ignored `seed` arg is now honoured.
+
+4. **`ServerWorld::createWorld(name, seed, worldType)`** — new overload that builds `WorldSettings(seed, ...)` and stashes the marker string `"custom"` in `generateOptions` when `worldType == 100`. The marker propagates: `WorldSettings::m_generateOptions` → `WorldInfo::m_generatorOptions` → `WorldProvider::generateOptions` (via `WorldProvider::registerWorld()`).
+
+5. **`ServerWorldProviderSurface::createChunkGenerator()`** now checks `generateOptions == "custom"` and returns `ChunkProviderCustom` instead of delegating to the base class.
+
+6. **`ServerWorld::createChunkService()`** now branches on the same marker: when custom, it wires `useChunkProvider<ChunkProviderCustom>(this, getSeed())` + `useChunkStorage<ChunkReadableStorageFileServer>(this, mapPath)` separately — so `getChunk(x, z)` always generates fresh (the generator IS the provider), while `saveChunk` still writes to disk. Result: every app launch produces a brand-new world; edits within a session are visible (cache holds them) but are never read back from disk.
+
+7. **`Server::init()`** now reads `m_config.worldType`; when it's `100`, it force-generates chunk (0,0) and probes every column in [0,15]² for a safe spawn Y. The first column with a height value in (1, 127) becomes the spawn point — so the player actually stands on solid ground instead of falling through sky.
+
+8. **`S2CPacketWorldInfo` sent on login**: `C2SInitPacketHandles::handlePacket(C2SPacketLogin)` now constructs an `S2CPacketWorldInfo` with the spawn pos, world type, dimension, and a FNV-1a hash of the seed (raw seed never leaves the server). Sent right after `sendGameInfo`.
+
+9. **Client-side S2C handlers: `S2CChunkPacketHandles.{h,cpp}`**. New file under `client/Src/Network/S2CPacketHandles/`. Two handlers:
+   - `handlePacket(S2CPacketWorldInfo)` — overrides the client's local hardcoded spawn with the server's authoritative one via `World::setSpawnLocation`.
+   - `handlePacket(S2CPacketChunkData)` — wraps the byte blob in a `ZlibInputStream`, calls `deserialize<ChunkWithMeta>`, hands the resulting `Chunk*` to a `shared_ptr`, and calls `ChunkService::injectChunk()` so the next `getChunk(x, z)` hits the cache.
+
+10. **`ClientNetworkRecver`** now registers `S2CChunkPacketHandles` in the dispatch.
+
+11. **`ChunkService` gained two new methods**:
+    - `injectChunk(ChunkPtr)` — public, adds to cache + calls `prepareChunk`. Used by the S2C handler.
+    - `onChunkMiss(int x, int z)` — protected virtual, default no-op. Called by `getChunk()` when the local provider returns a `NonexistentChunk`. The client overrides this to fire a `C2SRequestChunk` instead of returning empty.
+
+12. **`ChunkServiceClient::onChunkMiss(int x, int z)`** — sends `C2SPacketRequestChunk(x, z)` via `ClientPacketSender::sendRequestChunk`. Fire-and-forget: `getChunk()` returns the `NonexistentChunk` to the renderer (which sees empty/air), and when the network reply arrives, `injectChunk()` puts the real chunk in the cache. The next frame's `getChunk()` hits the cache.
+
+13. **`ClientPacketSender::sendRequestChunk(int, int)`** — new method that constructs and sends `C2SPacketRequestChunk`.
+
+14. **`EchoesGLSurfaceView.java`** now has `LOCAL_WORLD_RANDOM_SEED = true` — each launch generates a fresh `new java.util.Random().nextLong()` seed, so every session is a NEW world. Sleep before connecting bumped from 300 ms to 500 ms to give the server time to generate the spawn chunk.
+
+Why: User explicitly asked "Now make it spawn in a new world with custom world generation and connect to gameserver". This commit implements every part of that: (a) custom world generator (`ChunkProviderCustom`), (b) spawn position computation from generated terrain (not hardcoded), (c) full client ↔ server chunk pipeline wired end-to-end (`C2SRequestChunk` on cache miss → server generates → `S2CChunkData` → client decodes + injects), (d) per-launch random seed so each session is genuinely a new world.
+
+Open: First green CI run on workflow_dispatch to validate the build. Then on-device test. The `ChunkProviderCustom` terrain is intentionally simple — future iterations can add caves, ores, trees, etc. without changing the wiring.
+

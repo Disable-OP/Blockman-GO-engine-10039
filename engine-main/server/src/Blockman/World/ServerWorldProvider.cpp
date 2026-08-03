@@ -8,6 +8,7 @@
 #include "Chunk/ChunkProviderHell.h"
 #include "Chunk/ChunkProviderEnd.h"
 #include "Chunk/ChunkProviderFlat.h"
+#include "Chunk/ChunkProviderCustom.h"
 
 namespace BLOCKMAN
 {
@@ -45,8 +46,15 @@ IChunkProvider* ServerWorldProviderHell::createChunkGenerator()
 
 IChunkProvider* ServerWorldProviderSurface::createChunkGenerator()
 {
-	// Delegate to the base class — it picks ChunkProviderFlat vs
-	// ChunkProviderGenerate based on terrainType, which is exactly what we want.
+	// Custom world type (sky islands) — check the marker set by
+	// ServerWorld::createWorld() when worldType == TERRAIN_TYPE_CUSTOM.
+	if (generateOptions == "custom")
+	{
+		return LordNew ChunkProviderCustom(worldObj, worldObj->getSeed());
+	}
+
+	// Otherwise: delegate to the base class — it picks ChunkProviderFlat
+	// vs ChunkProviderGenerate based on terrainType.
 	return WorldProviderSurface::createChunkGenerator();
 }
 
