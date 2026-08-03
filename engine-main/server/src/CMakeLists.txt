@@ -209,6 +209,21 @@ file(GLOB_RECURSE SOURCE_FILES *.cpp *.c)
 # main.cpp from the Android build to avoid a duplicate-symbol link error.
 if(LORD_PLATFORM_ANDROID)
         list(FILTER SOURCE_FILES EXCLUDE REGEX "/main[.]cpp$")
+
+        # Build behaviac from source (vendored at server/dependencies/behaviac-src/).
+        # The prebuilt libbehaviac_gcc_release.a only exists for Linux x86_64; for
+        # Android we compile the behaviac source directly into libGameServer.so.
+        # The headers at server/dependencies/linux/behaviac/include/ are reused
+        # (they are platform-independent C++ headers).
+        set(BEHAVIAC_SRC_DIR "${CMAKE_CURRENT_SOURCE_DIR}/../dependencies/behaviac-src")
+        file(GLOB_RECURSE BEHAVIAC_SOURCES "${BEHAVIAC_SRC_DIR}/*.cpp")
+        # Exclude the MSVC-only (_vcc) variants — use the _gcc variants for clang.
+        list(FILTER BEHAVIAC_SOURCES EXCLUDE REGEX "_vcc[.]cpp$")
+        # Exclude the test/example files if any.
+        list(FILTER BEHAVIAC_SOURCES EXCLUDE REGEX "/test/")
+        list(APPEND SOURCE_FILES ${BEHAVIAC_SOURCES})
+        list(LENGTH BEHAVIAC_SOURCES BEHAVIAC_SOURCES_COUNT)
+        message(STATUS "Added ${BEHAVIAC_SOURCES_COUNT} behaviac source files from ${BEHAVIAC_SRC_DIR}")
 endif()
 
 set(ALL_FILES ${HEADER_FILES} ${SOURCE_FILES})
