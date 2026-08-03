@@ -112,6 +112,31 @@ jobs:
             zlib1g-dev libssl-dev \
             unzip wget
 
+      - name: Fix libtinfo.so.5 for NDK r17c clang
+        # NDK r17c's clang binary is linked against libtinfo.so.5, which
+        # Ubuntu 22.04 no longer ships (it has libtinfo.so.6). The clang
+        # binary only uses a handful of symbols that are ABI-compatible
+        # across the libtinfo 5/6 boundary, so a symlink works as a
+        # workaround. This is the standard fix for NDK r17c on modern Linux.
+        # See: https://github.com/android-ndk/ndk/issues/1153
+        run: |
+          # Find where libtinfo.so.6 lives on this runner.
+          LIBTINFO6=$(find /usr/lib /lib -name 'libtinfo.so.6*' 2>/dev/null | head -1)
+          if [ -z "$LIBTINFO6" ]; then
+            echo "ERROR: libtinfo.so.6 not found on the runner — cannot create libtinfo.so.5 symlink."
+            exit 1
+          fi
+          LIBTINFO5_LINK="${LIBTINFO6%/*}/libtinfo.so.5"
+          echo "Symlinking $LIBTINFO5_LINK -> $LIBTINFO6"
+          sudo ln -sf "$LIBTINFO6" "$LIBTINFO5_LINK"
+          sudo ldconfig
+          # Verify clang now loads.
+          $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --version || {
+            echo "clang still fails to load after libtinfo symlink:"
+            ldd $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/clang | grep -i "not found" || true
+            exit 1
+          }
+
       - name: Print environment
         run: |
           echo "=== Environment ==="
@@ -121,6 +146,8 @@ jobs:
           echo "BUILD_TYPE=$BUILD_TYPE"
           echo "=== ndk-build version ==="
           $NDK_ROOT/ndk-build --version || true
+          echo "=== clang version (NDK) ==="
+          $NDK_ROOT/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --version
           echo "=== cmake version ==="
           cmake --version
           echo "=== Repo tree (depth 3) ==="
@@ -133,9 +160,10 @@ jobs:
       # Android.mk files that may need patching for modern NDK.
       # ----------------------------------------------------------------
       - name: Build third-party deps (ndk-build)
-        if: ${{ github.event.inputs.skip_deps != 'true' }}
+        if: ${{ github.event.inputs.skip_deps != true && github.event.inputs.skip_deps != 'true' }}
         working-directory: engine-main/engine/NDKBuild/DepBuild
         run: |
+          set -o pipefail
           echo "Building third-party deps for $ABI..."
           $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee deps-build.log
           echo "=== Deps build artifacts ==="
@@ -147,6 +175,7 @@ jobs:
       - name: Build engine core (ndk-build)
         working-directory: engine-main/engine/NDKBuild
         run: |
+          set -o pipefail
           echo "Building engine core for $ABI..."
           $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee engine-build.log
           find . -name "*.a" | head -20
@@ -157,6 +186,7 @@ jobs:
       - name: Build shared libraries (ndk-build)
         working-directory: engine-main/libraries/ApkBuild
         run: |
+          set -o pipefail
           echo "Building shared libraries for $ABI..."
           $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee libs-build.log
           find . -name "*.a" | head -20
@@ -167,6 +197,7 @@ jobs:
       - name: Build client static lib (ndk-build)
         working-directory: engine-main/client/ApkBuild
         run: |
+          set -o pipefail
           echo "Building client static lib for $ABI..."
           $NDK_ROOT/ndk-build -B NDK_DEBUG=0 APP_ABI=$ABI APP_PLATFORM=android-14 APP_STL=gnustl_static 2>&1 | tee client-build.log
 
@@ -178,6 +209,7 @@ jobs:
       - name: Build server shared lib (libGameServer.so) via CMake
         working-directory: engine-main/server
         run: |
+          set -o pipefail
           mkdir -p build-android-$ABI
           cd build-android-$ABI
           cmake .. \
@@ -216,6 +248,7 @@ jobs:
       - name: Build APK (Gradle)
         working-directory: engine-main/client/Shells/Android/Blockmango
         run: |
+          set -o pipefail
           chmod +x gradlew
           ./gradlew assembleDebug --no-daemon --stacktrace 2>&1 | tee apk-build.log
           echo "=== APK artifacts ==="
