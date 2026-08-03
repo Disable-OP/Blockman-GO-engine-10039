@@ -14,6 +14,6 @@
     "ghcr.io/devcontainers/features/git:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "postCreateCommand": "echo 'postCreateCommand works!' && ls -la .devcontainer/ && bash .devcontainer/setup.sh 2>&1 | tail -50; echo 'setup.sh done with exit code: '$?; bash .devcontainer/auto_build.sh 2>&1 | tail -50; echo 'auto_build.sh done with exit code: '$?",
+  "postCreateCommand": "echo 'START' > .devcontainer/build_log.txt 2>&1; whoami >> .devcontainer/build_log.txt 2>&1; pwd >> .devcontainer/build_log.txt 2>&1; ls .devcontainer/ >> .devcontainer/build_log.txt 2>&1; sudo apt-get update -qq >> .devcontainer/build_log.txt 2>&1; echo 'APT DONE' >> .devcontainer/build_log.txt 2>&1; git add .devcontainer/build_log.txt && git -c user.name=Codespace -c user.email=cs@noreply.github.com commit -m 'postCreateCommand log' && git push origin main 2>&1 >> .devcontainer/build_log.txt; echo 'DONE' >> .devcontainer/build_log.txt",
   "forwardPorts": [5554, 5555, 19130]
 }
