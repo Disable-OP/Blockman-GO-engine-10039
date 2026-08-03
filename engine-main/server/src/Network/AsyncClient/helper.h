@@ -3,7 +3,7 @@
 
 #include "CoreDef.h"
 
-#if (LORD_PLATFORM == LORD_PLATFORM_LINUX)
+#if (LORD_PLATFORM == LORD_PLATFORM_LINUX || LORD_PLATFORM == LORD_PLATFORM_ANDROID)
 #include "buffer.h"
 
 namespace vcs
