@@ -2,7 +2,7 @@
 #define ASYNC_CLIENT_H
 
 #include "CoreDef.h"
-#if(LORD_PLATFORM == LORD_PLATFORM_LINUX)
+#if(LORD_PLATFORM == LORD_PLATFORM_LINUX || LORD_PLATFORM == LORD_PLATFORM_ANDROID)
 #include <sys/epoll.h>
 #endif
 
@@ -17,7 +17,7 @@ public:
     virtual ~AsyncClientCallback(){}
 };
 
-#if(LORD_PLATFORM == LORD_PLATFORM_LINUX || LORD_PLATFORM == LORD_PLATFORM_MAC_OSX)
+#if(LORD_PLATFORM == LORD_PLATFORM_LINUX || LORD_PLATFORM == LORD_PLATFORM_MAC_OSX || LORD_PLATFORM == LORD_PLATFORM_ANDROID)
 
 class AsyncClient {
 public:
@@ -27,8 +27,8 @@ public:
     bool read(vcs::Buffer* buffer);
     bool write(const char* data, size_t count);
     void dispatch();
-	std::string getHost() { return m_host; }
-	unsigned short getPort() { return m_port; }
+        std::string getHost() { return m_host; }
+        unsigned short getPort() { return m_port; }
 
 private:
     void _connect();
@@ -62,25 +62,25 @@ public:
     bool read(vcs::Buffer* buffer);
     bool write(const char* data, size_t count);
     void dispatch();
-	std::string getHost() { return m_host; }
-	unsigned short getPort() { return m_port; }
+        std::string getHost() { return m_host; }
+        unsigned short getPort() { return m_port; }
 
 private:
-	bool _write(int fd, vcs::Buffer* buffer);
-	bool _read(int fd, vcs::Buffer* buffer);
+        bool _write(int fd, vcs::Buffer* buffer);
+        bool _read(int fd, vcs::Buffer* buffer);
 
 private:
-	std::string m_host;
-	unsigned short m_port;
-	AsyncClientCallback* m_callback = nullptr;
+        std::string m_host;
+        unsigned short m_port;
+        AsyncClientCallback* m_callback = nullptr;
 
-	SOCKET      m_socketFd = INVALID_SOCKET;
+        SOCKET      m_socketFd = INVALID_SOCKET;
 
-	vcs::Buffer m_readBuffer;
-	vcs::Buffer m_writeBuffer;
+        vcs::Buffer m_readBuffer;
+        vcs::Buffer m_writeBuffer;
 
-	bool m_lastConnected = false;
-	bool m_connected = false;
+        bool m_lastConnected = false;
+        bool m_connected = false;
 };
 
 #endif

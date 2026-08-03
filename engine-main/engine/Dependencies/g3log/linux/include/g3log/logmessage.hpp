@@ -38,7 +38,15 @@ namespace g3 {
          return _file;
       }
       std::string line() const {
-         return std::to_string(_line);
+         // Fallback for gnustl_static (NDK r17c) which doesn't define
+         // std::to_string even with __GXX_EXPERIMENTAL_CXX0X__.
+         #if defined(__ANDROID__) && !defined(_LIBCPP_VERSION)
+            char buf[16];
+            snprintf(buf, sizeof(buf), "%d", _line);
+            return std::string(buf);
+         #else
+            return std::to_string(_line);
+         #endif
       }
       std::string function() const {
          return _function;
