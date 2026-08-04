@@ -44,17 +44,24 @@ bool encodeChunkToBlob(BLOCKMAN::Chunk* chunk, LORD::vector<LORD::ui8>::type& ou
         // ZlibOutputStream takes vector<char>, not vector<ui8>. Use a temp
         // vector<char> then copy to the ui8 blob.
         LORD::vector<char>::type charBlob;
-        LORD::ZlibOutputStream os(charBlob);
-        try
         {
-                BLOCKMAN::serialize(&chunkWithMeta, os);
+                LORD::ZlibOutputStream os(charBlob);
+                try
+                {
+                        BLOCKMAN::serialize(&chunkWithMeta, os);
+                }
+                catch (const BLOCKMAN::InvalidNbtFormatError& e)
+                {
+                        LordLogError("Failed to encode chunk (%d, %d): %s", chunk->m_posX, chunk->m_posZ, e.what());
+                        return false;
+                }
+                catch (const std::exception& e)
+                {
+                        LordLogError("Exception encoding chunk (%d, %d): %s", chunk->m_posX, chunk->m_posZ, e.what());
+                        return false;
+                }
+                // os destructor runs here (end of scope) → flush() → data in charBlob
         }
-        catch (const BLOCKMAN::InvalidNbtFormatError& e)
-        {
-                LordLogError("Failed to encode chunk (%d, %d): %s", chunk->m_posX, chunk->m_posZ, e.what());
-                return false;
-        }
-        // Copy char → ui8 (same bits, different type).
         outBlob.assign(reinterpret_cast<const LORD::ui8*>(charBlob.data()),
                        reinterpret_cast<const LORD::ui8*>(charBlob.data()) + charBlob.size());
         return !outBlob.empty();
