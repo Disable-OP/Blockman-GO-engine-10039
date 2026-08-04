@@ -1,98 +1,3 @@
-#include "Server.h"
-
-#include "World/World.h"
-#include "World/GameSettings.h"
-#include "Chunk/Chunk.h"
-#include "Chunk/ChunkService.h"
-#include "World/Section.h"
-#include "World/WorldSettings.h"
-#include "World/WorldProvider.h"
-
-#include "Block/BlockManager.h"
-#include "WorldGenerator/BiomeGen.h"
-#include "WorldGenerator/GenLayer.h"
-#include "WorldGenerator/StructurePieces.h"
-#include "WorldGenerator/WorldGenerator.h"
-#include "Util/Concurrent/Promise.h"
-#include "Util/Facing.h"
-#include "TileEntity/TileEntity.h"
-#include "Entity/Attributes.h"
-#include "Entity/DamageSource.h"
-#include "Entity/Enchantment.h"
-#include "Entity/EntityLivingBase.h"
-#include "Item/Item.h"
-#include "Item/Items.h"
-#include "Item/Potion.h"
-#include "Item/PotionManager.h"
-#include "Stats/StatList.h"
-#include "Inventory/InventoryPlayer.h"
-#include "Item/ItemStack.h"
-#include "Block/Block.h"
-#include "Block/BlockManager.h"
-#include "Inventory/Container.h"
-#include "Inventory/CraftingManager.h"
-#include "TileEntity/TileEntityInventory.h"
-#include "Object/Root.h"
-
-#include "Network/ServerNetwork.h"
-#include "Network/GameCmdMgr.h"
-#include <iostream>
-
-#include "Global.h"
-#include "Util/CommonEvents.h"
-#include "Blockman/Entity/EntityPlayerMP.h"
-#include "Item/ItemCrafter.h"
-#include "Util/SecTimer.h"
-#include "Script/GameServerEvents.h"
-#include "RoomManager.h"
-#include "Script/ScriptManager.h"
-#include "Script/Setting/ScriptSetting.h"
-#include "Util/UThread.h"
-#include "Setting/MultiLanTipSetting.h"
-#include "Misc/IdMapping.h"
-#include "Block/BlockLoader.h"
-#include "GameVersionDefine.h"
-#include "DB/ServerDB.h"
-#include "DB/ServerRedisDB.h"
-#include "Setting/DoorSetting.h"
-#include "Setting/CarSetting.h"
-#include "Setting/LogicSetting.h"
-#include "Setting/GunSetting.h"
-#include "Setting/BulletClipSetting.h"
-#include "Setting/ActorSizeSetting.h"
-#include "Setting/GameRuleSetting.h"
-#include "Setting/MonsterSetting.h"
-#include "Setting/CropsSetting.h"
-#include "Setting/GunExtraAttrSetting.h"
-#include "Setting/GrenadeSetting.h"
-#include "Inventory/CoinManager.h"
-#include "Blockman/Trigger/TriggerModuleServer.h"
-#include "Behaviac/behaviac_generated/types/behaviac_types.h"
-#include "DB/MysqlHttpRequest.h"
-#include "DB/RedisHttpRequest.h"
-#include "Common.h"
-#include "Setting/RanchSetting.h"
-#include "Setting/HouseSetting.h"
-#include "Setting/BuildingSetting.h"
-#include "Setting/BulletinSetting.h"
-#include "Setting/FruitsSetting.h"
-#include "Util/NewRandom.h"
-
-#if LORD_PLATFORM == LORD_PLATFORM_LINUX
-#include <unistd.h>
-#include <string.h>
-#endif
-
-#define PROJECT_ROOT_PATH "blockmango-client"
-
-#define DISABLE_ROOM 0
-
-#define INIT_POS_X 4
-#define INIT_POS_Y 60
-#define INIT_POS_Z -17
-
-#if LORD_PLATFORM == LORD_PLATFORM_WINDOWS
-#define PATH_SEPARATOR '\\'
 #else
 #define PATH_SEPARATOR '/'
 #endif
@@ -329,7 +234,43 @@ void Server::unInitializeWorlModule()
 void Server::init(const RoomGameConfig& rgConfig)
 {
 	tickPerHeartBeat = rgConfig.heartbeatInterval;
-	m_config = rgConfig;
+	m_config.gameId = rgConfig.gameId;
+	m_config.gameName = rgConfig.gameName;
+	m_config.gameIp = rgConfig.gameIp;
+	m_config.serverPort = rgConfig.serverPort;
+	m_config.monitorAddr = rgConfig.monitorAddr;
+	m_config.gameType = rgConfig.gameType;
+	m_config.logDir = rgConfig.logDir;
+	m_config.scriptDir = rgConfig.scriptDir;
+	m_config.commonScriptDir = rgConfig.commonScriptDir;
+	m_config.mapDir = rgConfig.mapDir;
+	m_config.maxPlayers = rgConfig.maxPlayers;
+	m_config.mapID = rgConfig.mapID;
+	m_config.userConfig = rgConfig.userConfig;
+	m_config.propAddr = rgConfig.propAddr;
+	m_config.rankAddr = rgConfig.rankAddr;
+	m_config.rewardAddr = rgConfig.rewardAddr;
+	m_config.secret = rgConfig.secret;
+	m_config.isDebug = rgConfig.isDebug;
+	m_config.isChina = rgConfig.isChina;
+	m_config.testGameDataDir = rgConfig.testGameDataDir;
+	m_config.testScriptDir = rgConfig.testScriptDir;
+	m_config.testScriptCommonDir = rgConfig.testScriptCommonDir;
+	m_config.blockymodsUrl = rgConfig.blockymodsUrl;
+	m_config.blockmanUrl = rgConfig.blockmanUrl;
+	m_config.blockymodsRewardAddr = rgConfig.blockymodsRewardAddr;
+	m_config.dbIp = rgConfig.dbIp;
+	m_config.dbUsername = rgConfig.dbUsername;
+	m_config.dbPassword = rgConfig.dbPassword;
+	m_config.dbName = rgConfig.dbName;
+	m_config.redisDbIp = rgConfig.redisDbIp;
+	m_config.redisDbPassword = rgConfig.redisDbPassword;
+	m_config.redisPort = rgConfig.redisPort;
+	m_config.dbHttpServiceUrl = rgConfig.dbHttpServiceUrl;
+	m_config.heartbeatInterval = rgConfig.heartbeatInterval;
+	m_config.gameRankParams = rgConfig.gameRankParams;
+	m_config.worldSeed = rgConfig.worldSeed;
+	m_config.worldType = rgConfig.worldType;
 	m_initPos.x = INIT_POS_X;
 	m_initPos.y = INIT_POS_Y;
 	m_initPos.z = INIT_POS_Z;
@@ -353,8 +294,15 @@ void Server::init(const RoomGameConfig& rgConfig)
 	Root::RootCfg cfg;
 #if LORD_PLATFORM == LORD_PLATFORM_WINDOWS
 	cfg.rootPath = String(".\\");
-#else 
-	cfg.rootPath = String("./");
+#else
+	if (m_config.mapDir.length() > 0) {
+		cfg.rootPath = String(m_config.mapDir.c_str());
+		if (!PathUtil::IsEndWithSeperator(cfg.rootPath)) {
+			cfg.rootPath += "/";
+		}
+	} else {
+		cfg.rootPath = String("./");
+	}
 #endif
 	cfg.resCfgFile = cfg.rootPath + "resource.cfg";
 	cfg.bEditorMode = false;
@@ -429,9 +377,6 @@ void Server::init(const RoomGameConfig& rgConfig)
 	}
 #endif // LORD_PLATFORM
 
-	m_tickThread = LORD::make_shared<UThread>("ServerTickThread", &Server::tick, this);
-	m_tickThread->setPriority(ThreadPriority::HIGH);
-
 	String tmpStr = String(m_config.gameName.c_str());
 	// Pass world seed + type from RoomGameConfig through to ServerWorld.
 	// For non-LOCAL_MODE servers (Linux/Win32 standalone), the config
@@ -497,6 +442,8 @@ void Server::init(const RoomGameConfig& rgConfig)
 	std::string configPath = mapDir.c_str();
 	configPath += "/config.yml";
 	SCRIPT_EVENT::GameInitEvent::invoke(configPath.c_str(), "v1", m_serverWorld, m_config, &m_initPos);
+	m_tickThread = LORD::make_shared<UThread>("ServerTickThread", &Server::tick, this);
+	m_tickThread->setPriority(ThreadPriority::HIGH);
 
 #if LORD_PLATFORM == LORD_PLATFORM_WINDOWS
 	initTestAttr();

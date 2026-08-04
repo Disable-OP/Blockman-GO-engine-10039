@@ -9,7 +9,7 @@ namespace BLOCKMAN
 	{
 	public:
 		ChunkServiceServer(World* world)
-			: ChunkService(world, 650, false)
+			: ChunkService(world, 64, false)
 		{}
 		virtual bool chunkInCache(int x, int z) override
 		{

@@ -49,14 +49,14 @@ void C2SInitPacketHandles::handlePacket(std::shared_ptr<ClientPeer>& clientPeer,
 
 	LordLogInfo("m_gameToken____[%s] ====str____[%s]", packet->m_gameToken.c_str(), hash.c_str());
 
-	if (packet->m_gameToken != (String)hash.c_str())
-	{
-		ServerNetwork::Instance()->getSender()->sendLoginResult(clientPeer->getRakssid(), (int32_t)NETWORK_DEFINE::PacketLoginResult::emErrTokenWrong);
-		LordLogError("C2SPacketLogin token wrong %s!=%s, session id " U64FMT ", platform uid " U64FMT ", name %s",
-			packet->m_gameToken.c_str(), hash.c_str(), clientPeer->getRakssid(), packet->m_platformUserId, packet->m_playerName.c_str());
-
-		return;
-	}
+	if (Server::Instance()->getEnableRoom())
+        {
+                if (packet->m_gameToken != (String)hash.c_str())
+                {
+                        ServerNetwork::Instance()->getSender()->sendLoginResult(clientPeer->getRakssid(), (int32_t)NETWORK_DEFINE::PacketLoginResult::emErrTokenWrong);
+                        return;
+                }
+        }
 
 	if (Server::Instance()->getEnableRoom())
 	{

@@ -34,6 +34,7 @@ purpose:        Android JNI entry point for the in-process game server.
 #include <jni.h>
 #include <android/log.h>
 #include <thread>
+#include <pthread.h>
 #include <atomic>
 #include <memory>
 #include <string>
@@ -77,10 +78,12 @@ void serverThreadMain()
                 cfg.serverPort = g_serverPort;
                 cfg.monitorAddr = "";                 // empty → RoomClient is skipped (DISABLE_ROOM)
                 cfg.gameType = "";
-                cfg.testGameDataDir = g_serverWorkDir + "/game";
+                cfg.testGameDataDir = g_serverWorkDir;
+                cfg.mapDir = g_serverWorkDir;
+                cfg.logDir = g_serverWorkDir;
                 cfg.testScriptDir = "";                // no Lua scripts in standalone mode
                 cfg.testScriptCommonDir = "";
-                cfg.maxPlayers = 8;
+                cfg.maxPlayers = 1;
                 cfg.mapID = "";
                 cfg.userConfig = "users.json";
                 cfg.propAddr = "http://127.0.0.1:1";   // stub: connection refused
@@ -106,19 +109,16 @@ void serverThreadMain()
                 cfg.worldSeed = g_serverWorldSeed.load();
                 cfg.worldType = g_serverWorldType;
 
-                Server server;
-                server.init(cfg);
-                server.start();
+                Server* server = new Server();
+                server->init(cfg);
+                server->start();
                 g_serverRunning = true;
                 LOGI("Server running on 0.0.0.0:%d", g_serverPort);
-
-                // waitForStopEvent() blocks until setStopEvent() is called by
-                // nativeServerStop. This is the public API (tick() is private).
-                server.waitForStopEvent();
-
+                server->waitForStopEvent();
                 LOGI("Server stop event received; shutting down...");
-                server.stopThread();
-                server.unInit();
+                server->stopThread();
+                server->unInit();
+                delete server;
                 g_serverRunning = false;
                 LOGI("Server shut down cleanly");
         } catch (const std::exception& e) {
@@ -163,8 +163,20 @@ Java_com_sandboxol_blockmango_ServerService_nativeServerStart(
         // don't supply one).
         g_serverWorldSeed.store((int64_t)seed);
 
-        g_serverThread = std::unique_ptr<std::thread>(new std::thread(serverThreadMain));
-        g_serverThread->detach();
+        pthread_attr_t attr;
+        pthread_attr_init(&attr);
+        pthread_attr_setstacksize(&attr, 8 * 1024 * 1024);
+        pthread_t pthread_handle;
+        int rc = pthread_create(&pthread_handle, &attr,
+            [](void*) -> void* { serverThreadMain(); return nullptr; }, nullptr);
+        pthread_attr_destroy(&attr);
+        if (rc != 0) {
+            LOGE("pthread_create failed (rc=%d)", rc);
+            g_serverThread = std::unique_ptr<std::thread>(new std::thread(serverThreadMain));
+            g_serverThread->detach();
+        } else {
+            pthread_detach(pthread_handle);
+        }
 }
 
 // Stop the server. Calls Server::setStopEvent() which unblocks

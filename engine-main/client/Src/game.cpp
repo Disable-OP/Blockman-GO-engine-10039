@@ -102,6 +102,11 @@ namespace GameClient
 		, m_fps(60)
 		, m_debugMessageShown(true)
 #else
+		if (mapUrl == nullptr || mapUrl[0] == '\0')
+		{
+			onDownloadMapSuccess();
+		}
+		else if (!GameClient::MapManager::Instance()->mapExistsAndValid(mapName, mapNameReal))
 		, m_fps(30)
 		, m_debugMessageShown(false)
 #endif
@@ -166,6 +171,11 @@ namespace GameClient
 
 		//InitGame("test", startTestId, idTokenMap[startTestId].c_str(), "127.0.0.1", 19130, 123456789, "zh_CN", "g1001", "gameName-debug", "http://static.sandboxol.cn/mini-game-map/map-debug.zip", strRootPath, strConfigPath, width, height, hWnd, 1,pSoundEngine, strMapPath);
 #else
+		if (mapUrl == nullptr || mapUrl[0] == '\0')
+		{
+			onDownloadMapSuccess();
+		}
+		else if (!GameClient::MapManager::Instance()->mapExistsAndValid(mapName, mapNameReal))
 		InitGame("test", 4195328, "5283be6918214e267d870e2dfa1bcd54ad46f76d", "192.168.1.100", 19130, 123456789, "zh_CN",  "g1001","m101", "http://static.sandboxol.cn/mini-game-map/m101.zip", strRootPath, strConfigPath, width, height, hWnd,  1,pSoundEngine , strMapPath);
         
 		//InitGame("test", 4195328, "5283be6918214e267d870e2dfa1bcd54ad46f76d", "120.92.133.131", 19130, 123456789, "zh_CN", "g1001", "map-sample", "http://cloudatlasoft.u.qiniudn.com/map-sample.zip", strRootPath, strConfigPath, width, height, hWnd, 1, pSoundEngine, strMapPath);
@@ -215,6 +225,11 @@ namespace GameClient
 #if LORD_PLATFORM == LORD_PLATFORM_WINDOWS
 		WorldName = mapName;
 #else
+		if (mapUrl == nullptr || mapUrl[0] == '\0')
+		{
+			onDownloadMapSuccess();
+		}
+		else if (!GameClient::MapManager::Instance()->mapExistsAndValid(mapName, mapNameReal))
 		std::string mapNameStr(mapName);
 		WorldName = (mapNameStr + "/" + mapNameReal).c_str();
 #endif
@@ -295,6 +310,11 @@ namespace GameClient
 
 		if (false) // use the map in specified dir when develop
 #else
+		if (mapUrl == nullptr || mapUrl[0] == '\0')
+		{
+			onDownloadMapSuccess();
+		}
+		else if (!GameClient::MapManager::Instance()->mapExistsAndValid(mapName, mapNameReal))
 		if (!GameClient::MapManager::Instance()->mapExistsAndValid(mapName, mapNameReal))
 #endif
 		{
@@ -363,6 +383,11 @@ namespace GameClient
 		m_network->connect(addr.c_str(), port);
 		//m_network->connect("120.92.133.131", 13000);
 #else
+		if (mapUrl == nullptr || mapUrl[0] == '\0')
+		{
+			onDownloadMapSuccess();
+		}
+		else if (!GameClient::MapManager::Instance()->mapExistsAndValid(mapName, mapNameReal))
 		m_network->connect(m_gameIP.c_str()	, m_gamePort);
 #endif
 		m_bInited = true;
@@ -391,6 +416,11 @@ namespace GameClient
 #if LORD_PLATFORM == LORD_PLATFORM_WINDOWS
 		path = PathUtil::ConcatPath(Root::Instance()->getMapPath(), Blockman::Instance()->m_worldName, "dynamic");
 #else
+		if (mapUrl == nullptr || mapUrl[0] == '\0')
+		{
+			onDownloadMapSuccess();
+		}
+		else if (!GameClient::MapManager::Instance()->mapExistsAndValid(mapName, mapNameReal))
 		path = PathUtil::ConcatPath(Blockman::Instance()->m_worldName, "dynamic");
 #endif
 		ResourceGroupManager::Instance()->addResourceLocation(path.c_str(), "FileSystem", "General");
@@ -765,6 +795,11 @@ namespace GameClient
 				/*Sleep(maxFrameTime - g_framedt);*/
 				Sleep(maxFrameTime - g_framedt);
 #else
+		if (mapUrl == nullptr || mapUrl[0] == '\0')
+		{
+			onDownloadMapSuccess();
+		}
+		else if (!GameClient::MapManager::Instance()->mapExistsAndValid(mapName, mapNameReal))
 				usleep((maxFrameTime - g_framedt) * 1000);
 #endif
 			}
