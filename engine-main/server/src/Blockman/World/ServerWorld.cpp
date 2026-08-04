@@ -3,6 +3,7 @@
 #include "Blockman/Chunk/ChunkServiceServer.h"
 #include "Blockman/Chunk/ChunkReadableStorageFileServer.h"
 #include "Chunk/ChunkProviderCustom.h"
+#include "Chunk/ChunkProviderGenerate.h"
 #include "WorldServerListener.h"
 #include "ServerShop.h"
 
@@ -207,28 +208,11 @@ void ServerWorld::destroy()
 ChunkService * ServerWorld::createChunkService(int loadRange)
 {
 	m_pChunkService = LordNew ChunkServiceServer(this);
-
-	// Custom-world path: when the provider's generateOptions is the
-	// "custom" marker (set by ServerWorld::createWorld(name, seed, worldType)
-	// when RoomGameConfig::worldType == TERRAIN_TYPE_CUSTOM), wire the
-	// ChunkProviderCustom directly as the chunk provider. This means
-	// `ChunkService::getChunk(x, z)` will *generate* the chunk on demand
-	// instead of reading it from disk — exactly the "spawn in a new world"
-	// behaviour the user asked for. Storage is still Anvil region files so
-	// block edits are written to disk (they just don't get read back,
-	// because the provider is the generator, not the disk reader).
-	//
-	// Vanilla path: use the storage file as both provider and storage —
-	// unchanged from the original behaviour for non-custom world types.
-	if (m_provider && m_provider->generateOptions == "custom")
-	{
-		m_pChunkService->useChunkProvider<ChunkProviderCustom>(this, this->getSeed());
-		m_pChunkService->useChunkStorage<ChunkReadableStorageFileServer>(this, Root::Instance()->getMapPath());
-	}
-	else
-	{
-		m_pChunkService->useReadableStorage<ChunkReadableStorageFileServer>(this, Root::Instance()->getMapPath());
-	}
+	// Use ChunkProviderGenerate (vanilla overworld) as the chunk provider.
+	// This generates proper terrain with grass, trees, caves, ores, water.
+	// Storage is Anvil region files for block edit persistence.
+	m_pChunkService->useChunkProvider<ChunkProviderGenerate>(this, this->getSeed(), false);
+	m_pChunkService->useChunkStorage<ChunkReadableStorageFileServer>(this, Root::Instance()->getMapPath());
 	return m_pChunkService;
 }
 
