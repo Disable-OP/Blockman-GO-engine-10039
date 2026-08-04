@@ -3,6 +3,7 @@
 #include "World/World.h"
 #include "World/GameSettings.h"
 #include "Chunk/Chunk.h"
+#include "Chunk/ChunkService.h"
 #include "World/Section.h"
 #include "World/WorldSettings.h"
 #include "World/WorldProvider.h"
