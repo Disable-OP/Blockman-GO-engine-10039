@@ -80,7 +80,7 @@ void S2CChunkPacketHandles::handlePacket(std::shared_ptr<S2CPacketChunkData>& pa
         bool ok = false;
         try
         {
-                ZlibInputStream is(charBlob);
+                ZlibInputStream is(charBlob.data(), charBlob.size());
                 ok = deserialize(&chunkWithMeta, is);
         }
         catch (const StreamError& e)
