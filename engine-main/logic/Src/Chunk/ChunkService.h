@@ -61,12 +61,7 @@ namespace BLOCKMAN
 		// the network (S2CPacketChunkData on the client). Adds it to the
 		// cache and runs prepareChunk so the renderer picks it up. Safe
 		// to call from any thread — the cache uses a mutex internally.
-		void injectChunk(const ChunkPtr& chunk)
-		{
-			if (!chunk || chunk->isNonexistent()) return;
-			m_cache.add(chunk);
-			prepareChunk(chunk);
-		}
+		void injectChunk(const ChunkPtr& chunk);
 
 		void reset()
 		{
