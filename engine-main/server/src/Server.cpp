@@ -1,3 +1,98 @@
+#include "Server.h"
+
+#include "World/World.h"
+#include "World/GameSettings.h"
+#include "Chunk/Chunk.h"
+#include "Chunk/ChunkService.h"
+#include "World/Section.h"
+#include "World/WorldSettings.h"
+#include "World/WorldProvider.h"
+
+#include "Block/BlockManager.h"
+#include "WorldGenerator/BiomeGen.h"
+#include "WorldGenerator/GenLayer.h"
+#include "WorldGenerator/StructurePieces.h"
+#include "WorldGenerator/WorldGenerator.h"
+#include "Util/Concurrent/Promise.h"
+#include "Util/Facing.h"
+#include "TileEntity/TileEntity.h"
+#include "Entity/Attributes.h"
+#include "Entity/DamageSource.h"
+#include "Entity/Enchantment.h"
+#include "Entity/EntityLivingBase.h"
+#include "Item/Item.h"
+#include "Item/Items.h"
+#include "Item/Potion.h"
+#include "Item/PotionManager.h"
+#include "Stats/StatList.h"
+#include "Inventory/InventoryPlayer.h"
+#include "Item/ItemStack.h"
+#include "Block/Block.h"
+#include "Block/BlockManager.h"
+#include "Inventory/Container.h"
+#include "Inventory/CraftingManager.h"
+#include "TileEntity/TileEntityInventory.h"
+#include "Object/Root.h"
+
+#include "Network/ServerNetwork.h"
+#include "Network/GameCmdMgr.h"
+#include <iostream>
+
+#include "Global.h"
+#include "Util/CommonEvents.h"
+#include "Blockman/Entity/EntityPlayerMP.h"
+#include "Item/ItemCrafter.h"
+#include "Util/SecTimer.h"
+#include "Script/GameServerEvents.h"
+#include "RoomManager.h"
+#include "Script/ScriptManager.h"
+#include "Script/Setting/ScriptSetting.h"
+#include "Util/UThread.h"
+#include "Setting/MultiLanTipSetting.h"
+#include "Misc/IdMapping.h"
+#include "Block/BlockLoader.h"
+#include "GameVersionDefine.h"
+#include "DB/ServerDB.h"
+#include "DB/ServerRedisDB.h"
+#include "Setting/DoorSetting.h"
+#include "Setting/CarSetting.h"
+#include "Setting/LogicSetting.h"
+#include "Setting/GunSetting.h"
+#include "Setting/BulletClipSetting.h"
+#include "Setting/ActorSizeSetting.h"
+#include "Setting/GameRuleSetting.h"
+#include "Setting/MonsterSetting.h"
+#include "Setting/CropsSetting.h"
+#include "Setting/GunExtraAttrSetting.h"
+#include "Setting/GrenadeSetting.h"
+#include "Inventory/CoinManager.h"
+#include "Blockman/Trigger/TriggerModuleServer.h"
+#include "Behaviac/behaviac_generated/types/behaviac_types.h"
+#include "DB/MysqlHttpRequest.h"
+#include "DB/RedisHttpRequest.h"
+#include "Common.h"
+#include "Setting/RanchSetting.h"
+#include "Setting/HouseSetting.h"
+#include "Setting/BuildingSetting.h"
+#include "Setting/BulletinSetting.h"
+#include "Setting/FruitsSetting.h"
+#include "Util/NewRandom.h"
+
+#if LORD_PLATFORM == LORD_PLATFORM_LINUX
+#include <unistd.h>
+#include <string.h>
+#endif
+
+#define PROJECT_ROOT_PATH "blockmango-client"
+
+#define DISABLE_ROOM 1
+
+#define INIT_POS_X 4
+#define INIT_POS_Y 60
+#define INIT_POS_Z -17
+
+#if LORD_PLATFORM == LORD_PLATFORM_WINDOWS
+#define PATH_SEPARATOR '\\'
 #else
 #define PATH_SEPARATOR '/'
 #endif
@@ -421,11 +516,10 @@ void Server::init(const RoomGameConfig& rgConfig)
 		}
 	}
 
-	tmpStr = String(m_config.monitorAddr.c_str());
-	StringArray arr = StringUtil::Split(tmpStr, ":");
-
 	if (m_enableRoom)
 	{
+		String tmpStr = String(m_config.monitorAddr.c_str());
+		StringArray arr = StringUtil::Split(tmpStr, ":");
 		m_roomManager = LORD::make_shared<RoomManager>(std::string(arr[0].c_str()), StringUtil::ParseInt(arr[1]), m_config);
 		m_roomManager->tick();
 	}
