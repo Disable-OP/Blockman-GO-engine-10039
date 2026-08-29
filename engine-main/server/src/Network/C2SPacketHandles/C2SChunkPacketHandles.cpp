@@ -79,6 +79,15 @@ void C2SChunkPacketHandles::handlePacket(std::shared_ptr<ClientPeer>& clientPeer
         }
 
         auto chunkService = world->getChunkService();
+
+        // Server-authoritative worldgen, population step: decorate the chunk
+        // (trees, ores, plants...) BEFORE serializing it, so the client always
+        // receives a fully-populated chunk. populateChunk is a no-op when the
+        // chunk is already populated (flag persisted in Anvil NBT). This runs
+        // on the server tick thread (packet dispatch happens in
+        // ServerNetwork::logicTick), same as every other world mutation.
+        world->populateChunk(packet->m_chunkX, packet->m_chunkZ);
+
         auto chunk = chunkService->getChunk(packet->m_chunkX, packet->m_chunkZ);
         if (!chunk || chunk->isNonexistent())
         {
@@ -122,6 +131,12 @@ void C2SChunkPacketHandles::handlePacket(std::shared_ptr<ClientPeer>& clientPeer
                 LordLogWarning("C2SPacketRequestChunkBulk: odd coord count %zu from client %llu",
                         coords.size(), (unsigned long long)clientPeer->getRakssid());
                 return;
+        }
+
+        // Population step first — see handlePacket(C2SPacketRequestChunk).
+        for (size_t i = 0; i + 1 < coords.size(); i += 2)
+        {
+                world->populateChunk(coords[i], coords[i + 1]);
         }
 
         for (size_t i = 0; i + 1 < coords.size(); i += 2)

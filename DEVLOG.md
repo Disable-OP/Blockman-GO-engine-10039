@@ -14,6 +14,17 @@ Why: <milestone / issue reference, or short rationale>
 
 ---
 
+## 2026-08-29 — M3 stability + rendering/lighting fix + real world population
+Branch: main
+What: Fixed the three blockers reported from on-device testing:
+1. **Client rendering + lighting (root cause found)**: `S2CChunkPacketHandles` decoded network chunks with the base `ChunkWithMeta` binding, constructing base `Chunk` objects containing base `Section`s. Base `Section`'s light accessors are no-op (return 0 → pitch-black world), it has no visibility set, and `LightTransferThread`/`SectionRenderer` `static_pointer_cast<ChunkClient>` on it is UB → the random mid-game crashes. Now decodes with `ChunkClientWithMeta` (same binding the Anvil disk path uses) → `ChunkClient` + `SectionClient` with real light NibbleArrays. Also: after `injectChunk`, the whole 16×256×16 chunk column is now flagged for re-render via `World::markBlockRangeForRenderUpdate` (previously nothing ever marked injected sections dirty, so the chunk never appeared).
+2. **Connection instability / crashes**: (a) `ServerJni.cpp` got a proper startup state machine (IDLE→STARTING→RUNNING) — `nativeServerStart` is now idempotent; previously the "already running" guard only flipped after multi-second init, so the Reset button / re-init double-`new Server()` tripped `LordAssert(!ms_pSingleton)` → SIGABRT. `nativeServerIsRunning` now returns true only once the RakNet socket is bound. (b) Java side replaced the blind `Thread.sleep(500)` with a background readiness poll (up to 30 s) that only enters the game once the server reports RUNNING — no more racing the server's first-time world generation.
+3. **Actual world generation**: wired the missing population step — `ServerWorld::populateChunk(x,z)` decorates chunks (trees, ores, flowers, mushrooms, cacti...) via `BiomeDecorator` with the vanilla per-chunk seed mix, guarded by the persisted `TerrainPopulated` Anvil flag, requiring the +x/+z/+x+z neighbours (vanilla semantics). Called from the chunk-request handlers BEFORE serialization so the client always receives fully-populated chunks. Spawn selection now scans a pre-generated 3×3 chunk area for a grass/sand/dirt surface (any world type, previously gated on the dead custom-world marker and only probed chunk (0,0)). Periodic `saveAllChunks` flush every 600 ticks (~30 s) persists edits + decoration to Anvil region files. `ServerJni` default worldType is now `TERRAIN_TYPE_DEFAULT` (vanilla overworld) instead of the stale custom marker 100.
+Why: User reported broken client rendering/lighting, intermittent connect-then-crash, and that the server had no real world generation. All three root causes were traced end-to-end through the code; fixes verified by host-GCC syntax checks of every changed TU (server: ServerWorld.cpp, Server.cpp, C2SChunkPacketHandles.cpp; client: S2CChunkPacketHandles.cpp) — full validation via the manual CI APK build + on-device test.
+Open: Run the "Android Build (Manual)" workflow, install the APK, verify: spawn on grass, world is lit, trees/ores generate, no crash on Reset.
+
+---
+
 ## 2026-08-03 — M0 project bootstrap
 Branch: main
 What: Stood up the repo with README, docs (ARCHITECTURE, PROJECT_STRUCTURE, BUILD, WORLDGEN, ROADMAP), CONTRIBUTING, DEVLOG, NEXT_PROMPT, and a root .gitignore. No source under engine-main/ or engine-res-main/ was modified.

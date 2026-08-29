@@ -49,6 +49,13 @@ public class EchoesGLSurfaceView extends GLSurfaceView implements EnterMiniGameT
     private static final boolean LOCAL_MODE = true;
     private static final int LOCAL_SERVER_PORT = 19130;
 
+    // How long to wait for the in-process server to finish booting (engine
+    // init + block registry + spawn chunk worldgen) before connecting anyway
+    // and letting the client's RakNet retry logic take over. Generous on
+    // purpose — low-end phones can take several seconds for first-run
+    // resource extraction + world generation.
+    private static final long LOCAL_SERVER_TIMEOUT_MS = 30000L;
+
     // Whether each app launch should generate a brand-new world (random seed)
     // or use a fixed seed (useful for testing / reproducibility).
     // When true: a new java.util.Random().nextLong() seed is generated on
@@ -356,16 +363,22 @@ public class EchoesGLSurfaceView extends GLSurfaceView implements EnterMiniGameT
             //      127.0.0.1:LOCAL_SERVER_PORT. The server runs the actual
             //      world generation pipeline and is the authoritative source
             //      of every chunk the client renders.
-            //   2. Synthesize a Dispatch that points the client at
+            //   2. WAIT until the server reports it is running (its RakNet
+            //      socket is bound) — on a phone the server init (engine +
+            //      block registry + spawn chunk generation) can take several
+            //      seconds. The old blind `Thread.sleep(500)` raced this and
+            //      caused intermittent connect failures/crashes.
+            //   3. Synthesize a Dispatch that points the client at
             //      127.0.0.1:LOCAL_SERVER_PORT with a stub user/token.
-            //   3. Invoke onEnterMiniGame directly with code=1.
+            //   4. Invoke onEnterMiniGame directly with code=1.
             //
             // When LOCAL_WORLD_RANDOM_SEED is true, a new random seed is
             // generated on every launch — so each session is a NEW world
-            // with different terrain (sky islands in different shapes).
+            // with different terrain (mountains, caves, trees, oceans in
+            // different shapes).
             //
             // See docs/WORLDGEN.md and docs/ARCHITECTURE.md.
-            long worldSeed = LOCAL_WORLD_RANDOM_SEED
+            final long worldSeed = LOCAL_WORLD_RANDOM_SEED
                     ? new java.util.Random().nextLong()
                     : LOCAL_WORLD_SEED_FIXED;
 
@@ -373,26 +386,42 @@ public class EchoesGLSurfaceView extends GLSurfaceView implements EnterMiniGameT
                 "LOCAL_MODE: starting in-process server on 127.0.0.1:" + LOCAL_SERVER_PORT
                 + " seed=" + worldSeed);
 
-            String workDir = strRootPath;
-            ServerService.startInProcess(LOCAL_SERVER_PORT, workDir, worldSeed);
+            final String workDir = strRootPath;
+            final int serverPort = LOCAL_SERVER_PORT;
+            ServerService.startInProcess(serverPort, workDir, worldSeed);
 
-            // Give the server a moment to bind the UDP socket + generate the
-            // spawn chunk. The client will retry the RakNet connect for ~10
-            // seconds if it fails immediately, so a short sleep here is
-            // sufficient.
-            try { Thread.sleep(500); } catch (InterruptedException ignored) {}
+            // Poll server readiness on a dedicated background thread (never
+            // blocks the UI or GL thread). Timeout after LOCAL_SERVER_TIMEOUT_MS.
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    long deadline = System.currentTimeMillis() + LOCAL_SERVER_TIMEOUT_MS;
+                    boolean ready = false;
+                    while (System.currentTimeMillis() < deadline) {
+                        if (ServerService.isRunning()) { ready = true; break; }
+                        try { Thread.sleep(100); } catch (InterruptedException e) { return; }
+                    }
+                    if (!ready) {
+                        android.util.Log.e("EchoesGLSurfaceView",
+                            "LOCAL_MODE: server failed to become ready within "
+                            + LOCAL_SERVER_TIMEOUT_MS + "ms — connecting anyway (client will retry)");
+                    } else {
+                        android.util.Log.i("EchoesGLSurfaceView", "LOCAL_MODE: server ready, entering game");
+                    }
 
-            Dispatch localDispatch = new Dispatch();
-            localDispatch.gAddr = "127.0.0.1:" + LOCAL_SERVER_PORT;
-            localDispatch.name = "Player";
-            localDispatch.userId = 1L;
-            localDispatch.signature = "local-token";
-            localDispatch.timestamp = System.currentTimeMillis() / 1000L;
-            localDispatch.gameType = "g_local";
-            localDispatch.mapName = "local";
-            localDispatch.mapId = "local";
-            localDispatch.mapUrl = "";   // server generates chunks; no map download
-            onEnterMiniGame(1, localDispatch);
+                    Dispatch localDispatch = new Dispatch();
+                    localDispatch.gAddr = "127.0.0.1:" + serverPort;
+                    localDispatch.name = "Player";
+                    localDispatch.userId = 1L;
+                    localDispatch.signature = "local-token";
+                    localDispatch.timestamp = System.currentTimeMillis() / 1000L;
+                    localDispatch.gameType = "g_local";
+                    localDispatch.mapName = "local";
+                    localDispatch.mapId = "local";
+                    localDispatch.mapUrl = "";   // server generates chunks; no map download
+                    onEnterMiniGame(1, localDispatch);
+                }
+            }, "LocalServerReadyThread").start();
         } else {
             // Original path: matchmaking via external HTTP services.
             new EnterMiniGameTask(this).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR);
