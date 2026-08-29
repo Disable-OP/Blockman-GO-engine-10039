@@ -198,6 +198,15 @@ jobs:
           mkdir -p shots
           adb -s "$SER" logcat -d > shots/logcat-full.txt 2>/dev/null || true
           adb -s "$SER" logcat -d -b crash > shots/logcat-crash.txt 2>/dev/null || true
+          # Full tombstones: logcat only prints a truncated backtrace (1 frame
+          # when the stack is smashed). Redroid is userdebug → adb root works,
+          # and /data/tombstones has the full unwound backtrace + stack scan.
+          adb -s "$SER" root >/dev/null 2>&1 || true
+          sleep 3
+          adb -s "$SER" shell ls -t /data/tombstones 2>/dev/null | head -3 | while read -r ts; do
+            [ -n "$ts" ] && adb -s "$SER" pull "/data/tombstones/$ts" "shots/$ts" 2>/dev/null || true
+          done
+          ls -la shots/tombstone* 2>/dev/null || echo "no tombstones pulled"
           # App-relevant lines only (native crashes, our tags)
           grep -Ein "sandboxol|blockman|Echoes|ServerJni|GameServer|RakNet|Lord|Fatal|SIGSEGV|SIGABRT|tombstone|AndroidRuntime|backtrace|ANR in" \
             shots/logcat-full.txt > shots/app-log.txt 2>/dev/null || true
