@@ -56,10 +56,10 @@ public class EchoesGLSurfaceView extends GLSurfaceView implements EnterMiniGameT
     // resource extraction + world generation.
     private static final long LOCAL_SERVER_TIMEOUT_MS = 30000L;
 
-    // Whether each app launch should generate a brand-new world (random seed)
-    // or use a fixed seed (useful for testing / reproducibility).
-    // When true: a new java.util.Random().nextLong() seed is generated on
-    // every initGame() call. When false: LOCAL_WORLD_SEED_FIXED is used.
+    // Whether the FIRST world creation should use a random seed. The world
+    // now PERSISTS on disk (server writes Anvil region files + seed.txt), so
+    // on every later launch the server continues the saved world with its
+    // stamped seed — this flag only affects brand-new worlds.
     private static final boolean LOCAL_WORLD_RANDOM_SEED = true;
     private static final long LOCAL_WORLD_SEED_FIXED = 0L;  // 0 → server's built-in default
 

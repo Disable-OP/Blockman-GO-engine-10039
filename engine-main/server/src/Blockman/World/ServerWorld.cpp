@@ -2,6 +2,7 @@
 #include "ServerWorldProvider.h"
 #include "Blockman/Chunk/ChunkServiceServer.h"
 #include "Blockman/Chunk/ChunkReadableStorageFileServer.h"
+#include "Blockman/Chunk/ChunkProviderServerFile.h"   // disk-first / generate-on-miss provider
 #include "Chunk/ChunkProviderCustom.h"
 #include "Chunk/ChunkProviderGenerate.h"
 #include "WorldServerListener.h"
@@ -210,11 +211,16 @@ void ServerWorld::destroy()
 ChunkService * ServerWorld::createChunkService(int loadRange)
 {
         m_pChunkService = LordNew ChunkServiceServer(this);
-        // Use ChunkProviderGenerate (vanilla overworld) as the chunk provider.
-        // This generates proper terrain with grass, trees, caves, ores, water.
-        // Storage is Anvil region files for block edit persistence.
-        m_pChunkService->useChunkProvider<ChunkProviderGenerate>(this, this->getSeed(), false);
-        m_pChunkService->useChunkStorage<ChunkReadableStorageFileServer>(this, Root::Instance()->getMapPath());
+        // Authoritative server world source: DISK-FIRST, GENERATE-ON-MISS.
+        // ChunkProviderServerFile loads persisted chunks (player edits +
+        // previously populated terrain) from the Anvil region files, and only
+        // runs the real vanilla overworld generator (ChunkProviderGenerate —
+        // biome terrain, caves, ravines, surface) for chunks never generated
+        // before, persisting them immediately. One object serves as BOTH the
+        // provider and the storage so a single Anvil manager owns all I/O.
+        auto provider = LORD::make_shared<ChunkProviderServerFile>(
+                        this, Root::Instance()->getMapPath(), this->getSeed());
+        m_pChunkService->useProviderStorage(provider, provider);
         return m_pChunkService;
 }
 

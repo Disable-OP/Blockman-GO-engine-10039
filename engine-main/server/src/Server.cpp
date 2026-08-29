@@ -37,6 +37,7 @@
 #include "Network/ServerNetwork.h"
 #include "Network/GameCmdMgr.h"
 #include <iostream>
+#include <fstream>
 
 #include "Global.h"
 #include "Util/CommonEvents.h"
@@ -477,6 +478,41 @@ void Server::init(const RoomGameConfig& rgConfig)
         // For non-LOCAL_MODE servers (Linux/Win32 standalone), the config
         // fields default to (0, TERRAIN_TYPE_DEFAULT) so behaviour is
         // unchanged from the original single-arg createWorld() path.
+        //
+        // Seed continuity: chunks now persist to the Anvil region files
+        // (disk-first provider). If a world already exists in the map dir,
+        // its unvisited chunks must still generate with the SAME seed the
+        // saved chunks were generated with — otherwise the world would
+        // develop seams. So the seed is stamped into <mapDir>/seed.txt on
+        // first world creation and reused on every subsequent boot. The
+        // Java-supplied random seed only applies to the FIRST world.
+        {
+                // Ensure the map dir exists (first boot) before stamping the seed.
+                PathUtil::CreateDir(mapDir);
+                std::string seedFile = mapDir.c_str();
+                seedFile += "/seed.txt";
+                std::ifstream sfIn(seedFile.c_str());
+                if (sfIn.is_open())
+                {
+                        long long savedSeed = 0;
+                        if (sfIn >> savedSeed)
+                        {
+                                m_config.worldSeed = (int64_t)savedSeed;
+                                LordLogInfo("world seed: continuing saved world with seed %lld (from %s)",
+                                        (long long)m_config.worldSeed, seedFile.c_str());
+                        }
+                }
+                else
+                {
+                        std::ofstream sfOut(seedFile.c_str());
+                        if (sfOut.is_open())
+                        {
+                                sfOut << (long long)m_config.worldSeed << "\n";
+                                LordLogInfo("world seed: new world, stamped seed %lld to %s",
+                                        (long long)m_config.worldSeed, seedFile.c_str());
+                        }
+                }
+        }
         m_serverWorld = ServerWorld::createWorld(tmpStr, m_config.worldSeed, m_config.worldType);
 
         // Safe-spawn scan (ALL world types — not just custom worlds): the
