@@ -1,0 +1,245 @@
+# Blockman-GO-engine-10039 — Redroid arm64 APK smoke-test workflow
+#
+# WHAT THIS DOES (on every push to main + manual dispatch):
+#   1. Downloads the APK from the latest "blockman-go-apk" artifact
+#      (produced by the "Android Build (Manual)" workflow).
+#   2. Boots a REAL ARM64 Android system in a container via Redroid
+#      (https://github.com/remote-android/redroid-doc) on GitHub's free
+#      arm64 runners (ubuntu-24.04-arm). Redroid runs Android natively —
+#      unlike the Google SDK emulator, whose system images are x86_64-only,
+#      so an armeabi-v7a APK cannot run there without libhoudini translation.
+#   3. Installs the APK, launches EchoesActivity (the game), takes a timed
+#      series of screenshots over ~5 minutes, and captures logcat
+#      (full + crash buffer + app-filtered).
+#   4. Uploads screenshots + logs as the "redroid-screenshots" artifact so
+#      they can be analyzed (VLM) after the run.
+#
+# IMAGE CHOICE: Android 12 (12.0.0-latest_arm64). The app targets SDK 22 —
+# Android 14 refuses to install targetSdk < 23, so 14.x images are unusable.
+# Android 12 arm64 is multilib: it runs our armeabi-v7a native libs natively.
+#
+# GPU: androidboot.redroid_gpu_mode=guest → SwiftShader software GLES2.
+# The engine renders with OpenGL ES 2.0, which SwiftShader supports.
+#
+# BOOT PREREQ: Redroid needs the binder kernel module. GitHub runners use
+# the -azure kernel; binder_linux ships in linux-modules-extra-$(uname -r),
+# which we install + modprobe below. Android 11+ images do not need ashmem
+# (removed from mainline kernels since 5.18; redroid uses memfd instead).
+
+name: Redroid APK Test (arm64)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      watch_seconds:
+        description: 'How long to watch + screenshot the app (seconds)'
+        required: false
+        default: '300'
+
+concurrency:
+  group: redroid-test-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  redroid-test:
+    name: Install + launch APK on Redroid (arm64 Android 12)
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 45
+
+    env:
+      PKG: com.sandboxol.blockmango
+      ACTIVITY: com.sandboxol.blockmango/.EchoesActivity
+      SER: localhost:5555
+      REDROID_IMAGE: redroid/redroid:12.0.0-latest_arm64
+      WATCH_SECONDS: ${{ github.event.inputs.watch_seconds || '300' }}
+
+    steps:
+      # ----------------------------------------------------------------
+      # Get the APK: newest non-expired "blockman-go-apk" artifact from
+      # any successful run of the manual build workflow.
+      # ----------------------------------------------------------------
+      - name: Download latest APK artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          ART_ID=$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?name=blockman-go-apk&per_page=20" \
+                     --jq '.artifacts[] | select(.expired == false) | .id' | head -1 || true)
+          if [ -z "${ART_ID:-}" ]; then
+            echo "::error::No 'blockman-go-apk' artifact found. Run the 'Android Build (Manual)' workflow first (armeabi-v7a)."
+            exit 1
+          fi
+          echo "Using artifact id: $ART_ID"
+          gh api "/repos/${GITHUB_REPOSITORY}/actions/artifacts/${ART_ID}/zip" > apk.zip
+          mkdir -p apk && unzip -oq apk.zip -d apk
+          APK=$(find apk -name '*.apk' -type f | head -1)
+          if [ -z "$APK" ]; then
+            echo "::error::Artifact contained no .apk"
+            find apk -type f | head -20
+            exit 1
+          fi
+          ls -la "$APK"
+          echo "APK_PATH=$APK" >> "$GITHUB_ENV"
+
+      - name: Set up adb (arm64 build from Ubuntu repos)
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -yq android-tools-adb unzip
+          adb version
+
+      - name: Load binder kernel module (required by Redroid)
+        run: |
+          set -uo pipefail
+          sudo apt-get install -yq "linux-modules-extra-$(uname -r)" || \
+            echo "WARN: linux-modules-extra install failed"
+          if sudo modprobe binder_linux; then
+            echo "binder_linux loaded"
+          else
+            echo "WARN: modprobe binder_linux failed — trying binderfs"
+            sudo mkdir -p /dev/binderfs
+            sudo mount -t binder binder || true
+          fi
+          ls -l /dev/binder* /dev/anbox-binder 2>/dev/null || true
+
+      - name: Start Redroid container (arm64 Android 12)
+        run: |
+          set -euo pipefail
+          sudo docker pull "$REDROID_IMAGE"
+          sudo docker run -d --privileged --name redroid \
+            -v "$HOME/redroid-data:/data" \
+            -p 127.0.0.1:5555:5555 \
+            "$REDROID_IMAGE" \
+            androidboot.redroid_gpu_mode=guest \
+            androidboot.redroid_width=1280 \
+            androidboot.redroid_height=720 \
+            androidboot.redroid_dpi=240
+
+      - name: Wait for Android boot
+        timeout-minutes: 12
+        run: |
+          set -uo pipefail
+          adb start-server
+          adb connect "$SER"
+          ok=0
+          for i in $(seq 1 60); do
+            BOOT=$(adb -s "$SER" shell getprop sys.boot_completed 2>/dev/null | tr -d '\r\n' || true)
+            if [ "$BOOT" = "1" ]; then ok=1; break; fi
+            sleep 10
+          done
+          if [ "$ok" != "1" ]; then
+            echo "ERROR: Android did not boot in 10 min. Redroid container logs:"
+            sudo docker logs --tail 200 redroid || true
+            adb -s "$SER" shell getprop ro.product.cpu.abilist || true
+            exit 1
+          fi
+          echo "Boot completed."
+          echo "ro.product.cpu.abilist = $(adb -s "$SER" shell getprop ro.product.cpu.abilist | tr -d '\r')"
+          echo "Android release: $(adb -s "$SER" shell getprop ro.build.version.release | tr -d '\r')"
+
+      - name: Install APK
+        run: |
+          set -euo pipefail
+          adb -s "$SER" install -r -g "$APK_PATH" 2>&1 | tee install.log
+          if adb -s "$SER" shell pm path "$PKG" >/dev/null 2>&1; then
+            echo "Package $PKG installed OK"
+          else
+            echo "::error::Install finished but package $PKG not found"
+            exit 1
+          fi
+
+      - name: Launch app + capture screenshot series
+        run: |
+          set -uo pipefail
+          mkdir -p shots
+          adb -s "$SER" shell am start -W -n "$ACTIVITY" 2>&1 | tee shots/am-start.txt
+          adb -s "$SER" shell getprop ro.product.cpu.abilist > shots/device-info.txt
+          adb -s "$SER" shell dumpsys window displays 2>/dev/null | grep -E 'init|cur=' | head -5 >> shots/device-info.txt || true
+
+          START=$(date +%s)
+          for T in 5 15 30 45 60 90 120 180 240 300 360 420 480; do
+            [ "$T" -gt "$WATCH_SECONDS" ] && break
+            NOW=$(date +%s)
+            WAIT=$((T - (NOW - START)))
+            [ "$WAIT" -gt 0 ] && sleep "$WAIT"
+            PID=$(adb -s "$SER" shell pidof "$PKG" 2>/dev/null | tr -d '\r\n ' || true)
+            if adb -s "$SER" exec-out screencap -p > "shots/shot_$(printf '%03d' "$T")s.png" 2>/dev/null; then
+              echo "screenshot t=${T}s ok" >> shots/process_log.txt
+            else
+              echo "screenshot t=${T}s FAILED" >> shots/process_log.txt
+            fi
+            if [ -n "$PID" ]; then
+              echo "t=${T}s app=ALIVE pid=${PID}" >> shots/process_log.txt
+            else
+              echo "t=${T}s app=DEAD pid=none" >> shots/process_log.txt
+              echo "App process died before t=${T}s — stopping capture." >> shots/process_log.txt
+              break
+            fi
+          done
+
+          # What is on screen / in focus at the end?
+          adb -s "$SER" shell dumpsys activity activities 2>/dev/null | \
+            grep -E 'mResumedActivity|topResumedActivity' | head -3 >> shots/device-info.txt || true
+          adb -s "$SER" shell dumpsys activity top 2>/dev/null | head -40 >> shots/device-info.txt || true
+
+      - name: Collect logs
+        if: always()
+        run: |
+          set -uo pipefail
+          mkdir -p shots
+          adb -s "$SER" logcat -d > shots/logcat-full.txt 2>/dev/null || true
+          adb -s "$SER" logcat -d -b crash > shots/logcat-crash.txt 2>/dev/null || true
+          # App-relevant lines only (native crashes, our tags)
+          grep -Ein "sandboxol|blockman|Echoes|ServerJni|GameServer|RakNet|Lord|Fatal|SIGSEGV|SIGABRT|tombstone|AndroidRuntime|backtrace|ANR in" \
+            shots/logcat-full.txt > shots/app-log.txt 2>/dev/null || true
+          wc -l shots/logcat-full.txt shots/app-log.txt || true
+          cat shots/process_log.txt || true
+
+      - name: Verdict
+        run: |
+          set -uo pipefail
+          {
+            echo "## Redroid arm64 APK test result"
+            echo
+            echo '```'
+            cat shots/process_log.txt 2>/dev/null || echo "no process log"
+            echo '```'
+            echo
+            if grep -q "app=DEAD" shots/process_log.txt 2>/dev/null; then
+              echo "**VERDICT: APP CRASHED during the watch window.** See app-log.txt / logcat-crash.txt."
+              CRASHED=1
+            else
+              echo "**VERDICT: app stayed alive for the full watch window (${WATCH_SECONDS}s).** Check screenshots for rendering state."
+            fi
+            echo
+            echo "### Crash-buffer excerpt"
+            echo '```'
+            head -c 3000 shots/logcat-crash.txt 2>/dev/null || true
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          # Fail the job if the app died (screenshots/logs still upload below).
+          if grep -q "app=DEAD" shots/process_log.txt 2>/dev/null; then exit 1; fi
+
+      - name: Upload screenshots + logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: redroid-screenshots
+          path: shots/
+          if-no-files-found: warn
+          retention-days: 14
+          overwrite: true
+
+      - name: Upload install log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: redroid-install-log
+          path: install.log
+          if-no-files-found: ignore
+          retention-days: 14
+          overwrite: true
