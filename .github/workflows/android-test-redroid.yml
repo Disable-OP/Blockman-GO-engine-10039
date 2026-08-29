@@ -55,7 +55,12 @@ jobs:
       PKG: com.sandboxol.blockmango
       ACTIVITY: com.sandboxol.blockmango/.EchoesActivity
       SER: localhost:5555
-      REDROID_IMAGE: redroid/redroid:12.0.0-latest_arm64
+      # NOTE: redroid publishes arm64 via MULTI-ARCH MANIFESTS on the plain
+      # tags (verified on Docker Hub: 12.0.0-latest = amd64+arm64). There is
+      # no "_arm64" suffixed tag — docker auto-selects arm64 on this runner.
+      # "12.0.0-latest" is the MULTILIB image (runs armeabi-v7a apps);
+      # "_64only" variants would NOT run our 32-bit APK.
+      REDROID_IMAGE: redroid/redroid:12.0.0-latest
       WATCH_SECONDS: ${{ github.event.inputs.watch_seconds || '300' }}
 
     steps:
