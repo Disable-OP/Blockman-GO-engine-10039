@@ -1735,7 +1735,11 @@ void ServerPacketSender::sendActivateTrigger(ui64 rakssId, const Vector3i & bloc
 
 void ServerPacketSender::broadCastSyncBlock()
 {
-	auto positions = BlockChangeRecorderServer::Instance()->getBlockSyncList();
+	// FIX [SYMPTOM-4]: getBlockSyncList() returns a reference; `auto positions`
+	// (by value) copied the whole list each call and positions.clear() below
+	// cleared the COPY — the real list grew without bound and every broadcast
+	// resent the full edit history to every player.
+	auto& positions = BlockChangeRecorderServer::Instance()->getBlockSyncList();
 
 	EntityPlayers& players = Server::Instance()->getWorld()->getPlayers();
 

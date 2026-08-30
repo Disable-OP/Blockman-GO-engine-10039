@@ -30,7 +30,13 @@
 
 
 
-#define MAXIMUM_MTU_SIZE 576
+// FIX [SYMPTOM-4]: was 576 (dial-up era value, 16x below the upstream default
+// of 1492). Every S2C chunk blob (~tens of KB) was split into 576-byte frames
+// over RakNet reliability — heavy per-frame overhead on the in-process
+// loopback link. 1492 matches upstream RakNet and is applied IDENTICALLY in
+// logic/dependencies/Android/raknet/include/MTUSize.h (the server's copy) so
+// both ends of the connection agree.
+#define MAXIMUM_MTU_SIZE 1492
 
 
 #define MINIMUM_MTU_SIZE 400

@@ -147,7 +147,14 @@ void Chunk::generateHeightMap()
 		for (int iz = 0; iz < 16; ++iz)
 		{
 			m_precipitationHeightMap[ix + (iz << 4)] = INVALID_PRECIPITATION;
-			int height = top * 16 - 1;
+			// FIX [SYMPTOM-4]: getTopFilledSegment() returns the top section's
+			// BLOCK-space base (e.g. 240 for section 15). The scan must start
+			// at top + 15 (the highest block of that section — exactly what
+			// updateHeightMap uses). "top * 16 - 1" started 16x higher (e.g.
+			// y=3839), so every column first walked ~3800 all-air lookups:
+			// ~950,000 wasted opacity queries per generated/loaded chunk — a
+			// major slice of the server's chunk-serving cost.
+			int height = top + 16 - 1;
 
 			while (height > 0 && getBlockLightOpacity(BlockPos(ix, height, iz)) == 0)
 			{

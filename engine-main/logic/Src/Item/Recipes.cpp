@@ -20,7 +20,9 @@ FurnaceRecipes::FurnaceRecipes()
 	addSmelting(BLOCK_ID_ORE_IRON, LORD::make_shared<ItemStack>(Item::ingotIron), 0.7F);
 	addSmelting(BLOCK_ID_ORE_GOLD, LORD::make_shared<ItemStack>(Item::ingotGold), 1.0F);
 	addSmelting(BLOCK_ID_ORE_DIAMOND, LORD::make_shared<ItemStack>(Item::diamond), 1.0F);
-	addSmelting(BLOCK_ID_SAND, LORD::make_shared<ItemStack>(BlockManager::grass), 0.1F);
+	// FIX [SYMPTOM-3]: smelting SAND must yield GLASS, not grass
+	// (copy-paste from a dirt/grass recipe).
+	addSmelting(BLOCK_ID_SAND, LORD::make_shared<ItemStack>(BlockManager::glass), 0.1F);
 	addSmelting(Item::porkRaw->itemID, LORD::make_shared<ItemStack>(Item::porkCooked), 0.35F);
 	addSmelting(Item::beefRaw->itemID, LORD::make_shared<ItemStack>(Item::beefCooked), 0.35F);
 	addSmelting(Item::chickenRaw->itemID, LORD::make_shared<ItemStack>(Item::chickenCooked), 0.35F);
@@ -330,10 +332,15 @@ ItemStackPtr RecipesArmorDyes::getCraftingResult(InventoryCrafting* pInvCrafting
 	for (i = 0; i < pInvCrafting->getSizeInventory(); ++i)
 	{
 		ItemStackPtr pSlotStack = pInvCrafting->getStackInSlot(i);
+		// FIX: null check BEFORE the deref (was dynamic_cast on
+		// pSlotStack->getItem() with pSlotStack possibly null — crash
+		// on any empty slot in the armor-dye grid).
+		if (!pSlotStack)
+		{
+			continue;
+		}
 		pArmor = dynamic_cast<ItemArmor*>(pSlotStack->getItem());
 
-		if (pSlotStack)
-		{
 			if (pArmor)
 			{
 				if (pArmor->getArmorMaterial() != ArmorMaterial::CLOTH || pStack != NULL)
@@ -378,7 +385,6 @@ ItemStackPtr RecipesArmorDyes::getCraftingResult(InventoryCrafting* pInvCrafting
 				++armorCount;
 			}
 		}
-	}
 
 	if (pArmor == NULL)
 	{
@@ -531,7 +537,12 @@ bool ShapedRecipes::checkMatch(InventoryCrafting* pInvCrafting, int xPos, int yP
 			}
 
 			ItemStackPtr pStack = pInvCrafting->getStackInRowAndColumn(i, j);
-			if (!ingredient->matches(pStack))
+			// FIX [SYMPTOM-3]: a null ingredient means "this cell must
+			// be EMPTY" (pattern ' ' cells push nullptr in
+			// CraftingManager::addShapedRecipe). The old unconditional
+			// ingredient->matches(pStack) dereferenced null for every
+			// recipe with a gap in its pattern (UB/crash, broken matching).
+			if (ingredient == nullptr ? pStack != nullptr : !ingredient->matches(pStack))
 			{
 				return false;
 			}
@@ -583,40 +594,40 @@ ShapelessRecipes::ShapelessRecipes(ItemStackPtr pStack, const IngredientPtrArr& 
 
 bool ShapelessRecipes::matches(InventoryCrafting* pInvCrafting, World* pWorld)
 {
-	throw std::logic_error("not implemented");
-	//typedef set<ItemStackPtr>::type ItemStackSet;
-	//ItemStackSet stacks(recipeItems.begin(), recipeItems.end());
+	// FIX [SYMPTOM-3]: was `throw std::logic_error("not implemented")` —
+	// any shapeless recipe that managed to register would have crashed the
+	// crafting scan. Vanilla semantics: every filled grid slot must consume
+	// one distinct ingredient, and all ingredients must be consumed.
+	vector<IngredientPtr>::type remaining(recipeItems.begin(), recipeItems.end());
+	int filledSlots = 0;
 
-	//for (int i = 0; i < 3; ++i)
-	//{
-	//	for (int j = 0; j < 3; ++j)
-	//	{
-	//		ItemStackPtr pStack = pInvCrafting->getStackInRowAndColumn(j, i);
+	for (int i = 0; i < pInvCrafting->getSizeInventory(); ++i)
+	{
+		ItemStackPtr pStack = pInvCrafting->getStackInSlot(i);
+		if (!pStack)
+		{
+			continue;
+		}
+		++filledSlots;
 
-	//		if (!pStack)
-	//			continue;
+		bool consumed = false;
+		for (auto it = remaining.begin(); it != remaining.end(); ++it)
+		{
+			if (*it && (*it)->matches(pStack))
+			{
+				remaining.erase(it);
+				consumed = true;
+				break;
+			}
+		}
 
-	//		bool flag = false;
-	//		for (ItemStackSet::iterator it = stacks.begin(); it != stacks.end(); ++it)
-	//		{
-	//			ItemStackPtr pRecipeStack = *it;
-	//			if (pStack->itemID == pRecipeStack->itemID && 
-	//				(pRecipeStack->getItemDamage() == 32767 || pStack->getItemDamage() == pRecipeStack->getItemDamage()))
-	//			{
-	//				flag = true;
-	//				stacks.erase(it);
-	//				break;
-	//			}
-	//		}
-	//		
-	//		if (!flag)
-	//		{
-	//			return false;
-	//		}
-	//	}
-	//}
+		if (!consumed)
+		{
+			return false;
+		}
+	}
 
-	//return stacks.empty();
+	return filledSlots == int(recipeItems.size()) && remaining.empty();
 }
 
 ItemStackPtr ShapelessRecipes::getCraftingResult(InventoryCrafting* pInvCrafting)

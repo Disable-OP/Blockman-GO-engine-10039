@@ -27,6 +27,17 @@ namespace BLOCKMAN
 	void ChunkServiceClient::prepareChunk(const ChunkPtr & chunk)
 	{
 		ChunkService::prepareChunk(chunk);
+		// FIX [SYMPTOM-1]: chunks that arrive over the network never went
+		// through the disk path (ChunkReadableStorageFile::prepareChunk),
+		// which is the only place that called Chunk::onChunkLoad(). A
+		// network-injected chunk therefore kept m_isChunkLoaded == false
+		// forever, and EntityLivingBase::handleEntityDrop treated the
+		// player's own chunk as "not loaded", replacing real gravity with
+		// a fixed motion.y = -0.1 (jump apex ~0.32 blocks, floaty fall).
+		// Marking the chunk loaded here restores vanilla physics
+		// (0.42 jump / 0.08 gravity -> 1.25-block jump) for every chunk
+		// source. onChunkLoad() is idempotent for the disk path.
+		chunk->onChunkLoad();
 		chunk->setSectionXZ();
 		BlockChangeRecorderClient::Instance()->applyChanges(chunk);
 		SignTextsChangeRecorder::Instance()->applyChanges(chunk);

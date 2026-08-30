@@ -57,7 +57,10 @@ void PacketHandlerRegistry<enumtype, CPacket>::registerHandler(Callback<CPacket<
 		auto derived = std::dynamic_pointer_cast<CPacket<type>>(packet);
 		if (!derived)
 		{
+			// FIX: failed cast used to log and then INVOKE the handler with a
+			// null packet anyway (null-deref on the main dispatch path).
 			LordLogError("Failed to cast packet to %s", typeid(CPacket<type>).name());
+			return;
 		}
 		callback(derived);
 	};

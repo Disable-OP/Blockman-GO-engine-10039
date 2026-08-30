@@ -117,6 +117,27 @@ bool CraftingManager::parseRecipeJson(const String& recipeName, const rapidjson:
 		RETURN_ON_FAIL(itemStack, "failed to load recipe %s: failed to create ItemStack for result", recipeName.c_str());
 		addShapedRecipe(itemStack, patternStrings, charToIngredient, recipeName, recipeGroup);
 	}
+	else if (type == "crafting_shapeless")
+	{
+		// FIX [SYMPTOM-3]: the shapeless branch was never implemented here —
+		// every crafting_shapeless json fell into the "unsupported" error even
+		// though addShapelessRecipe() and ShapelessRecipes existed.
+		IngredientPtrArr ingredients;
+		for (const auto& ingredientJson : recipeJson["ingredients"].GetArray())
+		{
+			auto ingredient = createIngredientFromJson(ingredientJson);
+			RETURN_ON_FAIL(ingredient, "failed to load recipe %s: failed to create Ingredients", recipeName.c_str());
+			ingredients.push_back(ingredient);
+		}
+		String recipeGroup;
+		if (recipeJson.HasMember("group"))
+		{
+			recipeGroup = recipeJson["group"].GetString();
+		}
+		auto itemStack = createItemStackFromJson(recipeJson["result"]);
+		RETURN_ON_FAIL(itemStack, "failed to load recipe %s: failed to create ItemStack for result", recipeName.c_str());
+		addShapelessRecipe(itemStack, ingredients, recipeName, recipeGroup);
+	}
 	else
 	{
 		LordLogError("failed to load recipe %s: recipe type %s is unsupported", recipeName.c_str(), type.c_str());

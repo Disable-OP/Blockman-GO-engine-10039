@@ -143,7 +143,10 @@ namespace BLOCKMAN
 		}
 		else if (type == "crafting_shapeless")
 		{
-			RETURN_ON_FAIL(doc.HasMember("pattern"), "recipe with type \"crafting_shapeless\" must have \"ingredients\" field");
+			// FIX [SYMPTOM-3]: was HasMember("pattern") — a one-word typo that
+			// rejected EVERY shapeless recipe (they carry "ingredients", not
+			// "pattern"), so dyeing, fire charges etc. never loaded.
+			RETURN_ON_FAIL(doc.HasMember("ingredients"), "recipe with type \"crafting_shapeless\" must have \"ingredients\" field");
 		}
 		if (doc.HasMember("key"))
 		{

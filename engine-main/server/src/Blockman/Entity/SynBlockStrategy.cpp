@@ -153,9 +153,13 @@ void SyncBlockStrategySection::add(const Vector3& playPosition, BlockPos& pos, i
 	blockInfoSection.meta = (ui8)meta;
 
 	bool needSync = false;
+	// FIX [SYMPTOM-4]: proximity must hold on ALL THREE axes (cube around the
+	// player). With ||, any single axis within range — e.g. every section in
+	// the player's Y band regardless of horizontal distance — was flagged,
+	// syncing essentially the whole loaded world's edits.
 	if (Math::Abs(sectionInfo.absoluteX - playerSectionX) <= needSyncSectionDistance
-		|| Math::Abs(sectionInfo.absoluteY - playerSectionY) <= needSyncSectionDistance
-		|| Math::Abs(sectionInfo.absoluteZ - playerSectionZ) <= needSyncSectionDistance)
+		&& Math::Abs(sectionInfo.absoluteY - playerSectionY) <= needSyncSectionDistance
+		&& Math::Abs(sectionInfo.absoluteZ - playerSectionZ) <= needSyncSectionDistance)
 	{
 		needSync = true;
 		isNeedSync = true;
@@ -206,9 +210,15 @@ void SyncBlockStrategySection::move(const Vector3& playPosition)
 	bool needSync = false;
 	for (SectionInfoMap::iterator sectionIter = mNearBySection.begin(); sectionIter != mNearBySection.end(); sectionIter++)
 	{
-		if (aPosToRPos(((int)sectionIter->first.absoluteX) - aPosToRPos((int)playPosition.x)) <= needSyncSectionDistance
-			|| aPosToRPos(((int)sectionIter->first.absoluteY) - aPosToRPos((int)playPosition.y)) <= needSyncSectionDistance
-			|| aPosToRPos(((int)sectionIter->first.absoluteZ) - aPosToRPos((int)playPosition.z)) <= needSyncSectionDistance)
+		// FIX [SYMPTOM-4]: the old expression applied aPosToRPos to a DIFFERENCE
+		// that was already in mixed units (absoluteX is already a section index,
+		// aPosToRPos(playPosition.x) is a section index too, but their difference
+		// was divided by 16 once more) — distances shrank 16x, so nearly every
+		// section was flagged on every section change. Compare section indices
+		// directly, on all three axes (cube).
+		if (Math::Abs(((int)sectionIter->first.absoluteX) - aPosToRPos((int)playPosition.x)) <= needSyncSectionDistance
+			&& Math::Abs(((int)sectionIter->first.absoluteY) - aPosToRPos((int)playPosition.y)) <= needSyncSectionDistance
+			&& Math::Abs(((int)sectionIter->first.absoluteZ) - aPosToRPos((int)playPosition.z)) <= needSyncSectionDistance)
 		{
 			sectionIter->second.isNeedSync = true;
 			needSync = true;

@@ -197,7 +197,10 @@ void ItemStack::readFromNBT(NBTTagCompound* pCompound)
 {
 	itemID = pCompound->getShort("id");
 	stackSize = pCompound->getByte("Count");
-	itemDamage = pCompound->getBool("Damage");
+	// FIX [SYMPTOM-3 vicinity]: damage is WRITTEN as a short (writeToNBT uses
+	// setShort) but was READ with getBool, collapsing every saved tool damage
+	// value to 0/1. Read it back with the matching type.
+	itemDamage = pCompound->getShort("Damage");
 
 	if (itemDamage < 0)
 		itemDamage = 0;

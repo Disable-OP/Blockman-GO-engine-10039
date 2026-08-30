@@ -95,17 +95,10 @@ bool ServerNetwork::hasBeenDeferredLogin(ui64 platformUserId) {
 
 std::shared_ptr<ClientPeer> ServerNetwork::findPlayerByRakssid(ui64 ssid)
 {
-	std::shared_ptr<ClientPeer> pret;
-	for (auto player : m_playerMap)
-	{
-		if (player.first == ssid)
-		{
-			pret = player.second;
-			break;
-		}
-	}
-
-	return pret;
+	// FIX [SYMPTOM-4]: m_playerMap is keyed by ssid — the previous linear scan
+	// ran per entity-sync per tick. Direct lookup, same semantics for misses.
+	auto it = m_playerMap.find(ssid);
+	return it != m_playerMap.end() ? it->second : nullptr;
 }
 
 std::shared_ptr<ClientPeer> ServerNetwork::findPlayerByPlatformUserId(ui64 userId)

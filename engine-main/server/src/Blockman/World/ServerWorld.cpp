@@ -268,9 +268,11 @@ void ServerWorld::populateChunk(int x, int z)
 
         chunk->m_isTerrainPopulated = true;
 
-        // Persist the populated chunk immediately so a restart doesn't lose
-        // decoration (and so a re-request after cache eviction is consistent).
-        m_pChunkService->saveChunk(x, z, false);
+        // FIX [SYMPTOM-4]: removed the synchronous per-chunk disk save from
+        // the chunk-request path (NBT serialize + zlib + file IO on the tick
+        // thread, multiplied by every chunk served at join). The periodic
+        // saveAllChunks (every 600 ticks) and the shutdown save persist the
+        // decoration with at most ~30s of exposure.
 
         LordLogInfo("populateChunk: decorated chunk (%d, %d), biome %d", x, z, biome ? (int)biome->m_ID : -1);
 }

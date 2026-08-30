@@ -7,6 +7,7 @@ using namespace LORD;
 
 namespace BLOCKMAN
 {
+	class IRecipe;
 	class ShapedRecipes;
 	class InventoryPlayer;
 	class IInventory;
@@ -15,10 +16,11 @@ namespace BLOCKMAN
 	class ItemCrafter : public Singleton<ItemCrafter>, public ObjectAlloc
 	{
 	private:
-		bool tryConsumeItemsFromInventory(ShapedRecipes * recipe, IInventory * inventory);
+		// FIX [SYMPTOM-3]: generalized to IRecipe so shapeless recipes work too.
+		bool tryConsumeItemsFromInventory(IRecipe * recipe, IInventory * inventory);
 
 	public:
-		bool craftWithinInventory(ShapedRecipes * recipe, InventoryPlayer* inventory);
+		bool craftWithinInventory(IRecipe * recipe, InventoryPlayer* inventory);
 		bool craftItem(EntityPlayer* player, int recipeId);
 	};
 }

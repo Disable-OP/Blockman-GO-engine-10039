@@ -144,6 +144,9 @@ protected:
 
 public:
 	ShapelessRecipes(ItemStackPtr pStack, const IngredientPtrArr& stacks, const String& name, const String& group = "");
+	// FIX [SYMPTOM-3]: getter used by ItemCrafter to consume ingredients
+	// for shapeless crafting (mirrors ShapedRecipes::getRecipeItems).
+	IngredientPtrArr getRecipeItems() { return recipeItems; }
 	
 	/** Implement override functions from IRecipe*/
 	virtual ItemStackPtr getRecipeOutput() { return recipeOutput; }

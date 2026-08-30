@@ -15,6 +15,7 @@
     }
   },
   "result": {
-    "item": "blockman:spruce_fence_gate"
+    "item": "blockman:spruce_fence_gate",
+    "count": 3
   }
 }

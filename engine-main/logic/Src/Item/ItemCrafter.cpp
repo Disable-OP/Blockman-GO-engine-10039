@@ -8,11 +8,32 @@
 
 namespace BLOCKMAN
 {
-	bool ItemCrafter::tryConsumeItemsFromInventory(ShapedRecipes * recipe, IInventory * inventory)
+	// FIX [SYMPTOM-3]: ingredient access generalized to any recipe type so
+	// shapeless recipes can be consumed too (previously ShapedRecipes-only).
+	static IngredientPtrArr getRecipeIngredients(ShapedRecipes* recipe)
+	{
+		return recipe->getRecipeItems();
+	}
+
+	static IngredientPtrArr getRecipeIngredients(ShapelessRecipes* recipe)
+	{
+		return recipe->getRecipeItems();
+	}
+
+	bool ItemCrafter::tryConsumeItemsFromInventory(IRecipe * recipe, IInventory * inventory)
 	{
 		auto size = InventoryPlayer::MAIN_INVENTORY_COUNT;
 		vector<int>::type usage(size);
-		for (auto ingredient : recipe->getRecipeItems())
+
+		IngredientPtrArr ingredients;
+		if (auto shaped = dynamic_cast<ShapedRecipes*>(recipe))
+			ingredients = getRecipeIngredients(shaped);
+		else if (auto shapeless = dynamic_cast<ShapelessRecipes*>(recipe))
+			ingredients = getRecipeIngredients(shapeless);
+		else
+			return false;
+
+		for (auto ingredient : ingredients)
 		{
 			if (!ingredient)
 			{
@@ -22,7 +43,7 @@ namespace BLOCKMAN
 			for (int i = 0; i < size; ++i)
 			{
 				auto targetStack = inventory->getStackInSlot(i);
-				if (ingredient->matches(targetStack) && targetStack->stackSize > usage[i])
+				if (targetStack && ingredient->matches(targetStack) && targetStack->stackSize > usage[i])
 				{
 					++usage[i];
 					found = true;
@@ -41,9 +62,9 @@ namespace BLOCKMAN
 		return true;
 	}
 
-	bool ItemCrafter::craftWithinInventory(ShapedRecipes * recipe, InventoryPlayer * inventory)
+	bool ItemCrafter::craftWithinInventory(IRecipe * recipe, InventoryPlayer * inventory)
 	{
-		if (!inventory->canItemStackAddedToInventory(recipe->getRecipeOutput()))
+		if (!recipe->getRecipeOutput() || !inventory->canItemStackAddedToInventory(recipe->getRecipeOutput()))
 		{
 			return false;
 		}
@@ -60,8 +81,12 @@ namespace BLOCKMAN
 
 	bool ItemCrafter::craftItem(EntityPlayer* player, int recipeId)
 	{
-		auto recipe = dynamic_cast<ShapedRecipes*>(CraftingManager::Instance()->getRecipe(recipeId));
+		// FIX [SYMPTOM-3]: accept both shaped AND shapeless recipes (was
+		// dynamic_cast<ShapedRecipes*> only — every shapeless craft failed).
+		auto recipe = CraftingManager::Instance()->getRecipe(recipeId);
 		if (recipe)
+		{
+			if (dynamic_cast<ShapedRecipes*>(recipe) || dynamic_cast<ShapelessRecipes*>(recipe))
 		{
 			if (player)
 			{
@@ -75,7 +100,13 @@ namespace BLOCKMAN
 		}
 		else
 		{
-			LordLogError("recipe with id %d is not a ShapedRecipe", recipeId);
+				LordLogError("recipe with id %d is neither ShapedRecipe nor ShapelessRecipe", recipeId);
+				return false;
+			}
+		}
+		else
+		{
+			LordLogError("recipe with id %d not found", recipeId);
 			return false;
 		}
 	}

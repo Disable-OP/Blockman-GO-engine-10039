@@ -91,7 +91,10 @@ inline void C2SPacketDispatcher::registerHandler(C2SMethodCallBack<C2SPacket<typ
 		auto c2sPacket = std::dynamic_pointer_cast<C2SPacket<type>>(packet);
 		if (!c2sPacket)
 		{
+			// FIX: was log-and-continue, then dereferenced the null
+			// packet below (server crash path).
 			LordLogError("Failed to cast packet to %s", typeid(C2SPacket<type>).name());
+			return;
 		}
 
 		std::shared_ptr<ClientPeer> clientPeer =
@@ -120,7 +123,10 @@ inline void C2SPacketDispatcher::registerHandler(C2SCallBack<C2SPacket<type>> ca
 		auto c2sPacket = std::dynamic_pointer_cast<C2SPacket<type>>(packet);
 		if (!c2sPacket)
 		{
+			// FIX: was log-and-continue, then dereferenced the null
+			// packet below (server crash path).
 			LordLogError("Failed to cast packet to %s", typeid(C2SPacket<type>).name());
+			return;
 		}
 
 		std::shared_ptr<ClientPeer> clientPeer =

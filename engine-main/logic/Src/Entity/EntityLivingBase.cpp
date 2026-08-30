@@ -1751,7 +1751,13 @@ void EntityLivingBase::handleOnLadderAfterMove()
 
 void EntityLivingBase::handleEntityDrop(float dt)
 {
-	if (world->m_isClient &&
+	// FIX [SYMPTOM-1]: the "chunk not loaded" fallback (fixed -0.1 vertical
+	// velocity) must never fight a real jump. It exists to make entities drift
+	// down slowly over void/unloaded terrain; when the entity is standing on
+	// the ground (or actively jumping from it) vanilla gravity must apply,
+	// otherwise jump() sets motion.y = 0.42 and this branch immediately
+	// overwrites it with -0.1 -> the player can never clear a single block.
+	if (world->m_isClient && !onGround &&
 		(!world->blockExists(BlockPos((int)position.x, 0, (int)position.z)) ||
 			!world->getChunkFromBlockCoords((int)position.x, (int)position.z)->m_isChunkLoaded))
 	{

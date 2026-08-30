@@ -74,9 +74,13 @@ void EntityPlayerMP::doConstruct(const Vector3i& spawnPos)
 	monitorInventoryChanged();
 	monitorPropertyChanged();
 
-	if (!Server::Instance()->isScriptLoaded()) {
-		initPlayerInventory();
-	}
+	// FIX [SYMPTOM-5]: initPlayerInventory() is a DEBUG care-package (~20 item
+	// stacks) and was granted to every new player whenever no gameplay script
+	// was loaded — which is always the case for the script-less in-process
+	// server. Players now start with an EMPTY inventory (vanilla survival).
+	// if (!Server::Instance()->isScriptLoaded()) {
+	//      initPlayerInventory();
+	// }
 
 	// for debug, added by wanglei
 #if LORD_PLATFORM == LORD_PLATFORM_WINDOWS

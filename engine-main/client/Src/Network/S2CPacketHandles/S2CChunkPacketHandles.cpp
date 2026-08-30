@@ -77,15 +77,16 @@ void S2CChunkPacketHandles::handlePacket(std::shared_ptr<S2CPacketChunkData>& pa
 	if (!bm || !bm->m_pWorld || !bm->m_pWorld->getChunkService()) return;
 	if (packet->m_blob.empty()) return;
 
-	// If the cache already holds a REAL chunk for these coords (e.g. a
-	// duplicate request raced on the wire), skip — re-injecting would reset
-	// the lighting/rebuild state and could drop the player's local view.
-	if (bm->m_pWorld->getChunkService()->chunkInCache(packet->m_chunkX, packet->m_chunkZ))
-	{
-		auto existing = bm->m_pWorld->getChunkService()->getChunk(packet->m_chunkX, packet->m_chunkZ);
-		if (existing && !existing->isNonexistent())
-			return;
-	}
+        // FIX [SYMPTOM-2]: the server is the authority — always accept fresh
+        // chunk data, REPLACING whatever the cache holds. The old early-return
+        // ("skip if a real chunk is already cached") made stale local-disk
+        // chunks (e.g. empty/corrupt ones persisted by older builds) win over
+        // the live server copy, leaving the world a void until a block update
+        // happened to re-mark that one section for render. m_cache.add()
+        // overwrites the entry for these coordinates; the shared_ptr release
+        // of any replaced chunk is handled by the cache.
+        // (Duplicate requests racing on the wire are also fine: last write
+        // wins, and both writes carry identical server state.)
 
 	// The blob is the same format as an Anvil chunk record: zlib-compressed
 	// NBT. ZlibInputStream takes vector<char>; m_blob is vector<ui8>. Use
