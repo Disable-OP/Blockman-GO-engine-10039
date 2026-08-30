@@ -166,12 +166,13 @@ jobs:
           adb -s "$SER" shell dumpsys window displays 2>/dev/null | grep -E 'init|cur=' | head -5 >> shots/device-info.txt || true
 
           # Android 12 shows a blocking compat dialog for targetSdk<23 apps
-          # ("built for an older version of Android"). Dismiss it (OK button)
-          # so it does not obstruct every screenshot. Poll + dismiss for 60s.
+          # ("built for an older version of Android"), plus the immersive
+          # "Viewing full screen" hint overlay. Dismiss both (ENTER) so they
+          # do not obstruct every screenshot. Poll + dismiss for 60s.
           DISMISS_END=$(( $(date +%s) + 60 ))
           while [ "$(date +%s)" -lt "$DISMISS_END" ]; do
             FOCUS=$(adb -s "$SER" shell dumpsys window 2>/dev/null | grep -E 'mCurrentFocus|mFocusedWindow' | head -1)
-            if echo "$FOCUS" | grep -qiE 'dialog|alert'; then
+            if echo "$FOCUS" | grep -qiE 'dialog|alert|fulls|immersive'; then
               adb -s "$SER" shell input keyevent 66 >/dev/null 2>&1
               echo "dismissed dialog: $FOCUS" >> shots/process_log.txt
             fi
